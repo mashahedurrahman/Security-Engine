@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Feb 11 19:51:56 2022
+# Process ID: 75256
+# Current directory: /home/mashahed/projects/cva6/cva6/corev_apu/fpga
+# Command line: vivado
+# Log file: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/vivado.log
+# Journal file: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/vivado.jou
+# Running On: ubuntu, OS: Linux, CPU Frequency: 3312.003 MHz, CPU Physical cores: 12, Host memory: 16742 MB
+#-----------------------------------------------------------
+start_gui
+pwd
+source ./scripts/prologue.tcl
+source ./scripts/run.tcl
+update_compile_order -fileset sources_1

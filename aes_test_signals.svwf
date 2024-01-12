@@ -1,0 +1,78 @@
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+array unset createdGroup
+array set createdGroup {}
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.clk_i}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[8] .aw_addr[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[8] .aw_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[8] .w_data[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[8] .w_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[8] .ar_addr[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[8] .ar_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[8] .r_data[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[8] .r_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.soft_reset}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.rst_both}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.encNotDec}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.nonce[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.counterIn[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.messageIn[127:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.done_cipher}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.cipherOut[127:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.cipherIn[127:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.done_message}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.messageOut[127:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.aes.reg_data_out[31:0]}]}
+	} ]]
+
+waveform xview limits 12614000ps 20806000ps

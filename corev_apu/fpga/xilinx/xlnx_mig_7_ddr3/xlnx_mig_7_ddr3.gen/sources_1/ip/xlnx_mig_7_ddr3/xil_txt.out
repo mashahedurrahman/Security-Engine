@@ -1,0 +1,4 @@
+SET_ERROR_CODE 0
+SET_XMDF_PATH ./xlnx_mig_7_ddr3_xmdf.tcl
+SET_PARAMETER component_name xlnx_mig_7_ddr3
+SET_PARAMETER xml_input_file  ./xlnx_mig_7_ddr3/mig.prj

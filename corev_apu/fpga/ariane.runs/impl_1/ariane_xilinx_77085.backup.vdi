@@ -1,0 +1,797 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Feb 11 20:08:26 2022
+# Process ID: 77085
+# Current directory: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1
+# Command line: vivado -log ariane_xilinx.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ariane_xilinx.tcl -notrace
+# Log file: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/ariane_xilinx.vdi
+# Journal file: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/vivado.jou
+# Running On: ubuntu, OS: Linux, CPU Frequency: 3312.003 MHz, CPU Physical cores: 12, Host memory: 16742 MB
+#-----------------------------------------------------------
+source ariane_xilinx.tcl -notrace
+Command: open_checkpoint /home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/ariane_xilinx.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2761.422 ; gain = 2.969 ; free physical = 6420 ; free virtual = 8845
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:00.81 ; elapsed = 00:00:00.82 . Memory (MB): peak = 2761.516 ; gain = 0.000 ; free physical = 6721 ; free virtual = 9148
+INFO: [Netlist 29-17] Analyzing 7789 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'i_xlnx_clk_gen/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3380.664 ; gain = 0.000 ; free physical = 5879 ; free virtual = 8306
+Restored from archive | CPU: 0.060000 secs | Memory: 1.744072 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3380.664 ; gain = 0.000 ; free physical = 5879 ; free virtual = 8306
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3380.664 ; gain = 0.000 ; free physical = 5892 ; free virtual = 8319
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 376 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+  IOBUFDS_DIFF_OUT_DCIEN => IOBUFDS_DIFF_OUT_DCIEN (IBUFDS_IBUFDISABLE_INT(x2), INV, OBUFTDS_DCIEN(x2)): 4 instances
+  IOBUF_DCIEN => IOBUF_DCIEN (IBUF_IBUFDISABLE, OBUFT_DCIEN): 32 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 26 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 290 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 22 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2021.2 (64-bit) build 3367213
+open_checkpoint: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3380.664 ; gain = 628.148 ; free physical = 5892 ; free virtual = 8319
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.87 . Memory (MB): peak = 3455.668 ; gain = 67.000 ; free physical = 5880 ; free virtual = 8307
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 1a5727c56
+
+Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3455.668 ; gain = 0.000 ; free physical = 5875 ; free virtual = 8302
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[0].i_opgroup_block/gen_parallel_slices[0].active_format.i_fmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fma/gen_inside_pipeline[0].mid_pipe_add_shamt_q[1][3]_i_1 into driver instance i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[0].i_opgroup_block/gen_parallel_slices[0].active_format.i_fmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fma/gen_inside_pipeline[0].mid_pipe_add_shamt_q[1][3]_i_2, which resulted in an inversion of 57 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[0].i_opgroup_block/gen_parallel_slices[0].active_format.i_fmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fma/gen_inside_pipeline[0].mid_pipe_add_shamt_q[1][6]_i_1 into driver instance i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[0].i_opgroup_block/gen_parallel_slices[0].active_format.i_fmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fma/gen_inside_pipeline[0].mid_pipe_add_shamt_q[1][6]_i_2, which resulted in an inversion of 20 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[0].i_opgroup_block/gen_parallel_slices[0].active_format.i_fmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fma/gen_inside_pipeline[0].mid_pipe_eff_sub_q[1]_i_1 into driver instance i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[0].i_opgroup_block/gen_parallel_slices[0].active_format.i_fmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fma/gen_inside_pipeline[0].mid_pipe_eff_sub_q[1]_i_2, which resulted in an inversion of 155 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_divsqrt_multi/i_divsqrt_lei/nrbd_nrsc_U0/control_U0/Special_case_dly_SBO_i_1 into driver instance i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_divsqrt_multi/i_divsqrt_lei/nrbd_nrsc_U0/control_U0/Ready_SO_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_divsqrt_multi/i_divsqrt_lei/preprocess_U0/Exp_a_norm_DP0_carry_i_3 into driver instance i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_divsqrt_multi/i_divsqrt_lei/preprocess_U0/Exp_a_norm_DP0_carry_i_10, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_divsqrt_multi/i_divsqrt_lei/preprocess_U0/Exp_b_norm_DP0_carry_i_3 into driver instance i_ariane/i_cva6/ex_stage_i/fpu_gen.fpu_i/fpu_gen.i_fpnew_bulk/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_divsqrt_multi/i_divsqrt_lei/preprocess_U0/Exp_b_norm_DP0_carry_i_10, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/ex_stage_i/lsu_i/lsu_bypass_i/load_data_q[address_offset][0]_i_1 into driver instance i_ariane/i_cva6/ex_stage_i/lsu_i/lsu_bypass_i/load_data_q[address_offset][0]_i_2, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/ex_stage_i/lsu_i/lsu_bypass_i/load_data_q[operator][1]_i_1 into driver instance i_ariane/i_cva6/ex_stage_i/lsu_i/lsu_bypass_i/load_data_q[operator][1]_i_2, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/i_cache_subsystem/i_adapter/mask_q[0]_i_1 into driver instance i_ariane/i_cva6/i_cache_subsystem/i_adapter/mask_q[15]_i_4, which resulted in an inversion of 22 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/i_cache_subsystem/i_cva6_icache/gen_sram[3].tag_sram/gen_cut[0].gen_mem.i_ram/vaddr_q[63]_i_1__0 into driver instance i_ariane/i_cva6/i_cache_subsystem/i_cva6_icache/gen_sram[3].tag_sram/gen_cut[0].gen_mem.i_ram/vaddr_q[63]_i_3__0, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/i_cache_subsystem/i_wt_dcache/gen_rd_ports[0].i_wt_dcache_ctrl/address_idx_q[7]_i_1 into driver instance i_ariane/i_cva6/i_cache_subsystem/i_wt_dcache/gen_rd_ports[0].i_wt_dcache_ctrl/tag_valid_q_i_2, which resulted in an inversion of 14 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/i_cache_subsystem/i_wt_dcache/gen_rd_ports[1].i_wt_dcache_ctrl/address_off_q[3]_i_1 into driver instance i_ariane/i_cva6/i_cache_subsystem/i_wt_dcache/gen_rd_ports[1].i_wt_dcache_ctrl/address_off_q[3]_i_3, which resulted in an inversion of 18 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/i_cache_subsystem/i_wt_dcache/i_wt_dcache_missunit/miss_req_masked_q[0]_i_1 into driver instance i_ariane/i_cva6/i_cache_subsystem/i_wt_dcache/i_wt_dcache_missunit/mshr_q[paddr][55]_i_7, which resulted in an inversion of 120 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/i_cache_subsystem/i_wt_dcache/i_wt_dcache_missunit/mshr_q[miss_port_idx][0]_i_1 into driver instance i_ariane/i_cva6/i_cache_subsystem/i_wt_dcache/i_wt_dcache_missunit/mshr_q[paddr][55]_i_6, which resulted in an inversion of 126 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/i_frontend/i_instr_queue/gen_instr_fifo[0].i_fifo_instr_data/issue_q[sbe][bp][cf][0]_i_1 into driver instance i_ariane/i_cva6/i_frontend/i_instr_queue/gen_instr_fifo[0].i_fifo_instr_data/issue_q[sbe][bp][cf][0]_i_2, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/issue_stage_i/i_issue_read_operands/div_shift0_carry__0_i_3 into driver instance i_ariane/i_cva6/issue_stage_i/i_issue_read_operands/div_shift0_carry_i_32, which resulted in an inversion of 7 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/issue_stage_i/i_scoreboard/mem_q[1][sbe][is_compressed]_i_1 into driver instance i_ariane/i_cva6/issue_stage_i/i_scoreboard/mem_q[1][sbe][is_compressed]_i_2, which resulted in an inversion of 9 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane/i_cva6/issue_stage_i/i_scoreboard/mem_q[2][sbe][is_compressed]_i_1 into driver instance i_ariane/i_cva6/issue_stage_i/i_scoreboard/mem_q[2][sbe][is_compressed]_i_2, which resulted in an inversion of 9 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/m_axi_arvalid_INST_0 into driver instance i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/m_axi_arvalid_INST_0_i_1, which resulted in an inversion of 9 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/wrap_need_to_split_q_i_4__0 into driver instance i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/masked_addr_q[8]_i_2__0, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.USE_SPLIT.write_resp_inst/first_mi_word_i_2 into driver instance i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.USE_SPLIT.write_resp_inst/s_axi_bvalid_INST_0_i_1, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/m_axi_awvalid_INST_0 into driver instance i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/m_axi_awvalid_INST_0_i_1, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/masked_addr_q[5]_i_2 into driver instance i_ariane_peripherals/gen_gpio.i_xlnx_axi_dwidth_converter_gpio/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/masked_addr_q[5]_i_4, which resulted in an inversion of 1 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/m_axi_arvalid_INST_0 into driver instance i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/m_axi_arvalid_INST_0_i_1, which resulted in an inversion of 9 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/wrap_need_to_split_q_i_4__0 into driver instance i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/masked_addr_q[8]_i_2__0, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.USE_SPLIT.write_resp_inst/first_mi_word_i_2 into driver instance i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.USE_SPLIT.write_resp_inst/s_axi_bvalid_INST_0_i_1, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/m_axi_awvalid_INST_0 into driver instance i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/m_axi_awvalid_INST_0_i_1, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/masked_addr_q[5]_i_2 into driver instance i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/masked_addr_q[5]_i_4, which resulted in an inversion of 1 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/FSM_onehot_gen_rst_ic.curr_wrst_state[4]_i_1 into driver instance i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst//i_, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/FSM_onehot_gen_rst_ic.curr_wrst_state[4]_i_1 into driver instance i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst//i_, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/LOGIC_FOR_MD_0_GEN.SPI_MODULE_I/LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_1 into driver instance i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/LOGIC_FOR_MD_0_GEN.SPI_MODULE_I/SS_O[0]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter i_ariane_peripherals/gen_uart.i_apb_uart/UART_RXFF/iIIR[2]_i_1 into driver instance i_ariane_peripherals/gen_uart.i_apb_uart/UART_RXFF/iIIR[2]_i_2, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_870 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_230, which resulted in an inversion of 9 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_871 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_233, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_872 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_237, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_873 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_241, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_874 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_245, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_875 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_249, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_876 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_253, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_877 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_257, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_878 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_261, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_879 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_265, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_880 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_269, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_881 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_273, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_882 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_277, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_883 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_281, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_884 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_285, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_885 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_289, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_886 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_293, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_887 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_297, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_888 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_301, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_889 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_305, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_890 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_309, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_891 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_313, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_892 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_317, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_893 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_321, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_894 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_325, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_895 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_329, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_896 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_333, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_897 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_337, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_898 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_341, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_899 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_345, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_900 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_349, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_901 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_353, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_902 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_357, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_903 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_361, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_904 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_365, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_905 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_369, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_906 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_373, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_907 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_377, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_908 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_381, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_909 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_385, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_910 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_389, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_911 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_393, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_912 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_397, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_913 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_401, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_914 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_405, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_915 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_409, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_916 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_413, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_917 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_417, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_918 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_421, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_919 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_425, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_920 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_429, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_921 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_433, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_922 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_437, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_923 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_441, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_924 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_445, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_925 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_449, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_926 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_453, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_927 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_457, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_928 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_461, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_929 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_465, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_930 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_469, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_931 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_473, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_932 into driver instance i_axi_riscv_atomics/i_atomics/i_amos/i_xlnx_axi_clock_converter_ddr_i_477, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_xbar/i_xbar/gen_mst_port_mux[0].i_axi_mux/gen_mux.i_aw_arbiter/gen_spill_reg.a_data_q[id][4]_i_2 into driver instance i_axi_xbar/i_xbar/gen_mst_port_mux[0].i_axi_mux/gen_mux.i_aw_arbiter/gen_spill_reg.a_data_q[id][4]_i_3__2, which resulted in an inversion of 80 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_xbar/i_xbar/gen_mst_port_mux[1].i_axi_mux/gen_mux.i_aw_arbiter/gen_spill_reg.a_data_q[id][4]_i_2__1 into driver instance i_axi_xbar/i_xbar/gen_mst_port_mux[1].i_axi_mux/gen_mux.i_aw_arbiter/gen_spill_reg.a_data_q[id][4]_i_3__3, which resulted in an inversion of 42 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_xbar/i_xbar/gen_mst_port_mux[2].i_axi_mux/gen_mux.i_aw_arbiter/gen_spill_reg.a_data_q[id][4]_i_2__3 into driver instance i_axi_xbar/i_xbar/gen_mst_port_mux[2].i_axi_mux/gen_mux.i_aw_arbiter/gen_spill_reg.a_data_q[id][4]_i_3__4, which resulted in an inversion of 21 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_aw_arbiter/gen_spill_reg.a_data_q[id][4]_i_2__5 into driver instance i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_aw_arbiter/gen_spill_reg.a_data_q[id][4]_i_3__5, which resulted in an inversion of 42 pins
+INFO: [Opt 31-1287] Pulled Inverter i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_r_spill_reg/spill_register_flushable_i/gen_spill_reg.a_data_q[id][0]_i_1 into driver instance i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_r_spill_reg/spill_register_flushable_i/counter_q[1]_i_2, which resulted in an inversion of 29 pins
+INFO: [Common 17-14] Message 'Opt 31-1287' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 3 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 4f13dfb6
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3659.773 ; gain = 24.012 ; free physical = 5850 ; free virtual = 8278
+INFO: [Opt 31-389] Phase Retarget created 293 cells and removed 540 cells
+INFO: [Opt 31-1021] In phase Retarget, 217 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 19 load pin(s).
+Phase 2 Constant propagation | Checksum: 344f478f
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 3659.773 ; gain = 24.012 ; free physical = 5849 ; free virtual = 8277
+INFO: [Opt 31-389] Phase Constant propagation created 597 cells and removed 1479 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 172 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: a7c91ff4
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3659.773 ; gain = 24.012 ; free physical = 5848 ; free virtual = 8275
+INFO: [Opt 31-389] Phase Sweep created 9 cells and removed 2315 cells
+INFO: [Opt 31-1021] In phase Sweep, 751 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-129] Inserted BUFG to drive high-fanout reset|set|enable net. BUFG cell: i_rstgen_main/i_rstgen_bypass/synch_regs_q_reg[3]_0_BUFG_inst, Net: i_rstgen_main/i_rstgen_bypass/synch_regs_q_reg[3]_0
+Phase 4 BUFG optimization | Checksum: 2d7082f6
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 3659.773 ; gain = 24.012 ; free physical = 5846 ; free virtual = 8274
+INFO: [Opt 31-662] Phase BUFG optimization created 2 cells of which 1 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 2d7082f6
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 3659.773 ; gain = 24.012 ; free physical = 5846 ; free virtual = 8274
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 3efda3d2
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 3659.773 ; gain = 24.012 ; free physical = 5846 ; free virtual = 8273
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 1 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 197 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |             293  |             540  |                                            217  |
+|  Constant propagation         |             597  |            1479  |                                            172  |
+|  Sweep                        |               9  |            2315  |                                            751  |
+|  BUFG optimization            |               2  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               1  |                                            197  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3659.773 ; gain = 0.000 ; free physical = 5846 ; free virtual = 8273
+Ending Logic Optimization Task | Checksum: 1b905833e
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 3659.773 ; gain = 24.012 ; free physical = 5846 ; free virtual = 8273
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 8 BRAM(s) out of a total of 51 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-201] Structural ODC has moved 8 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 8 Total Ports: 102
+Ending PowerOpt Patch Enables Task | Checksum: 1213c9853
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 4384.340 ; gain = 0.000 ; free physical = 5663 ; free virtual = 8093
+Ending Power Optimization Task | Checksum: 1213c9853
+
+Time (s): cpu = 00:04:29 ; elapsed = 00:04:02 . Memory (MB): peak = 4384.340 ; gain = 724.566 ; free physical = 5747 ; free virtual = 8178
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1213c9853
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4384.340 ; gain = 0.000 ; free physical = 5747 ; free virtual = 8178
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4384.340 ; gain = 0.000 ; free physical = 5748 ; free virtual = 8179
+Ending Netlist Obfuscation Task | Checksum: 19c5ceebe
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4384.340 ; gain = 0.000 ; free physical = 5748 ; free virtual = 8179
+INFO: [Common 17-83] Releasing license: Implementation
+139 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:04:50 ; elapsed = 00:04:16 . Memory (MB): peak = 4384.340 ; gain = 1003.676 ; free physical = 5748 ; free virtual = 8179
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 4392.344 ; gain = 0.000 ; free physical = 5652 ; free virtual = 8085
+INFO: [Common 17-1381] The checkpoint '/home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/ariane_xilinx_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:25 ; elapsed = 00:00:16 . Memory (MB): peak = 4392.344 ; gain = 8.004 ; free physical = 5617 ; free virtual = 8077
+INFO: [runtcl-4] Executing : report_drc -file ariane_xilinx_drc_opted.rpt -pb ariane_xilinx_drc_opted.pb -rpx ariane_xilinx_drc_opted.rpx
+Command: report_drc -file ariane_xilinx_drc_opted.rpt -pb ariane_xilinx_drc_opted.pb -rpx ariane_xilinx_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2021.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-804] Only the first 20 REQP-1839 messages were issued by report_drc. An additional 1 messages have not been issued. Use 'set_property MAX_MESSAGES <number> [get_drc_check REQP-1839]' to change the number of messages that should be reported.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/ariane_xilinx_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:25 ; elapsed = 00:00:11 . Memory (MB): peak = 4456.375 ; gain = 64.031 ; free physical = 5476 ; free virtual = 7937
+Command: place_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-804] Only the first 20 REQP-1839 messages were issued by report_drc. An additional 1 messages have not been issued. Use 'set_property MAX_MESSAGES <number> [get_drc_check REQP-1839]' to change the number of messages that should be reported.
+WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1839 rule limit reached: 20 violations have been found.
+WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1839 rule limit reached: 20 violations have been found.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/FSM_sequential_state_q_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/FSM_sequential_state_q_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/FSM_sequential_state_q_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][12]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][13]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/ax_req_q_reg[addr][9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/cnt_q_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/cnt_q_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/cnt_q_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/cnt_q_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/cnt_q_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst has an input control pin i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/genblk1[0].RAMB16_S9_S36_inst/ADDRBWRADDR[13] (net: i_ariane_peripherals/gen_ethernet.eth_rgmii/RAMB16_inst_rx/addrb[8]) which is driven by a register (i_ariane_peripherals/gen_ethernet.i_axi2rom/cnt_q_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/ENBWREN (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/enb) which is driven by a register (i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/ENBWREN (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/enb) which is driven by a register (i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_r_spill_reg/spill_register_flushable_i/gen_spill_reg.a_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/ENBWREN (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/enb) which is driven by a register (i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_r_spill_reg/spill_register_flushable_i/gen_spill_reg.b_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/ENARDEN (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/ena) which is driven by a register (i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/ENARDEN (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/ena) which is driven by a register (i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_w_spill_reg/spill_register_flushable_i/gen_spill_reg.a_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/ENARDEN (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/ena) which is driven by a register (i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_w_spill_reg/spill_register_flushable_i/gen_spill_reg.b_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEA[0] (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/ena) which is driven by a register (i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEA[0] (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/ena) which is driven by a register (i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_w_spill_reg/spill_register_flushable_i/gen_spill_reg.a_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEA[0] (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/ena) which is driven by a register (i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_w_spill_reg/spill_register_flushable_i/gen_spill_reg.b_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEA[1] (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/ena) which is driven by a register (i_ariane_peripherals/gen_spi.i_xlnx_axi_dwidth_converter_spi/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEA[1] (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/ena) which is driven by a register (i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_w_spill_reg/spill_register_flushable_i/gen_spill_reg.a_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEA[1] (net: i_ariane_peripherals/gen_spi.i_xlnx_axi_quad_spi/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_ENHANCED_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/xpm_fifo_instance.xpm_fifo_async_inst/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/ena) which is driven by a register (i_axi_xbar/i_xbar/gen_mst_port_mux[3].i_axi_mux/gen_mux.i_w_spill_reg/spill_register_flushable_i/gen_spill_reg.b_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 34 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'RuntimeOptimized' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5471 ; free virtual = 7932
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: a24d5b51
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5471 ; free virtual = 7932
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5471 ; free virtual = 7932
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+WARNING: [Place 30-575] Sub-optimal placement for a clock-capable IO pin and MMCM pair. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+
+	i_ddr/u_xlnx_mig_7_ddr3_mig/u_ddr3_clk_ibuf/diff_input_clk.u_ibufg_sys_clk (IBUFDS.O) is locked to IOB_X1Y76
+	i_ddr/u_xlnx_mig_7_ddr3_mig/u_iodelay_ctrl/clk_ref_mmcm_gen.mmcm_i (MMCME2_ADV.CLKIN1) is provisionally placed by clockplacer on MMCME2_ADV_X0Y3
+Resolution: A dedicated routing path between the two can be used if: (a) The clock-capable IO (CCIO) is placed on a CCIO capable site (b) The MMCM is placed in the same clock region as the CCIO pin. If the IOB is driving multiple MMCMs, all MMCMs must be placed in the same clock region, one clock region above or one clock region below the IOB. Both the above conditions must be met at the same time, else it may lead to longer and less predictable clock insertion delays.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 11d91b049
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5519 ; free virtual = 7983
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1a1861187
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:26 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5358 ; free virtual = 7823
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1a1861187
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:26 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5358 ; free virtual = 7823
+Phase 1 Placer Initialization | Checksum: 1a1861187
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5346 ; free virtual = 7812
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 14798c680
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:34 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5271 ; free virtual = 7737
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 19eaf628a
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:42 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5274 ; free virtual = 7740
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 19eaf628a
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:42 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5274 ; free virtual = 7740
+
+Phase 2.4 Global Placement Core
+Phase 2.4 Global Placement Core | Checksum: 19df0440b
+
+Time (s): cpu = 00:02:08 ; elapsed = 00:01:36 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5193 ; free virtual = 7660
+Phase 2 Global Placement | Checksum: 19df0440b
+
+Time (s): cpu = 00:02:08 ; elapsed = 00:01:37 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5252 ; free virtual = 7719
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: fc54f319
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:01:45 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5251 ; free virtual = 7718
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: d3d63739
+
+Time (s): cpu = 00:02:25 ; elapsed = 00:02:01 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5237 ; free virtual = 7704
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 11a0bd1ee
+
+Time (s): cpu = 00:02:26 ; elapsed = 00:02:02 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5236 ; free virtual = 7703
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 9877466d
+
+Time (s): cpu = 00:02:26 ; elapsed = 00:02:02 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5236 ; free virtual = 7703
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 16caaf261
+
+Time (s): cpu = 00:02:56 ; elapsed = 00:02:44 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5071 ; free virtual = 7579
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: b8b23012
+
+Time (s): cpu = 00:03:01 ; elapsed = 00:02:49 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5079 ; free virtual = 7588
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: fa830742
+
+Time (s): cpu = 00:03:02 ; elapsed = 00:02:50 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5079 ; free virtual = 7588
+Phase 3 Detail Placement | Checksum: fa830742
+
+Time (s): cpu = 00:03:02 ; elapsed = 00:02:51 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5080 ; free virtual = 7588
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 20fe7159f
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.201 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 2f205e0d1
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5050 ; free virtual = 7559
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 211d14e97
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:03 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5048 ; free virtual = 7556
+Phase 4.1.1.1 BUFG Insertion | Checksum: 20fe7159f
+
+Time (s): cpu = 00:03:38 ; elapsed = 00:03:10 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5051 ; free virtual = 7560
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.201. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 130431376
+
+Time (s): cpu = 00:03:41 ; elapsed = 00:03:12 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5047 ; free virtual = 7556
+
+Time (s): cpu = 00:03:41 ; elapsed = 00:03:12 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5049 ; free virtual = 7558
+Phase 4.1 Post Commit Optimization | Checksum: 130431376
+
+Time (s): cpu = 00:03:41 ; elapsed = 00:03:12 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5048 ; free virtual = 7557
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 130431376
+
+Time (s): cpu = 00:03:42 ; elapsed = 00:03:13 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5055 ; free virtual = 7564
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                4x4|                8x8|
+|___________|___________________|___________________|
+|      South|                2x2|                4x4|
+|___________|___________________|___________________|
+|       East|                2x2|                4x4|
+|___________|___________________|___________________|
+|       West|                4x4|                8x8|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 130431376
+
+Time (s): cpu = 00:03:43 ; elapsed = 00:03:14 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5056 ; free virtual = 7565
+Phase 4.3 Placer Reporting | Checksum: 130431376
+
+Time (s): cpu = 00:03:43 ; elapsed = 00:03:14 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5056 ; free virtual = 7565
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5056 ; free virtual = 7565
+
+Time (s): cpu = 00:03:43 ; elapsed = 00:03:14 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5056 ; free virtual = 7565
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 111d8a83c
+
+Time (s): cpu = 00:03:44 ; elapsed = 00:03:15 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5056 ; free virtual = 7565
+Ending Placer Task | Checksum: f9574ff0
+
+Time (s): cpu = 00:03:44 ; elapsed = 00:03:15 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5056 ; free virtual = 7565
+INFO: [Common 17-83] Releasing license: Implementation
+164 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:03:50 ; elapsed = 00:03:18 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5236 ; free virtual = 7745
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5020 ; free virtual = 7697
+INFO: [Common 17-1381] The checkpoint '/home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/ariane_xilinx_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:34 ; elapsed = 00:00:20 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5169 ; free virtual = 7718
+INFO: [runtcl-4] Executing : report_io -file ariane_xilinx_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.28 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5144 ; free virtual = 7694
+INFO: [runtcl-4] Executing : report_utilization -file ariane_xilinx_utilization_placed.rpt -pb ariane_xilinx_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file ariane_xilinx_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.33 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5166 ; free virtual = 7717
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+173 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:12 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5128 ; free virtual = 7679
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 4901 ; free virtual = 7619
+INFO: [Common 17-1381] The checkpoint '/home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/ariane_xilinx_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:27 ; elapsed = 00:00:16 . Memory (MB): peak = 4456.375 ; gain = 0.000 ; free physical = 5067 ; free virtual = 7659
+Command: route_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC PLCK-23] Clock Placer Checks: Sub-optimal placement for a clock-capable IO pin and MMCM pair. 
+Resolution: A dedicated routing path between the two can be used if: (a) The clock-capable IO (CCIO) is placed on a CCIO capable site (b) The MMCM is placed in the same clock region as the CCIO pin. If the IOB is driving multiple MMCMs, all MMCMs must be placed in the same clock region, one clock region above or one clock region below the IOB. Both the above conditions must be met at the same time, else it may lead to longer and less predictable clock insertion delays.
+ This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+
+	i_ddr/u_xlnx_mig_7_ddr3_mig/u_ddr3_clk_ibuf/diff_input_clk.u_ibufg_sys_clk (IBUFDS.O) is locked to IOB_X1Y76
+	i_ddr/u_xlnx_mig_7_ddr3_mig/u_iodelay_ctrl/clk_ref_mmcm_gen.mmcm_i (MMCME2_ADV.CLKIN1) is provisionally placed by clockplacer on MMCME2_ADV_X0Y3
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'RuntimeOptimized'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 17f0c83b ConstDB: 0 ShapeSum: e16687b5 RouteDB: 0
+Post Restoration Checksum: NetGraph: 575c03fe NumContArr: 3c421036 Constraints: 0 Timing: 0
+Phase 1 Build RT Design | Checksum: 939e1434
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:22 . Memory (MB): peak = 4468.230 ; gain = 11.855 ; free physical = 4794 ; free virtual = 7386
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 939e1434
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:23 . Memory (MB): peak = 4468.230 ; gain = 11.855 ; free physical = 4824 ; free virtual = 7416
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 939e1434
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:24 . Memory (MB): peak = 4504.223 ; gain = 47.848 ; free physical = 4768 ; free virtual = 7360
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 939e1434
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:24 . Memory (MB): peak = 4504.223 ; gain = 47.848 ; free physical = 4768 ; free virtual = 7361
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 1fd66a260
+
+Time (s): cpu = 00:01:28 ; elapsed = 00:00:50 . Memory (MB): peak = 4575.332 ; gain = 118.957 ; free physical = 4721 ; free virtual = 7314
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.119  | TNS=0.000  | WHS=-0.473 | THS=-2357.728|
+
+
+Phase 2.5 Update Timing for Bus Skew
+
+Phase 2.5.1 Update Timing
+Phase 2.5.1 Update Timing | Checksum: 203521ec6
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:01:03 . Memory (MB): peak = 4598.332 ; gain = 141.957 ; free physical = 4694 ; free virtual = 7287
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.119  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 2.5 Update Timing for Bus Skew | Checksum: 14f7541fa
+
+Time (s): cpu = 00:02:02 ; elapsed = 00:01:03 . Memory (MB): peak = 4614.332 ; gain = 157.957 ; free physical = 4692 ; free virtual = 7285
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00228417 %
+  Global Horizontal Routing Utilization  = 0.00398333 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 107580
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 107578
+  Number of Partially Routed Nets     = 2
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 1a71c1299
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:04 . Memory (MB): peak = 4614.332 ; gain = 157.957 ; free physical = 4689 ; free virtual = 7282
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 1a71c1299
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:04 . Memory (MB): peak = 4614.332 ; gain = 157.957 ; free physical = 4689 ; free virtual = 7282
+Phase 3 Initial Routing | Checksum: 15b55cea0
+
+Time (s): cpu = 00:02:34 ; elapsed = 00:01:12 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4662 ; free virtual = 7256
+INFO: [Route 35-580] Design has 64 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++===============+==================+=========================================================================================================================================================================================================================================+
+| Launch Clock  | Capture Clock    | Pin                                                                                                                                                                                                                                     |
++===============+==================+=========================================================================================================================================================================================================================================+
+| oserdes_clk_1 | oserdes_clkdiv_1 | i_ddr/u_xlnx_mig_7_ddr3_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/output_[8].oserdes_dq_.ddr.oserdes_dq_i/RST |
+| oserdes_clk_2 | oserdes_clkdiv_2 | i_ddr/u_xlnx_mig_7_ddr3_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/output_[4].oserdes_dq_.ddr.oserdes_dq_i/RST |
+| oserdes_clk_6 | oserdes_clkdiv_6 | i_ddr/u_xlnx_mig_7_ddr3_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/output_[4].oserdes_dq_.sdr.oserdes_dq_i/RST |
+| oserdes_clk_2 | oserdes_clkdiv_2 | i_ddr/u_xlnx_mig_7_ddr3_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/output_[2].oserdes_dq_.ddr.oserdes_dq_i/RST |
+| oserdes_clk_6 | oserdes_clkdiv_6 | i_ddr/u_xlnx_mig_7_ddr3_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/output_[2].oserdes_dq_.sdr.oserdes_dq_i/RST |
++---------------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 19571
+ Number of Nodes with overlaps = 2509
+ Number of Nodes with overlaps = 727
+ Number of Nodes with overlaps = 201
+ Number of Nodes with overlaps = 63
+ Number of Nodes with overlaps = 26
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.119  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: b18f9afb
+
+Time (s): cpu = 00:04:50 ; elapsed = 00:02:44 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4675 ; free virtual = 7269
+Phase 4 Rip-up And Reroute | Checksum: b18f9afb
+
+Time (s): cpu = 00:04:50 ; elapsed = 00:02:44 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4675 ; free virtual = 7269
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: b18f9afb
+
+Time (s): cpu = 00:04:51 ; elapsed = 00:02:45 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4675 ; free virtual = 7269
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: b18f9afb
+
+Time (s): cpu = 00:04:51 ; elapsed = 00:02:45 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4675 ; free virtual = 7269
+Phase 5 Delay and Skew Optimization | Checksum: b18f9afb
+
+Time (s): cpu = 00:04:51 ; elapsed = 00:02:45 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4675 ; free virtual = 7269
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: bdfb6ea7
+
+Time (s): cpu = 00:05:04 ; elapsed = 00:02:50 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4672 ; free virtual = 7266
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.119  | TNS=0.000  | WHS=0.039  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: df80b740
+
+Time (s): cpu = 00:05:05 ; elapsed = 00:02:51 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4671 ; free virtual = 7265
+Phase 6 Post Hold Fix | Checksum: df80b740
+
+Time (s): cpu = 00:05:05 ; elapsed = 00:02:51 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4671 ; free virtual = 7265
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 9.52057 %
+  Global Horizontal Routing Utilization  = 11.6307 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 15ad76af5
+
+Time (s): cpu = 00:05:06 ; elapsed = 00:02:52 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4670 ; free virtual = 7264
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 15ad76af5
+
+Time (s): cpu = 00:05:07 ; elapsed = 00:02:52 . Memory (MB): peak = 4661.348 ; gain = 204.973 ; free physical = 4667 ; free virtual = 7261
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1d2b49b0d
+
+Time (s): cpu = 00:05:14 ; elapsed = 00:02:59 . Memory (MB): peak = 4709.371 ; gain = 252.996 ; free physical = 4666 ; free virtual = 7260
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.119  | TNS=0.000  | WHS=0.039  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 1d2b49b0d
+
+Time (s): cpu = 00:05:25 ; elapsed = 00:03:02 . Memory (MB): peak = 4709.371 ; gain = 252.996 ; free physical = 4664 ; free virtual = 7258
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:05:25 ; elapsed = 00:03:02 . Memory (MB): peak = 4709.371 ; gain = 252.996 ; free physical = 4782 ; free virtual = 7376
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+190 Infos, 39 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:05:57 ; elapsed = 00:03:19 . Memory (MB): peak = 4709.371 ; gain = 252.996 ; free physical = 4782 ; free virtual = 7376
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:16 ; elapsed = 00:00:05 . Memory (MB): peak = 4709.371 ; gain = 0.000 ; free physical = 4524 ; free virtual = 7329
+report_design_analysis: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 4709.371 ; gain = 0.000 ; free physical = 4466 ; free virtual = 7281
+INFO: [Common 17-1381] The checkpoint '/home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/ariane_xilinx_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:38 ; elapsed = 00:00:23 . Memory (MB): peak = 4709.371 ; gain = 0.000 ; free physical = 4637 ; free virtual = 7282
+INFO: [runtcl-4] Executing : report_drc -file ariane_xilinx_drc_routed.rpt -pb ariane_xilinx_drc_routed.pb -rpx ariane_xilinx_drc_routed.rpx
+Command: report_drc -file ariane_xilinx_drc_routed.rpt -pb ariane_xilinx_drc_routed.pb -rpx ariane_xilinx_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-804] Only the first 20 REQP-1839 messages were issued by report_drc. An additional 1 messages have not been issued. Use 'set_property MAX_MESSAGES <number> [get_drc_check REQP-1839]' to change the number of messages that should be reported.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/ariane_xilinx_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:53 ; elapsed = 00:00:16 . Memory (MB): peak = 4783.223 ; gain = 73.852 ; free physical = 4555 ; free virtual = 7201
+INFO: [runtcl-4] Executing : report_methodology -file ariane_xilinx_methodology_drc_routed.rpt -pb ariane_xilinx_methodology_drc_routed.pb -rpx ariane_xilinx_methodology_drc_routed.rpx
+Command: report_methodology -file ariane_xilinx_methodology_drc_routed.rpt -pb ariane_xilinx_methodology_drc_routed.pb -rpx ariane_xilinx_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/mashahed/projects/cva6/cva6/corev_apu/fpga/ariane.runs/impl_1/ariane_xilinx_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:50 ; elapsed = 00:00:15 . Memory (MB): peak = 4786.191 ; gain = 2.969 ; free physical = 4569 ; free virtual = 7215
+INFO: [runtcl-4] Executing : report_power -file ariane_xilinx_power_routed.rpt -pb ariane_xilinx_power_summary_routed.pb -rpx ariane_xilinx_power_routed.rpx
+Command: report_power -file ariane_xilinx_power_routed.rpt -pb ariane_xilinx_power_summary_routed.pb -rpx ariane_xilinx_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+202 Infos, 40 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:58 ; elapsed = 00:00:25 . Memory (MB): peak = 4866.250 ; gain = 80.059 ; free physical = 4484 ; free virtual = 7143
+INFO: [runtcl-4] Executing : report_route_status -file ariane_xilinx_route_status.rpt -pb ariane_xilinx_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file ariane_xilinx_timing_summary_routed.rpt -pb ariane_xilinx_timing_summary_routed.pb -rpx ariane_xilinx_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file ariane_xilinx_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file ariane_xilinx_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file ariane_xilinx_bus_skew_routed.rpt -pb ariane_xilinx_bus_skew_routed.pb -rpx ariane_xilinx_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 11 20:22:34 2022...

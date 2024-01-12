@@ -1,0 +1,5 @@
+export RISCV=/home/mashahed/projects/efpga/cva6/cva6/riscv64-unknown-elf-gcc-8.3.0-2020.04.0-x86_64-linux-ubuntu14
+export BOARD=genesys2
+export XILINX_PART=xc7k325tffg900-2
+export XILINX_BOARD=digilentinc.com:genesys2:part0:1.1
+export CLK_PERIOD_NS=20

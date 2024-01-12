@@ -1,0 +1,473 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Feb 11 18:59:26 2022
+# Process ID: 13110
+# Current directory: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter
+# Command line: vivado -mode batch -source tcl/run.tcl
+# Log file: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/vivado.log
+# Journal file: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/vivado.jou
+# Running On: ubuntu, OS: Linux, CPU Frequency: 3312.003 MHz, CPU Physical cores: 12, Host memory: 16742 MB
+#-----------------------------------------------------------
+source tcl/run.tcl
+# set partNumber $::env(XILINX_PART)
+# set boardName  $::env(XILINX_BOARD)
+# set ipName xlnx_axi_dwidth_converter
+# create_project $ipName . -force -part $partNumber
+# set_property board_part $boardName [current_project]
+# create_ip -name axi_dwidth_converter -vendor xilinx.com -library ip -module_name $ipName
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2021.2/data/ip'.
+# set_property -dict [list CONFIG.SI_DATA_WIDTH {64} CONFIG.SI_ID_WIDTH {5} CONFIG.MI_DATA_WIDTH {32}] [get_ips $ipName]
+# generate_target {instantiation_template} [get_files ./$ipName.srcs/sources_1/ip/$ipName/$ipName.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'xlnx_axi_dwidth_converter'...
+# generate_target all [get_files  ./$ipName.srcs/sources_1/ip/$ipName/$ipName.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'xlnx_axi_dwidth_converter'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'xlnx_axi_dwidth_converter'...
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'xlnx_axi_dwidth_converter'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'xlnx_axi_dwidth_converter'...
+# create_ip_run [get_files -of_objects [get_fileset sources_1] ./$ipName.srcs/sources_1/ip/$ipName/$ipName.xci]
+# launch_run -jobs 8 ${ipName}_synth_1
+[Fri Feb 11 18:59:38 2022] Launched xlnx_axi_dwidth_converter_synth_1...
+Run output will be captured here: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.runs/xlnx_axi_dwidth_converter_synth_1/runme.log
+# wait_on_run ${ipName}_synth_1
+[Fri Feb 11 18:59:38 2022] Waiting for xlnx_axi_dwidth_converter_synth_1 to finish...
+
+*** Running vivado
+    with args -log xlnx_axi_dwidth_converter.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source xlnx_axi_dwidth_converter.tcl
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source xlnx_axi_dwidth_converter.tcl -notrace
+Command: synth_design -top xlnx_axi_dwidth_converter -part xc7k325tffg900-2 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13203
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2765.477 ; gain = 0.000 ; free physical = 4687 ; free virtual = 26795
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'xlnx_axi_dwidth_converter' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/synth/xlnx_axi_dwidth_converter.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_25_top' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:14462]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_25_axi_downsizer' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:2380]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_25_b_downsizer' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:1251]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_25_b_downsizer' (1#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:1251]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_25_a_downsizer' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:64]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_24_axic_fifo' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_24_fifo_gen' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_async_rst' [/tools/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_async_rst' (2#1) [/tools/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_24_fifo_gen' (20#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_24_axic_fifo' (21#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_24_axic_fifo__parameterized0' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_24_fifo_gen__parameterized0' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_24_fifo_gen__parameterized0' (21#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_data_fifo_v2_1_vl_rfs.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_24_axic_fifo__parameterized0' (21#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_data_fifo_v2_1_vl_rfs.v:64]
+WARNING: [Synth 8-6014] Unused sequential element cmd_empty_reg was removed.  [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:1053]
+WARNING: [Synth 8-6014] Unused sequential element cmd_depth_reg was removed.  [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:1054]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_25_a_downsizer' (22#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:64]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_25_w_downsizer' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:2016]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_25_w_downsizer' (23#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:2016]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_25_a_downsizer__parameterized0' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:64]
+WARNING: [Synth 8-6014] Unused sequential element cmd_b_push_block_reg was removed.  [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:976]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_25_a_downsizer__parameterized0' (23#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:64]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_25_r_downsizer' [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:1533]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_25_r_downsizer' (24#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:1533]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_25_axi_downsizer' (25#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:2380]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_25_top' (26#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:14462]
+INFO: [Synth 8-6155] done synthesizing module 'xlnx_axi_dwidth_converter' (27#1) [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/synth/xlnx_axi_dwidth_converter.v:58]
+WARNING: [Synth 8-7129] Port ALMOST_FULL_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ALMOST_EMPTY_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_ACK_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port VALID_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OVERFLOW_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port UNDERFLOW_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[5] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[4] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[3] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[2] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[1] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_COUNT_I[0] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[5] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[4] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[3] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[2] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[1] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_DATA_COUNT_I[0] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[5] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[4] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[3] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[2] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[1] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_DATA_COUNT_I[0] in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SBITERR_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DBITERR_I in module output_blk__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRST_FULL_FF in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_RST in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRST in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SAFETY_CKT_WR_RST in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS2[4] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS2[3] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS2[2] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS2[1] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS2[0] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[4] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[3] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[2] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[1] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS3[0] in module wr_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRST in module wr_bin_cntr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_EN_INTO_LOGIC in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_RST_INTO_LOGIC in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_EN in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_RST_BUSY in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EMPTY in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ALMOST_EMPTY in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[4] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[3] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[2] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[1] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH[0] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[4] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[3] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[2] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[1] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_ASSERT[0] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[4] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[3] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[2] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[1] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_FULL_THRESH_NEGATE[0] in module wr_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRST in module rd_fwft is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SAFETY_CKT_RD_RST in module rd_fwft is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RAM_ALMOST_EMPTY in module rd_fwft is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRST in module rd_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SAFETY_CKT_RD_RST in module rd_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_PNTR_PLUS2[4] in module rd_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_PNTR_PLUS2[3] in module rd_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_PNTR_PLUS2[2] in module rd_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_PNTR_PLUS2[1] in module rd_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_PNTR_PLUS2[0] in module rd_status_flags_ss is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRST in module rd_bin_cntr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_EN_INTO_LOGIC in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_RST_INTO_LOGIC in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RD_RST_BUSY in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RST_FULL_FF in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ALMOST_FULL_FB in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port FULL in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[4] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[3] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[2] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[1] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WR_PNTR_PLUS1_RD[0] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH[4] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH[3] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH[2] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH[1] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH[0] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[4] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[3] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[2] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[1] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH_ASSERT[0] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH_NEGATE[4] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH_NEGATE[3] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH_NEGATE[2] in module rd_logic is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PROG_EMPTY_THRESH_NEGATE[1] in module rd_logic is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2765.477 ; gain = 0.000 ; free physical = 5666 ; free virtual = 27774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2765.477 ; gain = 0.000 ; free physical = 5663 ; free virtual = 27772
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2765.477 ; gain = 0.000 ; free physical = 5663 ; free virtual = 27772
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2765.477 ; gain = 0.000 ; free physical = 5655 ; free virtual = 27763
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.gen/sources_1/ip/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.runs/xlnx_axi_dwidth_converter_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.runs/xlnx_axi_dwidth_converter_synth_1/dont_touch.xdc]
+INFO: [Project 1-1714] 3 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2895.320 ; gain = 0.000 ; free physical = 5556 ; free virtual = 27665
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2895.320 ; gain = 0.000 ; free physical = 5556 ; free virtual = 27665
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5639 ; free virtual = 27747
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5639 ; free virtual = 27747
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.runs/xlnx_axi_dwidth_converter_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\gen_downsizer.gen_simple_downsizer.axi_downsizer_inst /\USE_WRITE.write_addr_inst /\USE_B_CHANNEL.cmd_b_queue /inst/fifo_gen_inst/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\gen_downsizer.gen_simple_downsizer.axi_downsizer_inst /\USE_WRITE.write_addr_inst /cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\gen_downsizer.gen_simple_downsizer.axi_downsizer_inst /\USE_READ.read_addr_inst /cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/\gconvfifo.rf /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst . (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5642 ; free virtual = 27751
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'gpregsm1.curr_fwft_state_reg' in module 'rd_fwft'
+INFO: [Synth 8-6159] Found Keep on FSM register 'gpregsm1.curr_fwft_state_reg' in module 'rd_fwft', re-encoding will not be performed
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 invalid |                               00 |                               00
+            stage1_valid |                               10 |                               10
+       both_stages_valid |                               11 |                               11
+            stage2_valid |                               01 |                               01
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5632 ; free virtual = 27741
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 7     
+	   3 Input    8 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 6     
+	   2 Input    3 Bit       Adders := 4     
++---XORs : 
+	   2 Input      1 Bit         XORs := 60    
++---Registers : 
+	               32 Bit    Registers := 10    
+	               26 Bit    Registers := 4     
+	               11 Bit    Registers := 2     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 13    
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 18    
+	                4 Bit    Registers := 9     
+	                3 Bit    Registers := 10    
+	                2 Bit    Registers := 11    
+	                1 Bit    Registers := 62    
++---Muxes : 
+	   8 Input   32 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 7     
+	   2 Input   11 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 11    
+	   8 Input    7 Bit        Muxes := 2     
+	   8 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 6     
+	   8 Input    3 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 44    
+	   4 Input    2 Bit        Muxes := 3     
+	   5 Input    2 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 27    
+	   4 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5608 ; free virtual = 27723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+----------------+----------------------+-------------+
+|Module Name                                                                                                                         | RTL Object                                                                    | Inference      | Size (Depth x Width) | Primitives  | 
++------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+----------------+----------------------+-------------+
+|inst/\gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst  | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 32 x 9               | RAM32M x 2  | 
+|inst/\gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst                  | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 32 x 26              | RAM32M x 5  | 
+|inst/\gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst                    | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 32 x 26              | RAM32M x 5  | 
++------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+----------------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5490 ; free virtual = 27605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5452 ; free virtual = 27567
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+----------------+----------------------+-------------+
+|Module Name                                                                                                                         | RTL Object                                                                    | Inference      | Size (Depth x Width) | Primitives  | 
++------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+----------------+----------------------+-------------+
+|inst/\gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst  | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 32 x 9               | RAM32M x 2  | 
+|inst/\gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst                  | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 32 x 26              | RAM32M x 5  | 
+|inst/\gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst                    | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 32 x 26              | RAM32M x 5  | 
++------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+----------------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5450 ; free virtual = 27565
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5450 ; free virtual = 27565
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5450 ; free virtual = 27565
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5450 ; free virtual = 27565
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5450 ; free virtual = 27565
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5450 ; free virtual = 27565
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5450 ; free virtual = 27565
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    18|
+|2     |LUT1     |    51|
+|3     |LUT2     |   164|
+|4     |LUT3     |   113|
+|5     |LUT4     |   141|
+|6     |LUT5     |   125|
+|7     |LUT6     |   318|
+|8     |RAM32M   |    10|
+|9     |RAM32X1D |     4|
+|10    |FDCE     |    69|
+|11    |FDPE     |    33|
+|12    |FDRE     |   635|
+|13    |FDSE     |     5|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5450 ; free virtual = 27565
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1604 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2895.320 ; gain = 0.000 ; free physical = 5502 ; free virtual = 27617
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2895.320 ; gain = 129.844 ; free physical = 5502 ; free virtual = 27617
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2895.320 ; gain = 0.000 ; free physical = 5594 ; free virtual = 27709
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2895.320 ; gain = 0.000 ; free physical = 5529 ; free virtual = 27644
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+Synth Design complete, checksum: c687550b
+INFO: [Common 17-83] Releasing license: Synthesis
+44 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:30 . Memory (MB): peak = 2895.320 ; gain = 137.848 ; free physical = 5758 ; free virtual = 27873
+INFO: [Common 17-1381] The checkpoint '/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.runs/xlnx_axi_dwidth_converter_synth_1/xlnx_axi_dwidth_converter.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP xlnx_axi_dwidth_converter, cache-ID = f401d1d30c288fc1
+INFO: [Coretcl 2-1174] Renamed 58 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_axi_dwidth_converter/xlnx_axi_dwidth_converter.runs/xlnx_axi_dwidth_converter_synth_1/xlnx_axi_dwidth_converter.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file xlnx_axi_dwidth_converter_utilization_synth.rpt -pb xlnx_axi_dwidth_converter_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 11 19:00:23 2022...
+[Fri Feb 11 19:00:26 2022] xlnx_axi_dwidth_converter_synth_1 finished
+wait_on_runs: Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 2809.797 ; gain = 0.000 ; free physical = 6833 ; free virtual = 28947
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 11 19:00:26 2022...

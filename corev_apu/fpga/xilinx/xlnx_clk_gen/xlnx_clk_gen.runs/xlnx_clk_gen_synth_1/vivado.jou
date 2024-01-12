@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Feb 11 19:04:49 2022
+# Process ID: 14417
+# Current directory: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_clk_gen/xlnx_clk_gen.runs/xlnx_clk_gen_synth_1
+# Command line: vivado -log xlnx_clk_gen.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source xlnx_clk_gen.tcl
+# Log file: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_clk_gen/xlnx_clk_gen.runs/xlnx_clk_gen_synth_1/xlnx_clk_gen.vds
+# Journal file: /home/mashahed/projects/cva6/cva6/corev_apu/fpga/xilinx/xlnx_clk_gen/xlnx_clk_gen.runs/xlnx_clk_gen_synth_1/vivado.jou
+# Running On: ubuntu, OS: Linux, CPU Frequency: 3312.003 MHz, CPU Physical cores: 12, Host memory: 16742 MB
+#-----------------------------------------------------------
+source xlnx_clk_gen.tcl -notrace

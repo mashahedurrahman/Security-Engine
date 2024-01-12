@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               256M
+Start Address      0x00000000
+End Address        0x0FFFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x00AE9D9B    Feb 11 19:39:58 2022    work-fpga/ariane_xilinx.bit
