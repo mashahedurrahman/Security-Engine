@@ -1,0 +1,11 @@
+prefix=/ecel/UFAD/mrahman1/cva6_for_se/cva6_09042023/mylib
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: mpfr
+URL: https://www.mpfr.org/
+Description: C library for multiple-precision floating-point computations
+Version: 4.2.1
+Libs: -L${libdir} -lmpfr -lgmp
+Cflags: -I${includedir}

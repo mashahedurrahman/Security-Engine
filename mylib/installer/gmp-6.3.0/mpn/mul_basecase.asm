@@ -1,0 +1,1 @@
+../mpn/x86_64/zen/mul_basecase.asm

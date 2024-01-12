@@ -1,0 +1,43 @@
+xrun: 21.03-s015: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun	21.03-s015: Started on Nov 23, 2023 at 17:33:01 EST
+irun
+	-access +rw
+	tb_poca_wrapper.v
+	POCA_v1_0_POCA_master.v
+	slave_wrapper.v
+	poca_master.v
+xrun: *W,NCEXDEP: Executable (irun) is deprecated. Use (xrun) instead.
+Recompiling... reason: file './POCA_v1_0_POCA_master.v' is newer than expected.
+	expected: Thu Nov 23 17:29:20 2023
+	actual:   Thu Nov 23 17:32:40 2023
+file: POCA_v1_0_POCA_master.v
+	module worklib.POCA_v1_0_POCA_master:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_poca_wrapper
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.POCA_v1_0_POCA_master:v <0x4b957cac>
+			streams: 112, words: 73418
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		               Instances  Unique
+		Modules:               4       4
+		Registers:           105     105
+		Scalar wires:         28       -
+		Vectored wires:       25       -
+		Always blocks:        49      49
+		Initial blocks:        2       2
+		Cont. assignments:     9      25
+		Pseudo assignments:   12      12
+	Writing initial simulation snapshot: worklib.tb_poca_wrapper:v
+Loading snapshot worklib.tb_poca_wrapper:v .................... Done
+xcelium> source /apps/cds/xcelium2103/tools/xcelium/files/xmsimrc
+xcelium> run
+Simulation complete via $finish(1) at time 20020 NS + 0
+./tb_poca_wrapper.v:69       $finish;
+xcelium> exit
+TOOL:	xrun	21.03-s015: Exiting on Nov 23, 2023 at 17:33:02 EST  (total: 00:00:01)

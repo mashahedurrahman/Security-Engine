@@ -1,0 +1,223 @@
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+array unset createdGroup
+array set createdGroup {}
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.clk_i}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .aw_addr[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .aw_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .aw_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .w_data[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .w_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .w_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .w_strb[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .ar_addr[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .ar_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .ar_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .ar_id[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .ar_len[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .ar_size[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .ar_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .r_data[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[2] .r_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[0] .ar_addr[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[0] .ar_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[0] .r_data[63:0]}]}
+	} ]]
+waveform format $id -radix %x
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\slave[0] .r_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[0] .ar_addr[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[0] .ar_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[0] .aw_addr[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[0] .aw_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[0] .w_data[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[0] .w_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.\master[0] .w_strb[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.axi_req_o[280:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.i_axi_shim.axi_req_o[280:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.i_axi_shim.rd_req_i}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.i_axi_shim.rd_addr_i[63:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.i_dcache_data_fifo.data_o[134:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.dcache_data[134:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.i_dcache_data_fifo.data_i[134:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.dcache_data_i[134:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.dcache_data_ack_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.dcache_data[134:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.arb_req[1:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.dcache_data_empty}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.icache_data_empty}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.arb_idx}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.icache_data_i[60:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.icache_data_ack_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_cva6_icache.areq_i[185:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_cva6_icache.state_q[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_cva6_icache.cl_hit[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_cva6_icache.inv_q}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_cva6_icache.cache_en_q}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_cva6_icache.paddr_is_nc}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_cva6_icache.cl_tag_d[43:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.miss_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.miss_nc[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.miss_paddr[167:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.rd_tag[131:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.dcache_miss_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.dcache_data_i[134:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_adapter.dcache_data_ack_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.i_wt_dcache_missunit.state_q[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.i_wt_dcache_missunit.miss_req_masked_d[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.i_wt_dcache_missunit.lock_reqs}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.i_wt_dcache_missunit.mask_reads}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.i_wt_dcache_missunit.miss_req_i[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.miss_req[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.\gen_rd_ports[1] .i_wt_dcache_ctrl.state_q[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.\gen_rd_ports[1] .i_wt_dcache_ctrl.req_port_i[133:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.\gen_rd_ports[1] .i_wt_dcache_ctrl.miss_nc_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.\gen_rd_ports[1] .i_wt_dcache_ctrl.address_tag_q[43:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.i_ariane.i_cva6.i_cache_subsystem.i_wt_dcache.\gen_rd_ports[1] .i_wt_dcache_ctrl.cache_en_i}]}
+	} ]]
+
+waveform xview limits 0 125006880ps

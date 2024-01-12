@@ -1,0 +1,1 @@
+../mpn/x86_64/zen/sublsh1_n.asm

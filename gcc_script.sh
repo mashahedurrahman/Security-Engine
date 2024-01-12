@@ -1,0 +1,1 @@
+./riscv_install/bin/riscv64-unknown-elf-gcc -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -o hello_ecdsa.elf hello_ecdsa.c -static -nostdlib -nostartfiles -lm -lgcc -T $TOP/tmp/riscv-tests/benchmarks/common/test.ld

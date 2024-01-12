@@ -1,0 +1,1 @@
+../mpn/x86_64/zen/sqr_basecase.asm

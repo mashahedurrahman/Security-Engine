@@ -1,0 +1,134 @@
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+array unset createdGroup
+array set createdGroup {}
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.clk_i}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.ndmreset_n}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.aw_addr[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.aw_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.aw_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.w_data[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.w_strb[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.w_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.w_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.ar_addr[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.ar_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.ar_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.r_data[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.r_valid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.r_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.mst_exec_state[4:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.reads_done}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.start_single_read}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.read_issued}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.axi_arvalid}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.M_AXI_RVALID}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.init_txn_pulse}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.is_write}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.go}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.U0_poca_master.state[3:0]}]}
+	} ]]
+waveform format $id -radix %d
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.U0_poca_master.addr_out[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.addr_out_reg[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.U0_poca_master.write_complete}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.writes_done}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.start_single_write}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.write_issued}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.axi_slave.slv_reg0[31:0]}]}
+	} ]]
+waveform format $id -radix %x
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.slave_IP_done}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.data_in[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.input_data_transfer_complete}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.data_input_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.poca_output_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.U0_poca_master.shared_secret_key_ready}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_poca_wrapper.poca_wrapper.U0_poca_master.go}]}
+	} ]]
+
+waveform xview limits 17154ns 19170ns
