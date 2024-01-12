@@ -1,0 +1,30 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx86.21.03.d
+-RUNMODE
+./ECIES/ECIES_tb_2.sv
+./ECIES/ECIES_top.v
+./AES/CTR/aes_CTR_mode.v
+./tinyAES-master/rtl/aes_128.v
+./tinyAES-master/rtl/sbox.v
+./tinyAES-master/rtl/table.v
+./tinyAES-master/rtl/round.v
+./ECCShared/montgomeryLadder.v
+./ECCShared/get_2P.v
+./ECCShared/eeageneric.v
+./ECCShared/get_PQ.v
+./ECIES/ECIES_encrypt.v
+./ECIES/ECIES_decrypt.v
+./ECIES/ANSIX963KDF.sv
+-CDSLIB
+./xcelium.d/run.lnx86.21.03.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx86.21.03.d/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx86.21.03.d/xllibs
+-ALLOWUNBOUND

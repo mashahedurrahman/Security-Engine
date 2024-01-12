@@ -1,0 +1,90 @@
+xrun: 21.03-s015: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun	21.03-s015: Started on Sep 21, 2023 at 03:45:20 EDT
+xrun
+	-access +rw
+	-v200X
+	tb_rsa_mont.v
+	rsa_mont.v
+	Mont_Ladder.v
+	reg_module.v
+	COUNTER.vhd
+	BoothEncoder.vhd
+	RightShiftReg.vhd
+	LeftShiftReg.vhd
+	Ander.vhd
+	XorCrearor.vhd
+	FullAdder.vhd
+	Adder.vhd
+	Alu.vhd
+	Regeister.vhd
+	BoothDatapath.vhd
+	BoothController.vhd
+	BoothMultiplier.vhd
+file: rsa_mont.v
+	module worklib.rsa_mont:v
+		errors: 0, warnings: 0
+file: Mont_Ladder.v
+	module worklib.mont_lad:v
+		errors: 0, warnings: 0
+file: reg_module.v
+	module worklib.reg_module:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+xmelab: *W,CUDEFB: default binding occurred for component instance (tb_rsa_ip.uut@rsa_mont<module>.u_encrypt@mont_lad<module>.mult_1) with design unit (WORKLIB.BOOTHMULTIPLIER:BEHAVIORAL).
+	Top level design units:
+		tb_rsa_ip
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.reg_module:v <0x3c8e4ffa>
+			streams:   2, words:   658
+		worklib.mont_lad:v <0x6ece6535>
+			streams:  24, words: 14504
+		worklib.rsa_mont:v <0x4b85375b>
+			streams:  10, words:  3202
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+	VHDL Design hierarchy:
+		Components:            4108      13
+		Processes:             8214      24
+		Signals:                 23      23
+	Verilog Design hierarchy:
+		Modules:                  7       4
+		Registers:               27      24
+		Scalar wires:            11       -
+		Expanded wires:        4096       2
+		Vectored wires:           9       -
+		Always blocks:            8       5
+		Initial blocks:           7       7
+		Cont. assignments:        0       1
+		Pseudo assignments:      11      11
+		Simulation timescale:   1ps
+	Writing initial simulation snapshot: worklib.tb_rsa_ip:v
+Loading snapshot worklib.tb_rsa_ip:v .................... Done
+xcelium> source /apps/cds/xcelium2103/tools/xcelium/files/xmsimrc
+xcelium> run
+Current output:
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000110010 
+Current Key:
+0000000000000000000000000000000000000000000000000000000000001101
+Current output:
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000 
+Current Key:
+0000000000000000000000000000000000000000000000000000000000100101
+Output matches original message
+Current output:
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000 
+Current Key:
+0000000000000000000000000000000000000000000000000000000000000111
+Current output:
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011001 
+Current Key:
+0000000000000000000000000000000000000000000000000000000001100111
+Output matches original message
+Simulation complete via $finish(1) at time 26555 NS + 5
+./tb_rsa_mont.v:115 		$finish;
+xcelium> exit
+TOOL:	xrun	21.03-s015: Exiting on Sep 21, 2023 at 03:45:24 EDT  (total: 00:00:04)

@@ -1,0 +1,4 @@
+s1(25Sep2023:15:06:01):  xrun -access +rw TRNG_Top_tb_128.v TRNG_Top_128.v TRNG_Controller.v sha256_ip.v Data_Path_128.v sha256.v controller.v register.v Mux.v 
+s2(25Sep2023:15:19:19):  xrun -access +rw trng_128_wrapper.v TRNG_Top_128.v TRNG_Controller.v sha256_ip.v Data_Path_128.v sha256.v controller.v register.v Mux.v 
+s3(25Sep2023:17:15:30):  xrun -access +rw TRNG_Top_tb_128.v TRNG_Top_128.v TRNG_Controller.v sha256_ip.v Data_Path_128.v sha256.v controller.v register.v Mux.v 
+s4(25Sep2023:22:09:12):  xrun -access +rw TRNG_Top_tb_128.v TRNG_Top_128.v TRNG_Controller.v sha256_ip.v Data_Path_128.v sha256.v controller.v register.v Mux.v 

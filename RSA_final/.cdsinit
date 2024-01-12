@@ -1,0 +1,4 @@
+loadi( strcat( getShellEnvVar("CDS_SITE") "/GPDK180/libs.oa22/gpdk180/libInit.il"))
+loadi( strcat( getShellEnvVar("CDS_SITE") "/GPDK045/gpdk045/libInit.il"))
+loadi( strcat( getShellEnvVar("MGC_HOME") "/shared/pkgs/icv/tools/queryskl/calibre.OA.skl" ))
+ddsOpenLibManager()

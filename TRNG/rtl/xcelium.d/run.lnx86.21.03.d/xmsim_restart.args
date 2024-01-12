@@ -1,0 +1,23 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-MESSAGES
++EMGRLOG
+xrun.log
+-XLSTIME
+1695694151
+-XLKEEP
+-XLMODE
+./xcelium.d/run.lnx86.21.03.d
+-RUNMODE
+-CDSLIB
+./xcelium.d/run.lnx86.21.03.d/cds.lib
+-HDLVAR
+./xcelium.d/run.lnx86.21.03.d/hdl.var
+-XLNAME
+xrun
+-XLVERSION
+"TOOL:	xrun	21.03-s015"
+-XLNAME
+./xcelium.d/run.lnx86.21.03.d/ece-lnx-03_8584

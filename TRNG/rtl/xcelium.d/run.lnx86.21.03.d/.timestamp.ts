@@ -1,0 +1,10 @@
+1695434602 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/sha256_ip.v
+1695434602 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/Mux.v
+1695434602 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/controller.v
+1695434602 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/register.v
+1695434602 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/Data_Path_128.v
+1695434602 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/TRNG_Top_128.v
+1695669526 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/trng_128_wrapper.v
+1695434602 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/sha256.v
+1695434602 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/TRNG_Controller.v
+1695676518 /ecel/UFAD/mrahman1/cva6_for_se/cva6_09222023/TRNG/rtl/TRNG_Top_tb_128.v

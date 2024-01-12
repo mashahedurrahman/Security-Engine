@@ -1,0 +1,17 @@
+TOOL:	xmvhdl_cg	21.03-s015: Started on Sep 18, 2023 at 14:46:51 EDT
+xmvhdl_cg
+    -NOCOPYRIGHT
+    -NOVITALACCL
+    -MESSAGES
+    -CDSLIB ./xcelium.d/run.lnx86.21.03.d/cdsrun.lib
+    -HDLVAR ./xcelium.d/run.lnx86.21.03.d/hdlrun.var
+    -MESSAGES
+    -V93
+    -IMPLICIT worklib
+    -XHANDOFF worklib
+    -XHANDOFF worklib
+    WORKLIB.COUNTER
+
+WORKLIB.COUNTER (entity):
+	streams: 6, words: 732
+TOOL:	xmvhdl_cg	21.03-s015: Exiting on Sep 18, 2023 at 14:46:51 EDT  (total: 00:00:00)

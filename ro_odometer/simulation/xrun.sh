@@ -1,0 +1,1 @@
+xrun rtl/ro_odometer_top.v rtl/sn_cdir_decoder.v rtl/ring_oscillator.v rtl/mux.v tb/tb_ro_odometer_top.v -access +rw 

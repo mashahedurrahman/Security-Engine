@@ -1,0 +1,1 @@
+xrun rtl/controller.vhd rtl/controller384.vhd rtl/controller512.vhd rtl/decoder.vhd rtl/mux4x1.vhd rtl/mux512.vhd rtl/reg.vhd rtl/sha256.v rtl/sha384.v rtl/sha512.v rtl/SHA384_IP.vhd rtl/SHA512_IP.vhd rtl/sha_controller.vhd rtl/SHA_IP.vhd rtl/sha_functions.vhd rtl/toplevel.vhd rtl/sha_wrapper.v -access +rw -v200x

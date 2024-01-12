@@ -1,0 +1,1 @@
+xrun -access +rw -v200X tb_rsa_mont.v rsa_mont.v Mont_Ladder.v reg_module.v COUNTER.vhd BoothEncoder.vhd RightShiftReg.vhd LeftShiftReg.vhd Ander.vhd XorCrearor.vhd FullAdder.vhd Adder.vhd Alu.vhd Regeister.vhd BoothDatapath.vhd BoothController.vhd BoothMultiplier.vhd

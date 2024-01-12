@@ -1,0 +1,2338 @@
+
+median.riscv:     file format elf64-littleriscv
+
+
+Disassembly of section .text.init:
+
+0000000080000000 <_start>:
+    80000000:	4081                	li	ra,0
+    80000002:	4101                	li	sp,0
+    80000004:	4181                	li	gp,0
+    80000006:	4201                	li	tp,0
+    80000008:	4281                	li	t0,0
+    8000000a:	4301                	li	t1,0
+    8000000c:	4381                	li	t2,0
+    8000000e:	4401                	li	s0,0
+    80000010:	4481                	li	s1,0
+    80000012:	4501                	li	a0,0
+    80000014:	4581                	li	a1,0
+    80000016:	4601                	li	a2,0
+    80000018:	4681                	li	a3,0
+    8000001a:	4701                	li	a4,0
+    8000001c:	4781                	li	a5,0
+    8000001e:	4801                	li	a6,0
+    80000020:	4881                	li	a7,0
+    80000022:	4901                	li	s2,0
+    80000024:	4981                	li	s3,0
+    80000026:	4a01                	li	s4,0
+    80000028:	4a81                	li	s5,0
+    8000002a:	4b01                	li	s6,0
+    8000002c:	4b81                	li	s7,0
+    8000002e:	4c01                	li	s8,0
+    80000030:	4c81                	li	s9,0
+    80000032:	4d01                	li	s10,0
+    80000034:	4d81                	li	s11,0
+    80000036:	4e01                	li	t3,0
+    80000038:	4e81                	li	t4,0
+    8000003a:	4f01                	li	t5,0
+    8000003c:	4f81                	li	t6,0
+    8000003e:	62f9                	lui	t0,0x1e
+    80000040:	3002a073          	csrs	mstatus,t0
+    80000044:	4285                	li	t0,1
+    80000046:	02fe                	slli	t0,t0,0x1f
+    80000048:	0002d863          	bgez	t0,80000058 <_start+0x58>
+    8000004c:	4505                	li	a0,1
+    8000004e:	00001297          	auipc	t0,0x1
+    80000052:	faa2a923          	sw	a0,-78(t0) # 80001000 <tohost>
+    80000056:	bfdd                	j	8000004c <_start+0x4c>
+    80000058:	00000297          	auipc	t0,0x0
+    8000005c:	09028293          	addi	t0,t0,144 # 800000e8 <_start+0xe8>
+    80000060:	30529073          	csrw	mtvec,t0
+    80000064:	00301073          	fssr	zero
+    80000068:	f0000053          	fmv.w.x	ft0,zero
+    8000006c:	f00000d3          	fmv.w.x	ft1,zero
+    80000070:	f0000153          	fmv.w.x	ft2,zero
+    80000074:	f00001d3          	fmv.w.x	ft3,zero
+    80000078:	f0000253          	fmv.w.x	ft4,zero
+    8000007c:	f00002d3          	fmv.w.x	ft5,zero
+    80000080:	f0000353          	fmv.w.x	ft6,zero
+    80000084:	f00003d3          	fmv.w.x	ft7,zero
+    80000088:	f0000453          	fmv.w.x	fs0,zero
+    8000008c:	f00004d3          	fmv.w.x	fs1,zero
+    80000090:	f0000553          	fmv.w.x	fa0,zero
+    80000094:	f00005d3          	fmv.w.x	fa1,zero
+    80000098:	f0000653          	fmv.w.x	fa2,zero
+    8000009c:	f00006d3          	fmv.w.x	fa3,zero
+    800000a0:	f0000753          	fmv.w.x	fa4,zero
+    800000a4:	f00007d3          	fmv.w.x	fa5,zero
+    800000a8:	f0000853          	fmv.w.x	fa6,zero
+    800000ac:	f00008d3          	fmv.w.x	fa7,zero
+    800000b0:	f0000953          	fmv.w.x	fs2,zero
+    800000b4:	f00009d3          	fmv.w.x	fs3,zero
+    800000b8:	f0000a53          	fmv.w.x	fs4,zero
+    800000bc:	f0000ad3          	fmv.w.x	fs5,zero
+    800000c0:	f0000b53          	fmv.w.x	fs6,zero
+    800000c4:	f0000bd3          	fmv.w.x	fs7,zero
+    800000c8:	f0000c53          	fmv.w.x	fs8,zero
+    800000cc:	f0000cd3          	fmv.w.x	fs9,zero
+    800000d0:	f0000d53          	fmv.w.x	fs10,zero
+    800000d4:	f0000dd3          	fmv.w.x	fs11,zero
+    800000d8:	f0000e53          	fmv.w.x	ft8,zero
+    800000dc:	f0000ed3          	fmv.w.x	ft9,zero
+    800000e0:	f0000f53          	fmv.w.x	ft10,zero
+    800000e4:	f0000fd3          	fmv.w.x	ft11,zero
+    800000e8:	00000297          	auipc	t0,0x0
+    800000ec:	03828293          	addi	t0,t0,56 # 80000120 <trap_entry>
+    800000f0:	30529073          	csrw	mtvec,t0
+    800000f4:	00004197          	auipc	gp,0x4
+    800000f8:	d4418193          	addi	gp,gp,-700 # 80003e38 <__global_pointer$>
+    800000fc:	88718213          	addi	tp,gp,-1913 # 800036bf <_end+0x3f>
+    80000100:	fc027213          	andi	tp,tp,-64
+    80000104:	f1402573          	csrr	a0,mhartid
+    80000108:	4585                	li	a1,1
+    8000010a:	00b57063          	bleu	a1,a0,8000010a <_start+0x10a>
+    8000010e:	00150113          	addi	sp,a0,1
+    80000112:	0146                	slli	sp,sp,0x11
+    80000114:	9112                	add	sp,sp,tp
+    80000116:	01151613          	slli	a2,a0,0x11
+    8000011a:	9232                	add	tp,tp,a2
+    8000011c:	4ea0206f          	j	80002606 <_init>
+
+0000000080000120 <trap_entry>:
+    80000120:	716d                	addi	sp,sp,-272
+    80000122:	e406                	sd	ra,8(sp)
+    80000124:	e80a                	sd	sp,16(sp)
+    80000126:	ec0e                	sd	gp,24(sp)
+    80000128:	f012                	sd	tp,32(sp)
+    8000012a:	f416                	sd	t0,40(sp)
+    8000012c:	f81a                	sd	t1,48(sp)
+    8000012e:	fc1e                	sd	t2,56(sp)
+    80000130:	e0a2                	sd	s0,64(sp)
+    80000132:	e4a6                	sd	s1,72(sp)
+    80000134:	e8aa                	sd	a0,80(sp)
+    80000136:	ecae                	sd	a1,88(sp)
+    80000138:	f0b2                	sd	a2,96(sp)
+    8000013a:	f4b6                	sd	a3,104(sp)
+    8000013c:	f8ba                	sd	a4,112(sp)
+    8000013e:	fcbe                	sd	a5,120(sp)
+    80000140:	e142                	sd	a6,128(sp)
+    80000142:	e546                	sd	a7,136(sp)
+    80000144:	e94a                	sd	s2,144(sp)
+    80000146:	ed4e                	sd	s3,152(sp)
+    80000148:	f152                	sd	s4,160(sp)
+    8000014a:	f556                	sd	s5,168(sp)
+    8000014c:	f95a                	sd	s6,176(sp)
+    8000014e:	fd5e                	sd	s7,184(sp)
+    80000150:	e1e2                	sd	s8,192(sp)
+    80000152:	e5e6                	sd	s9,200(sp)
+    80000154:	e9ea                	sd	s10,208(sp)
+    80000156:	edee                	sd	s11,216(sp)
+    80000158:	f1f2                	sd	t3,224(sp)
+    8000015a:	f5f6                	sd	t4,232(sp)
+    8000015c:	f9fa                	sd	t5,240(sp)
+    8000015e:	fdfe                	sd	t6,248(sp)
+    80000160:	34202573          	csrr	a0,mcause
+    80000164:	341025f3          	csrr	a1,mepc
+    80000168:	860a                	mv	a2,sp
+    8000016a:	2da020ef          	jal	ra,80002444 <handle_trap>
+    8000016e:	34151073          	csrw	mepc,a0
+    80000172:	000022b7          	lui	t0,0x2
+    80000176:	8002829b          	addiw	t0,t0,-2048
+    8000017a:	3002a073          	csrs	mstatus,t0
+    8000017e:	60a2                	ld	ra,8(sp)
+    80000180:	6142                	ld	sp,16(sp)
+    80000182:	61e2                	ld	gp,24(sp)
+    80000184:	7202                	ld	tp,32(sp)
+    80000186:	72a2                	ld	t0,40(sp)
+    80000188:	7342                	ld	t1,48(sp)
+    8000018a:	73e2                	ld	t2,56(sp)
+    8000018c:	6406                	ld	s0,64(sp)
+    8000018e:	64a6                	ld	s1,72(sp)
+    80000190:	6546                	ld	a0,80(sp)
+    80000192:	65e6                	ld	a1,88(sp)
+    80000194:	7606                	ld	a2,96(sp)
+    80000196:	76a6                	ld	a3,104(sp)
+    80000198:	7746                	ld	a4,112(sp)
+    8000019a:	77e6                	ld	a5,120(sp)
+    8000019c:	680a                	ld	a6,128(sp)
+    8000019e:	68aa                	ld	a7,136(sp)
+    800001a0:	694a                	ld	s2,144(sp)
+    800001a2:	69ea                	ld	s3,152(sp)
+    800001a4:	7a0a                	ld	s4,160(sp)
+    800001a6:	7aaa                	ld	s5,168(sp)
+    800001a8:	7b4a                	ld	s6,176(sp)
+    800001aa:	7bea                	ld	s7,184(sp)
+    800001ac:	6c0e                	ld	s8,192(sp)
+    800001ae:	6cae                	ld	s9,200(sp)
+    800001b0:	6d4e                	ld	s10,208(sp)
+    800001b2:	6dee                	ld	s11,216(sp)
+    800001b4:	7e0e                	ld	t3,224(sp)
+    800001b6:	7eae                	ld	t4,232(sp)
+    800001b8:	7f4e                	ld	t5,240(sp)
+    800001ba:	7fee                	ld	t6,248(sp)
+    800001bc:	6151                	addi	sp,sp,272
+    800001be:	30200073          	mret
+
+Disassembly of section .text:
+
+0000000080002000 <median>:
+    80002000:	00251793          	slli	a5,a0,0x2
+    80002004:	97b2                	add	a5,a5,a2
+    80002006:	00062023          	sw	zero,0(a2)
+    8000200a:	fe07ae23          	sw	zero,-4(a5)
+    8000200e:	4789                	li	a5,2
+    80002010:	02a7d763          	ble	a0,a5,8000203e <median+0x3e>
+    80002014:	3575                	addiw	a0,a0,-3
+    80002016:	1502                	slli	a0,a0,0x20
+    80002018:	8179                	srli	a0,a0,0x1e
+    8000201a:	00458793          	addi	a5,a1,4
+    8000201e:	0611                	addi	a2,a2,4
+    80002020:	953e                	add	a0,a0,a5
+    80002022:	4198                	lw	a4,0(a1)
+    80002024:	41dc                	lw	a5,4(a1)
+    80002026:	4594                	lw	a3,8(a1)
+    80002028:	00f75c63          	ble	a5,a4,80002040 <median+0x40>
+    8000202c:	02d7c063          	blt	a5,a3,8000204c <median+0x4c>
+    80002030:	00e6dc63          	ble	a4,a3,80002048 <median+0x48>
+    80002034:	c218                	sw	a4,0(a2)
+    80002036:	0591                	addi	a1,a1,4
+    80002038:	0611                	addi	a2,a2,4
+    8000203a:	feb514e3          	bne	a0,a1,80002022 <median+0x22>
+    8000203e:	8082                	ret
+    80002040:	fed74ae3          	blt	a4,a3,80002034 <median+0x34>
+    80002044:	00f6c463          	blt	a3,a5,8000204c <median+0x4c>
+    80002048:	c214                	sw	a3,0(a2)
+    8000204a:	b7f5                	j	80002036 <median+0x36>
+    8000204c:	c21c                	sw	a5,0(a2)
+    8000204e:	b7e5                	j	80002036 <median+0x36>
+
+0000000080002050 <vprintfmt>:
+    80002050:	710d                	addi	sp,sp,-352
+    80002052:	eaa2                	sd	s0,336(sp)
+    80002054:	e6a6                	sd	s1,328(sp)
+    80002056:	e2ca                	sd	s2,320(sp)
+    80002058:	fa52                	sd	s4,304(sp)
+    8000205a:	f656                	sd	s5,296(sp)
+    8000205c:	f25a                	sd	s6,288(sp)
+    8000205e:	ee86                	sd	ra,344(sp)
+    80002060:	fe4e                	sd	s3,312(sp)
+    80002062:	ee5e                	sd	s7,280(sp)
+    80002064:	ea62                	sd	s8,272(sp)
+    80002066:	e666                	sd	s9,264(sp)
+    80002068:	892a                	mv	s2,a0
+    8000206a:	84ae                	mv	s1,a1
+    8000206c:	8432                	mv	s0,a2
+    8000206e:	8b36                	mv	s6,a3
+    80002070:	02500a13          	li	s4,37
+    80002074:	00000a97          	auipc	s5,0x0
+    80002078:	7a0a8a93          	addi	s5,s5,1952 # 80002814 <main+0x90>
+    8000207c:	a029                	j	80002086 <vprintfmt+0x36>
+    8000207e:	c131                	beqz	a0,800020c2 <vprintfmt+0x72>
+    80002080:	85a6                	mv	a1,s1
+    80002082:	0405                	addi	s0,s0,1
+    80002084:	9902                	jalr	s2
+    80002086:	00044503          	lbu	a0,0(s0)
+    8000208a:	ff451ae3          	bne	a0,s4,8000207e <vprintfmt+0x2e>
+    8000208e:	00144683          	lbu	a3,1(s0)
+    80002092:	00140c93          	addi	s9,s0,1
+    80002096:	8766                	mv	a4,s9
+    80002098:	02000b93          	li	s7,32
+    8000209c:	59fd                	li	s3,-1
+    8000209e:	5c7d                	li	s8,-1
+    800020a0:	4581                	li	a1,0
+    800020a2:	05500613          	li	a2,85
+    800020a6:	4525                	li	a0,9
+    800020a8:	fdd6879b          	addiw	a5,a3,-35
+    800020ac:	0ff7f793          	andi	a5,a5,255
+    800020b0:	00170413          	addi	s0,a4,1
+    800020b4:	1ef66963          	bltu	a2,a5,800022a6 <vprintfmt+0x256>
+    800020b8:	078a                	slli	a5,a5,0x2
+    800020ba:	97d6                	add	a5,a5,s5
+    800020bc:	439c                	lw	a5,0(a5)
+    800020be:	97d6                	add	a5,a5,s5
+    800020c0:	8782                	jr	a5
+    800020c2:	60f6                	ld	ra,344(sp)
+    800020c4:	6456                	ld	s0,336(sp)
+    800020c6:	64b6                	ld	s1,328(sp)
+    800020c8:	6916                	ld	s2,320(sp)
+    800020ca:	79f2                	ld	s3,312(sp)
+    800020cc:	7a52                	ld	s4,304(sp)
+    800020ce:	7ab2                	ld	s5,296(sp)
+    800020d0:	7b12                	ld	s6,288(sp)
+    800020d2:	6bf2                	ld	s7,280(sp)
+    800020d4:	6c52                	ld	s8,272(sp)
+    800020d6:	6cb2                	ld	s9,264(sp)
+    800020d8:	6135                	addi	sp,sp,352
+    800020da:	8082                	ret
+    800020dc:	4721                	li	a4,8
+    800020de:	4785                	li	a5,1
+    800020e0:	008b0693          	addi	a3,s6,8
+    800020e4:	0eb7d463          	ble	a1,a5,800021cc <vprintfmt+0x17c>
+    800020e8:	000b3783          	ld	a5,0(s6)
+    800020ec:	8b36                	mv	s6,a3
+    800020ee:	02e7f6b3          	remu	a3,a5,a4
+    800020f2:	2b81                	sext.w	s7,s7
+    800020f4:	0050                	addi	a2,sp,4
+    800020f6:	4985                	li	s3,1
+    800020f8:	c036                	sw	a3,0(sp)
+    800020fa:	00e7f463          	bleu	a4,a5,80002102 <vprintfmt+0xb2>
+    800020fe:	aa55                	j	800022b2 <vprintfmt+0x262>
+    80002100:	89e6                	mv	s3,s9
+    80002102:	02e7d7b3          	divu	a5,a5,a4
+    80002106:	0611                	addi	a2,a2,4
+    80002108:	00198c9b          	addiw	s9,s3,1
+    8000210c:	02e7f6b3          	remu	a3,a5,a4
+    80002110:	fed62e23          	sw	a3,-4(a2)
+    80002114:	fee7f6e3          	bleu	a4,a5,80002100 <vprintfmt+0xb0>
+    80002118:	018cd963          	ble	s8,s9,8000212a <vprintfmt+0xda>
+    8000211c:	2c01                	sext.w	s8,s8
+    8000211e:	3c7d                	addiw	s8,s8,-1
+    80002120:	85a6                	mv	a1,s1
+    80002122:	855e                	mv	a0,s7
+    80002124:	9902                	jalr	s2
+    80002126:	ff8ccce3          	blt	s9,s8,8000211e <vprintfmt+0xce>
+    8000212a:	00299793          	slli	a5,s3,0x2
+    8000212e:	0218                	addi	a4,sp,256
+    80002130:	97ba                	add	a5,a5,a4
+    80002132:	f007a683          	lw	a3,-256(a5)
+    80002136:	fff98b9b          	addiw	s7,s3,-1
+    8000213a:	0b8a                	slli	s7,s7,0x2
+    8000213c:	9b8a                	add	s7,s7,sp
+    8000213e:	4c25                	li	s8,9
+    80002140:	a029                	j	8000214a <vprintfmt+0xfa>
+    80002142:	000ba683          	lw	a3,0(s7)
+    80002146:	19fd                	addi	s3,s3,-1
+    80002148:	1bf1                	addi	s7,s7,-4
+    8000214a:	03000513          	li	a0,48
+    8000214e:	00dc7463          	bleu	a3,s8,80002156 <vprintfmt+0x106>
+    80002152:	05700513          	li	a0,87
+    80002156:	85a6                	mv	a1,s1
+    80002158:	9d35                	addw	a0,a0,a3
+    8000215a:	9902                	jalr	s2
+    8000215c:	0009879b          	sext.w	a5,s3
+    80002160:	fef041e3          	bgtz	a5,80002142 <vprintfmt+0xf2>
+    80002164:	b70d                	j	80002086 <vprintfmt+0x36>
+    80002166:	03000513          	li	a0,48
+    8000216a:	85a6                	mv	a1,s1
+    8000216c:	9902                	jalr	s2
+    8000216e:	85a6                	mv	a1,s1
+    80002170:	07800513          	li	a0,120
+    80002174:	9902                	jalr	s2
+    80002176:	008b0693          	addi	a3,s6,8
+    8000217a:	4741                	li	a4,16
+    8000217c:	b7b5                	j	800020e8 <vprintfmt+0x98>
+    8000217e:	000b3c83          	ld	s9,0(s6)
+    80002182:	0b21                	addi	s6,s6,8
+    80002184:	180c8863          	beqz	s9,80002314 <vprintfmt+0x2c4>
+    80002188:	15805163          	blez	s8,800022ca <vprintfmt+0x27a>
+    8000218c:	02d00793          	li	a5,45
+    80002190:	16fb8d63          	beq	s7,a5,8000230a <vprintfmt+0x2ba>
+    80002194:	000c059b          	sext.w	a1,s8
+    80002198:	18098963          	beqz	s3,8000232a <vprintfmt+0x2da>
+    8000219c:	000cc783          	lbu	a5,0(s9)
+    800021a0:	18078563          	beqz	a5,8000232a <vprintfmt+0x2da>
+    800021a4:	001c8793          	addi	a5,s9,1
+    800021a8:	013c8633          	add	a2,s9,s3
+    800021ac:	1af60363          	beq	a2,a5,80002352 <vprintfmt+0x302>
+    800021b0:	00178713          	addi	a4,a5,1
+    800021b4:	fff74683          	lbu	a3,-1(a4)
+    800021b8:	10068363          	beqz	a3,800022be <vprintfmt+0x26e>
+    800021bc:	87ba                	mv	a5,a4
+    800021be:	b7fd                	j	800021ac <vprintfmt+0x15c>
+    800021c0:	4785                	li	a5,1
+    800021c2:	4729                	li	a4,10
+    800021c4:	008b0693          	addi	a3,s6,8
+    800021c8:	f2b7c0e3          	blt	a5,a1,800020e8 <vprintfmt+0x98>
+    800021cc:	fd91                	bnez	a1,800020e8 <vprintfmt+0x98>
+    800021ce:	000b6783          	lwu	a5,0(s6)
+    800021d2:	8b36                	mv	s6,a3
+    800021d4:	bf29                	j	800020ee <vprintfmt+0x9e>
+    800021d6:	00174683          	lbu	a3,1(a4)
+    800021da:	8722                	mv	a4,s0
+    800021dc:	b5f1                	j	800020a8 <vprintfmt+0x58>
+    800021de:	85a6                	mv	a1,s1
+    800021e0:	02500513          	li	a0,37
+    800021e4:	9902                	jalr	s2
+    800021e6:	b545                	j	80002086 <vprintfmt+0x36>
+    800021e8:	4741                	li	a4,16
+    800021ea:	bdd5                	j	800020de <vprintfmt+0x8e>
+    800021ec:	000b2983          	lw	s3,0(s6)
+    800021f0:	00174683          	lbu	a3,1(a4)
+    800021f4:	0b21                	addi	s6,s6,8
+    800021f6:	8722                	mv	a4,s0
+    800021f8:	ea0c58e3          	bgez	s8,800020a8 <vprintfmt+0x58>
+    800021fc:	8c4e                	mv	s8,s3
+    800021fe:	59fd                	li	s3,-1
+    80002200:	b565                	j	800020a8 <vprintfmt+0x58>
+    80002202:	00174683          	lbu	a3,1(a4)
+    80002206:	02d00b93          	li	s7,45
+    8000220a:	8722                	mv	a4,s0
+    8000220c:	bd71                	j	800020a8 <vprintfmt+0x58>
+    8000220e:	fffc4793          	not	a5,s8
+    80002212:	97fd                	srai	a5,a5,0x3f
+    80002214:	00fc7c33          	and	s8,s8,a5
+    80002218:	00174683          	lbu	a3,1(a4)
+    8000221c:	2c01                	sext.w	s8,s8
+    8000221e:	8722                	mv	a4,s0
+    80002220:	b561                	j	800020a8 <vprintfmt+0x58>
+    80002222:	00174683          	lbu	a3,1(a4)
+    80002226:	03000b93          	li	s7,48
+    8000222a:	8722                	mv	a4,s0
+    8000222c:	bdb5                	j	800020a8 <vprintfmt+0x58>
+    8000222e:	fd06899b          	addiw	s3,a3,-48
+    80002232:	00174683          	lbu	a3,1(a4)
+    80002236:	8722                	mv	a4,s0
+    80002238:	fd06879b          	addiw	a5,a3,-48
+    8000223c:	0006881b          	sext.w	a6,a3
+    80002240:	faf56ce3          	bltu	a0,a5,800021f8 <vprintfmt+0x1a8>
+    80002244:	0705                	addi	a4,a4,1
+    80002246:	0029979b          	slliw	a5,s3,0x2
+    8000224a:	00074683          	lbu	a3,0(a4)
+    8000224e:	013789bb          	addw	s3,a5,s3
+    80002252:	0019999b          	slliw	s3,s3,0x1
+    80002256:	010989bb          	addw	s3,s3,a6
+    8000225a:	fd06879b          	addiw	a5,a3,-48
+    8000225e:	fd09899b          	addiw	s3,s3,-48
+    80002262:	0006881b          	sext.w	a6,a3
+    80002266:	fcf57fe3          	bleu	a5,a0,80002244 <vprintfmt+0x1f4>
+    8000226a:	b779                	j	800021f8 <vprintfmt+0x1a8>
+    8000226c:	000b2503          	lw	a0,0(s6)
+    80002270:	85a6                	mv	a1,s1
+    80002272:	0b21                	addi	s6,s6,8
+    80002274:	9902                	jalr	s2
+    80002276:	bd01                	j	80002086 <vprintfmt+0x36>
+    80002278:	4785                	li	a5,1
+    8000227a:	008b0c93          	addi	s9,s6,8
+    8000227e:	08b7d263          	ble	a1,a5,80002302 <vprintfmt+0x2b2>
+    80002282:	000b3983          	ld	s3,0(s6)
+    80002286:	0a09da63          	bgez	s3,8000233a <vprintfmt+0x2ea>
+    8000228a:	85a6                	mv	a1,s1
+    8000228c:	02d00513          	li	a0,45
+    80002290:	9902                	jalr	s2
+    80002292:	8b66                	mv	s6,s9
+    80002294:	413007b3          	neg	a5,s3
+    80002298:	4729                	li	a4,10
+    8000229a:	bd91                	j	800020ee <vprintfmt+0x9e>
+    8000229c:	00174683          	lbu	a3,1(a4)
+    800022a0:	2585                	addiw	a1,a1,1
+    800022a2:	8722                	mv	a4,s0
+    800022a4:	b511                	j	800020a8 <vprintfmt+0x58>
+    800022a6:	85a6                	mv	a1,s1
+    800022a8:	02500513          	li	a0,37
+    800022ac:	9902                	jalr	s2
+    800022ae:	8466                	mv	s0,s9
+    800022b0:	bbd9                	j	80002086 <vprintfmt+0x36>
+    800022b2:	4785                	li	a5,1
+    800022b4:	4981                	li	s3,0
+    800022b6:	4c85                	li	s9,1
+    800022b8:	e787c2e3          	blt	a5,s8,8000211c <vprintfmt+0xcc>
+    800022bc:	bdad                	j	80002136 <vprintfmt+0xe6>
+    800022be:	41978c33          	sub	s8,a5,s9
+    800022c2:	41858c3b          	subw	s8,a1,s8
+    800022c6:	07804263          	bgtz	s8,8000232a <vprintfmt+0x2da>
+    800022ca:	000cc503          	lbu	a0,0(s9)
+    800022ce:	da050ce3          	beqz	a0,80002086 <vprintfmt+0x36>
+    800022d2:	5bfd                	li	s7,-1
+    800022d4:	0209d363          	bgez	s3,800022fa <vprintfmt+0x2aa>
+    800022d8:	85a6                	mv	a1,s1
+    800022da:	0c85                	addi	s9,s9,1
+    800022dc:	9902                	jalr	s2
+    800022de:	000cc503          	lbu	a0,0(s9)
+    800022e2:	3c7d                	addiw	s8,s8,-1
+    800022e4:	f965                	bnez	a0,800022d4 <vprintfmt+0x284>
+    800022e6:	db8050e3          	blez	s8,80002086 <vprintfmt+0x36>
+    800022ea:	3c7d                	addiw	s8,s8,-1
+    800022ec:	85a6                	mv	a1,s1
+    800022ee:	02000513          	li	a0,32
+    800022f2:	9902                	jalr	s2
+    800022f4:	fe0c1be3          	bnez	s8,800022ea <vprintfmt+0x29a>
+    800022f8:	b379                	j	80002086 <vprintfmt+0x36>
+    800022fa:	39fd                	addiw	s3,s3,-1
+    800022fc:	fd799ee3          	bne	s3,s7,800022d8 <vprintfmt+0x288>
+    80002300:	b7dd                	j	800022e6 <vprintfmt+0x296>
+    80002302:	f1c1                	bnez	a1,80002282 <vprintfmt+0x232>
+    80002304:	000b2983          	lw	s3,0(s6)
+    80002308:	bfbd                	j	80002286 <vprintfmt+0x236>
+    8000230a:	000cc503          	lbu	a0,0(s9)
+    8000230e:	dd71                	beqz	a0,800022ea <vprintfmt+0x29a>
+    80002310:	5bfd                	li	s7,-1
+    80002312:	b7c9                	j	800022d4 <vprintfmt+0x284>
+    80002314:	03805763          	blez	s8,80002342 <vprintfmt+0x2f2>
+    80002318:	02d00793          	li	a5,45
+    8000231c:	02fb8363          	beq	s7,a5,80002342 <vprintfmt+0x2f2>
+    80002320:	00000c97          	auipc	s9,0x0
+    80002324:	650c8c93          	addi	s9,s9,1616 # 80002970 <main+0x1ec>
+    80002328:	b5b5                	j	80002194 <vprintfmt+0x144>
+    8000232a:	2b81                	sext.w	s7,s7
+    8000232c:	3c7d                	addiw	s8,s8,-1
+    8000232e:	85a6                	mv	a1,s1
+    80002330:	855e                	mv	a0,s7
+    80002332:	9902                	jalr	s2
+    80002334:	fe0c1ce3          	bnez	s8,8000232c <vprintfmt+0x2dc>
+    80002338:	bf49                	j	800022ca <vprintfmt+0x27a>
+    8000233a:	87ce                	mv	a5,s3
+    8000233c:	8b66                	mv	s6,s9
+    8000233e:	4729                	li	a4,10
+    80002340:	b37d                	j	800020ee <vprintfmt+0x9e>
+    80002342:	00000c97          	auipc	s9,0x0
+    80002346:	62ec8c93          	addi	s9,s9,1582 # 80002970 <main+0x1ec>
+    8000234a:	02800513          	li	a0,40
+    8000234e:	5bfd                	li	s7,-1
+    80002350:	b751                	j	800022d4 <vprintfmt+0x284>
+    80002352:	41960c33          	sub	s8,a2,s9
+    80002356:	41858c3b          	subw	s8,a1,s8
+    8000235a:	fd8048e3          	bgtz	s8,8000232a <vprintfmt+0x2da>
+    8000235e:	b7b5                	j	800022ca <vprintfmt+0x27a>
+
+0000000080002360 <sprintf_putch.2950>:
+    80002360:	619c                	ld	a5,0(a1)
+    80002362:	00a78023          	sb	a0,0(a5)
+    80002366:	619c                	ld	a5,0(a1)
+    80002368:	0785                	addi	a5,a5,1
+    8000236a:	e19c                	sd	a5,0(a1)
+    8000236c:	8082                	ret
+
+000000008000236e <putchar>:
+    8000236e:	04022803          	lw	a6,64(tp) # 40 <buflen.2836>
+    80002372:	00020793          	mv	a5,tp
+    80002376:	97c2                	add	a5,a5,a6
+    80002378:	7119                	addi	sp,sp,-128
+    8000237a:	0018069b          	addiw	a3,a6,1
+    8000237e:	04d22023          	sw	a3,64(tp) # 40 <buflen.2836>
+    80002382:	00a78023          	sb	a0,0(a5)
+    80002386:	03f10713          	addi	a4,sp,63
+    8000238a:	47a9                	li	a5,10
+    8000238c:	fc077713          	andi	a4,a4,-64
+    80002390:	00f50963          	beq	a0,a5,800023a2 <putchar+0x34>
+    80002394:	04000793          	li	a5,64
+    80002398:	00f68563          	beq	a3,a5,800023a2 <putchar+0x34>
+    8000239c:	4501                	li	a0,0
+    8000239e:	6109                	addi	sp,sp,128
+    800023a0:	8082                	ret
+    800023a2:	04000793          	li	a5,64
+    800023a6:	e31c                	sd	a5,0(a4)
+    800023a8:	4785                	li	a5,1
+    800023aa:	e71c                	sd	a5,8(a4)
+    800023ac:	00020613          	mv	a2,tp
+    800023b0:	eb10                	sd	a2,16(a4)
+    800023b2:	ef14                	sd	a3,24(a4)
+    800023b4:	0ff0000f          	fence
+    800023b8:	fffff797          	auipc	a5,0xfffff
+    800023bc:	c4e7b423          	sd	a4,-952(a5) # 80001000 <tohost>
+    800023c0:	fffff697          	auipc	a3,0xfffff
+    800023c4:	c8068693          	addi	a3,a3,-896 # 80001040 <fromhost>
+    800023c8:	629c                	ld	a5,0(a3)
+    800023ca:	dffd                	beqz	a5,800023c8 <putchar+0x5a>
+    800023cc:	fffff797          	auipc	a5,0xfffff
+    800023d0:	c607ba23          	sd	zero,-908(a5) # 80001040 <fromhost>
+    800023d4:	0ff0000f          	fence
+    800023d8:	04022023          	sw	zero,64(tp) # 40 <buflen.2836>
+    800023dc:	631c                	ld	a5,0(a4)
+    800023de:	4501                	li	a0,0
+    800023e0:	6109                	addi	sp,sp,128
+    800023e2:	8082                	ret
+
+00000000800023e4 <setStats>:
+    800023e4:	b00027f3          	csrr	a5,mcycle
+    800023e8:	00001717          	auipc	a4,0x1
+    800023ec:	25070713          	addi	a4,a4,592 # 80003638 <counters>
+    800023f0:	e919                	bnez	a0,80002406 <setStats+0x22>
+    800023f2:	6314                	ld	a3,0(a4)
+    800023f4:	00000617          	auipc	a2,0x0
+    800023f8:	58460613          	addi	a2,a2,1412 # 80002978 <main+0x1f4>
+    800023fc:	00001597          	auipc	a1,0x1
+    80002400:	24c5b623          	sd	a2,588(a1) # 80003648 <counter_names>
+    80002404:	8f95                	sub	a5,a5,a3
+    80002406:	00001697          	auipc	a3,0x1
+    8000240a:	22f6b923          	sd	a5,562(a3) # 80003638 <counters>
+    8000240e:	b02027f3          	csrr	a5,minstret
+    80002412:	e919                	bnez	a0,80002428 <setStats+0x44>
+    80002414:	6718                	ld	a4,8(a4)
+    80002416:	00000697          	auipc	a3,0x0
+    8000241a:	56a68693          	addi	a3,a3,1386 # 80002980 <main+0x1fc>
+    8000241e:	00001617          	auipc	a2,0x1
+    80002422:	22d63923          	sd	a3,562(a2) # 80003650 <counter_names+0x8>
+    80002426:	8f99                	sub	a5,a5,a4
+    80002428:	00001717          	auipc	a4,0x1
+    8000242c:	20f73c23          	sd	a5,536(a4) # 80003640 <counters+0x8>
+    80002430:	8082                	ret
+
+0000000080002432 <tohost_exit>:
+    80002432:	00151793          	slli	a5,a0,0x1
+    80002436:	0017e793          	ori	a5,a5,1
+    8000243a:	fffff717          	auipc	a4,0xfffff
+    8000243e:	bcf73323          	sd	a5,-1082(a4) # 80001000 <tohost>
+    80002442:	a001                	j	80002442 <tohost_exit+0x10>
+
+0000000080002444 <handle_trap>:
+    80002444:	6785                	lui	a5,0x1
+    80002446:	a7378793          	addi	a5,a5,-1421 # a73 <buflen.2836+0xa33>
+    8000244a:	fffff717          	auipc	a4,0xfffff
+    8000244e:	baf73b23          	sd	a5,-1098(a4) # 80001000 <tohost>
+    80002452:	a001                	j	80002452 <handle_trap+0xe>
+
+0000000080002454 <exit>:
+    80002454:	1141                	addi	sp,sp,-16
+    80002456:	e406                	sd	ra,8(sp)
+    80002458:	fdbff0ef          	jal	ra,80002432 <tohost_exit>
+
+000000008000245c <abort>:
+    8000245c:	10d00793          	li	a5,269
+    80002460:	fffff717          	auipc	a4,0xfffff
+    80002464:	baf73023          	sd	a5,-1120(a4) # 80001000 <tohost>
+    80002468:	a001                	j	80002468 <abort+0xc>
+
+000000008000246a <printstr>:
+    8000246a:	00054783          	lbu	a5,0(a0)
+    8000246e:	7119                	addi	sp,sp,-128
+    80002470:	03f10713          	addi	a4,sp,63
+    80002474:	86aa                	mv	a3,a0
+    80002476:	fc077713          	andi	a4,a4,-64
+    8000247a:	c3b9                	beqz	a5,800024c0 <printstr+0x56>
+    8000247c:	862a                	mv	a2,a0
+    8000247e:	0505                	addi	a0,a0,1
+    80002480:	00054783          	lbu	a5,0(a0)
+    80002484:	ffed                	bnez	a5,8000247e <printstr+0x14>
+    80002486:	8d11                	sub	a0,a0,a2
+    80002488:	04000793          	li	a5,64
+    8000248c:	e31c                	sd	a5,0(a4)
+    8000248e:	4785                	li	a5,1
+    80002490:	e71c                	sd	a5,8(a4)
+    80002492:	eb14                	sd	a3,16(a4)
+    80002494:	ef08                	sd	a0,24(a4)
+    80002496:	0ff0000f          	fence
+    8000249a:	fffff797          	auipc	a5,0xfffff
+    8000249e:	b6e7b323          	sd	a4,-1178(a5) # 80001000 <tohost>
+    800024a2:	fffff697          	auipc	a3,0xfffff
+    800024a6:	b9e68693          	addi	a3,a3,-1122 # 80001040 <fromhost>
+    800024aa:	629c                	ld	a5,0(a3)
+    800024ac:	dffd                	beqz	a5,800024aa <printstr+0x40>
+    800024ae:	fffff797          	auipc	a5,0xfffff
+    800024b2:	b807b923          	sd	zero,-1134(a5) # 80001040 <fromhost>
+    800024b6:	0ff0000f          	fence
+    800024ba:	631c                	ld	a5,0(a4)
+    800024bc:	6109                	addi	sp,sp,128
+    800024be:	8082                	ret
+    800024c0:	4501                	li	a0,0
+    800024c2:	b7d9                	j	80002488 <printstr+0x1e>
+
+00000000800024c4 <thread_entry>:
+    800024c4:	c111                	beqz	a0,800024c8 <thread_entry+0x4>
+    800024c6:	a001                	j	800024c6 <thread_entry+0x2>
+    800024c8:	8082                	ret
+
+00000000800024ca <printhex>:
+    800024ca:	7179                	addi	sp,sp,-48
+    800024cc:	f406                	sd	ra,40(sp)
+    800024ce:	01710713          	addi	a4,sp,23
+    800024d2:	00710813          	addi	a6,sp,7
+    800024d6:	45a5                	li	a1,9
+    800024d8:	00f57793          	andi	a5,a0,15
+    800024dc:	03000613          	li	a2,48
+    800024e0:	0ff7f693          	andi	a3,a5,255
+    800024e4:	00f5f463          	bleu	a5,a1,800024ec <printhex+0x22>
+    800024e8:	05700613          	li	a2,87
+    800024ec:	00c687bb          	addw	a5,a3,a2
+    800024f0:	00f70023          	sb	a5,0(a4)
+    800024f4:	177d                	addi	a4,a4,-1
+    800024f6:	8111                	srli	a0,a0,0x4
+    800024f8:	fee810e3          	bne	a6,a4,800024d8 <printhex+0xe>
+    800024fc:	0028                	addi	a0,sp,8
+    800024fe:	00010c23          	sb	zero,24(sp)
+    80002502:	f69ff0ef          	jal	ra,8000246a <printstr>
+    80002506:	70a2                	ld	ra,40(sp)
+    80002508:	6145                	addi	sp,sp,48
+    8000250a:	8082                	ret
+
+000000008000250c <printf>:
+    8000250c:	711d                	addi	sp,sp,-96
+    8000250e:	02810313          	addi	t1,sp,40
+    80002512:	f42e                	sd	a1,40(sp)
+    80002514:	f832                	sd	a2,48(sp)
+    80002516:	fc36                	sd	a3,56(sp)
+    80002518:	862a                	mv	a2,a0
+    8000251a:	869a                	mv	a3,t1
+    8000251c:	00000517          	auipc	a0,0x0
+    80002520:	e5250513          	addi	a0,a0,-430 # 8000236e <putchar>
+    80002524:	4581                	li	a1,0
+    80002526:	ec06                	sd	ra,24(sp)
+    80002528:	e0ba                	sd	a4,64(sp)
+    8000252a:	e4be                	sd	a5,72(sp)
+    8000252c:	e8c2                	sd	a6,80(sp)
+    8000252e:	ecc6                	sd	a7,88(sp)
+    80002530:	e41a                	sd	t1,8(sp)
+    80002532:	b1fff0ef          	jal	ra,80002050 <vprintfmt>
+    80002536:	60e2                	ld	ra,24(sp)
+    80002538:	4501                	li	a0,0
+    8000253a:	6125                	addi	sp,sp,96
+    8000253c:	8082                	ret
+
+000000008000253e <sprintf>:
+    8000253e:	711d                	addi	sp,sp,-96
+    80002540:	03010313          	addi	t1,sp,48
+    80002544:	f022                	sd	s0,32(sp)
+    80002546:	e42a                	sd	a0,8(sp)
+    80002548:	f832                	sd	a2,48(sp)
+    8000254a:	fc36                	sd	a3,56(sp)
+    8000254c:	842a                	mv	s0,a0
+    8000254e:	862e                	mv	a2,a1
+    80002550:	00000517          	auipc	a0,0x0
+    80002554:	e1050513          	addi	a0,a0,-496 # 80002360 <sprintf_putch.2950>
+    80002558:	002c                	addi	a1,sp,8
+    8000255a:	869a                	mv	a3,t1
+    8000255c:	f406                	sd	ra,40(sp)
+    8000255e:	e4be                	sd	a5,72(sp)
+    80002560:	e0ba                	sd	a4,64(sp)
+    80002562:	e8c2                	sd	a6,80(sp)
+    80002564:	ecc6                	sd	a7,88(sp)
+    80002566:	ec1a                	sd	t1,24(sp)
+    80002568:	ae9ff0ef          	jal	ra,80002050 <vprintfmt>
+    8000256c:	67a2                	ld	a5,8(sp)
+    8000256e:	00078023          	sb	zero,0(a5)
+    80002572:	6522                	ld	a0,8(sp)
+    80002574:	70a2                	ld	ra,40(sp)
+    80002576:	9d01                	subw	a0,a0,s0
+    80002578:	7402                	ld	s0,32(sp)
+    8000257a:	6125                	addi	sp,sp,96
+    8000257c:	8082                	ret
+
+000000008000257e <memcpy>:
+    8000257e:	00c5e7b3          	or	a5,a1,a2
+    80002582:	8fc9                	or	a5,a5,a0
+    80002584:	8b9d                	andi	a5,a5,7
+    80002586:	00c506b3          	add	a3,a0,a2
+    8000258a:	cf91                	beqz	a5,800025a6 <memcpy+0x28>
+    8000258c:	962e                	add	a2,a2,a1
+    8000258e:	87aa                	mv	a5,a0
+    80002590:	02d57763          	bleu	a3,a0,800025be <memcpy+0x40>
+    80002594:	0585                	addi	a1,a1,1
+    80002596:	fff5c703          	lbu	a4,-1(a1)
+    8000259a:	0785                	addi	a5,a5,1
+    8000259c:	fee78fa3          	sb	a4,-1(a5)
+    800025a0:	feb61ae3          	bne	a2,a1,80002594 <memcpy+0x16>
+    800025a4:	8082                	ret
+    800025a6:	fed57fe3          	bleu	a3,a0,800025a4 <memcpy+0x26>
+    800025aa:	87aa                	mv	a5,a0
+    800025ac:	05a1                	addi	a1,a1,8
+    800025ae:	ff85b703          	ld	a4,-8(a1)
+    800025b2:	07a1                	addi	a5,a5,8
+    800025b4:	fee7bc23          	sd	a4,-8(a5)
+    800025b8:	fed7eae3          	bltu	a5,a3,800025ac <memcpy+0x2e>
+    800025bc:	8082                	ret
+    800025be:	8082                	ret
+
+00000000800025c0 <memset>:
+    800025c0:	00c567b3          	or	a5,a0,a2
+    800025c4:	8b9d                	andi	a5,a5,7
+    800025c6:	962a                	add	a2,a2,a0
+    800025c8:	0ff5f593          	andi	a1,a1,255
+    800025cc:	cb91                	beqz	a5,800025e0 <memset+0x20>
+    800025ce:	87aa                	mv	a5,a0
+    800025d0:	02c57a63          	bleu	a2,a0,80002604 <memset+0x44>
+    800025d4:	0785                	addi	a5,a5,1
+    800025d6:	feb78fa3          	sb	a1,-1(a5)
+    800025da:	fef61de3          	bne	a2,a5,800025d4 <memset+0x14>
+    800025de:	8082                	ret
+    800025e0:	00859793          	slli	a5,a1,0x8
+    800025e4:	8fcd                	or	a5,a5,a1
+    800025e6:	01079593          	slli	a1,a5,0x10
+    800025ea:	8fcd                	or	a5,a5,a1
+    800025ec:	02079713          	slli	a4,a5,0x20
+    800025f0:	8fd9                	or	a5,a5,a4
+    800025f2:	fec576e3          	bleu	a2,a0,800025de <memset+0x1e>
+    800025f6:	872a                	mv	a4,a0
+    800025f8:	0721                	addi	a4,a4,8
+    800025fa:	fef73c23          	sd	a5,-8(a4)
+    800025fe:	fec76de3          	bltu	a4,a2,800025f8 <memset+0x38>
+    80002602:	8082                	ret
+    80002604:	8082                	ret
+
+0000000080002606 <_init>:
+    80002606:	7131                	addi	sp,sp,-192
+    80002608:	00001797          	auipc	a5,0x1
+    8000260c:	05078793          	addi	a5,a5,80 # 80003658 <_tdata_begin>
+    80002610:	f14a                	sd	s2,160(sp)
+    80002612:	00001917          	auipc	s2,0x1
+    80002616:	04690913          	addi	s2,s2,70 # 80003658 <_tdata_begin>
+    8000261a:	f526                	sd	s1,168(sp)
+    8000261c:	40f904b3          	sub	s1,s2,a5
+    80002620:	8626                	mv	a2,s1
+    80002622:	ed4e                	sd	s3,152(sp)
+    80002624:	e952                	sd	s4,144(sp)
+    80002626:	89aa                	mv	s3,a0
+    80002628:	8a2e                	mv	s4,a1
+    8000262a:	8512                	mv	a0,tp
+    8000262c:	85be                	mv	a1,a5
+    8000262e:	fd06                	sd	ra,184(sp)
+    80002630:	f922                	sd	s0,176(sp)
+    80002632:	e556                	sd	s5,136(sp)
+    80002634:	8a92                	mv	s5,tp
+    80002636:	f49ff0ef          	jal	ra,8000257e <memcpy>
+    8000263a:	88c18613          	addi	a2,gp,-1908 # 800036c4 <_tbss_end>
+    8000263e:	41260633          	sub	a2,a2,s2
+    80002642:	4581                	li	a1,0
+    80002644:	009a8533          	add	a0,s5,s1
+    80002648:	f79ff0ef          	jal	ra,800025c0 <memset>
+    8000264c:	854e                	mv	a0,s3
+    8000264e:	85d2                	mv	a1,s4
+    80002650:	e75ff0ef          	jal	ra,800024c4 <thread_entry>
+    80002654:	4581                	li	a1,0
+    80002656:	4501                	li	a0,0
+    80002658:	12c000ef          	jal	ra,80002784 <main>
+    8000265c:	00001497          	auipc	s1,0x1
+    80002660:	fdc48493          	addi	s1,s1,-36 # 80003638 <counters>
+    80002664:	6094                	ld	a3,0(s1)
+    80002666:	03f10413          	addi	s0,sp,63
+    8000266a:	fc047413          	andi	s0,s0,-64
+    8000266e:	89aa                	mv	s3,a0
+    80002670:	e695                	bnez	a3,8000269c <_init+0x96>
+    80002672:	6494                	ld	a3,8(s1)
+    80002674:	e681                	bnez	a3,8000267c <_init+0x76>
+    80002676:	854e                	mv	a0,s3
+    80002678:	dbbff0ef          	jal	ra,80002432 <tohost_exit>
+    8000267c:	8922                	mv	s2,s0
+    8000267e:	6c90                	ld	a2,24(s1)
+    80002680:	854a                	mv	a0,s2
+    80002682:	00000597          	auipc	a1,0x0
+    80002686:	32658593          	addi	a1,a1,806 # 800029a8 <main+0x224>
+    8000268a:	eb5ff0ef          	jal	ra,8000253e <sprintf>
+    8000268e:	992a                	add	s2,s2,a0
+    80002690:	ff2403e3          	beq	s0,s2,80002676 <_init+0x70>
+    80002694:	8522                	mv	a0,s0
+    80002696:	dd5ff0ef          	jal	ra,8000246a <printstr>
+    8000269a:	bff1                	j	80002676 <_init+0x70>
+    8000269c:	6890                	ld	a2,16(s1)
+    8000269e:	00000597          	auipc	a1,0x0
+    800026a2:	30a58593          	addi	a1,a1,778 # 800029a8 <main+0x224>
+    800026a6:	8522                	mv	a0,s0
+    800026a8:	e97ff0ef          	jal	ra,8000253e <sprintf>
+    800026ac:	6494                	ld	a3,8(s1)
+    800026ae:	00a40933          	add	s2,s0,a0
+    800026b2:	def9                	beqz	a3,80002690 <_init+0x8a>
+    800026b4:	b7e9                	j	8000267e <_init+0x78>
+
+00000000800026b6 <strlen>:
+    800026b6:	00054783          	lbu	a5,0(a0)
+    800026ba:	872a                	mv	a4,a0
+    800026bc:	c799                	beqz	a5,800026ca <strlen+0x14>
+    800026be:	0505                	addi	a0,a0,1
+    800026c0:	00054783          	lbu	a5,0(a0)
+    800026c4:	ffed                	bnez	a5,800026be <strlen+0x8>
+    800026c6:	8d19                	sub	a0,a0,a4
+    800026c8:	8082                	ret
+    800026ca:	4501                	li	a0,0
+    800026cc:	8082                	ret
+
+00000000800026ce <strnlen>:
+    800026ce:	872a                	mv	a4,a0
+    800026d0:	cd91                	beqz	a1,800026ec <strnlen+0x1e>
+    800026d2:	00054783          	lbu	a5,0(a0)
+    800026d6:	cb99                	beqz	a5,800026ec <strnlen+0x1e>
+    800026d8:	95aa                	add	a1,a1,a0
+    800026da:	a021                	j	800026e2 <strnlen+0x14>
+    800026dc:	00054783          	lbu	a5,0(a0)
+    800026e0:	c781                	beqz	a5,800026e8 <strnlen+0x1a>
+    800026e2:	0505                	addi	a0,a0,1
+    800026e4:	feb51ce3          	bne	a0,a1,800026dc <strnlen+0xe>
+    800026e8:	8d19                	sub	a0,a0,a4
+    800026ea:	8082                	ret
+    800026ec:	4501                	li	a0,0
+    800026ee:	8082                	ret
+
+00000000800026f0 <strcmp>:
+    800026f0:	0505                	addi	a0,a0,1
+    800026f2:	fff54783          	lbu	a5,-1(a0)
+    800026f6:	0585                	addi	a1,a1,1
+    800026f8:	fff5c703          	lbu	a4,-1(a1)
+    800026fc:	c799                	beqz	a5,8000270a <strcmp+0x1a>
+    800026fe:	fee789e3          	beq	a5,a4,800026f0 <strcmp>
+    80002702:	0007851b          	sext.w	a0,a5
+    80002706:	9d19                	subw	a0,a0,a4
+    80002708:	8082                	ret
+    8000270a:	4501                	li	a0,0
+    8000270c:	bfed                	j	80002706 <strcmp+0x16>
+
+000000008000270e <strcpy>:
+    8000270e:	87aa                	mv	a5,a0
+    80002710:	0585                	addi	a1,a1,1
+    80002712:	fff5c703          	lbu	a4,-1(a1)
+    80002716:	0785                	addi	a5,a5,1
+    80002718:	fee78fa3          	sb	a4,-1(a5)
+    8000271c:	fb75                	bnez	a4,80002710 <strcpy+0x2>
+    8000271e:	8082                	ret
+
+0000000080002720 <atol>:
+    80002720:	00054783          	lbu	a5,0(a0)
+    80002724:	02000713          	li	a4,32
+    80002728:	00e79763          	bne	a5,a4,80002736 <atol+0x16>
+    8000272c:	0505                	addi	a0,a0,1
+    8000272e:	00054783          	lbu	a5,0(a0)
+    80002732:	fee78de3          	beq	a5,a4,8000272c <atol+0xc>
+    80002736:	fd57871b          	addiw	a4,a5,-43
+    8000273a:	0fd77713          	andi	a4,a4,253
+    8000273e:	c715                	beqz	a4,8000276a <atol+0x4a>
+    80002740:	00054683          	lbu	a3,0(a0)
+    80002744:	87aa                	mv	a5,a0
+    80002746:	4601                	li	a2,0
+    80002748:	ce85                	beqz	a3,80002780 <atol+0x60>
+    8000274a:	4501                	li	a0,0
+    8000274c:	0785                	addi	a5,a5,1
+    8000274e:	fd06859b          	addiw	a1,a3,-48
+    80002752:	00251713          	slli	a4,a0,0x2
+    80002756:	0007c683          	lbu	a3,0(a5)
+    8000275a:	953a                	add	a0,a0,a4
+    8000275c:	0506                	slli	a0,a0,0x1
+    8000275e:	952e                	add	a0,a0,a1
+    80002760:	f6f5                	bnez	a3,8000274c <atol+0x2c>
+    80002762:	c219                	beqz	a2,80002768 <atol+0x48>
+    80002764:	40a00533          	neg	a0,a0
+    80002768:	8082                	ret
+    8000276a:	00154683          	lbu	a3,1(a0)
+    8000276e:	fd378793          	addi	a5,a5,-45
+    80002772:	0017b613          	seqz	a2,a5
+    80002776:	00150793          	addi	a5,a0,1
+    8000277a:	fae1                	bnez	a3,8000274a <atol+0x2a>
+    8000277c:	4501                	li	a0,0
+    8000277e:	b7d5                	j	80002762 <atol+0x42>
+    80002780:	4501                	li	a0,0
+    80002782:	8082                	ret
+
+Disassembly of section .text.startup:
+
+0000000080002784 <main>:
+    80002784:	9b010113          	addi	sp,sp,-1616
+    80002788:	00000597          	auipc	a1,0x0
+    8000278c:	23058593          	addi	a1,a1,560 # 800029b8 <input_data>
+    80002790:	860a                	mv	a2,sp
+    80002792:	19000513          	li	a0,400
+    80002796:	64113423          	sd	ra,1608(sp)
+    8000279a:	867ff0ef          	jal	ra,80002000 <median>
+    8000279e:	4505                	li	a0,1
+    800027a0:	c45ff0ef          	jal	ra,800023e4 <setStats>
+    800027a4:	860a                	mv	a2,sp
+    800027a6:	00000597          	auipc	a1,0x0
+    800027aa:	21258593          	addi	a1,a1,530 # 800029b8 <input_data>
+    800027ae:	19000513          	li	a0,400
+    800027b2:	84fff0ef          	jal	ra,80002000 <median>
+    800027b6:	4501                	li	a0,0
+    800027b8:	c2dff0ef          	jal	ra,800023e4 <setStats>
+    800027bc:	878a                	mv	a5,sp
+    800027be:	00001717          	auipc	a4,0x1
+    800027c2:	83a70713          	addi	a4,a4,-1990 # 80002ff8 <verify_data>
+    800027c6:	4501                	li	a0,0
+    800027c8:	19000893          	li	a7,400
+    800027cc:	4390                	lw	a2,0(a5)
+    800027ce:	430c                	lw	a1,0(a4)
+    800027d0:	43d4                	lw	a3,4(a5)
+    800027d2:	00472803          	lw	a6,4(a4)
+    800027d6:	07a1                	addi	a5,a5,8
+    800027d8:	2681                	sext.w	a3,a3
+    800027da:	00c59e63          	bne	a1,a2,800027f6 <main+0x72>
+    800027de:	2509                	addiw	a0,a0,2
+    800027e0:	01069663          	bne	a3,a6,800027ec <main+0x68>
+    800027e4:	0721                	addi	a4,a4,8
+    800027e6:	ff1513e3          	bne	a0,a7,800027cc <main+0x48>
+    800027ea:	4501                	li	a0,0
+    800027ec:	64813083          	ld	ra,1608(sp)
+    800027f0:	65010113          	addi	sp,sp,1616
+    800027f4:	8082                	ret
+    800027f6:	2505                	addiw	a0,a0,1
+    800027f8:	bfd5                	j	800027ec <main+0x68>
+    800027fa:	1141                	addi	sp,sp,-16
+    800027fc:	00000517          	auipc	a0,0x0
+    80002800:	19450513          	addi	a0,a0,404 # 80002990 <main+0x20c>
+    80002804:	e406                	sd	ra,8(sp)
+    80002806:	c65ff0ef          	jal	ra,8000246a <printstr>
+    8000280a:	60a2                	ld	ra,8(sp)
+    8000280c:	557d                	li	a0,-1
+    8000280e:	0141                	addi	sp,sp,16
+    80002810:	8082                	ret
+
+Disassembly of section .data:
+
+00000000800029b8 <input_data>:
+    800029b8:	0029                	c.addi	zero,10
+    800029ba:	0000                	unimp
+    800029bc:	01c6                	slli	gp,gp,0x11
+    800029be:	0000                	unimp
+    800029c0:	0341                	addi	t1,t1,16
+    800029c2:	0000                	unimp
+    800029c4:	0000014f          	fnmadd.s	ft2,ft0,ft0,ft0,rne
+    800029c8:	0234                	addi	a3,sp,264
+    800029ca:	0000                	unimp
+    800029cc:	0001                	nop
+    800029ce:	0000                	unimp
+    800029d0:	000000bb          	addw	ra,zero,zero
+    800029d4:	03dd                	addi	t2,t2,23
+    800029d6:	0000                	unimp
+    800029d8:	02ed                	addi	t0,t0,27
+    800029da:	0000                	unimp
+    800029dc:	016d                	addi	sp,sp,27
+    800029de:	0000                	unimp
+    800029e0:	015e                	slli	sp,sp,0x17
+    800029e2:	0000                	unimp
+    800029e4:	023c                	addi	a5,sp,264
+    800029e6:	0000                	unimp
+    800029e8:	0084                	addi	s1,sp,64
+    800029ea:	0000                	unimp
+    800029ec:	0040                	addi	s0,sp,4
+    800029ee:	0000                	unimp
+    800029f0:	03b5                	addi	t2,t2,13
+    800029f2:	0000                	unimp
+    800029f4:	0099                	addi	ra,ra,6
+    800029f6:	0000                	unimp
+    800029f8:	0248                	addi	a0,sp,260
+    800029fa:	0000                	unimp
+    800029fc:	00d8                	addi	a4,sp,68
+    800029fe:	0000                	unimp
+    80002a00:	0325                	addi	t1,t1,9
+    80002a02:	0000                	unimp
+    80002a04:	008c                	addi	a1,sp,64
+    80002a06:	0000                	unimp
+    80002a08:	026d                	addi	tp,tp,27
+    80002a0a:	0000                	unimp
+    80002a0c:	00d2                	slli	ra,ra,0x14
+    80002a0e:	0000                	unimp
+    80002a10:	0006                	0x6
+    80002a12:	0000                	unimp
+    80002a14:	023c                	addi	a5,sp,264
+    80002a16:	0000                	unimp
+    80002a18:	000003a3          	sb	zero,7(zero) # 7 <buf.2835+0x7>
+    80002a1c:	00000153          	fadd.s	ft2,ft0,ft0,rne
+    80002a20:	037a                	slli	t1,t1,0x1e
+    80002a22:	0000                	unimp
+    80002a24:	0251                	addi	tp,tp,20
+    80002a26:	0000                	unimp
+    80002a28:	0188                	addi	a0,sp,192
+    80002a2a:	0000                	unimp
+    80002a2c:	0382                	slli	t2,t2,0x0
+    80002a2e:	0000                	unimp
+    80002a30:	02b6                	slli	t0,t0,0xd
+    80002a32:	0000                	unimp
+    80002a34:	00e4                	addi	s1,sp,76
+    80002a36:	0000                	unimp
+    80002a38:	03c1                	addi	t2,t2,16
+    80002a3a:	0000                	unimp
+    80002a3c:	000c                	0xc
+    80002a3e:	0000                	unimp
+    80002a40:	006e                	0x6e
+    80002a42:	0000                	unimp
+    80002a44:	00000373          	0x373
+    80002a48:	0074                	addi	a3,sp,12
+    80002a4a:	0000                	unimp
+    80002a4c:	02ee                	slli	t0,t0,0x1b
+    80002a4e:	0000                	unimp
+    80002a50:	0128                	addi	a0,sp,136
+    80002a52:	0000                	unimp
+    80002a54:	0286                	slli	t0,t0,0x1
+    80002a56:	0000                	unimp
+    80002a58:	01aa                	slli	gp,gp,0xa
+    80002a5a:	0000                	unimp
+    80002a5c:	01f4                	addi	a3,sp,204
+    80002a5e:	0000                	unimp
+    80002a60:	013a                	slli	sp,sp,0xe
+    80002a62:	0000                	unimp
+    80002a64:	01b4                	addi	a3,sp,200
+    80002a66:	0000                	unimp
+    80002a68:	00000293          	li	t0,0
+    80002a6c:	02bd                	addi	t0,t0,15
+    80002a6e:	0000                	unimp
+    80002a70:	0306                	slli	t1,t1,0x1
+    80002a72:	0000                	unimp
+    80002a74:	032c                	addi	a1,sp,392
+    80002a76:	0000                	unimp
+    80002a78:	0000013f 000003d5 	0x3d50000013f
+    80002a80:	02a6                	slli	t0,t0,0x9
+    80002a82:	0000                	unimp
+    80002a84:	0096                	slli	ra,ra,0x5
+    80002a86:	0000                	unimp
+    80002a88:	0000036b          	0x36b
+    80002a8c:	02b8                	addi	a4,sp,328
+    80002a8e:	0000                	unimp
+    80002a90:	0178                	addi	a4,sp,140
+    80002a92:	0000                	unimp
+    80002a94:	0234                	addi	a3,sp,264
+    80002a96:	0000                	unimp
+    80002a98:	01da                	slli	gp,gp,0x16
+    80002a9a:	0000                	unimp
+    80002a9c:	0110                	addi	a2,sp,128
+    80002a9e:	0000                	unimp
+    80002aa0:	03aa                	slli	t2,t2,0xa
+    80002aa2:	0000                	unimp
+    80002aa4:	0102                	slli	sp,sp,0x0
+    80002aa6:	0000                	unimp
+    80002aa8:	0000021b          	sext.w	tp,zero
+    80002aac:	00000287          	0x287
+    80002ab0:	0239                	addi	tp,tp,14
+    80002ab2:	0000                	unimp
+    80002ab4:	01fd                	addi	gp,gp,31
+    80002ab6:	0000                	unimp
+    80002ab8:	000000cb          	fnmsub.s	ft1,ft0,ft0,ft0,rne
+    80002abc:	0058                	addi	a4,sp,4
+    80002abe:	0000                	unimp
+    80002ac0:	0118                	addi	a4,sp,128
+    80002ac2:	0000                	unimp
+    80002ac4:	000002bf 000002f7 	0x2f7000002bf
+    80002acc:	029d                	addi	t0,t0,7
+    80002ace:	0000                	unimp
+    80002ad0:	025e                	slli	tp,tp,0x17
+    80002ad2:	0000                	unimp
+    80002ad4:	00000177          	0x177
+    80002ad8:	01ff                	0x1ff
+    80002ada:	0000                	unimp
+    80002adc:	00000227          	0x227
+    80002ae0:	0291                	addi	t0,t0,4
+    80002ae2:	0000                	unimp
+    80002ae4:	03a8                	addi	a0,sp,456
+    80002ae6:	0000                	unimp
+    80002ae8:	000000c3          	fmadd.s	ft1,ft0,ft0,ft0,rne
+    80002aec:	0250                	addi	a2,sp,260
+    80002aee:	0000                	unimp
+    80002af0:	0051                	c.addi	zero,20
+    80002af2:	0000                	unimp
+    80002af4:	0239                	addi	tp,tp,14
+    80002af6:	0000                	unimp
+    80002af8:	0000010b          	0x10b
+    80002afc:	03b8                	addi	a4,sp,456
+    80002afe:	0000                	unimp
+    80002b00:	00e5                	addi	ra,ra,25
+    80002b02:	0000                	unimp
+    80002b04:	0320                	addi	s0,sp,392
+    80002b06:	0000                	unimp
+    80002b08:	0151                	addi	sp,sp,20
+    80002b0a:	0000                	unimp
+    80002b0c:	0248                	addi	a0,sp,260
+    80002b0e:	0000                	unimp
+    80002b10:	03b0                	addi	a2,sp,456
+    80002b12:	0000                	unimp
+    80002b14:	00000283          	lb	t0,0(zero) # 0 <buf.2835>
+    80002b18:	0386                	slli	t2,t2,0x1
+    80002b1a:	0000                	unimp
+    80002b1c:	0170                	addi	a2,sp,140
+    80002b1e:	0000                	unimp
+    80002b20:	00f1                	addi	ra,ra,28
+    80002b22:	0000                	unimp
+    80002b24:	01e9                	addi	gp,gp,26
+    80002b26:	0000                	unimp
+    80002b28:	0391                	addi	t2,t2,4
+    80002b2a:	0000                	unimp
+    80002b2c:	0148                	addi	a0,sp,132
+    80002b2e:	0000                	unimp
+    80002b30:	033a                	slli	t1,t1,0xe
+    80002b32:	0000                	unimp
+    80002b34:	0139                	addi	sp,sp,14
+    80002b36:	0000                	unimp
+    80002b38:	03a5                	addi	t2,t2,9
+    80002b3a:	0000                	unimp
+    80002b3c:	0250                	addi	a2,sp,260
+    80002b3e:	0000                	unimp
+    80002b40:	03d9                	addi	t2,t2,22
+    80002b42:	0000                	unimp
+    80002b44:	0184                	addi	s1,sp,192
+    80002b46:	0000                	unimp
+    80002b48:	000000c3          	fmadd.s	ft1,ft0,ft0,ft0,rne
+    80002b4c:	021f 0000 03c0      	0x3c00000021f
+    80002b52:	0000                	unimp
+    80002b54:	0289                	addi	t0,t0,2
+    80002b56:	0000                	unimp
+    80002b58:	0236                	slli	tp,tp,0xd
+    80002b5a:	0000                	unimp
+    80002b5c:	000003d3          	fadd.s	ft7,ft0,ft0,rne
+    80002b60:	015e                	slli	sp,sp,0x17
+    80002b62:	0000                	unimp
+    80002b64:	03e5                	addi	t2,t2,25
+    80002b66:	0000                	unimp
+    80002b68:	0289                	addi	t0,t0,2
+    80002b6a:	0000                	unimp
+    80002b6c:	032e                	slli	t1,t1,0xb
+    80002b6e:	0000                	unimp
+    80002b70:	0291                	addi	t0,t0,4
+    80002b72:	0000                	unimp
+    80002b74:	0000004f          	fnmadd.s	ft0,ft0,ft0,ft0,rne
+    80002b78:	00b5                	addi	ra,ra,13
+    80002b7a:	0000                	unimp
+    80002b7c:	00d0                	addi	a2,sp,68
+    80002b7e:	0000                	unimp
+    80002b80:	0000006f          	j	80002b80 <input_data+0x1c8>
+    80002b84:	03e6                	slli	t2,t2,0x19
+    80002b86:	0000                	unimp
+    80002b88:	0000035b          	0x35b
+    80002b8c:	0275                	addi	tp,tp,29
+    80002b8e:	0000                	unimp
+    80002b90:	0041                	c.addi	zero,16
+    80002b92:	0000                	unimp
+    80002b94:	0000034f          	fnmadd.s	ft6,ft0,ft0,ft0,rne
+    80002b98:	0120                	addi	s0,sp,136
+    80002b9a:	0000                	unimp
+    80002b9c:	02c0                	addi	s0,sp,324
+    80002b9e:	0000                	unimp
+    80002ba0:	015d                	addi	sp,sp,23
+    80002ba2:	0000                	unimp
+    80002ba4:	03e5                	addi	t2,t2,25
+    80002ba6:	0000                	unimp
+    80002ba8:	008d                	addi	ra,ra,3
+    80002baa:	0000                	unimp
+    80002bac:	00fd                	addi	ra,ra,31
+    80002bae:	0000                	unimp
+    80002bb0:	0389                	addi	t2,t2,2
+    80002bb2:	0000                	unimp
+    80002bb4:	000002cb          	fnmsub.s	ft5,ft0,ft0,ft0,rne
+    80002bb8:	0376                	slli	t1,t1,0x1d
+    80002bba:	0000                	unimp
+    80002bbc:	01ae                	slli	gp,gp,0xb
+    80002bbe:	0000                	unimp
+    80002bc0:	0108                	addi	a0,sp,128
+    80002bc2:	0000                	unimp
+    80002bc4:	019f 0000 0240      	0x2400000019f
+    80002bca:	0000                	unimp
+    80002bcc:	021a                	slli	tp,tp,0x6
+    80002bce:	0000                	unimp
+    80002bd0:	000003d3          	fadd.s	ft7,ft0,ft0,rne
+    80002bd4:	02bc                	addi	a5,sp,328
+    80002bd6:	0000                	unimp
+    80002bd8:	02f9                	addi	t0,t0,30
+    80002bda:	0000                	unimp
+    80002bdc:	0004                	0x4
+    80002bde:	0000                	unimp
+    80002be0:	00f1                	addi	ra,ra,28
+    80002be2:	0000                	unimp
+    80002be4:	01ee                	slli	gp,gp,0x1b
+    80002be6:	0000                	unimp
+    80002be8:	01de                	slli	gp,gp,0x17
+    80002bea:	0000                	unimp
+    80002bec:	0064                	addi	s1,sp,12
+    80002bee:	0000                	unimp
+    80002bf0:	000001f3          	0x1f3
+    80002bf4:	0360                	addi	s0,sp,396
+    80002bf6:	0000                	unimp
+    80002bf8:	00000193          	li	gp,0
+    80002bfc:	02b5                	addi	t0,t0,13
+    80002bfe:	0000                	unimp
+    80002c00:	00de                	slli	ra,ra,0x17
+    80002c02:	0000                	unimp
+    80002c04:	01a0                	addi	s0,sp,200
+    80002c06:	0000                	unimp
+    80002c08:	01bc                	addi	a5,sp,200
+    80002c0a:	0000                	unimp
+    80002c0c:	0128                	addi	a0,sp,136
+    80002c0e:	0000                	unimp
+    80002c10:	02d1                	addi	t0,t0,20
+    80002c12:	0000                	unimp
+    80002c14:	011d                	addi	sp,sp,7
+    80002c16:	0000                	unimp
+    80002c18:	02a4                	addi	s1,sp,328
+    80002c1a:	0000                	unimp
+    80002c1c:	026c                	addi	a1,sp,268
+    80002c1e:	0000                	unimp
+    80002c20:	013d                	addi	sp,sp,15
+    80002c22:	0000                	unimp
+    80002c24:	004e                	0x4e
+    80002c26:	0000                	unimp
+    80002c28:	00e0                	addi	s0,sp,76
+    80002c2a:	0000                	unimp
+    80002c2c:	015f 0000 03a9      	0x3a90000015f
+    80002c32:	0000                	unimp
+    80002c34:	021c                	addi	a5,sp,256
+    80002c36:	0000                	unimp
+    80002c38:	0120                	addi	s0,sp,136
+    80002c3a:	0000                	unimp
+    80002c3c:	0286                	slli	t0,t0,0x1
+    80002c3e:	0000                	unimp
+    80002c40:	00000077          	0x77
+    80002c44:	00a9                	addi	ra,ra,10
+    80002c46:	0000                	unimp
+    80002c48:	00000267          	jalr	tp,zero
+    80002c4c:	0000020f          	0x20f
+    80002c50:	025e                	slli	tp,tp,0x17
+    80002c52:	0000                	unimp
+    80002c54:	0121                	addi	sp,sp,8
+    80002c56:	0000                	unimp
+    80002c58:	0185                	addi	gp,gp,1
+    80002c5a:	0000                	unimp
+    80002c5c:	031c                	addi	a5,sp,384
+    80002c5e:	0000                	unimp
+    80002c60:	015f 0000 0321      	0x3210000015f
+    80002c66:	0000                	unimp
+    80002c68:	000001c7          	fmsub.s	ft3,ft0,ft0,ft0,rne
+    80002c6c:	02d0                	addi	a2,sp,324
+    80002c6e:	0000                	unimp
+    80002c70:	0116                	slli	sp,sp,0x5
+    80002c72:	0000                	unimp
+    80002c74:	02f6                	slli	t0,t0,0x1d
+    80002c76:	0000                	unimp
+    80002c78:	0000016f          	jal	sp,80002c78 <input_data+0x2c0>
+    80002c7c:	02e9                	addi	t0,t0,26
+    80002c7e:	0000                	unimp
+    80002c80:	0166                	slli	sp,sp,0x19
+    80002c82:	0000                	unimp
+    80002c84:	005c                	addi	a5,sp,4
+    80002c86:	0000                	unimp
+    80002c88:	0248                	addi	a0,sp,260
+    80002c8a:	0000                	unimp
+    80002c8c:	03dd                	addi	t2,t2,23
+    80002c8e:	0000                	unimp
+    80002c90:	003e                	0x3e
+    80002c92:	0000                	unimp
+    80002c94:	0000010f          	0x10f
+    80002c98:	03d9                	addi	t2,t2,22
+    80002c9a:	0000                	unimp
+    80002c9c:	0355                	addi	t1,t1,21
+    80002c9e:	0000                	unimp
+    80002ca0:	00000193          	li	gp,0
+    80002ca4:	0314                	addi	a3,sp,384
+    80002ca6:	0000                	unimp
+    80002ca8:	015a                	slli	sp,sp,0x16
+    80002caa:	0000                	unimp
+    80002cac:	00000213          	li	tp,0
+    80002cb0:	0205                	addi	tp,tp,1
+    80002cb2:	0000                	unimp
+    80002cb4:	00de                	slli	ra,ra,0x17
+    80002cb6:	0000                	unimp
+    80002cb8:	0000022f          	0x22f
+    80002cbc:	01cd                	addi	gp,gp,19
+    80002cbe:	0000                	unimp
+    80002cc0:	038c                	addi	a1,sp,448
+    80002cc2:	0000                	unimp
+    80002cc4:	00f1                	addi	ra,ra,28
+    80002cc6:	0000                	unimp
+    80002cc8:	00000307          	0x307
+    80002ccc:	0166                	slli	sp,sp,0x19
+    80002cce:	0000                	unimp
+    80002cd0:	00ff                	0xff
+    80002cd2:	0000                	unimp
+    80002cd4:	014c                	addi	a1,sp,132
+    80002cd6:	0000                	unimp
+    80002cd8:	030a                	slli	t1,t1,0x2
+    80002cda:	0000                	unimp
+    80002cdc:	02ac                	addi	a1,sp,328
+    80002cde:	0000                	unimp
+    80002ce0:	0256                	slli	tp,tp,0x15
+    80002ce2:	0000                	unimp
+    80002ce4:	02e4                	addi	s1,sp,332
+    80002ce6:	0000                	unimp
+    80002ce8:	0000008f          	0x8f
+    80002cec:	01be                	slli	gp,gp,0xf
+    80002cee:	0000                	unimp
+    80002cf0:	0021                	c.addi	zero,8
+    80002cf2:	0000                	unimp
+    80002cf4:	00000137          	lui	sp,0x0
+    80002cf8:	007d                	c.addi	zero,31
+    80002cfa:	0000                	unimp
+    80002cfc:	000002e7          	jalr	t0,zero
+    80002d00:	03ad                	addi	t2,t2,11
+    80002d02:	0000                	unimp
+    80002d04:	022d                	addi	tp,tp,11
+    80002d06:	0000                	unimp
+    80002d08:	03a5                	addi	t2,t2,9
+    80002d0a:	0000                	unimp
+    80002d0c:	01df 0000 031f      	0x31f000001df
+    80002d12:	0000                	unimp
+    80002d14:	022d                	addi	tp,tp,11
+    80002d16:	0000                	unimp
+    80002d18:	0229                	addi	tp,tp,10
+    80002d1a:	0000                	unimp
+    80002d1c:	039d                	addi	t2,t2,7
+    80002d1e:	0000                	unimp
+    80002d20:	000001af          	0x1af
+    80002d24:	031c                	addi	a5,sp,384
+    80002d26:	0000                	unimp
+    80002d28:	0288                	addi	a0,sp,320
+    80002d2a:	0000                	unimp
+    80002d2c:	0165                	addi	sp,sp,25
+    80002d2e:	0000                	unimp
+    80002d30:	03b8                	addi	a4,sp,456
+    80002d32:	0000                	unimp
+    80002d34:	0000037b          	0x37b
+    80002d38:	011f 0000 029a      	0x29a0000011f
+    80002d3e:	0000                	unimp
+    80002d40:	00000013          	nop
+    80002d44:	0202                	slli	tp,tp,0x0
+    80002d46:	0000                	unimp
+    80002d48:	0031                	c.addi	zero,12
+    80002d4a:	0000                	unimp
+    80002d4c:	022d                	addi	tp,tp,11
+    80002d4e:	0000                	unimp
+    80002d50:	0056                	0x56
+    80002d52:	0000                	unimp
+    80002d54:	0366                	slli	t1,t1,0x19
+    80002d56:	0000                	unimp
+    80002d58:	005f 0000 0355      	0x3550000005f
+    80002d5e:	0000                	unimp
+    80002d60:	01b9                	addi	gp,gp,14
+    80002d62:	0000                	unimp
+    80002d64:	01b8                	addi	a4,sp,200
+    80002d66:	0000                	unimp
+    80002d68:	0000024b          	fnmsub.s	ft4,ft0,ft0,ft0,rne
+    80002d6c:	003d                	c.addi	zero,15
+    80002d6e:	0000                	unimp
+    80002d70:	0266                	slli	tp,tp,0x19
+    80002d72:	0000                	unimp
+    80002d74:	02a6                	slli	t0,t0,0x9
+    80002d76:	0000                	unimp
+    80002d78:	017e                	slli	sp,sp,0x1f
+    80002d7a:	0000                	unimp
+    80002d7c:	018c                	addi	a1,sp,192
+    80002d7e:	0000                	unimp
+    80002d80:	0118                	addi	a4,sp,128
+    80002d82:	0000                	unimp
+    80002d84:	0009                	c.addi	zero,2
+    80002d86:	0000                	unimp
+    80002d88:	0328                	addi	a0,sp,392
+    80002d8a:	0000                	unimp
+    80002d8c:	0011                	c.addi	zero,4
+    80002d8e:	0000                	unimp
+    80002d90:	000003cb          	fnmsub.s	ft7,ft0,ft0,ft0,rne
+    80002d94:	00aa                	slli	ra,ra,0xa
+    80002d96:	0000                	unimp
+    80002d98:	00000333          	add	t1,zero,zero
+    80002d9c:	00000123          	sb	zero,2(zero) # 2 <buf.2835+0x2>
+    80002da0:	0158                	addi	a4,sp,132
+    80002da2:	0000                	unimp
+    80002da4:	017c                	addi	a5,sp,140
+    80002da6:	0000                	unimp
+    80002da8:	01c2                	slli	gp,gp,0x10
+    80002daa:	0000                	unimp
+    80002dac:	0218                	addi	a4,sp,256
+    80002dae:	0000                	unimp
+    80002db0:	0200                	addi	s0,sp,256
+    80002db2:	0000                	unimp
+    80002db4:	00b9                	addi	ra,ra,14
+    80002db6:	0000                	unimp
+    80002db8:	03c5                	addi	t2,t2,17
+    80002dba:	0000                	unimp
+    80002dbc:	0395                	addi	t2,t2,5
+    80002dbe:	0000                	unimp
+    80002dc0:	0000015b          	0x15b
+    80002dc4:	0000021b          	sext.w	tp,zero
+    80002dc8:	0328                	addi	a0,sp,392
+    80002dca:	0000                	unimp
+    80002dcc:	000003d7          	0x3d7
+    80002dd0:	0372                	slli	t1,t1,0x1c
+    80002dd2:	0000                	unimp
+    80002dd4:	00000377          	0x377
+    80002dd8:	0219                	addi	tp,tp,6
+    80002dda:	0000                	unimp
+    80002ddc:	0036                	0x36
+    80002dde:	0000                	unimp
+    80002de0:	03b2                	slli	t2,t2,0xc
+    80002de2:	0000                	unimp
+    80002de4:	0264                	addi	s1,sp,268
+    80002de6:	0000                	unimp
+    80002de8:	02bd                	addi	t0,t0,15
+    80002dea:	0000                	unimp
+    80002dec:	000003b7          	lui	t2,0x0
+    80002df0:	0164                	addi	s1,sp,140
+    80002df2:	0000                	unimp
+    80002df4:	01df 0000 0237      	0x237000001df
+    80002dfa:	0000                	unimp
+    80002dfc:	00000097          	auipc	ra,0x0
+    80002e00:	0000037b          	0x37b
+    80002e04:	00000007          	0x7
+    80002e08:	0016                	0x16
+    80002e0a:	0000                	unimp
+    80002e0c:	0281                	addi	t0,t0,0
+    80002e0e:	0000                	unimp
+    80002e10:	0238                	addi	a4,sp,264
+    80002e12:	0000                	unimp
+    80002e14:	0000014f          	fnmadd.s	ft2,ft0,ft0,ft0,rne
+    80002e18:	0299                	addi	t0,t0,6
+    80002e1a:	0000                	unimp
+    80002e1c:	02da                	slli	t0,t0,0x16
+    80002e1e:	0000                	unimp
+    80002e20:	000001a7          	0x1a7
+    80002e24:	005f 0000 01b2      	0x1b20000005f
+    80002e2a:	0000                	unimp
+    80002e2c:	02d8                	addi	a4,sp,324
+    80002e2e:	0000                	unimp
+    80002e30:	009e                	slli	ra,ra,0x7
+    80002e32:	0000                	unimp
+    80002e34:	0118                	addi	a4,sp,128
+    80002e36:	0000                	unimp
+    80002e38:	0002                	0x2
+    80002e3a:	0000                	unimp
+    80002e3c:	0000018b          	0x18b
+    80002e40:	0054                	addi	a3,sp,4
+    80002e42:	0000                	unimp
+    80002e44:	02b0                	addi	a2,sp,328
+    80002e46:	0000                	unimp
+    80002e48:	000000f7          	0xf7
+    80002e4c:	0000038f          	0x38f
+    80002e50:	0031                	c.addi	zero,12
+    80002e52:	0000                	unimp
+    80002e54:	01dc                	addi	a5,sp,196
+    80002e56:	0000                	unimp
+    80002e58:	000001b3          	add	gp,zero,zero
+    80002e5c:	0000032f          	0x32f
+    80002e60:	0318                	addi	a4,sp,384
+    80002e62:	0000                	unimp
+    80002e64:	02d9                	addi	t0,t0,22
+    80002e66:	0000                	unimp
+    80002e68:	0365                	addi	t1,t1,25
+    80002e6a:	0000                	unimp
+    80002e6c:	0109                	addi	sp,sp,2
+    80002e6e:	0000                	unimp
+    80002e70:	01e6                	slli	gp,gp,0x19
+    80002e72:	0000                	unimp
+    80002e74:	007f                	0x7f
+    80002e76:	0000                	unimp
+    80002e78:	019e                	slli	gp,gp,0x7
+    80002e7a:	0000                	unimp
+    80002e7c:	00ec                	addi	a1,sp,76
+    80002e7e:	0000                	unimp
+    80002e80:	0171                	addi	sp,sp,28
+    80002e82:	0000                	unimp
+    80002e84:	00d6                	slli	ra,ra,0x15
+    80002e86:	0000                	unimp
+    80002e88:	0224                	addi	s1,sp,264
+    80002e8a:	0000                	unimp
+    80002e8c:	00b4                	addi	a3,sp,72
+    80002e8e:	0000                	unimp
+    80002e90:	0206                	slli	tp,tp,0x1
+    80002e92:	0000                	unimp
+    80002e94:	0006                	0x6
+    80002e96:	0000                	unimp
+    80002e98:	0378                	addi	a4,sp,396
+    80002e9a:	0000                	unimp
+    80002e9c:	000001f7          	0x1f7
+    80002ea0:	02aa                	slli	t0,t0,0xa
+    80002ea2:	0000                	unimp
+    80002ea4:	0254                	addi	a3,sp,260
+    80002ea6:	0000                	unimp
+    80002ea8:	011c                	addi	a5,sp,128
+    80002eaa:	0000                	unimp
+    80002eac:	00ad                	addi	ra,ra,11
+    80002eae:	0000                	unimp
+    80002eb0:	0108                	addi	a0,sp,128
+    80002eb2:	0000                	unimp
+    80002eb4:	00000283          	lb	t0,0(zero) # 0 <buf.2835>
+    80002eb8:	000001f3          	0x1f3
+    80002ebc:	015a                	slli	sp,sp,0x16
+    80002ebe:	0000                	unimp
+    80002ec0:	0122                	slli	sp,sp,0x8
+    80002ec2:	0000                	unimp
+    80002ec4:	00000257          	0x257
+    80002ec8:	0381                	addi	t2,t2,0
+    80002eca:	0000                	unimp
+    80002ecc:	0044                	addi	s1,sp,4
+    80002ece:	0000                	unimp
+    80002ed0:	000000d7          	0xd7
+    80002ed4:	0351                	addi	t1,t1,20
+    80002ed6:	0000                	unimp
+    80002ed8:	000002db          	0x2db
+    80002edc:	0292                	slli	t0,t0,0x4
+    80002ede:	0000                	unimp
+    80002ee0:	02b0                	addi	a2,sp,328
+    80002ee2:	0000                	unimp
+    80002ee4:	0000026b          	0x26b
+    80002ee8:	000000fb          	0xfb
+    80002eec:	0079                	c.addi	zero,30
+    80002eee:	0000                	unimp
+    80002ef0:	0312                	slli	t1,t1,0x4
+    80002ef2:	0000                	unimp
+    80002ef4:	00000083          	lb	ra,0(zero) # 0 <buf.2835>
+    80002ef8:	0000022b          	0x22b
+    80002efc:	033c                	addi	a5,sp,392
+    80002efe:	0000                	unimp
+    80002f00:	012e                	slli	sp,sp,0xb
+    80002f02:	0000                	unimp
+    80002f04:	0000029b          	sext.w	t0,zero
+    80002f08:	0210                	addi	a2,sp,256
+    80002f0a:	0000                	unimp
+    80002f0c:	01b1                	addi	gp,gp,12
+    80002f0e:	0000                	unimp
+    80002f10:	0220                	addi	s0,sp,264
+    80002f12:	0000                	unimp
+    80002f14:	000001e7          	jalr	gp,zero
+    80002f18:	0142                	slli	sp,sp,0x10
+    80002f1a:	0000                	unimp
+    80002f1c:	02f1                	addi	t0,t0,28
+    80002f1e:	0000                	unimp
+    80002f20:	000003b3          	add	t2,zero,zero
+    80002f24:	007d                	c.addi	zero,31
+    80002f26:	0000                	unimp
+    80002f28:	011f 0000 0272      	0x2720000011f
+    80002f2e:	0000                	unimp
+    80002f30:	0338                	addi	a4,sp,392
+    80002f32:	0000                	unimp
+    80002f34:	000e                	0xe
+    80002f36:	0000                	unimp
+    80002f38:	0130                	addi	a2,sp,136
+    80002f3a:	0000                	unimp
+    80002f3c:	000a                	0xa
+    80002f3e:	0000                	unimp
+    80002f40:	0314                	addi	a3,sp,384
+    80002f42:	0000                	unimp
+    80002f44:	00000193          	li	gp,0
+    80002f48:	02dd                	addi	t0,t0,23
+    80002f4a:	0000                	unimp
+    80002f4c:	006a                	0x6a
+    80002f4e:	0000                	unimp
+    80002f50:	000003bf 000002bf 	0x2bf000003bf
+    80002f58:	016e                	slli	sp,sp,0x1b
+    80002f5a:	0000                	unimp
+    80002f5c:	0332                	slli	t1,t1,0xc
+    80002f5e:	0000                	unimp
+    80002f60:	02d2                	slli	t0,t0,0x14
+    80002f62:	0000                	unimp
+    80002f64:	03c4                	addi	s1,sp,452
+    80002f66:	0000                	unimp
+    80002f68:	0126                	slli	sp,sp,0x9
+    80002f6a:	0000                	unimp
+    80002f6c:	0196                	slli	gp,gp,0x5
+    80002f6e:	0000                	unimp
+    80002f70:	000003cf          	fnmadd.s	ft7,ft0,ft0,ft0,rne
+    80002f74:	036a                	slli	t1,t1,0x1a
+    80002f76:	0000                	unimp
+    80002f78:	028d                	addi	t0,t0,3
+    80002f7a:	0000                	unimp
+    80002f7c:	0358                	addi	a4,sp,388
+    80002f7e:	0000                	unimp
+    80002f80:	02ec                	addi	a1,sp,332
+    80002f82:	0000                	unimp
+    80002f84:	0056                	0x56
+    80002f86:	0000                	unimp
+    80002f88:	0000005b          	0x5b
+    80002f8c:	003c                	addi	a5,sp,8
+    80002f8e:	0000                	unimp
+    80002f90:	017a                	slli	sp,sp,0x1e
+    80002f92:	0000                	unimp
+    80002f94:	0294                	addi	a3,sp,320
+    80002f96:	0000                	unimp
+    80002f98:	0069                	c.addi	zero,26
+    80002f9a:	0000                	unimp
+    80002f9c:	0000029b          	sext.w	t0,zero
+    80002fa0:	0066                	0x66
+    80002fa2:	0000                	unimp
+    80002fa4:	0099                	addi	ra,ra,6
+    80002fa6:	0000                	unimp
+    80002fa8:	017d                	addi	sp,sp,31
+    80002faa:	0000                	unimp
+    80002fac:	0079                	c.addi	zero,30
+    80002fae:	0000                	unimp
+    80002fb0:	0000028b          	0x28b
+    80002fb4:	0062                	0x62
+    80002fb6:	0000                	unimp
+    80002fb8:	0339                	addi	t1,t1,14
+    80002fba:	0000                	unimp
+    80002fbc:	019c                	addi	a5,sp,192
+    80002fbe:	0000                	unimp
+    80002fc0:	0348                	addi	a0,sp,388
+    80002fc2:	0000                	unimp
+    80002fc4:	00ec                	addi	a1,sp,76
+    80002fc6:	0000                	unimp
+    80002fc8:	0164                	addi	s1,sp,140
+    80002fca:	0000                	unimp
+    80002fcc:	000c                	0xc
+    80002fce:	0000                	unimp
+    80002fd0:	0094                	addi	a3,sp,64
+    80002fd2:	0000                	unimp
+    80002fd4:	000001a7          	0x1a7
+    80002fd8:	0036                	0x36
+    80002fda:	0000                	unimp
+    80002fdc:	03c5                	addi	t2,t2,17
+    80002fde:	0000                	unimp
+    80002fe0:	008c                	addi	a1,sp,64
+    80002fe2:	0000                	unimp
+    80002fe4:	00d8                	addi	a4,sp,68
+    80002fe6:	0000                	unimp
+    80002fe8:	000003bb          	addw	t2,zero,zero
+    80002fec:	026d                	addi	tp,tp,27
+    80002fee:	0000                	unimp
+    80002ff0:	00000157          	0x157
+    80002ff4:	0169                	addi	sp,sp,26
+    80002ff6:	0000                	unimp
+
+0000000080002ff8 <verify_data>:
+    80002ff8:	0000                	unimp
+    80002ffa:	0000                	unimp
+    80002ffc:	01c6                	slli	gp,gp,0x11
+    80002ffe:	0000                	unimp
+    80003000:	01c6                	slli	gp,gp,0x11
+    80003002:	0000                	unimp
+    80003004:	0234                	addi	a3,sp,264
+    80003006:	0000                	unimp
+    80003008:	0000014f          	fnmadd.s	ft2,ft0,ft0,ft0,rne
+    8000300c:	000000bb          	addw	ra,zero,zero
+    80003010:	000000bb          	addw	ra,zero,zero
+    80003014:	02ed                	addi	t0,t0,27
+    80003016:	0000                	unimp
+    80003018:	02ed                	addi	t0,t0,27
+    8000301a:	0000                	unimp
+    8000301c:	016d                	addi	sp,sp,27
+    8000301e:	0000                	unimp
+    80003020:	016d                	addi	sp,sp,27
+    80003022:	0000                	unimp
+    80003024:	015e                	slli	sp,sp,0x17
+    80003026:	0000                	unimp
+    80003028:	0084                	addi	s1,sp,64
+    8000302a:	0000                	unimp
+    8000302c:	0084                	addi	s1,sp,64
+    8000302e:	0000                	unimp
+    80003030:	0099                	addi	ra,ra,6
+    80003032:	0000                	unimp
+    80003034:	0248                	addi	a0,sp,260
+    80003036:	0000                	unimp
+    80003038:	00d8                	addi	a4,sp,68
+    8000303a:	0000                	unimp
+    8000303c:	0248                	addi	a0,sp,260
+    8000303e:	0000                	unimp
+    80003040:	00d8                	addi	a4,sp,68
+    80003042:	0000                	unimp
+    80003044:	026d                	addi	tp,tp,27
+    80003046:	0000                	unimp
+    80003048:	00d2                	slli	ra,ra,0x14
+    8000304a:	0000                	unimp
+    8000304c:	00d2                	slli	ra,ra,0x14
+    8000304e:	0000                	unimp
+    80003050:	00d2                	slli	ra,ra,0x14
+    80003052:	0000                	unimp
+    80003054:	023c                	addi	a5,sp,264
+    80003056:	0000                	unimp
+    80003058:	023c                	addi	a5,sp,264
+    8000305a:	0000                	unimp
+    8000305c:	037a                	slli	t1,t1,0x1e
+    8000305e:	0000                	unimp
+    80003060:	0251                	addi	tp,tp,20
+    80003062:	0000                	unimp
+    80003064:	0251                	addi	tp,tp,20
+    80003066:	0000                	unimp
+    80003068:	0251                	addi	tp,tp,20
+    8000306a:	0000                	unimp
+    8000306c:	02b6                	slli	t0,t0,0xd
+    8000306e:	0000                	unimp
+    80003070:	02b6                	slli	t0,t0,0xd
+    80003072:	0000                	unimp
+    80003074:	02b6                	slli	t0,t0,0xd
+    80003076:	0000                	unimp
+    80003078:	00e4                	addi	s1,sp,76
+    8000307a:	0000                	unimp
+    8000307c:	006e                	0x6e
+    8000307e:	0000                	unimp
+    80003080:	006e                	0x6e
+    80003082:	0000                	unimp
+    80003084:	0074                	addi	a3,sp,12
+    80003086:	0000                	unimp
+    80003088:	02ee                	slli	t0,t0,0x1b
+    8000308a:	0000                	unimp
+    8000308c:	0128                	addi	a0,sp,136
+    8000308e:	0000                	unimp
+    80003090:	0286                	slli	t0,t0,0x1
+    80003092:	0000                	unimp
+    80003094:	01aa                	slli	gp,gp,0xa
+    80003096:	0000                	unimp
+    80003098:	01f4                	addi	a3,sp,204
+    8000309a:	0000                	unimp
+    8000309c:	01aa                	slli	gp,gp,0xa
+    8000309e:	0000                	unimp
+    800030a0:	01b4                	addi	a3,sp,200
+    800030a2:	0000                	unimp
+    800030a4:	01b4                	addi	a3,sp,200
+    800030a6:	0000                	unimp
+    800030a8:	00000293          	li	t0,0
+    800030ac:	02bd                	addi	t0,t0,15
+    800030ae:	0000                	unimp
+    800030b0:	0306                	slli	t1,t1,0x1
+    800030b2:	0000                	unimp
+    800030b4:	0306                	slli	t1,t1,0x1
+    800030b6:	0000                	unimp
+    800030b8:	032c                	addi	a1,sp,392
+    800030ba:	0000                	unimp
+    800030bc:	02a6                	slli	t0,t0,0x9
+    800030be:	0000                	unimp
+    800030c0:	02a6                	slli	t0,t0,0x9
+    800030c2:	0000                	unimp
+    800030c4:	02a6                	slli	t0,t0,0x9
+    800030c6:	0000                	unimp
+    800030c8:	02b8                	addi	a4,sp,328
+    800030ca:	0000                	unimp
+    800030cc:	02b8                	addi	a4,sp,328
+    800030ce:	0000                	unimp
+    800030d0:	0234                	addi	a3,sp,264
+    800030d2:	0000                	unimp
+    800030d4:	01da                	slli	gp,gp,0x16
+    800030d6:	0000                	unimp
+    800030d8:	01da                	slli	gp,gp,0x16
+    800030da:	0000                	unimp
+    800030dc:	01da                	slli	gp,gp,0x16
+    800030de:	0000                	unimp
+    800030e0:	0110                	addi	a2,sp,128
+    800030e2:	0000                	unimp
+    800030e4:	0000021b          	sext.w	tp,zero
+    800030e8:	0000021b          	sext.w	tp,zero
+    800030ec:	0239                	addi	tp,tp,14
+    800030ee:	0000                	unimp
+    800030f0:	0239                	addi	tp,tp,14
+    800030f2:	0000                	unimp
+    800030f4:	01fd                	addi	gp,gp,31
+    800030f6:	0000                	unimp
+    800030f8:	000000cb          	fnmsub.s	ft1,ft0,ft0,ft0,rne
+    800030fc:	000000cb          	fnmsub.s	ft1,ft0,ft0,ft0,rne
+    80003100:	0118                	addi	a4,sp,128
+    80003102:	0000                	unimp
+    80003104:	000002bf 000002bf 	0x2bf000002bf
+    8000310c:	029d                	addi	t0,t0,7
+    8000310e:	0000                	unimp
+    80003110:	025e                	slli	tp,tp,0x17
+    80003112:	0000                	unimp
+    80003114:	01ff                	0x1ff
+    80003116:	0000                	unimp
+    80003118:	01ff                	0x1ff
+    8000311a:	0000                	unimp
+    8000311c:	00000227          	0x227
+    80003120:	0291                	addi	t0,t0,4
+    80003122:	0000                	unimp
+    80003124:	0291                	addi	t0,t0,4
+    80003126:	0000                	unimp
+    80003128:	0250                	addi	a2,sp,260
+    8000312a:	0000                	unimp
+    8000312c:	000000c3          	fmadd.s	ft1,ft0,ft0,ft0,rne
+    80003130:	0239                	addi	tp,tp,14
+    80003132:	0000                	unimp
+    80003134:	0000010b          	0x10b
+    80003138:	0239                	addi	tp,tp,14
+    8000313a:	0000                	unimp
+    8000313c:	0000010b          	0x10b
+    80003140:	0320                	addi	s0,sp,392
+    80003142:	0000                	unimp
+    80003144:	0151                	addi	sp,sp,20
+    80003146:	0000                	unimp
+    80003148:	0248                	addi	a0,sp,260
+    8000314a:	0000                	unimp
+    8000314c:	0248                	addi	a0,sp,260
+    8000314e:	0000                	unimp
+    80003150:	00000283          	lb	t0,0(zero) # 0 <buf.2835>
+    80003154:	0386                	slli	t2,t2,0x1
+    80003156:	0000                	unimp
+    80003158:	00000283          	lb	t0,0(zero) # 0 <buf.2835>
+    8000315c:	0170                	addi	a2,sp,140
+    8000315e:	0000                	unimp
+    80003160:	0170                	addi	a2,sp,140
+    80003162:	0000                	unimp
+    80003164:	01e9                	addi	gp,gp,26
+    80003166:	0000                	unimp
+    80003168:	01e9                	addi	gp,gp,26
+    8000316a:	0000                	unimp
+    8000316c:	033a                	slli	t1,t1,0xe
+    8000316e:	0000                	unimp
+    80003170:	0148                	addi	a0,sp,132
+    80003172:	0000                	unimp
+    80003174:	033a                	slli	t1,t1,0xe
+    80003176:	0000                	unimp
+    80003178:	0250                	addi	a2,sp,260
+    8000317a:	0000                	unimp
+    8000317c:	03a5                	addi	t2,t2,9
+    8000317e:	0000                	unimp
+    80003180:	0250                	addi	a2,sp,260
+    80003182:	0000                	unimp
+    80003184:	0184                	addi	s1,sp,192
+    80003186:	0000                	unimp
+    80003188:	0184                	addi	s1,sp,192
+    8000318a:	0000                	unimp
+    8000318c:	021f 0000 0289      	0x2890000021f
+    80003192:	0000                	unimp
+    80003194:	0289                	addi	t0,t0,2
+    80003196:	0000                	unimp
+    80003198:	0289                	addi	t0,t0,2
+    8000319a:	0000                	unimp
+    8000319c:	0236                	slli	tp,tp,0xd
+    8000319e:	0000                	unimp
+    800031a0:	000003d3          	fadd.s	ft7,ft0,ft0,rne
+    800031a4:	0289                	addi	t0,t0,2
+    800031a6:	0000                	unimp
+    800031a8:	032e                	slli	t1,t1,0xb
+    800031aa:	0000                	unimp
+    800031ac:	0291                	addi	t0,t0,4
+    800031ae:	0000                	unimp
+    800031b0:	0291                	addi	t0,t0,4
+    800031b2:	0000                	unimp
+    800031b4:	00b5                	addi	ra,ra,13
+    800031b6:	0000                	unimp
+    800031b8:	00b5                	addi	ra,ra,13
+    800031ba:	0000                	unimp
+    800031bc:	00b5                	addi	ra,ra,13
+    800031be:	0000                	unimp
+    800031c0:	00d0                	addi	a2,sp,68
+    800031c2:	0000                	unimp
+    800031c4:	0000035b          	0x35b
+    800031c8:	0000035b          	0x35b
+    800031cc:	0275                	addi	tp,tp,29
+    800031ce:	0000                	unimp
+    800031d0:	0275                	addi	tp,tp,29
+    800031d2:	0000                	unimp
+    800031d4:	0120                	addi	s0,sp,136
+    800031d6:	0000                	unimp
+    800031d8:	02c0                	addi	s0,sp,324
+    800031da:	0000                	unimp
+    800031dc:	015d                	addi	sp,sp,23
+    800031de:	0000                	unimp
+    800031e0:	02c0                	addi	s0,sp,324
+    800031e2:	0000                	unimp
+    800031e4:	015d                	addi	sp,sp,23
+    800031e6:	0000                	unimp
+    800031e8:	00fd                	addi	ra,ra,31
+    800031ea:	0000                	unimp
+    800031ec:	00fd                	addi	ra,ra,31
+    800031ee:	0000                	unimp
+    800031f0:	000002cb          	fnmsub.s	ft5,ft0,ft0,ft0,rne
+    800031f4:	0376                	slli	t1,t1,0x1d
+    800031f6:	0000                	unimp
+    800031f8:	000002cb          	fnmsub.s	ft5,ft0,ft0,ft0,rne
+    800031fc:	01ae                	slli	gp,gp,0xb
+    800031fe:	0000                	unimp
+    80003200:	019f 0000 019f      	0x19f0000019f
+    80003206:	0000                	unimp
+    80003208:	021a                	slli	tp,tp,0x6
+    8000320a:	0000                	unimp
+    8000320c:	0240                	addi	s0,sp,260
+    8000320e:	0000                	unimp
+    80003210:	02bc                	addi	a5,sp,328
+    80003212:	0000                	unimp
+    80003214:	02f9                	addi	t0,t0,30
+    80003216:	0000                	unimp
+    80003218:	02bc                	addi	a5,sp,328
+    8000321a:	0000                	unimp
+    8000321c:	00f1                	addi	ra,ra,28
+    8000321e:	0000                	unimp
+    80003220:	00f1                	addi	ra,ra,28
+    80003222:	0000                	unimp
+    80003224:	01de                	slli	gp,gp,0x17
+    80003226:	0000                	unimp
+    80003228:	01de                	slli	gp,gp,0x17
+    8000322a:	0000                	unimp
+    8000322c:	01de                	slli	gp,gp,0x17
+    8000322e:	0000                	unimp
+    80003230:	000001f3          	0x1f3
+    80003234:	000001f3          	0x1f3
+    80003238:	02b5                	addi	t0,t0,13
+    8000323a:	0000                	unimp
+    8000323c:	00000193          	li	gp,0
+    80003240:	01a0                	addi	s0,sp,200
+    80003242:	0000                	unimp
+    80003244:	01a0                	addi	s0,sp,200
+    80003246:	0000                	unimp
+    80003248:	01a0                	addi	s0,sp,200
+    8000324a:	0000                	unimp
+    8000324c:	01bc                	addi	a5,sp,200
+    8000324e:	0000                	unimp
+    80003250:	0128                	addi	a0,sp,136
+    80003252:	0000                	unimp
+    80003254:	02a4                	addi	s1,sp,328
+    80003256:	0000                	unimp
+    80003258:	026c                	addi	a1,sp,268
+    8000325a:	0000                	unimp
+    8000325c:	026c                	addi	a1,sp,268
+    8000325e:	0000                	unimp
+    80003260:	013d                	addi	sp,sp,15
+    80003262:	0000                	unimp
+    80003264:	00e0                	addi	s0,sp,76
+    80003266:	0000                	unimp
+    80003268:	00e0                	addi	s0,sp,76
+    8000326a:	0000                	unimp
+    8000326c:	015f 0000 021c      	0x21c0000015f
+    80003272:	0000                	unimp
+    80003274:	021c                	addi	a5,sp,256
+    80003276:	0000                	unimp
+    80003278:	021c                	addi	a5,sp,256
+    8000327a:	0000                	unimp
+    8000327c:	0120                	addi	s0,sp,136
+    8000327e:	0000                	unimp
+    80003280:	00a9                	addi	ra,ra,10
+    80003282:	0000                	unimp
+    80003284:	00a9                	addi	ra,ra,10
+    80003286:	0000                	unimp
+    80003288:	0000020f          	0x20f
+    8000328c:	025e                	slli	tp,tp,0x17
+    8000328e:	0000                	unimp
+    80003290:	0000020f          	0x20f
+    80003294:	0185                	addi	gp,gp,1
+    80003296:	0000                	unimp
+    80003298:	0185                	addi	gp,gp,1
+    8000329a:	0000                	unimp
+    8000329c:	0185                	addi	gp,gp,1
+    8000329e:	0000                	unimp
+    800032a0:	031c                	addi	a5,sp,384
+    800032a2:	0000                	unimp
+    800032a4:	000001c7          	fmsub.s	ft3,ft0,ft0,ft0,rne
+    800032a8:	02d0                	addi	a2,sp,324
+    800032aa:	0000                	unimp
+    800032ac:	000001c7          	fmsub.s	ft3,ft0,ft0,ft0,rne
+    800032b0:	02d0                	addi	a2,sp,324
+    800032b2:	0000                	unimp
+    800032b4:	0000016f          	jal	sp,800032b4 <verify_data+0x2bc>
+    800032b8:	02e9                	addi	t0,t0,26
+    800032ba:	0000                	unimp
+    800032bc:	0000016f          	jal	sp,800032bc <verify_data+0x2c4>
+    800032c0:	0166                	slli	sp,sp,0x19
+    800032c2:	0000                	unimp
+    800032c4:	0166                	slli	sp,sp,0x19
+    800032c6:	0000                	unimp
+    800032c8:	0248                	addi	a0,sp,260
+    800032ca:	0000                	unimp
+    800032cc:	0248                	addi	a0,sp,260
+    800032ce:	0000                	unimp
+    800032d0:	0000010f          	0x10f
+    800032d4:	0000010f          	0x10f
+    800032d8:	0355                	addi	t1,t1,21
+    800032da:	0000                	unimp
+    800032dc:	0355                	addi	t1,t1,21
+    800032de:	0000                	unimp
+    800032e0:	0314                	addi	a3,sp,384
+    800032e2:	0000                	unimp
+    800032e4:	00000193          	li	gp,0
+    800032e8:	00000213          	li	tp,0
+    800032ec:	0205                	addi	tp,tp,1
+    800032ee:	0000                	unimp
+    800032f0:	0205                	addi	tp,tp,1
+    800032f2:	0000                	unimp
+    800032f4:	0205                	addi	tp,tp,1
+    800032f6:	0000                	unimp
+    800032f8:	01cd                	addi	gp,gp,19
+    800032fa:	0000                	unimp
+    800032fc:	0000022f          	0x22f
+    80003300:	01cd                	addi	gp,gp,19
+    80003302:	0000                	unimp
+    80003304:	00000307          	0x307
+    80003308:	0166                	slli	sp,sp,0x19
+    8000330a:	0000                	unimp
+    8000330c:	0166                	slli	sp,sp,0x19
+    8000330e:	0000                	unimp
+    80003310:	014c                	addi	a1,sp,132
+    80003312:	0000                	unimp
+    80003314:	014c                	addi	a1,sp,132
+    80003316:	0000                	unimp
+    80003318:	02ac                	addi	a1,sp,328
+    8000331a:	0000                	unimp
+    8000331c:	02ac                	addi	a1,sp,328
+    8000331e:	0000                	unimp
+    80003320:	02ac                	addi	a1,sp,328
+    80003322:	0000                	unimp
+    80003324:	0256                	slli	tp,tp,0x15
+    80003326:	0000                	unimp
+    80003328:	01be                	slli	gp,gp,0xf
+    8000332a:	0000                	unimp
+    8000332c:	0000008f          	0x8f
+    80003330:	00000137          	lui	sp,0x0
+    80003334:	007d                	c.addi	zero,31
+    80003336:	0000                	unimp
+    80003338:	00000137          	lui	sp,0x0
+    8000333c:	000002e7          	jalr	t0,zero
+    80003340:	000002e7          	jalr	t0,zero
+    80003344:	03a5                	addi	t2,t2,9
+    80003346:	0000                	unimp
+    80003348:	022d                	addi	tp,tp,11
+    8000334a:	0000                	unimp
+    8000334c:	031f 0000 022d      	0x22d0000031f
+    80003352:	0000                	unimp
+    80003354:	022d                	addi	tp,tp,11
+    80003356:	0000                	unimp
+    80003358:	022d                	addi	tp,tp,11
+    8000335a:	0000                	unimp
+    8000335c:	0229                	addi	tp,tp,10
+    8000335e:	0000                	unimp
+    80003360:	031c                	addi	a5,sp,384
+    80003362:	0000                	unimp
+    80003364:	0288                	addi	a0,sp,320
+    80003366:	0000                	unimp
+    80003368:	0288                	addi	a0,sp,320
+    8000336a:	0000                	unimp
+    8000336c:	0288                	addi	a0,sp,320
+    8000336e:	0000                	unimp
+    80003370:	0000037b          	0x37b
+    80003374:	0000037b          	0x37b
+    80003378:	029a                	slli	t0,t0,0x6
+    8000337a:	0000                	unimp
+    8000337c:	011f 0000 0202      	0x2020000011f
+    80003382:	0000                	unimp
+    80003384:	0031                	c.addi	zero,12
+    80003386:	0000                	unimp
+    80003388:	0202                	slli	tp,tp,0x0
+    8000338a:	0000                	unimp
+    8000338c:	0056                	0x56
+    8000338e:	0000                	unimp
+    80003390:	022d                	addi	tp,tp,11
+    80003392:	0000                	unimp
+    80003394:	005f 0000 0355      	0x3550000005f
+    8000339a:	0000                	unimp
+    8000339c:	01b9                	addi	gp,gp,14
+    8000339e:	0000                	unimp
+    800033a0:	01b9                	addi	gp,gp,14
+    800033a2:	0000                	unimp
+    800033a4:	01b9                	addi	gp,gp,14
+    800033a6:	0000                	unimp
+    800033a8:	01b8                	addi	a4,sp,200
+    800033aa:	0000                	unimp
+    800033ac:	0000024b          	fnmsub.s	ft4,ft0,ft0,ft0,rne
+    800033b0:	0266                	slli	tp,tp,0x19
+    800033b2:	0000                	unimp
+    800033b4:	0266                	slli	tp,tp,0x19
+    800033b6:	0000                	unimp
+    800033b8:	018c                	addi	a1,sp,192
+    800033ba:	0000                	unimp
+    800033bc:	017e                	slli	sp,sp,0x1f
+    800033be:	0000                	unimp
+    800033c0:	0118                	addi	a4,sp,128
+    800033c2:	0000                	unimp
+    800033c4:	0118                	addi	a4,sp,128
+    800033c6:	0000                	unimp
+    800033c8:	0011                	c.addi	zero,4
+    800033ca:	0000                	unimp
+    800033cc:	0328                	addi	a0,sp,392
+    800033ce:	0000                	unimp
+    800033d0:	00aa                	slli	ra,ra,0xa
+    800033d2:	0000                	unimp
+    800033d4:	00000333          	add	t1,zero,zero
+    800033d8:	00000123          	sb	zero,2(zero) # 2 <buf.2835+0x2>
+    800033dc:	0158                	addi	a4,sp,132
+    800033de:	0000                	unimp
+    800033e0:	0158                	addi	a4,sp,132
+    800033e2:	0000                	unimp
+    800033e4:	017c                	addi	a5,sp,140
+    800033e6:	0000                	unimp
+    800033e8:	01c2                	slli	gp,gp,0x10
+    800033ea:	0000                	unimp
+    800033ec:	0200                	addi	s0,sp,256
+    800033ee:	0000                	unimp
+    800033f0:	0200                	addi	s0,sp,256
+    800033f2:	0000                	unimp
+    800033f4:	0200                	addi	s0,sp,256
+    800033f6:	0000                	unimp
+    800033f8:	0395                	addi	t2,t2,5
+    800033fa:	0000                	unimp
+    800033fc:	0395                	addi	t2,t2,5
+    800033fe:	0000                	unimp
+    80003400:	0000021b          	sext.w	tp,zero
+    80003404:	0000021b          	sext.w	tp,zero
+    80003408:	0328                	addi	a0,sp,392
+    8000340a:	0000                	unimp
+    8000340c:	0372                	slli	t1,t1,0x1c
+    8000340e:	0000                	unimp
+    80003410:	00000377          	0x377
+    80003414:	0372                	slli	t1,t1,0x1c
+    80003416:	0000                	unimp
+    80003418:	0219                	addi	tp,tp,6
+    8000341a:	0000                	unimp
+    8000341c:	0219                	addi	tp,tp,6
+    8000341e:	0000                	unimp
+    80003420:	0264                	addi	s1,sp,268
+    80003422:	0000                	unimp
+    80003424:	02bd                	addi	t0,t0,15
+    80003426:	0000                	unimp
+    80003428:	02bd                	addi	t0,t0,15
+    8000342a:	0000                	unimp
+    8000342c:	02bd                	addi	t0,t0,15
+    8000342e:	0000                	unimp
+    80003430:	01df 0000 01df      	0x1df000001df
+    80003436:	0000                	unimp
+    80003438:	01df 0000 0237      	0x237000001df
+    8000343e:	0000                	unimp
+    80003440:	00000097          	auipc	ra,0x0
+    80003444:	0016                	0x16
+    80003446:	0000                	unimp
+    80003448:	0016                	0x16
+    8000344a:	0000                	unimp
+    8000344c:	0238                	addi	a4,sp,264
+    8000344e:	0000                	unimp
+    80003450:	0238                	addi	a4,sp,264
+    80003452:	0000                	unimp
+    80003454:	0238                	addi	a4,sp,264
+    80003456:	0000                	unimp
+    80003458:	0299                	addi	t0,t0,6
+    8000345a:	0000                	unimp
+    8000345c:	0299                	addi	t0,t0,6
+    8000345e:	0000                	unimp
+    80003460:	000001a7          	0x1a7
+    80003464:	000001a7          	0x1a7
+    80003468:	01b2                	slli	gp,gp,0xc
+    8000346a:	0000                	unimp
+    8000346c:	01b2                	slli	gp,gp,0xc
+    8000346e:	0000                	unimp
+    80003470:	0118                	addi	a4,sp,128
+    80003472:	0000                	unimp
+    80003474:	009e                	slli	ra,ra,0x7
+    80003476:	0000                	unimp
+    80003478:	0118                	addi	a4,sp,128
+    8000347a:	0000                	unimp
+    8000347c:	0054                	addi	a3,sp,4
+    8000347e:	0000                	unimp
+    80003480:	0000018b          	0x18b
+    80003484:	000000f7          	0xf7
+    80003488:	02b0                	addi	a2,sp,328
+    8000348a:	0000                	unimp
+    8000348c:	000000f7          	0xf7
+    80003490:	01dc                	addi	a5,sp,196
+    80003492:	0000                	unimp
+    80003494:	000001b3          	add	gp,zero,zero
+    80003498:	01dc                	addi	a5,sp,196
+    8000349a:	0000                	unimp
+    8000349c:	0318                	addi	a4,sp,384
+    8000349e:	0000                	unimp
+    800034a0:	0318                	addi	a4,sp,384
+    800034a2:	0000                	unimp
+    800034a4:	0318                	addi	a4,sp,384
+    800034a6:	0000                	unimp
+    800034a8:	02d9                	addi	t0,t0,22
+    800034aa:	0000                	unimp
+    800034ac:	01e6                	slli	gp,gp,0x19
+    800034ae:	0000                	unimp
+    800034b0:	0109                	addi	sp,sp,2
+    800034b2:	0000                	unimp
+    800034b4:	019e                	slli	gp,gp,0x7
+    800034b6:	0000                	unimp
+    800034b8:	00ec                	addi	a1,sp,76
+    800034ba:	0000                	unimp
+    800034bc:	0171                	addi	sp,sp,28
+    800034be:	0000                	unimp
+    800034c0:	00ec                	addi	a1,sp,76
+    800034c2:	0000                	unimp
+    800034c4:	0171                	addi	sp,sp,28
+    800034c6:	0000                	unimp
+    800034c8:	00d6                	slli	ra,ra,0x15
+    800034ca:	0000                	unimp
+    800034cc:	0206                	slli	tp,tp,0x1
+    800034ce:	0000                	unimp
+    800034d0:	00b4                	addi	a3,sp,72
+    800034d2:	0000                	unimp
+    800034d4:	0206                	slli	tp,tp,0x1
+    800034d6:	0000                	unimp
+    800034d8:	000001f7          	0x1f7
+    800034dc:	02aa                	slli	t0,t0,0xa
+    800034de:	0000                	unimp
+    800034e0:	0254                	addi	a3,sp,260
+    800034e2:	0000                	unimp
+    800034e4:	0254                	addi	a3,sp,260
+    800034e6:	0000                	unimp
+    800034e8:	011c                	addi	a5,sp,128
+    800034ea:	0000                	unimp
+    800034ec:	0108                	addi	a0,sp,128
+    800034ee:	0000                	unimp
+    800034f0:	0108                	addi	a0,sp,128
+    800034f2:	0000                	unimp
+    800034f4:	000001f3          	0x1f3
+    800034f8:	000001f3          	0x1f3
+    800034fc:	015a                	slli	sp,sp,0x16
+    800034fe:	0000                	unimp
+    80003500:	015a                	slli	sp,sp,0x16
+    80003502:	0000                	unimp
+    80003504:	00000257          	0x257
+    80003508:	00000257          	0x257
+    8000350c:	000000d7          	0xd7
+    80003510:	000000d7          	0xd7
+    80003514:	000002db          	0x2db
+    80003518:	000002db          	0x2db
+    8000351c:	02b0                	addi	a2,sp,328
+    8000351e:	0000                	unimp
+    80003520:	0292                	slli	t0,t0,0x4
+    80003522:	0000                	unimp
+    80003524:	0000026b          	0x26b
+    80003528:	000000fb          	0xfb
+    8000352c:	000000fb          	0xfb
+    80003530:	00000083          	lb	ra,0(zero) # 0 <buf.2835>
+    80003534:	0000022b          	0x22b
+    80003538:	0000022b          	0x22b
+    8000353c:	0000022b          	0x22b
+    80003540:	0000029b          	sext.w	t0,zero
+    80003544:	0210                	addi	a2,sp,256
+    80003546:	0000                	unimp
+    80003548:	0210                	addi	a2,sp,256
+    8000354a:	0000                	unimp
+    8000354c:	0210                	addi	a2,sp,256
+    8000354e:	0000                	unimp
+    80003550:	000001e7          	jalr	gp,zero
+    80003554:	000001e7          	jalr	gp,zero
+    80003558:	000001e7          	jalr	gp,zero
+    8000355c:	02f1                	addi	t0,t0,28
+    8000355e:	0000                	unimp
+    80003560:	02f1                	addi	t0,t0,28
+    80003562:	0000                	unimp
+    80003564:	011f 0000 011f      	0x11f0000011f
+    8000356a:	0000                	unimp
+    8000356c:	0272                	slli	tp,tp,0x1c
+    8000356e:	0000                	unimp
+    80003570:	0272                	slli	tp,tp,0x1c
+    80003572:	0000                	unimp
+    80003574:	0130                	addi	a2,sp,136
+    80003576:	0000                	unimp
+    80003578:	000e                	0xe
+    8000357a:	0000                	unimp
+    8000357c:	0130                	addi	a2,sp,136
+    8000357e:	0000                	unimp
+    80003580:	00000193          	li	gp,0
+    80003584:	02dd                	addi	t0,t0,23
+    80003586:	0000                	unimp
+    80003588:	00000193          	li	gp,0
+    8000358c:	02dd                	addi	t0,t0,23
+    8000358e:	0000                	unimp
+    80003590:	000002bf 000002bf 	0x2bf000002bf
+    80003598:	000002bf 000002d2 	0x2d2000002bf
+    800035a0:	0332                	slli	t1,t1,0xc
+    800035a2:	0000                	unimp
+    800035a4:	02d2                	slli	t0,t0,0x14
+    800035a6:	0000                	unimp
+    800035a8:	0196                	slli	gp,gp,0x5
+    800035aa:	0000                	unimp
+    800035ac:	0196                	slli	gp,gp,0x5
+    800035ae:	0000                	unimp
+    800035b0:	036a                	slli	t1,t1,0x1a
+    800035b2:	0000                	unimp
+    800035b4:	036a                	slli	t1,t1,0x1a
+    800035b6:	0000                	unimp
+    800035b8:	0358                	addi	a4,sp,388
+    800035ba:	0000                	unimp
+    800035bc:	02ec                	addi	a1,sp,332
+    800035be:	0000                	unimp
+    800035c0:	02ec                	addi	a1,sp,332
+    800035c2:	0000                	unimp
+    800035c4:	0000005b          	0x5b
+    800035c8:	0056                	0x56
+    800035ca:	0000                	unimp
+    800035cc:	0000005b          	0x5b
+    800035d0:	017a                	slli	sp,sp,0x1e
+    800035d2:	0000                	unimp
+    800035d4:	017a                	slli	sp,sp,0x1e
+    800035d6:	0000                	unimp
+    800035d8:	0294                	addi	a3,sp,320
+    800035da:	0000                	unimp
+    800035dc:	0069                	c.addi	zero,26
+    800035de:	0000                	unimp
+    800035e0:	0099                	addi	ra,ra,6
+    800035e2:	0000                	unimp
+    800035e4:	0099                	addi	ra,ra,6
+    800035e6:	0000                	unimp
+    800035e8:	0099                	addi	ra,ra,6
+    800035ea:	0000                	unimp
+    800035ec:	017d                	addi	sp,sp,31
+    800035ee:	0000                	unimp
+    800035f0:	0079                	c.addi	zero,30
+    800035f2:	0000                	unimp
+    800035f4:	0000028b          	0x28b
+    800035f8:	019c                	addi	a5,sp,192
+    800035fa:	0000                	unimp
+    800035fc:	0339                	addi	t1,t1,14
+    800035fe:	0000                	unimp
+    80003600:	019c                	addi	a5,sp,192
+    80003602:	0000                	unimp
+    80003604:	0164                	addi	s1,sp,140
+    80003606:	0000                	unimp
+    80003608:	00ec                	addi	a1,sp,76
+    8000360a:	0000                	unimp
+    8000360c:	0094                	addi	a3,sp,64
+    8000360e:	0000                	unimp
+    80003610:	0094                	addi	a3,sp,64
+    80003612:	0000                	unimp
+    80003614:	0094                	addi	a3,sp,64
+    80003616:	0000                	unimp
+    80003618:	000001a7          	0x1a7
+    8000361c:	008c                	addi	a1,sp,64
+    8000361e:	0000                	unimp
+    80003620:	00d8                	addi	a4,sp,68
+    80003622:	0000                	unimp
+    80003624:	00d8                	addi	a4,sp,68
+    80003626:	0000                	unimp
+    80003628:	026d                	addi	tp,tp,27
+    8000362a:	0000                	unimp
+    8000362c:	026d                	addi	tp,tp,27
+    8000362e:	0000                	unimp
+    80003630:	0169                	addi	sp,sp,26
+    80003632:	0000                	unimp
+    80003634:	0000                	unimp
+    80003636:	0000                	unimp

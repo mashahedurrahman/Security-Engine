@@ -1,0 +1,63 @@
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+array unset createdGroup
+array set createdGroup {}
+#
+# Groups
+#
+if {[catch {group get -using [list master[5]]}]} {
+set createdGroup([list master[5]]) 1
+catch {group new -name {master[5]} -overlay 0}
+}
+if {[catch {group get -using [list apb_uart]}]} {
+set createdGroup([list apb_uart]) 1
+catch {group new -name apb_uart -overlay 0}
+}
+if {[info exists createdGroup([list master[5]])]} {
+group using {master[5]}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {ariane_tb.dut.\master[5] .aw_addr[63:0]}]} ] \
+    [subst  {[format {ariane_tb.dut.\master[5] .aw_valid}]} ] \
+    [subst  {[format {ariane_tb.dut.\master[5] .w_data[63:0]}]} ] \
+    [subst  {[format {ariane_tb.dut.\master[5] .w_valid}]} ] \
+    [subst  {[format {ariane_tb.dut.\master[5] .ar_addr[63:0]}]} ] \
+    [subst  {[format {ariane_tb.dut.\master[5] .ar_valid}]} ] \
+    [subst  {[format {ariane_tb.dut.\master[5] .r_data[63:0]}]} ] \
+    [subst  {[format {ariane_tb.dut.\master[5] .r_valid}]} ]
+}
+
+if {[info exists createdGroup([list apb_uart])]} {
+group using apb_uart
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {ariane_tb.dut.i_ariane_peripherals.gen_uart.i_apb_uart.PADDR[2:0]}]} ] \
+    [subst  {[format {ariane_tb.dut.i_ariane_peripherals.gen_uart.i_apb_uart.PWDATA[31:0]}]} ] \
+    [subst  {[format {ariane_tb.dut.i_ariane_peripherals.gen_uart.i_apb_uart.PWRITE}]} ] \
+    [subst  {[format {ariane_tb.dut.i_ariane_peripherals.gen_uart.i_apb_uart.PRDATA[31:0]}]} ]
+}
+
+set id [waveform add -signals [subst  {
+	{[format {ariane_tb.dut.clk_i}]}
+	} ]]
+
+set groupId0 [waveform add -groups {{master[5]}}]
+
+
+set groupId0 [waveform add -groups apb_uart]
+
+
+waveform xview limits 7933705ps 8086295ps

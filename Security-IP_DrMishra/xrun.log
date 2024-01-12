@@ -1,0 +1,153 @@
+xrun: 21.03-s015: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun	21.03-s015: Started on Oct 28, 2023 at 12:28:43 EDT
+irun
+	-access +rw
+	./ECIES/ECIES_tb_2.sv
+	./ECIES/ECIES_top.v
+	./AES/CTR/aes_CTR_mode.v
+	./tinyAES-master/rtl/aes_128.v
+	./tinyAES-master/rtl/sbox.v
+	./tinyAES-master/rtl/table.v
+	./tinyAES-master/rtl/round.v
+	./ECCShared/montgomeryLadder.v
+	./ECCShared/get_2P.v
+	./ECCShared/eeageneric.v
+	./ECCShared/get_PQ.v
+	./ECIES/ECIES_encrypt.v
+	./ECIES/ECIES_decrypt.v
+	./ECIES/ANSIX963KDF.sv
+xrun: *W,NCEXDEP: Executable (irun) is deprecated. Use (xrun) instead.
+Recompiling... reason: file './ECIES/ECIES_tb_2.sv' is newer than expected.
+	expected: Sat Oct 28 12:25:07 2023
+	actual:   Sat Oct 28 12:28:28 2023
+file: ./ECIES/ECIES_tb_2.sv
+	module worklib.ECIES_full_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	eeageneric #(.integer_size(integer_size)) eeaCalculator(.clk(clk), .reset(rst), .go(go), .done(done), .x(doubleYin), .p(prime), .x_inv(eeaout));
+	                                                      |
+xmelab: *W,CUVWSP (./ECCShared/get_2P.v,10|55): 1 output port was not connected:
+xmelab: (./ECCShared/eeageneric.v,4): failure
+
+	eeageneric #(.integer_size(integer_size)) eeaCalculator(.clk(clk), .reset(rst), .go(go), .done(done), .x(subtractX), .p(prime), .x_inv(eeaout));
+	                                                      |
+xmelab: *W,CUVWSP (./ECCShared/get_PQ.v,9|55): 1 output port was not connected:
+xmelab: (./ECCShared/eeageneric.v,4): failure
+
+		) kGGen (
+		      |
+xmelab: *W,CUVWSP (./ECIES/ECIES_encrypt.v,37|8): 1 output port was not connected:
+xmelab: (./ECCShared/montgomeryLadder.v,4): infinityP
+
+		) kGGen (
+		      |
+xmelab: *W,CUVWSI (./ECIES/ECIES_encrypt.v,37|8): 2 input ports were not connected:
+xmelab: (./ECCShared/montgomeryLadder.v,4): Ox
+xmelab: (./ECCShared/montgomeryLadder.v,4): Oy
+
+			) sharedSecretGen (
+			                |
+xmelab: *W,CUVWSP (./ECIES/ECIES_encrypt.v,56|19): 2 output ports were not connected:
+xmelab: (./ECCShared/montgomeryLadder.v,4): infinityP
+xmelab: (./ECCShared/montgomeryLadder.v,4): mGy
+
+			) sharedSecretGen (
+			                |
+xmelab: *W,CUVWSI (./ECIES/ECIES_encrypt.v,56|19): 2 input ports were not connected:
+xmelab: (./ECCShared/montgomeryLadder.v,4): Ox
+xmelab: (./ECCShared/montgomeryLadder.v,4): Oy
+
+		) kGGen (
+		      |
+xmelab: *W,CUVWSI (./ECIES/ECIES_decrypt.v,39|8): 2 input ports were not connected:
+xmelab: (./ECCShared/montgomeryLadder.v,4): Ox
+xmelab: (./ECCShared/montgomeryLadder.v,4): Oy
+
+	Top level design units:
+		ECIES_full_tb
+		S_table
+		xS_table
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+            .messageIn  (enc_messageToProcess),
+                                            |
+xmelab: *W,CUVMPW (./ECIES/ECIES_tb_2.sv,63|44): port sizes differ in port connection(32/128) for the instance(ECIES_full_tb) .
+            .cipherIn   (dec_messageToProcess),
+                                            |
+xmelab: *W,CUVMPW (./ECIES/ECIES_tb_2.sv,64|44): port sizes differ in port connection(32/128) for the instance(ECIES_full_tb) .
+            .nonce      (nonce),
+                             |
+xmelab: *W,CUVMPW (./ECIES/ECIES_tb_2.sv,65|29): port sizes differ in port connection(128/64) for the instance(ECIES_full_tb) .
+            .counterIn  (counter),
+                               |
+xmelab: *W,CUVMPW (./ECIES/ECIES_tb_2.sv,66|31): port sizes differ in port connection(128/64) for the instance(ECIES_full_tb) .
+            .messageOut (messageReturn),
+                                     |
+xmelab: *W,CUVMPW (./ECIES/ECIES_tb_2.sv,67|37): port sizes differ in port connection(32/128) for the instance(ECIES_full_tb) .
+            .cipherOut  (enc_encryptedMessage)
+                                            |
+xmelab: *W,CUVMPW (./ECIES/ECIES_tb_2.sv,68|44): port sizes differ in port connection(32/128) for the instance(ECIES_full_tb) .
+            .hashedMessage    (hashedMessage),
+                                           |
+xmelab: *W,CUVMPW (./ECIES/ECIES_tb_2.sv,121|43): port sizes differ in port connection(1/512) for the instance(ECIES_full_tb) .
+            .enc_key          (enc_key),
+                                     |
+xmelab: *W,CUVMPW (./ECIES/ECIES_tb_2.sv,146|37): port sizes differ in port connection(1/128) for the instance(ECIES_full_tb) .
+    .mGx(kGx),
+           |
+xmelab: *W,CUVMPW (./ECIES/ECIES_encrypt.v,49|11): port sizes differ in port connection(64/128) for the instance(ECIES_full_tb.inst_ECIES_top.inst_ECIES_encrypt) .
+    .mGy(kGy)
+           |
+xmelab: *W,CUVMPW (./ECIES/ECIES_encrypt.v,50|11): port sizes differ in port connection(64/128) for the instance(ECIES_full_tb.inst_ECIES_top.inst_ECIES_encrypt) .
+    .Px(publicKeyX), 
+                 |
+xmelab: *W,CUVMPW (./ECIES/ECIES_encrypt.v,66|17): port sizes differ in port connection(128/64) for the instance(ECIES_full_tb.inst_ECIES_top.inst_ECIES_encrypt) .
+    .Py(publicKeyY), 
+                 |
+xmelab: *W,CUVMPW (./ECIES/ECIES_encrypt.v,67|17): port sizes differ in port connection(128/64) for the instance(ECIES_full_tb.inst_ECIES_top.inst_ECIES_encrypt) .
+    .mGx(secret_X) //Leave out y bc not included in secret, so doesn't matter.
+                |
+xmelab: *W,CUVMPW (./ECIES/ECIES_encrypt.v,68|16): port sizes differ in port connection(64/384) for the instance(ECIES_full_tb.inst_ECIES_top.inst_ECIES_encrypt) .
+    .mGx(kGx),
+           |
+xmelab: *W,CUVMPW (./ECIES/ECIES_decrypt.v,51|11): port sizes differ in port connection(64/128) for the instance(ECIES_full_tb.inst_ECIES_top.inst_ECIES_decrypt) .
+    .mGy(kGy)
+           |
+xmelab: *W,CUVMPW (./ECIES/ECIES_decrypt.v,52|11): port sizes differ in port connection(64/128) for the instance(ECIES_full_tb.inst_ECIES_top.inst_ECIES_decrypt) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ECIES_full_tb:sv <0x05bf6621>
+			streams:  86, words: 37693
+	Building instance specific data structures.
+            .hashedMessage    (hashedMessage),
+                                           |
+xmelab: *W,CSINFI (./ECIES/ECIES_tb_2.sv,121|43): implicit wire has no fanin (ECIES_full_tb.hashedMessage).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:               740      21
+		Registers:             853     196
+		Scalar wires:        40686       -
+		Expanded wires:       9408     994
+		Vectored wires:        798       -
+		Always blocks:         413      19
+		Initial blocks:          4       4
+		Cont. assignments:    4117     156
+		Pseudo assignments:    156     144
+		Assertions:              3       3
+	Writing initial simulation snapshot: worklib.ECIES_full_tb:sv
+Loading snapshot worklib.ECIES_full_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /apps/cds/xcelium2103/tools/xcelium/files/xmsimrc
+xcelium> run
+Encrypted output 2610711940
+Valid encryption
+decrypting 2610711940
+messageOut[31:0]          8
+cipherOut[31:0]          0
+Valid decrypt
+Correct Message
+Simulation complete via $finish(1) at time 10370 NS + 0
+./ECIES/ECIES_tb_2.sv:233             $finish;
+xcelium> exit
+TOOL:	xrun	21.03-s015: Exiting on Oct 28, 2023 at 12:28:45 EDT  (total: 00:00:02)
