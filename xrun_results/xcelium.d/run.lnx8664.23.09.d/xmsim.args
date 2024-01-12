@@ -1,0 +1,47 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
++permissive
++permissive-off
++define+WT_DCACHE+RVFI_TRACE
++incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/axi_node
++incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/common_cells/include
++incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/common_cells/include
++incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/include
++incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/register_interface/include
++incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/local/util
++incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/util
+-sv_lib
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/work-dpi/ariane_dpi.so
+-XCELIGEN
+on=1903
+-NOWARN
+BIGWIX
+-NOWARN
+ZROMCW
+-NOWARN
+STRINT
+-NOWARN
+ENUMERR
+-NOWARN
+SPDUSD
+-NOWARN
+RNDXCELON
+-MESSAGES
++EMGRLOG
+xrun_compl.log
+-XLSTIME
+1704663134
+-XLKEEP
+-XLMODE
+./xcelium.d/run.lnx8664.23.09.d
+-RUNMODE
+-CDSLIB
+./xcelium.d/run.lnx8664.23.09.d/cds.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.23.09.d/hdl.var
+-XLNAME
+xrun
+-XLVERSION
+"TOOL:	xrun(64)	23.09-s003"

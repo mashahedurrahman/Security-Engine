@@ -1,0 +1,4 @@
+SOFTINCLUDE /apps/cds/xcelium2309/tools/inca/files/cds.lib
+include ../../../../../cds.lib
+define worklib ../worklib
+define vhdlspice_skeletons ../vhdlspice_skeletons

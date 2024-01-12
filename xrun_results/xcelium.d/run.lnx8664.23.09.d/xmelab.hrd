@@ -1,0 +1,12 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-DISABLE_SEM2009
+-ACCESS
++rwc
+-V200X
+
+worklib.ariane_tb
+-timescale
+1ns/1ps

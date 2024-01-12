@@ -1,0 +1,2675 @@
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on Jan 07, 2024 at 16:32:14 EST
+xrun
+	+permissive
+	-64bit
+	-disable_sem2009
+	-access +rwc
+	-sv
+	-v200x
+	-sv_lib /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/work-dpi/ariane_dpi.so
+	-smartorder
+	-sv
+	-top worklib.ariane_tb
+	-xceligen on=1903
+	+define+WT_DCACHE+RVFI_TRACE
+	-timescale 1ns/1ps
+	-nowarn BIGWIX
+	-nowarn ZROMCW
+	-nowarn STRINT
+	-nowarn ENUMERR
+	-nowarn SPDUSD
+	-nowarn RNDXCELON
+	+incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/axi_node
+	+incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/common_cells/include
+	+incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/common_cells/include
+	+incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/include
+	+incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/register_interface/include
+	+incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/local/util
+	+incdir+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/util
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/cv64a6_imafdc_sv39_config_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/riscv_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/ariane_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/ariane_rvfi_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/std_cache_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/wt_cache_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/cvxif_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/register_interface/src/reg_intf.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/axi_intf.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/rvfi_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_soc_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_axi_soc_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/ariane_axi_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/cf_math_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cvxif_example/include/cvxif_instr_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/instr_tracer_pkg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/local/util/instr_tracer_if.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/local/util/instr_tracer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/tech_cells_generic/src/cluster_clock_gating.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/common/mock_uart.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/local/util/sram.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/apb_uart.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/uart_transmitter.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/uart_interrupt.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_mv_filter.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_input_filter.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_counter.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/uart_receiver.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_input_sync.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_edge_detect.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_clock_div.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_fifo.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/uart_baudgen.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/serdiv.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/issue_stage.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cvxif_fu.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/branch_unit.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/ariane_regfile_ff.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/dromajo_ram.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/controller.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/commit_stage.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/re_name.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/csr_buffer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/decoder.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/ex_stage.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/scoreboard.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/store_buffer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/store_unit.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/ariane.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/mult.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/axi_adapter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu_wrap.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/load_store_unit.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/alu.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/amo_buffer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/multiplier.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/compressed_decoder.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/axi_shim.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/instr_realign.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/perf_counters.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cva6.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/id_stage.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/csr_regfile.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/load_unit.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/issue_read_operands.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_fma.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_opgroup_fmt_slice.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_divsqrt_multi.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_fma_multi.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_opgroup_multifmt_slice.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_classifier.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_top.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_noncomp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_cast_multi.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_opgroup_block.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_rounding.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/iteration_div_sqrt_mvp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/control_mvp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/frontend.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/instr_scan.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/instr_queue.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/bht.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/btb.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/ras.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/tag_cmp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache_ctrl.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/amo_alu.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_axi_adapter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/std_nbdcache.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/cache_ctrl.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/miss_handler.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/std_cache_subsystem.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache_missunit.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/cva6_icache.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache_wbuffer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_l15_adapter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache_mem.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_cache_subsystem.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/cva6_icache_axi_wrapper.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/bootrom/bootrom.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/bootrom/dromajo_bootrom.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/clint/axi_lite_interface.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/clint/clint.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi2apb/src/axi2apb_wrap.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi2apb/src/axi2apb.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi2apb/src/axi2apb_64_32.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_timer/apb_timer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_timer/timer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_w_buffer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_r_buffer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_slice_wrap.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_slice.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_single_slice.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_ar_buffer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_b_buffer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_aw_buffer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_amos.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_atomics.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_res_tbl.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_lrsc_wrap.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_amos_alu.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_lrsc.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_atomics_wrap.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi_mem_if/src/axi2mem.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/pmp/src/pmp_entry.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/pmp/src/pmp.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cvxif_example/cvxif_example_coprocessor.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cvxif_example/instr_decoder.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/rv_plic/rtl/rv_plic_target.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/rv_plic/rtl/rv_plic_gateway.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/rv_plic/rtl/plic_regmap.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/rv_plic/rtl/plic_top.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dmi_cdc.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dmi_jtag.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dmi_jtag_tap.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_csrs.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_mem.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_sba.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_top.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/debug_rom/debug_rom.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/register_interface/src/apb_to_reg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_multicut.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/generic_fifo.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/pulp_sync.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/find_first_one.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/rstgen_bypass.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/rstgen.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_mux.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_demux.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/exp_backoff.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/addr_decode.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_register.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/onehot_to_bin.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/id_queue.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_cut.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_join.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_delayer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_burst_splitter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_to_axi_lite.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_id_prepend.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_atop_filter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_err_slv.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_mux.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_demux.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_xbar.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga-support/rtl/SyncSpRamBeNx64.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/unread.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/sync.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/cdc_2phase.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/spill_register_flushable.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/spill_register.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/sync_wedge.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/edge_detect.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_arbiter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_arbiter_flushable.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/fifo_v1.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/fifo_v2.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/fifo_v3.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/lzc.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/popcount.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/rr_arb_tree.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/rrarbiter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_delay.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/lfsr.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/lfsr_8bit.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/lfsr_16bit.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/delta_counter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/counter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/shift_reg.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/tech_cells_generic/src/pulp_clock_gating.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/tech_cells_generic/src/cluster_clock_inverter.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/tech_cells_generic/src/pulp_clock_mux2.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_testharness.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_peripherals.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/rvfi_tracer.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/common/uart.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/mmu_sv39/tlb.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/mmu_sv39/mmu.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/mmu_sv39/ptw.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_to_axi_lite_mod.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/rsa_wrapper.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/rsa_mont.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Mont_Ladder.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/reg_module.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/COUNTER.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/BoothEncoder.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/RightShiftReg.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/LeftShiftReg.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Ander.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/XorCrearor.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/FullAdder.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Adder.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Alu.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Regeister.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/BoothDatapath.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/BoothController.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/BoothMultiplier.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/trng_128_wrapper.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/TRNG_Top_128.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/TRNG_Controller.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/sha256_ip.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/Data_Path_128.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/sha256.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/controller.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/register.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/Mux.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ECIES_wrapper.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ECIES_top.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECCShared/montgomeryLadder.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECCShared/get_2P.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECCShared/eeageneric.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECCShared/get_PQ.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ECIES_encrypt.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ECIES_decrypt.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ANSIX963KDF.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_wrapper.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/Top.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_Controller.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_Datapath.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/LFSR.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/Mux_N.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/Demux.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/Decoder_ECC.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/DECODER_256.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/ro_odometer_wrapper.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/ro_odometer_top.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/mux.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/ring_oscillator.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/sn_cdir_decoder.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha_wrapper.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/controller.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/controller384.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/controller512.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/decoder.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/mux4x1.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/mux512.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/reg.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha512.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/SHA384_IP.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/SHA512_IP.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha_controller.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/SHA_IP.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha_functions.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/toplevel.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ecc/ECC_v1_0_S00_AXI.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/aes_ctr_wrapper.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/aes_CTR_mode.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/aes_128.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/round.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/table.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/DH/rtl/dh_wrapper.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/DH/rtl/serial_multiplier_283.vhd
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/POCA_FSM/POCA_v1_0_POCA_master.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/POCA_FSM/parameter_poca.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/POCA_FSM/poca_master.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ECDSA/rtl/ecdsa_wrapper.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ECDSA/rtl/ecdsa_combined.sv
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ECDSA/rtl/ECDSA_sign.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ECDSA/rtl/ECDSA_verify.v
+	/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_tb.sv
+	-l xrun_compl.log
+	+permissive-off
+	-elaborate
+
+   User defined plus("+") options:
+	+permissive
+	+permissive-off
+
+xmvlog: *W,NOTIND: unable to access -INCDIR /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/axi_node (No such file or directory).
+xmvlog: *W,NOTIND: unable to access -INCDIR /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/common_cells/include (No such file or directory).
+xmvlog: *W,NOTIND: unable to access -INCDIR /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/util (No such file or directory).
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/cv64a6_imafdc_sv39_config_pkg.sv
+	package worklib.cva6_config_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/riscv_pkg.sv
+	package worklib.riscv:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_pkg.sv
+	package worklib.dm:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/ariane_pkg.sv
+	package worklib.ariane_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/ariane_rvfi_pkg.sv
+	package worklib.ariane_rvfi_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/std_cache_pkg.sv
+	package worklib.std_cache_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/wt_cache_pkg.sv
+	package worklib.wt_cache_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/cvxif_pkg.sv
+	package worklib.cvxif_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_pkg.sv
+	package worklib.axi_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/register_interface/src/reg_intf.sv
+	interface worklib.REG_BUS:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/axi_intf.sv
+	interface worklib.AXI_BUS:sv
+		errors: 0, warnings: 0
+	interface worklib.AXI_BUS_ASYNC:sv
+		errors: 0, warnings: 0
+	interface worklib.AXI_LITE:sv
+		errors: 0, warnings: 0
+	interface worklib.AXI_ROUTING_RULES:sv
+		errors: 0, warnings: 0
+	interface worklib.AXI_ARBITRATION:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/rvfi_pkg.sv
+	package worklib.rvfi_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_soc_pkg.sv
+	package worklib.ariane_soc:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_axi_soc_pkg.sv
+	package worklib.ariane_axi_soc:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/ariane_axi_pkg.sv
+	package worklib.ariane_axi:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_pkg.sv
+	package worklib.fpnew_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/cf_math_pkg.sv
+	package worklib.cf_math_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cvxif_example/include/cvxif_instr_pkg.sv
+	package worklib.cvxif_instr_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv
+	package worklib.defs_div_sqrt_mvp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/include/instr_tracer_pkg.sv
+	package worklib.instr_tracer_pkg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/local/util/instr_tracer_if.sv
+	interface worklib.instr_tracer_if:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/local/util/instr_tracer.sv
+	module worklib.instr_tracer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/tech_cells_generic/src/cluster_clock_gating.sv
+	module worklib.cluster_clock_gating:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/common/mock_uart.sv
+	module worklib.mock_uart:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/local/util/sram.sv
+	module worklib.sram:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/serdiv.sv
+	module worklib.serdiv:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/issue_stage.sv
+	module worklib.issue_stage:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cvxif_fu.sv
+	module worklib.cvxif_fu:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/branch_unit.sv
+	module worklib.branch_unit:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/ariane_regfile_ff.sv
+	module worklib.ariane_regfile:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/dromajo_ram.sv
+	module worklib.dromajo_ram:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/controller.sv
+	module worklib.controller:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/commit_stage.sv
+	module worklib.commit_stage:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/re_name.sv
+	module worklib.re_name:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/csr_buffer.sv
+	module worklib.csr_buffer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/decoder.sv
+	module worklib.decoder:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/ex_stage.sv
+	module worklib.ex_stage:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/scoreboard.sv
+	module worklib.scoreboard:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/store_buffer.sv
+	module worklib.store_buffer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/store_unit.sv
+	module worklib.store_unit:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/ariane.sv
+	module worklib.ariane:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/mult.sv
+	module worklib.mult:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/axi_adapter.sv
+	module worklib.axi_adapter:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu_wrap.sv
+	module worklib.fpu_wrap:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/load_store_unit.sv
+	module worklib.load_store_unit:sv
+		errors: 0, warnings: 0
+	module worklib.lsu_bypass:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/alu.sv
+	module worklib.alu:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/amo_buffer.sv
+	module worklib.amo_buffer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/multiplier.sv
+	module worklib.multiplier:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/compressed_decoder.sv
+	module worklib.compressed_decoder:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/axi_shim.sv
+	module worklib.axi_shim:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/instr_realign.sv
+	module worklib.instr_realign:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/perf_counters.sv
+	module worklib.perf_counters:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cva6.sv
+	module worklib.cva6:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/id_stage.sv
+	module worklib.id_stage:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/csr_regfile.sv
+	module worklib.csr_regfile:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/load_unit.sv
+	module worklib.load_unit:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/issue_read_operands.sv
+	module worklib.issue_read_operands:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_fma.sv
+	module worklib.fpnew_fma:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_opgroup_fmt_slice.sv
+	module worklib.fpnew_opgroup_fmt_slice:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_divsqrt_multi.sv
+	module worklib.fpnew_divsqrt_multi:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_fma_multi.sv
+	module worklib.fpnew_fma_multi:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_opgroup_multifmt_slice.sv
+	module worklib.fpnew_opgroup_multifmt_slice:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_classifier.sv
+	module worklib.fpnew_classifier:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_top.sv
+	module worklib.fpnew_top:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_noncomp.sv
+	module worklib.fpnew_noncomp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_cast_multi.sv
+	module worklib.fpnew_cast_multi:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_opgroup_block.sv
+	module worklib.fpnew_opgroup_block:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpnew_rounding.sv
+	module worklib.fpnew_rounding:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/iteration_div_sqrt_mvp.sv
+	module worklib.iteration_div_sqrt_mvp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv
+	module worklib.nrbd_nrsc_mvp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv
+	module worklib.div_sqrt_top_mvp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv
+	module worklib.preprocess_mvp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/control_mvp.sv
+	module worklib.control_mvp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv
+	module worklib.norm_div_sqrt_mvp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv
+	module worklib.div_sqrt_mvp_wrapper:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/frontend.sv
+	module worklib.frontend:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/instr_scan.sv
+	module worklib.instr_scan:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/instr_queue.sv
+	module worklib.instr_queue:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/bht.sv
+	module worklib.bht:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/btb.sv
+	module worklib.btb:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/frontend/ras.sv
+	module worklib.ras:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache.sv
+	module worklib.wt_dcache:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/tag_cmp.sv
+	module worklib.tag_cmp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache_ctrl.sv
+	module worklib.wt_dcache_ctrl:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/amo_alu.sv
+	module worklib.amo_alu:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_axi_adapter.sv
+	module worklib.wt_axi_adapter:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/std_nbdcache.sv
+	module worklib.std_nbdcache:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/cache_ctrl.sv
+	module worklib.cache_ctrl:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/miss_handler.sv
+	module worklib.miss_handler:sv
+		errors: 0, warnings: 0
+	module worklib.arbiter:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/std_cache_subsystem.sv
+	module worklib.std_cache_subsystem:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache_missunit.sv
+	module worklib.wt_dcache_missunit:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/cva6_icache.sv
+	module worklib.cva6_icache:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache_wbuffer.sv
+	module worklib.wt_dcache_wbuffer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_l15_adapter.sv
+	module worklib.wt_l15_adapter:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_dcache_mem.sv
+	module worklib.wt_dcache_mem:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/wt_cache_subsystem.sv
+	module worklib.wt_cache_subsystem:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cache_subsystem/cva6_icache_axi_wrapper.sv
+	module worklib.cva6_icache_axi_wrapper:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/bootrom/bootrom.sv
+	module worklib.bootrom:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/bootrom/dromajo_bootrom.sv
+	module worklib.dromajo_bootrom:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/clint/axi_lite_interface.sv
+	module worklib.axi_lite_interface:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/clint/clint.sv
+	module worklib.clint:sv
+		errors: 0, warnings: 0
+	module worklib.clint_sync_wedge:sv
+		errors: 0, warnings: 0
+	module worklib.clint_sync:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi2apb/src/axi2apb_wrap.sv
+	module worklib.axi2apb_wrap:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi2apb/src/axi2apb.sv
+	module worklib.axi2apb:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi2apb/src/axi2apb_64_32.sv
+	module worklib.axi2apb_64_32:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_timer/apb_timer.sv
+	module worklib.apb_timer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_timer/timer.sv
+	module worklib.timer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_w_buffer.sv
+	module worklib.axi_w_buffer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_r_buffer.sv
+	module worklib.axi_r_buffer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_slice_wrap.sv
+	module worklib.axi_slice_wrap:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_slice.sv
+	module worklib.axi_slice:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_single_slice.sv
+	module worklib.axi_single_slice:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_ar_buffer.sv
+	module worklib.axi_ar_buffer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_b_buffer.sv
+	module worklib.axi_b_buffer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/axi_slice/src/axi_aw_buffer.sv
+	module worklib.axi_aw_buffer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_amos.sv
+	module worklib.axi_riscv_amos:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_atomics.sv
+	module worklib.axi_riscv_atomics:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_res_tbl.sv
+	module worklib.axi_res_tbl:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_lrsc_wrap.sv
+	module worklib.axi_riscv_lrsc_wrap:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_amos_alu.sv
+	module worklib.axi_riscv_amos_alu:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_lrsc.sv
+	module worklib.axi_riscv_lrsc:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/axi_riscv_atomics/src/axi_riscv_atomics_wrap.sv
+	module worklib.axi_riscv_atomics_wrap:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi_mem_if/src/axi2mem.sv
+	module worklib.axi2mem:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/pmp/src/pmp_entry.sv
+	module worklib.pmp_entry:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/pmp/src/pmp.sv
+	module worklib.pmp:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cvxif_example/cvxif_example_coprocessor.sv
+	module worklib.cvxif_example_coprocessor:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/cvxif_example/instr_decoder.sv
+	module worklib.instr_decoder:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/rv_plic/rtl/rv_plic_target.sv
+	module worklib.rv_plic_target:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/rv_plic/rtl/rv_plic_gateway.sv
+	module worklib.rv_plic_gateway:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/rv_plic/rtl/plic_regmap.sv
+	module worklib.plic_regs:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/rv_plic/rtl/plic_top.sv
+	module worklib.plic_top:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dmi_cdc.sv
+	module worklib.dmi_cdc:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dmi_jtag.sv
+	module worklib.dmi_jtag:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dmi_jtag_tap.sv
+	module worklib.dmi_jtag_tap:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_csrs.sv
+	module worklib.dm_csrs:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_mem.sv
+	module worklib.dm_mem:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_sba.sv
+	module worklib.dm_sba:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/src/dm_top.sv
+	module worklib.dm_top:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/riscv-dbg/debug_rom/debug_rom.sv
+	module worklib.debug_rom:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/register_interface/src/apb_to_reg.sv
+	module worklib.apb_to_reg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_multicut.sv
+	module worklib.axi_multicut:sv
+		errors: 0, warnings: 0
+	module worklib.axi_multicut_intf:sv
+		errors: 0, warnings: 0
+	module worklib.axi_lite_multicut_intf:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/generic_fifo.sv
+	module worklib.generic_fifo:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/pulp_sync.sv
+	module worklib.pulp_sync:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/find_first_one.sv
+	module worklib.find_first_one:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/rstgen_bypass.sv
+	module worklib.rstgen_bypass:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/rstgen.sv
+	module worklib.rstgen:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_mux.sv
+	module worklib.stream_mux:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_demux.sv
+	module worklib.stream_demux:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/exp_backoff.sv
+	module worklib.exp_backoff:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/addr_decode.sv
+  assert final ($onehot0(matched_rules)) else
+             |
+xmvlog: *W,DEFFIN (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/addr_decode.sv,115|13): Usage of reserved word "final" in a deferred assertion is not supported.
+	module worklib.addr_decode:sv
+		errors: 0, warnings: 1
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_register.sv
+	module worklib.stream_register:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/onehot_to_bin.sv
+	module worklib.onehot_to_bin:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/id_queue.sv
+	module worklib.id_queue:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_cut.sv
+	module worklib.axi_cut:sv
+		errors: 0, warnings: 0
+	module worklib.axi_cut_intf:sv
+		errors: 0, warnings: 0
+	module worklib.axi_lite_cut_intf:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_join.sv
+	module worklib.axi_join_intf:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_delayer.sv
+	module worklib.axi_delayer:sv
+		errors: 0, warnings: 0
+	module worklib.axi_delayer_intf:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_burst_splitter.sv
+	module worklib.axi_burst_splitter:sv
+		errors: 0, warnings: 0
+	module worklib.axi_burst_splitter_ax_chan:sv
+		errors: 0, warnings: 0
+	module worklib.axi_burst_splitter_counters:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_to_axi_lite.sv
+	module worklib.axi_to_axi_lite:sv
+		errors: 0, warnings: 0
+	module worklib.axi_to_axi_lite_id_reflect:sv
+		errors: 0, warnings: 0
+	module worklib.axi_to_axi_lite_intf:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_id_prepend.sv
+	module worklib.axi_id_prepend:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_atop_filter.sv
+	module worklib.axi_atop_filter:sv
+		errors: 0, warnings: 0
+	module worklib.axi_atop_filter_intf:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_err_slv.sv
+	module worklib.axi_err_slv:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_mux.sv
+	module worklib.axi_mux:sv
+		errors: 0, warnings: 0
+	module worklib.axi_mux_intf:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_demux.sv
+	module worklib.axi_demux:sv
+		errors: 0, warnings: 0
+	module worklib.axi_demux_id_counters:sv
+		errors: 0, warnings: 0
+	module worklib.axi_demux_intf:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_xbar.sv
+	module worklib.axi_xbar:sv
+		errors: 0, warnings: 0
+	module worklib.axi_xbar_intf:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga-support/rtl/SyncSpRamBeNx64.sv
+	module worklib.SyncSpRamBeNx64:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/unread.sv
+	module worklib.unread:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/sync.sv
+	module worklib.sync:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/cdc_2phase.sv
+	module worklib.cdc_2phase:sv
+		errors: 0, warnings: 0
+	module worklib.cdc_2phase_src:sv
+		errors: 0, warnings: 0
+	module worklib.cdc_2phase_dst:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/spill_register_flushable.sv
+	module worklib.spill_register_flushable:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/spill_register.sv
+	module worklib.spill_register:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/sync_wedge.sv
+	module worklib.sync_wedge:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/edge_detect.sv
+	module worklib.edge_detect:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_arbiter.sv
+	module worklib.stream_arbiter:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_arbiter_flushable.sv
+	module worklib.stream_arbiter_flushable:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/fifo_v1.sv
+	module worklib.fifo:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/fifo_v2.sv
+	module worklib.fifo_v2:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/fifo_v3.sv
+	module worklib.fifo_v3:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/lzc.sv
+	module worklib.lzc:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/popcount.sv
+	module worklib.popcount:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/rr_arb_tree.sv
+	module worklib.rr_arb_tree:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/deprecated/rrarbiter.sv
+	module worklib.rrarbiter:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/stream_delay.sv
+	module worklib.stream_delay:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/lfsr.sv
+	module worklib.lfsr:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/lfsr_8bit.sv
+	module worklib.lfsr_8bit:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/lfsr_16bit.sv
+	module worklib.lfsr_16bit:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/delta_counter.sv
+	module worklib.delta_counter:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/counter.sv
+	module worklib.counter:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/submodules/common_cells/src/shift_reg.sv
+	module worklib.shift_reg:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/tech_cells_generic/src/pulp_clock_gating.sv
+	module worklib.pulp_clock_gating:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/tech_cells_generic/src/cluster_clock_inverter.sv
+	module worklib.cluster_clock_inverter:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/src/tech_cells_generic/src/pulp_clock_mux2.sv
+	module worklib.pulp_clock_mux2:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_testharness.sv
+	module worklib.ariane_testharness:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_peripherals.sv
+	module worklib.ariane_peripherals:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/rvfi_tracer.sv
+	module worklib.rvfi_tracer:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/common/uart.sv
+	interface worklib.uart_bus:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/mmu_sv39/tlb.sv
+	module worklib.tlb:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/mmu_sv39/mmu.sv
+	module worklib.mmu:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/mmu_sv39/ptw.sv
+	module worklib.ptw:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/src/axi_to_axi_lite_mod.sv
+	module worklib.axi_to_axi_lite_mod:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/rsa_wrapper.v
+	module worklib.rsa_wrapper:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/rsa_mont.v
+	module worklib.rsa_mont:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Mont_Ladder.v
+	module worklib.mont_lad:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/reg_module.v
+	module worklib.reg_module:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/trng_128_wrapper.v
+	module worklib.trng_128_wrapper:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/TRNG_Top_128.v
+	module worklib.TRNG_Top_128:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/TRNG_Controller.v
+	module worklib.TRNG_Controller:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/sha256_ip.v
+	module worklib.sha256_ip:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/Data_Path_128.v
+	module worklib.Data_Path_128:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/sha256.v
+	module worklib.sha256:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/controller.v
+	module worklib.controller256:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/register.v
+	module worklib.Data_reg:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/TRNG/rtl/Mux.v
+	module worklib.mux:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ECIES_wrapper.v
+	module worklib.ECIES_wrapper:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ECIES_top.v
+	module worklib.ECIES_top:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECCShared/montgomeryLadder.v
+	module worklib.montgomeryLadder:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECCShared/get_2P.v
+	module worklib.get_2P:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECCShared/eeageneric.v
+	module worklib.eeageneric:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECCShared/get_PQ.v
+	module worklib.get_PQ:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ECIES_encrypt.v
+	module worklib.ECIES_encrypt:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ECIES_decrypt.v
+	module worklib.ECIES_decrypt:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/Security-IP_DrMishra/ECIES/ANSIX963KDF.sv
+	module worklib.ANSIX963KDF:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_wrapper.v
+	module worklib.PUF_wrapper:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/Top.v
+	module worklib.PUF_Top:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_Controller.v
+`define		INIT	3'h0
+       		    	    |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_Controller.v,5|18): text macro 'INIT' redefined - replaced with new definition, Previous definition was found here ('../PUF_final/Top.v',6|13 ).
+`define		COND_1	3'h1
+       		      	    |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_Controller.v,6|20): text macro 'COND_1' redefined - replaced with new definition, Previous definition was found here ('../PUF_final/Top.v',7|15 ).
+`define		COND_2 	3'h2
+       		       	    |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_Controller.v,7|21): text macro 'COND_2' redefined - replaced with new definition, Previous definition was found here ('../PUF_final/Top.v',8|15 ).
+`define		COND_3 	3'h3
+       		       	    |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_Controller.v,8|21): text macro 'COND_3' redefined - replaced with new definition, Previous definition was found here ('../PUF_final/Top.v',9|15 ).
+	module worklib.PUF_Controller:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/PUF_Datapath.v
+	module worklib.PUF_Data_Path:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/LFSR.v
+	module worklib.LFSR:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/Mux_N.v
+	module worklib.Mux_N:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/Demux.v
+	module worklib.dmux:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/Decoder_ECC.v
+	module worklib.decoder_ECC:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/PUF_final/DECODER_256.v
+	module worklib.decoder_top:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/ro_odometer_wrapper.v
+	module worklib.ro_odometer_wrapper:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/ro_odometer_top.v
+	module worklib.ro_odometer_top:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/mux.v
+	module worklib.mux_ro:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/ring_oscillator.v
+	module worklib.ring_oscillator:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ro_odometer/rtl/sn_cdir_decoder.v
+	module worklib.sn_cdir_decoder:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha_wrapper.v
+	module worklib.sha_wrapper:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v
+`define K00 64'h428a2f98_d728ae22
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,57|33): text macro 'K00' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',48|11 ).
+`define K01 64'h71374491_23ef65cd
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,58|33): text macro 'K01' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',49|11 ).
+`define K02 64'hb5c0fbcf_ec4d3b2f
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,59|33): text macro 'K02' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',50|11 ).
+`define K03 64'he9b5dba5_8189dbbc
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,60|33): text macro 'K03' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',51|11 ).
+`define K04 64'h3956c25b_f348b538
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,61|33): text macro 'K04' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',52|11 ).
+`define K05 64'h59f111f1_b605d019
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,62|33): text macro 'K05' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',53|11 ).
+`define K06 64'h923f82a4_af194f9b
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,63|33): text macro 'K06' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',54|11 ).
+`define K07 64'hab1c5ed5_da6d8118
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,64|33): text macro 'K07' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',55|11 ).
+`define K08 64'hd807aa98_a3030242
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,65|33): text macro 'K08' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',56|11 ).
+`define K09 64'h12835b01_45706fbe
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,66|33): text macro 'K09' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',57|11 ).
+`define K10 64'h243185be_4ee4b28c
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,67|33): text macro 'K10' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',58|11 ).
+`define K11 64'h550c7dc3_d5ffb4e2
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,68|33): text macro 'K11' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',59|11 ).
+`define K12 64'h72be5d74_f27b896f
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,69|33): text macro 'K12' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',60|11 ).
+`define K13 64'h80deb1fe_3b1696b1
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,70|33): text macro 'K13' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',61|11 ).
+`define K14 64'h9bdc06a7_25c71235
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,71|33): text macro 'K14' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',62|11 ).
+`define K15 64'hc19bf174_cf692694
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,72|33): text macro 'K15' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',63|11 ).
+`define K16 64'he49b69c1_9ef14ad2
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,73|33): text macro 'K16' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',64|11 ).
+`define K17 64'hefbe4786_384f25e3
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,74|33): text macro 'K17' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',65|11 ).
+`define K18 64'h0fc19dc6_8b8cd5b5
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,75|33): text macro 'K18' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',66|11 ).
+`define K19 64'h240ca1cc_77ac9c65
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,76|33): text macro 'K19' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',67|11 ).
+`define K20 64'h2de92c6f_592b0275
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,77|33): text macro 'K20' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',68|11 ).
+`define K21 64'h4a7484aa_6ea6e483
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,78|33): text macro 'K21' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',69|11 ).
+`define K22 64'h5cb0a9dc_bd41fbd4
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,79|33): text macro 'K22' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',70|11 ).
+`define K23 64'h76f988da_831153b5
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,80|33): text macro 'K23' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',71|11 ).
+`define K24 64'h983e5152_ee66dfab
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,81|33): text macro 'K24' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',72|11 ).
+`define K25 64'ha831c66d_2db43210
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,82|33): text macro 'K25' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',73|11 ).
+`define K26 64'hb00327c8_98fb213f
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,83|33): text macro 'K26' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',74|11 ).
+`define K27 64'hbf597fc7_beef0ee4
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,84|33): text macro 'K27' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',75|11 ).
+`define K28 64'hc6e00bf3_3da88fc2
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,85|33): text macro 'K28' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',76|11 ).
+`define K29 64'hd5a79147_930aa725
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,86|33): text macro 'K29' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',77|11 ).
+`define K30 64'h06ca6351_e003826f
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,87|33): text macro 'K30' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',78|11 ).
+`define K31 64'h14292967_0a0e6e70
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,88|33): text macro 'K31' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',79|11 ).
+`define K32 64'h27b70a85_46d22ffc
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,89|33): text macro 'K32' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',80|11 ).
+`define K33 64'h2e1b2138_5c26c926
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,90|33): text macro 'K33' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',81|11 ).
+`define K34 64'h4d2c6dfc_5ac42aed
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,91|33): text macro 'K34' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',82|11 ).
+`define K35 64'h53380d13_9d95b3df
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,92|33): text macro 'K35' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',83|11 ).
+`define K36 64'h650a7354_8baf63de
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,93|33): text macro 'K36' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',84|11 ).
+`define K37 64'h766a0abb_3c77b2a8
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,94|33): text macro 'K37' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',85|11 ).
+`define K38 64'h81c2c92e_47edaee6
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,95|33): text macro 'K38' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',86|11 ).
+`define K39 64'h92722c85_1482353b
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,96|33): text macro 'K39' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',87|11 ).
+`define K40 64'ha2bfe8a1_4cf10364
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,97|33): text macro 'K40' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',88|11 ).
+`define K41 64'ha81a664b_bc423001
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,98|33): text macro 'K41' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',89|11 ).
+`define K42 64'hc24b8b70_d0f89791
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,99|33): text macro 'K42' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',90|11 ).
+`define K43 64'hc76c51a3_0654be30
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,100|33): text macro 'K43' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',91|11 ).
+`define K44 64'hd192e819_d6ef5218
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,101|33): text macro 'K44' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',92|11 ).
+`define K45 64'hd6990624_5565a910
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,102|33): text macro 'K45' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',93|11 ).
+`define K46 64'hf40e3585_5771202a
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,103|33): text macro 'K46' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',94|11 ).
+`define K47 64'h106aa070_32bbd1b8
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,104|33): text macro 'K47' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',95|11 ).
+`define K48 64'h19a4c116_b8d2d0c8
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,105|33): text macro 'K48' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',96|11 ).
+`define K49 64'h1e376c08_5141ab53
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,106|33): text macro 'K49' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',97|11 ).
+`define K50 64'h2748774c_df8eeb99
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,107|33): text macro 'K50' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',98|11 ).
+`define K51 64'h34b0bcb5_e19b48a8
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,108|33): text macro 'K51' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',99|11 ).
+`define K52 64'h391c0cb3_c5c95a63
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,109|33): text macro 'K52' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',100|11 ).
+`define K53 64'h4ed8aa4a_e3418acb
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,110|33): text macro 'K53' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',101|11 ).
+`define K54 64'h5b9cca4f_7763e373
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,111|33): text macro 'K54' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',102|11 ).
+`define K55 64'h682e6ff3_d6b2b8a3
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,112|33): text macro 'K55' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',103|11 ).
+`define K56 64'h748f82ee_5defb2fc
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,113|33): text macro 'K56' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',104|11 ).
+`define K57 64'h78a5636f_43172f60
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,114|33): text macro 'K57' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',105|11 ).
+`define K58 64'h84c87814_a1f0ab72
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,115|33): text macro 'K58' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',106|11 ).
+`define K59 64'h8cc70208_1a6439ec
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,116|33): text macro 'K59' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',107|11 ).
+`define K60 64'h90befffa_23631e28
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,117|33): text macro 'K60' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',108|11 ).
+`define K61 64'ha4506ceb_de82bde9
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,118|33): text macro 'K61' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',109|11 ).
+`define K62 64'hbef9a3f7_b2c67915
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,119|33): text macro 'K62' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',110|11 ).
+`define K63 64'hc67178f2_e372532b
+                                 |
+xmvlog: *W,MACRDF (/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha384.v,120|33): text macro 'K63' redefined - replaced with new definition, Previous definition was found here ('../TRNG/rtl/sha256.v',111|11 ).
+	module worklib.sha384:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha512.v
+	module worklib.sha512:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ecc/ECC_v1_0_S00_AXI.v
+	module worklib.ECC_v1_0_S00_AXI:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/aes_ctr_wrapper.sv
+	module worklib.aes_ctr_wrapper:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/aes_CTR_mode.v
+	module worklib.aes_CTR_mode:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/aes_128.v
+	module worklib.aes_128:v
+		errors: 0, warnings: 0
+	module worklib.expand_key_128:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/round.v
+	module worklib.one_round:v
+		errors: 0, warnings: 0
+	module worklib.final_round:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/aes_ctr/table.v
+	module worklib.table_lookup:v
+		errors: 0, warnings: 0
+	module worklib.S4:v
+		errors: 0, warnings: 0
+	module worklib.T:v
+		errors: 0, warnings: 0
+	module worklib.S:v
+		errors: 0, warnings: 0
+	module worklib.xS:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/DH/rtl/dh_wrapper.v
+	module worklib.dh_wrapper:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/POCA_FSM/POCA_v1_0_POCA_master.v
+	module worklib.POCA_v1_0_POCA_master:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/POCA_FSM/parameter_poca.v
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/POCA_FSM/poca_master.v
+	module worklib.poca_master:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ECDSA/rtl/ecdsa_wrapper.v
+	module worklib.ecdsa_wrapper:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ECDSA/rtl/ecdsa_combined.sv
+	module worklib.ecdsa_combined:sv
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ECDSA/rtl/ECDSA_sign.v
+	module worklib.ECDSA_sign:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/ECDSA/rtl/ECDSA_verify.v
+	module worklib.ECDSA_verify:v
+		errors: 0, warnings: 0
+file: /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/tb/ariane_tb.sv
+	module worklib.ariane_tb:sv
+		errors: 0, warnings: 0
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 71
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha_controller.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/mux512.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/mux4x1.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/controller512.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/SHA512_IP.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/controller384.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/SHA384_IP.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/controller.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/SHA_IP.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/decoder.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/sha_functions.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/reg.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/SHA/rtl/toplevel.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/XorCrearor.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/RightShiftReg.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Regeister.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/LeftShiftReg.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/FullAdder.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/COUNTER.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/BoothController.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Adder.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Alu.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/Ander.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/BoothEncoder.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/BoothDatapath.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/RSA_final/BoothMultiplier.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/DH/rtl/serial_multiplier_283.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/uart_transmitter.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/uart_receiver.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/uart_interrupt.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/uart_baudgen.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_mv_filter.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_input_sync.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_input_filter.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_fifo.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_edge_detect.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_counter.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/slib_clock_div.vhd:
+	errors: 0, warnings: 0
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/fpga/src/apb_uart/src/apb_uart.vhd:
+	errors: 0, warnings: 0
+WORKLIB.SHA_CONTROLLER (entity):
+	streams: 9, words: 127
+WORKLIB.SHA_CONTROLLER:ASM (architecture):
+	streams: 1, words: 195
+WORKLIB.MUX512 (entity):
+	streams: 13, words: 1801
+WORKLIB.MUX512:BHV (architecture):
+	streams: 1, words: 195
+WORKLIB.MUX4X1 (entity):
+	streams: 8, words: 376
+WORKLIB.MUX4X1:BHV (architecture):
+	streams: 1, words: 195
+WORKLIB.CONTROLLER512 (entity):
+	streams: 15, words: 1273
+WORKLIB.CONTROLLER512:BHV (architecture):
+	streams: 1, words: 494
+WORKLIB.SHA512_IP (entity):
+	streams: 9, words: 681
+WORKLIB.SHA512_IP:BHV (architecture):
+	streams: 2, words: 10290
+WORKLIB.CONTROLLER384 (entity):
+	streams: 15, words: 1273
+WORKLIB.CONTROLLER384:BHV (architecture):
+	streams: 1, words: 494
+WORKLIB.SHA384_IP (entity):
+	streams: 9, words: 681
+WORKLIB.SHA384_IP:BHV (architecture):
+	streams: 2, words: 8658
+WORKLIB.CONTROLLER (entity):
+	streams: 15, words: 1265
+WORKLIB.CONTROLLER:BHV (architecture):
+	streams: 1, words: 494
+WORKLIB.SHA_IP (entity):
+	streams: 9, words: 681
+WORKLIB.SHA_IP:BHV (architecture):
+	streams: 2, words: 6998
+WORKLIB.DECODER (entity):
+	streams: 8, words: 376
+WORKLIB.DECODER:BHV (architecture):
+	streams: 1, words: 195
+WORKLIB.SHA_FUNCTIONS (entity):
+	streams: 11, words: 954
+WORKLIB.SHA_FUNCTIONS:STR (architecture):
+	streams: 7, words: 6690
+WORKLIB.REG (entity):
+	streams: 9, words: 1849
+WORKLIB.REG:BHV (architecture):
+	streams: 1, words: 195
+WORKLIB.TOP_LEVEL (entity):
+	streams: 13, words: 970
+WORKLIB.TOP_LEVEL:STR (architecture):
+	streams: 6, words: 7714
+WORKLIB.XORCREAROR (entity):
+	streams: 7, words: 1833
+WORKLIB.XORCREAROR:BEHAVIORAL (architecture):
+	streams: 1, words: 195
+WORKLIB.RIGHTSHIFTREG (entity):
+	streams: 9, words: 1279
+WORKLIB.RIGHTSHIFTREG:BEHAVIORAL (architecture):
+	streams: 1, words: 801
+WORKLIB.REGEISTER (entity):
+	streams: 9, words: 1849
+WORKLIB.REGEISTER:BEHAVIORAL (architecture):
+	streams: 1, words: 863
+WORKLIB.LEFTSHIFTREG (entity):
+	streams: 9, words: 1849
+WORKLIB.LEFTSHIFTREG:BEHAVIORAL (architecture):
+	streams: 1, words: 709
+WORKLIB.FULLADDER (entity):
+	streams: 6, words: 103
+WORKLIB.FULLADDER:BEHAVIORAL (architecture):
+	streams: 1, words: 195
+WORKLIB.COUNTER (entity):
+	streams: 6, words: 998
+WORKLIB.COUNTER:BEHAVIORAL (architecture):
+	streams: 1, words: 863
+WORKLIB.BOOTHCONTROLLER (entity):
+	streams: 10, words: 135
+WORKLIB.BOOTHCONTROLLER:BEHAVIORAL (architecture):
+	streams: 1, words: 195
+WORKLIB.ADDER (entity):
+	streams: 10, words: 2684
+WORKLIB.ADDER:BEHAVIORAL (architecture):
+	streams: 3, words: 3287
+WORKLIB.ALU (entity):
+	streams: 9, words: 2676
+WORKLIB.ALU:BEHAVIORAL (architecture):
+	streams: 3, words: 5442
+WORKLIB.ANDER (entity):
+	streams: 7, words: 1833
+WORKLIB.ANDER:BEHAVIORAL (architecture):
+	streams: 1, words: 195
+WORKLIB.BOOTHENCODER (entity):
+	streams: 5, words: 95
+WORKLIB.BOOTHENCODER:BEHAVIORAL (architecture):
+	streams: 1, words: 195
+WORKLIB.BOOTHDATAPATH (entity):
+	streams: 12, words: 2780
+WORKLIB.BOOTHDATAPATH:BEHAVIORAL (architecture):
+	streams: 7, words: 15923
+WORKLIB.BOOTHMULTIPLIER (entity):
+	streams: 13, words: 4997
+WORKLIB.BOOTHMULTIPLIER:BEHAVIORAL (architecture):
+	streams: 4, words: 5902
+WORKLIB.SERIAL_MULTIPLIER_283 (entity):
+	streams: 12, words: 2700
+WORKLIB.SERIAL_MULTIPLIER_283:BEHAVE (architecture):
+	streams: 1, words: 3891
+WORKLIB.UART_TRANSMITTER (entity):
+	streams: 17, words: 706
+WORKLIB.UART_TRANSMITTER:RTL (architecture):
+	streams: 1, words: 230
+WORKLIB.UART_RECEIVER (entity):
+	streams: 18, words: 714
+WORKLIB.UART_RECEIVER:RTL (architecture):
+	streams: 1, words: 2527
+WORKLIB.UART_INTERRUPT (entity):
+	streams: 16, words: 1211
+WORKLIB.UART_INTERRUPT:RTL (architecture):
+	streams: 1, words: 276
+WORKLIB.UART_BAUDGEN (entity):
+	streams: 8, words: 390
+WORKLIB.UART_BAUDGEN:RTL (architecture):
+	streams: 1, words: 295
+WORKLIB.SLIB_MV_FILTER (entity):
+	streams: 9, words: 263
+WORKLIB.SLIB_MV_FILTER:RTL (architecture):
+	streams: 1, words: 610
+WORKLIB.SLIB_INPUT_SYNC (entity):
+	streams: 5, words: 95
+WORKLIB.SLIB_INPUT_SYNC:RTL (architecture):
+	streams: 1, words: 279
+WORKLIB.SLIB_INPUT_FILTER (entity):
+	streams: 7, words: 179
+WORKLIB.SLIB_INPUT_FILTER:RTL (architecture):
+	streams: 1, words: 347
+WORKLIB.SLIB_FIFO (entity):
+	streams: 16, words: 2851
+WORKLIB.SLIB_FIFO:RTL (architecture):
+	streams: 1, words: 3605
+WORKLIB.SLIB_EDGE_DETECT (entity):
+	streams: 6, words: 103
+WORKLIB.SLIB_EDGE_DETECT:RTL (architecture):
+	streams: 1, words: 195
+WORKLIB.SLIB_COUNTER (entity):
+	streams: 13, words: 1890
+WORKLIB.SLIB_COUNTER:RTL (architecture):
+	streams: 1, words: 627
+WORKLIB.SLIB_CLOCK_DIV (entity):
+	streams: 6, words: 171
+WORKLIB.SLIB_CLOCK_DIV:RTL (architecture):
+	streams: 1, words: 347
+WORKLIB.APB_UART (entity):
+	streams: 25, words: 1116
+WORKLIB.APB_UART:RTL (architecture):
+	streams: 1, words: 12469
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+xmelab: *W,DLLSVW: Unable to list the views of rfLib.rfLib (System error).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.rsa@rsa_wrapper<module>.rsa@rsa_mont<module>.u_encrypt@mont_lad<module>.mult_1) with design unit (WORKLIB.BOOTHMULTIPLIER:BEHAVIORAL).
+		) kGGen (
+		      |
+xmelab: *W,CUVWSP (../Security-IP_DrMishra/ECIES/ECIES_encrypt.v,37|8): 1 output port was not connected:
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): infinityP
+
+		) kGGen (
+		      |
+xmelab: *W,CUVWSI (../Security-IP_DrMishra/ECIES/ECIES_encrypt.v,37|8): 2 input ports were not connected:
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): Ox
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): Oy
+
+	eeageneric #(.integer_size(integer_size)) eeaCalculator(.clk(clk), .reset(rst), .go(go), .done(done), .x(doubleYin), .p(prime), .x_inv(eeaout));
+	                                                      |
+xmelab: *W,CUVWSP (../Security-IP_DrMishra/ECCShared/get_2P.v,10|55): 1 output port was not connected:
+xmelab: (../Security-IP_DrMishra/ECCShared/eeageneric.v,4): failure
+
+	eeageneric #(.integer_size(integer_size)) eeaCalculator(.clk(clk), .reset(rst), .go(go), .done(done), .x(subtractX), .p(prime), .x_inv(eeaout));
+	                                                      |
+xmelab: *W,CUVWSP (../Security-IP_DrMishra/ECCShared/get_PQ.v,9|55): 1 output port was not connected:
+xmelab: (../Security-IP_DrMishra/ECCShared/eeageneric.v,4): failure
+
+			) sharedSecretGen (
+			                |
+xmelab: *W,CUVWSP (../Security-IP_DrMishra/ECIES/ECIES_encrypt.v,56|19): 2 output ports were not connected:
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): infinityP
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): mGy
+
+			) sharedSecretGen (
+			                |
+xmelab: *W,CUVWSI (../Security-IP_DrMishra/ECIES/ECIES_encrypt.v,56|19): 2 input ports were not connected:
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): Ox
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): Oy
+
+		) kGGen (
+		      |
+xmelab: *W,CUVWSI (../Security-IP_DrMishra/ECIES/ECIES_decrypt.v,39|8): 2 input ports were not connected:
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): Ox
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): Oy
+
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.SHA@sha_wrapper<module>.UUT) with design unit (WORKLIB.TOP_LEVEL:STR).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.SHA@sha_wrapper<module>.UUT@top_level(STR):U_FUNCTIONS@sha_functions(STR):U_SHA256@SHA_IP(BHV):UUT) with verilog module (worklib.sha256:v).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.SHA@sha_wrapper<module>.UUT@top_level(STR):U_FUNCTIONS@sha_functions(STR):U_SHA384@SHA384_IP(BHV):UUT) with verilog module (worklib.sha384:v).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.SHA@sha_wrapper<module>.UUT@top_level(STR):U_FUNCTIONS@sha_functions(STR):U_SHA512@SHA512_IP(BHV):UUT) with verilog module (worklib.sha512:v).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.DH@dh_wrapper<module>.UUT) with design unit (WORKLIB.SERIAL_MULTIPLIER_283:BEHAVE).
+        ) publicKeyGen (
+                     |
+xmelab: *W,CUVWSI (../ECDSA/rtl/ecdsa_combined.sv,20|21): 2 input ports were not connected:
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): Ox
+xmelab: (../Security-IP_DrMishra/ECCShared/montgomeryLadder.v,4): Oy
+
+  	eeageneric #(.integer_size(integer_size)) kinverter(
+  	                                                  |
+xmelab: *W,CUVWSP (../ECDSA/rtl/ECDSA_sign.v,55|53): 1 output port was not connected:
+xmelab: (../Security-IP_DrMishra/ECCShared/eeageneric.v,4): failure
+
+	Top level design units:
+		cva6_config_pkg
+		riscv
+		dm
+		ariane_pkg
+		defs_div_sqrt_mvp
+		instr_tracer_pkg
+		$unit_0x6b9a3a54
+		axi_pkg
+		ariane_soc
+		ariane_axi_soc
+		ariane_rvfi_pkg
+		ariane_axi
+		cvxif_pkg
+		cf_math_pkg
+		wt_cache_pkg
+		rvfi_pkg
+		ariane_tb
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart) with design unit (WORKLIB.APB_UART:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IS_SIN) with design unit (WORKLIB.SLIB_INPUT_SYNC:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IS_CTS) with design unit (WORKLIB.SLIB_INPUT_SYNC:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IS_DSR) with design unit (WORKLIB.SLIB_INPUT_SYNC:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IS_DCD) with design unit (WORKLIB.SLIB_INPUT_SYNC:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IS_RI) with design unit (WORKLIB.SLIB_INPUT_SYNC:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IF_CTS) with design unit (WORKLIB.SLIB_INPUT_FILTER:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IF_DSR) with design unit (WORKLIB.SLIB_INPUT_FILTER:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IF_DCD) with design unit (WORKLIB.SLIB_INPUT_FILTER:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IF_RI) with design unit (WORKLIB.SLIB_INPUT_FILTER:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IIC) with design unit (WORKLIB.UART_INTERRUPT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_IIC_THRE_ED) with design unit (WORKLIB.SLIB_EDGE_DETECT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_PEDET) with design unit (WORKLIB.SLIB_EDGE_DETECT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_FEDET) with design unit (WORKLIB.SLIB_EDGE_DETECT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_BIDET) with design unit (WORKLIB.SLIB_EDGE_DETECT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_ED_CTS) with design unit (WORKLIB.SLIB_EDGE_DETECT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_ED_DSR) with design unit (WORKLIB.SLIB_EDGE_DETECT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_ED_RI) with design unit (WORKLIB.SLIB_EDGE_DETECT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_ED_DCD) with design unit (WORKLIB.SLIB_EDGE_DETECT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_BG16) with design unit (WORKLIB.UART_BAUDGEN:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_BG2) with design unit (WORKLIB.SLIB_CLOCK_DIV:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_RCLK) with design unit (WORKLIB.SLIB_EDGE_DETECT:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_TXFF) with design unit (WORKLIB.SLIB_FIFO:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_RXFF) with design unit (WORKLIB.SLIB_FIFO:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_TX) with design unit (WORKLIB.UART_TRANSMITTER:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_RX) with design unit (WORKLIB.UART_RECEIVER:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_RX@uart_receiver(rtl):RX_BRC) with design unit (WORKLIB.SLIB_COUNTER:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_RX@uart_receiver(rtl):RX_MVF) with design unit (WORKLIB.SLIB_MV_FILTER:RTL).
+xmelab: *W,CUDEFB: default binding occurred for component instance (ariane_tb.dut@ariane_testharness<module>.i_ariane_peripherals@ariane_peripherals<module>.gen_uart.i_apb_uart@apb_uart(rtl):UART_RX@uart_receiver(rtl):RX_IFSB) with design unit (WORKLIB.SLIB_INPUT_FILTER:RTL).
+      .S_AXI_AWADDR        (rsa_lite.aw_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,538|43): port sizes differ in port connection(64/11) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (rsa_lite.ar_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,549|43): port sizes differ in port connection(64/11) for the instance(ariane_tb.dut) .
+      .S_AXI_AWADDR        (trng_lite.aw_addr   ),
+                                            |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,579|44): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (trng_lite.ar_addr   ),
+                                            |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,590|44): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+      .S_AXI_AWADDR        (ecies_lite.aw_addr   ),
+                                             |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,634|45): port sizes differ in port connection(32/9) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (ecies_lite.ar_addr   ),
+                                             |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,645|45): port sizes differ in port connection(32/9) for the instance(ariane_tb.dut) .
+    .mGx(kGx),
+           |
+xmelab: *W,CUVMPW (../Security-IP_DrMishra/ECIES/ECIES_encrypt.v,49|11): port sizes differ in port connection(64/128) for the instance(ariane_tb.dut.ecies.inst_ECIES_top.inst_ECIES_encrypt) .
+    .mGy(kGy)
+           |
+xmelab: *W,CUVMPW (../Security-IP_DrMishra/ECIES/ECIES_encrypt.v,50|11): port sizes differ in port connection(64/128) for the instance(ariane_tb.dut.ecies.inst_ECIES_top.inst_ECIES_encrypt) .
+    .Px(publicKeyX), 
+                 |
+xmelab: *W,CUVMPW (../Security-IP_DrMishra/ECIES/ECIES_encrypt.v,66|17): port sizes differ in port connection(128/64) for the instance(ariane_tb.dut.ecies.inst_ECIES_top.inst_ECIES_encrypt) .
+    .Py(publicKeyY), 
+                 |
+xmelab: *W,CUVMPW (../Security-IP_DrMishra/ECIES/ECIES_encrypt.v,67|17): port sizes differ in port connection(128/64) for the instance(ariane_tb.dut.ecies.inst_ECIES_top.inst_ECIES_encrypt) .
+    .mGx(secret_X) //Leave out y bc not included in secret, so doesn't matter.
+                |
+xmelab: *W,CUVMPW (../Security-IP_DrMishra/ECIES/ECIES_encrypt.v,68|16): port sizes differ in port connection(64/384) for the instance(ariane_tb.dut.ecies.inst_ECIES_top.inst_ECIES_encrypt) .
+    .mGx(kGx),
+           |
+xmelab: *W,CUVMPW (../Security-IP_DrMishra/ECIES/ECIES_decrypt.v,51|11): port sizes differ in port connection(64/128) for the instance(ariane_tb.dut.ecies.inst_ECIES_top.inst_ECIES_decrypt) .
+    .mGy(kGy)
+           |
+xmelab: *W,CUVMPW (../Security-IP_DrMishra/ECIES/ECIES_decrypt.v,52|11): port sizes differ in port connection(64/128) for the instance(ariane_tb.dut.ecies.inst_ECIES_top.inst_ECIES_decrypt) .
+      .S_AXI_AWADDR        (PUF_lite.aw_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,675|43): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (PUF_lite.ar_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,686|43): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+        .Challenge_Seed(Challenge_Seed),
+                                     |
+xmelab: *W,CUVMPW (../PUF_final/PUF_wrapper.v,659|37): port sizes differ in port connection(32/8) for the instance(ariane_tb.dut.PUF) .
+      .S_AXI_AWADDR        (RO_ODOMETER_lite.aw_addr   ),
+                                                   |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,716|51): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (RO_ODOMETER_lite.ar_addr   ),
+                                                   |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,727|51): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+      .S_AXI_AWADDR        (SHA_lite.aw_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,757|43): port sizes differ in port connection(32/8) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (SHA_lite.ar_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,768|43): port sizes differ in port connection(32/8) for the instance(ariane_tb.dut) .
+      .S_AXI_AWADDR        (ecc_lite.aw_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,798|43): port sizes differ in port connection(32/8) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (ecc_lite.ar_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,809|43): port sizes differ in port connection(32/8) for the instance(ariane_tb.dut) .
+      .S_AXI_AWADDR        (aes_lite.aw_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,840|43): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (aes_lite.ar_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,851|43): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+      .S_AXI_AWADDR        (DH_lite.aw_addr   ),
+                                          |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,881|42): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (DH_lite.ar_addr   ),
+                                          |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,892|42): port sizes differ in port connection(32/7) for the instance(ariane_tb.dut) .
+      .M_AXI_AWADDR        (slave[2].aw_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,909|43): port sizes differ in port connection(64/32) for the instance(ariane_tb.dut) .
+      .M_AXI_WDATA         (slave[2].w_data   ),
+                                          |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,916|42): port sizes differ in port connection(64/32) for the instance(ariane_tb.dut) .
+      .M_AXI_WSTRB         (slave[2].w_strb   ),
+                                          |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,917|42): port sizes differ in port connection(8/4) for the instance(ariane_tb.dut) .
+      .M_AXI_ARADDR        (slave[2].ar_addr   ),
+                                           |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,924|43): port sizes differ in port connection(64/32) for the instance(ariane_tb.dut) .
+      .M_AXI_RDATA         (slave[2].r_data   ),
+                                          |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,931|42): port sizes differ in port connection(64/32) for the instance(ariane_tb.dut) .
+      .S_AXI_AWADDR        (ECDSA_lite.aw_addr   ),
+                                             |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,958|45): port sizes differ in port connection(32/9) for the instance(ariane_tb.dut) .
+      .S_AXI_ARADDR        (ECDSA_lite.ar_addr   ),
+                                             |
+xmelab: *W,CUVMPW (../corev_apu/tb/ariane_testharness.sv,969|45): port sizes differ in port connection(32/9) for the instance(ariane_tb.dut) .
+		.m(1), 
+		   |
+xmelab: *W,CUVMPW (../ECDSA/rtl/ECDSA_verify.v,32|5): port sizes differ in port connection(32/64) for the instance(ariane_tb.dut.ECDSA.ecdsa_combined_DUT.DUT_verify) .
+	Building instance overlay tables: ...........
+          r_XNOR = r_LFSR[9] ^~ r_LFSR[5];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,98|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[10] ^~ r_LFSR[7];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,101|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[11] ^~ r_LFSR[9];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,104|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[11] ^~ r_LFSR[9];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,104|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[12] ^~ r_LFSR[6] ^~ r_LFSR[4] ^~ r_LFSR[1];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,107|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[13] ^~ r_LFSR[4] ^~ r_LFSR[3] ^~ r_LFSR[1];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,110|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[14] ^~ r_LFSR[5] ^~ r_LFSR[3] ^~ r_LFSR[1];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,113|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[15] ^~ r_LFSR[14];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,116|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[15] ^~ r_LFSR[14];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,116|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[16] ^~ r_LFSR[15] ^~ r_LFSR[13] ^~ r_LFSR[4];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,119|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[16] ^~ r_LFSR[15] ^~ r_LFSR[13] ^~ r_LFSR[4];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,119|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[16] ^~ r_LFSR[15] ^~ r_LFSR[13] ^~ r_LFSR[4];
+                                                    |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,119|52): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[17] ^~ r_LFSR[14];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,122|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[17] ^~ r_LFSR[14];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,122|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[18] ^~ r_LFSR[11];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,125|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[18] ^~ r_LFSR[11];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,125|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[19] ^~ r_LFSR[6] ^~ r_LFSR[2] ^~ r_LFSR[1];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,128|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[20] ^~ r_LFSR[17];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,131|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[20] ^~ r_LFSR[17];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,131|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[21] ^~ r_LFSR[19];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,134|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[21] ^~ r_LFSR[19];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,134|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[22] ^~ r_LFSR[21];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,137|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[22] ^~ r_LFSR[21];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,137|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[23] ^~ r_LFSR[18];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,140|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[23] ^~ r_LFSR[18];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,140|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[24] ^~ r_LFSR[23] ^~ r_LFSR[22] ^~ r_LFSR[17];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,143|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[24] ^~ r_LFSR[23] ^~ r_LFSR[22] ^~ r_LFSR[17];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,143|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[24] ^~ r_LFSR[23] ^~ r_LFSR[22] ^~ r_LFSR[17];
+                                                    |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,143|52): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[24] ^~ r_LFSR[23] ^~ r_LFSR[22] ^~ r_LFSR[17];
+                                                                  |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,143|66): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[25] ^~ r_LFSR[22];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,146|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[25] ^~ r_LFSR[22];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,146|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[26] ^~ r_LFSR[6] ^~ r_LFSR[2] ^~ r_LFSR[1];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,149|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[27] ^~ r_LFSR[5] ^~ r_LFSR[2] ^~ r_LFSR[1];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,152|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[28] ^~ r_LFSR[25];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,155|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[28] ^~ r_LFSR[25];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,155|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[29] ^~ r_LFSR[27];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,158|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[29] ^~ r_LFSR[27];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,158|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[30] ^~ r_LFSR[6] ^~ r_LFSR[4] ^~ r_LFSR[1];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,161|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[31] ^~ r_LFSR[28];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,164|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[31] ^~ r_LFSR[28];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,164|38): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[32] ^~ r_LFSR[22] ^~ r_LFSR[2] ^~ r_LFSR[1];
+                        |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,167|24): Bit-select or part-select index out of declared bounds.
+          r_XNOR = r_LFSR[32] ^~ r_LFSR[22] ^~ r_LFSR[2] ^~ r_LFSR[1];
+                                      |
+xmelab: *W,BNDWRN (../PUF_final/LFSR.v,167|38): Bit-select or part-select index out of declared bounds.
+......... Done
+	Generating native compiled code:
+		worklib.sha512:v <0x31b53e50>
+			streams:  69, words: 143950
+		worklib.sha384:v <0x0bfa83a6>
+			streams:  69, words: 142890
+		worklib.sha256:v <0x2f3649b0>
+			streams:  49, words: 75425
+		worklib.rvfi_tracer:sv <0x273cf2c4>
+			streams:   7, words: 12721
+		worklib.fifo_v3:sv <0x289f7b23>
+			streams:  20, words: 16410
+		worklib.instr_tracer:sv <0x6020bb8a>
+			streams:  10, words: 30236
+		worklib.axi_shim:sv <0x2aa08a2f>
+			streams:  27, words: 22265
+		worklib.fifo_v3:sv <0x1014c985>
+			streams:  20, words: 15493
+		worklib.fifo_v3:sv <0x7b2883dc>
+			streams:  20, words: 15161
+		worklib.wt_dcache_ctrl:sv <0x5f68a672>
+			streams:  26, words: 22980
+		worklib.exp_backoff:sv <0x08f79999>
+			streams:   9, words:  4358
+		worklib.lfsr:sv <0x1b9967cf>
+			streams:  12, words: 58959
+		worklib.SyncSpRamBeNx64:sv <0x2b8d4285>
+			streams:  16, words:  8673
+		worklib.lfsr:sv <0x15f54b7a>
+			streams:  12, words: 58955
+		worklib.controller:sv <0x79b7ffed>
+			streams:   5, words:  7292
+		worklib.perf_counters:sv <0x4340d028>
+			streams:   3, words:  8572
+		worklib.csr_regfile:sv <0x0ee5f8e3>
+			streams:  44, words: 149737
+		worklib.cvxif_fu:sv <0x34283c76>
+			streams:   2, words: 10209
+		worklib.lsu_bypass:sv <0x7a8f97b7>
+			streams:   7, words:  6643
+		worklib.fifo_v3:sv <0x26d468f1>
+			streams:  20, words: 15364
+		worklib.store_unit:sv <0x5c7ade29>
+			streams:  27, words: 15479
+		worklib.pmp_entry:sv <0x51713aa3>
+			streams:   4, words:  3695
+		worklib.ptw:sv <0x14fbe62c>
+			streams:  18, words: 28098
+		worklib.tlb:sv <0x7be0d1d9>
+			streams:  18, words: 23791
+		worklib.tlb:sv <0x3c942d62>
+			streams:  18, words: 23945
+		worklib.mmu:sv <0x22c538b8>
+			streams:  40, words: 44239
+		worklib.fpnew_rounding:sv <0x32cfc2ee>
+			streams:   4, words:  2305
+		worklib.fpnew_rounding:sv <0x381c3c99>
+			streams:   4, words:  2544
+		worklib.norm_div_sqrt_mvp:sv <0x45ce2336>
+			streams:  16, words: 39238
+		worklib.iteration_div_sqrt_mvp:sv <0x6f35fe8b>
+			streams:   4, words:  1858
+		worklib.nrbd_nrsc_mvp:sv <0x35954c3f>
+			streams:  13, words:  3737
+		worklib.preprocess_mvp:sv <0x46e9aba1>
+			streams:  59, words: 30908
+		worklib.div_sqrt_top_mvp:sv <0x008d4eca>
+			streams:  55, words:  9931
+		worklib.fpnew_rounding:sv <0x63a74858>
+			streams:   4, words:  2503
+		worklib.serdiv:sv <0x4819a6b2>
+			streams:  38, words: 21974
+		worklib.multiplier:sv <0x2fc66c51>
+			streams:  11, words:  6529
+		worklib.mult:sv <0x0e6aa24c>
+			streams:  23, words: 10861
+		worklib.csr_buffer:sv <0x44879e1a>
+			streams:   5, words:  2235
+		worklib.branch_unit:sv <0x12dce7d9>
+			streams:   2, words: 10449
+		worklib.ex_stage:sv <0x72c0d502>
+			streams:  61, words: 22357
+		worklib.re_name:sv <0x5fda3eaa>
+			streams:   6, words:  7463
+		worklib.issue_stage:sv <0x7ba5cf40>
+			streams:  52, words: 12227
+		worklib.decoder:sv <0x11fdf351>
+			streams:  12, words: 152151
+		worklib.compressed_decoder:sv <0x34eb6601>
+			streams:   4, words: 21949
+		worklib.fifo_v3:sv <0x0e126db2>
+			streams:  20, words: 15514
+		worklib.popcount:sv <0x72666b6e>
+			streams:   3, words:  1247
+		worklib.instr_scan:sv <0x77b96c80>
+			streams:   9, words:  6834
+		worklib.ras:sv <0x1ed9266a>
+			streams:   4, words:  3672
+		worklib.cva6:sv <0x6467f85a>
+			streams: 279, words: 74038
+		worklib.ariane:sv <0x1111d79c>
+			streams:   6, words:  2079
+		worklib.uart_bus:sv <0x094aa03f>
+			streams:   3, words:  5787
+		worklib.timer:sv <0x7d7f815a>
+			streams:   9, words:  5758
+		worklib.plic_regs:sv <0x1b4d087e>
+			streams:   1, words: 46732
+		worklib.rv_plic_target:sv <0x69efe51f>
+			streams:   4, words:  2024
+		worklib.rv_plic_gateway:sv <0x3a2484cb>
+			streams:   6, words:  1868
+		worklib.apb_to_reg:sv <0x2b909ff3>
+			streams:   1, words:  1457
+		worklib.fifo_v3:sv <0x598d2ef3>
+			streams:  20, words: 13990
+		worklib.axi_single_slice:sv <0x74f0b1d9>
+			streams:   9, words:  2064
+		worklib.axi_b_buffer:sv <0x55cadf1f>
+			streams:   6, words:  1811
+		worklib.axi_r_buffer:sv <0x67479d09>
+			streams:   6, words:  2907
+		worklib.fifo_v3:sv <0x455f9a32>
+			streams:  20, words: 15347
+		worklib.axi_single_slice:sv <0x372821da>
+			streams:   9, words:  2203
+		worklib.axi_w_buffer:sv <0x31729ffd>
+			streams:   6, words:  2653
+		worklib.axi_ar_buffer:sv <0x25f89d4d>
+			streams:   6, words:  4562
+		worklib.fifo_v3:sv <0x10362c8f>
+			streams:  20, words: 15513
+		worklib.axi_single_slice:sv <0x29608ff1>
+			streams:   9, words:  2248
+		worklib.axi_aw_buffer:sv <0x238b5c40>
+			streams:   6, words:  4562
+		worklib.axi2apb_64_32:sv <0x36c91071>
+			streams:  71, words: 42943
+		worklib.clint_sync:sv <0x3c2e3248>
+			streams:   3, words:   672
+		worklib.clint_sync_wedge:sv <0x11e9223e>
+			streams:   5, words:  1150
+		worklib.axi_lite_interface:sv <0x4aa9bc83>
+			streams:  17, words: 17285
+		worklib.ECDSA_verify:v <0x3f6f1cda>
+			streams:  33, words: 28533
+		worklib.eeageneric:v <0x62a05368>
+			streams:  11, words:  6520
+		worklib.montgomeryLadder:v <0x5cbe3cf6>
+			streams:  34, words: 28953
+		worklib.ECDSA_sign:v <0x1c686ec4>
+			streams:  30, words: 20434
+		worklib.montgomeryLadder:v <0x16d8651b>
+			streams:  34, words: 29693
+		worklib.ecdsa_wrapper:v <0x457ec0da>
+			streams: 391, words: 231812
+		worklib.poca_master:v <0x0d16513d>
+			streams:  31, words: 27857
+		worklib.POCA_v1_0_POCA_master:v <0x0c79f879>
+			streams: 111, words: 83929
+		worklib.dh_wrapper:v <0x3da74a49>
+			streams: 127, words: 71901
+		worklib.S4:v <0x5c3bcb7e>
+			streams:   1, words:   436
+		worklib.final_round:v <0x0dab1ea5>
+			streams:   8, words:  3519
+		worklib.xS:v <0x7fe9c557>
+			streams:   2, words: 29973
+		worklib.S:v <0x3f336a1e>
+			streams:   2, words: 29973
+		worklib.T:v <0x0113379c>
+			streams:   2, words:   626
+		worklib.table_lookup:v <0x414ed7e9>
+			streams:   1, words:   432
+		worklib.one_round:v <0x53f3c6f3>
+			streams:   8, words:  3283
+		worklib.expand_key_128:v <0x392c1ba5>
+			streams:  14, words:  3699
+		worklib.S:v <0x4ed5e35a>
+			streams:   2, words: 30029
+		worklib.S4:v <0x7e639973>
+			streams:   0, words:     0
+		worklib.expand_key_128:v <0x155402e3>
+			streams:  14, words:  3835
+		worklib.aes_128:v <0x7ab541f2>
+			streams:   5, words:  2432
+		worklib.aes_CTR_mode:v <0x6b1caa13>
+			streams:   4, words:  5284
+		worklib.aes_ctr_wrapper:sv <0x759d56f4>
+			streams: 119, words: 66801
+		worklib.montgomeryLadder:v <0x1f675cf0>
+			streams:  34, words: 30834
+		worklib.ECC_v1_0_S00_AXI:v <0x12a93994>
+			streams: 116, words: 72006
+		worklib.sha_wrapper:v <0x5eb5fd3d>
+			streams: 214, words: 125414
+		worklib.mux_ro:v <0x7954583c>
+			streams:   1, words:   184
+		worklib.ro_odometer_top:v <0x50d300b8>
+			streams:   4, words:  2311
+		worklib.ro_odometer_wrapper:v <0x02dbdf42>
+			streams:  47, words: 22036
+		worklib.Mux_N:v <0x780b436a>
+			streams:   1, words:   558
+		worklib.decoder_ECC:v <0x088ea77f>
+			streams:   1, words:  2353
+		worklib.decoder_top:v <0x1ec33bc0>
+			streams:   9, words:  5689
+		worklib.LFSR:v <0x6d68d643>
+			streams:   8, words:  3178
+		worklib.PUF_Data_Path:v <0x01059e9e>
+			streams:   1, words:   291
+		worklib.PUF_Controller:v <0x7c4131d1>
+			streams:   3, words:  5864
+		worklib.PUF_wrapper:v <0x679844a1>
+			streams: 106, words: 59462
+		worklib.montgomeryLadder:v <0x62ae2a84>
+			streams:  34, words: 29604
+		worklib.ECIES_decrypt:v <0x235a38cf>
+			streams:  26, words: 17886
+		worklib.ANSIX963KDF:sv <0x45909a2f>
+			streams:  17, words:  8273
+		worklib.montgomeryLadder:v <0x5ab4b49c>
+			streams:  34, words: 29749
+		worklib.get_PQ:v <0x4127e0ef>
+			streams:   9, words: 14230
+		worklib.eeageneric:v <0x3035071f>
+			streams:  11, words:  6520
+		worklib.get_2P:v <0x6a91a1c7>
+			streams:  12, words: 11353
+		worklib.montgomeryLadder:v <0x7a094c6d>
+			streams:  34, words: 29522
+		worklib.ECIES_encrypt:v <0x37174d9c>
+			streams:  27, words: 19366
+		worklib.ECIES_wrapper:v <0x1ffbe09b>
+			streams: 453, words: 264323
+		worklib.mux:v <0x507325e6>
+			streams:   1, words:   567
+		worklib.Data_reg:v <0x39e44aa0>
+			streams:   2, words:   870
+		worklib.controller256:v <0x3350dec1>
+			streams:  15, words: 30278
+		worklib.sha256:v <0x6e62e952>
+			streams:  49, words: 72464
+		worklib.sha256_ip:v <0x1ce45c8c>
+			streams:   3, words:  1524
+		worklib.Data_Path_128:v <0x7de088ea>
+			streams:   4, words:   911
+		worklib.TRNG_Controller:v <0x1668d9b0>
+			streams:  11, words:  6036
+		worklib.trng_128_wrapper:v <0x765e00b8>
+			streams:  92, words: 49886
+		worklib.fifo_v3:sv <0x77a38910>
+			streams:  20, words: 13959
+		worklib.fifo_v3:sv <0x3de14a73>
+			streams:  20, words: 13959
+		worklib.reg_module:v <0x2a192aa6>
+			streams:   2, words:   788
+		worklib.reg_module:v <0x441dcbf7>
+			streams:   2, words:   916
+		worklib.mont_lad:v <0x0800b165>
+			streams:  24, words: 15083
+		worklib.rsa_mont:v <0x25f63ef8>
+			streams:  10, words:  3638
+		worklib.rsa_wrapper:v <0x6a45d960>
+			streams: 409, words: 381706
+		worklib.fifo_v3:sv <0x223b91c8>
+			streams:  20, words: 13959
+		worklib.fifo_v3:sv <0x687952ab>
+			streams:  20, words: 13959
+		worklib.spill_register_flushable:sv <0x2e05bfc9>
+			streams:   3, words:   633
+		worklib.spill_register_flushable:sv <0x2c05f7df>
+			streams:   3, words:   674
+		worklib.spill_register_flushable:sv <0x275b170c>
+			streams:   3, words:   557
+		worklib.spill_register_flushable:sv <0x7e1a9552>
+			streams:   3, words:   633
+		worklib.spill_register_flushable:sv <0x0e5b8b5c>
+			streams:   3, words:   680
+		worklib.fifo_v3:sv <0x6a25f9c5>
+			streams:  20, words: 13826
+		worklib.fifo_v3:sv <0x299b9afc>
+			streams:  20, words: 14816
+		worklib.fifo_v3:sv <0x7daeb25d>
+			streams:  20, words: 13846
+		worklib.fifo_v3:sv <0x541b9110>
+			streams:  20, words: 14509
+		worklib.fifo_v3:sv <0x6c1931ee>
+			streams:  20, words: 13925
+		worklib.spill_register_flushable:sv <0x45b18f0c>
+			streams:   3, words:   633
+		worklib.spill_register_flushable:sv <0x703084ad>
+			streams:   3, words:   674
+		worklib.spill_register_flushable:sv <0x4ec5aa14>
+			streams:   3, words:   548
+		worklib.spill_register_flushable:sv <0x720d1394>
+			streams:   3, words:   633
+		worklib.fifo_v3:sv <0x1eaa6134>
+			streams:  20, words: 13851
+		worklib.delta_counter:sv <0x20ab86ee>
+			streams:   4, words:  1592
+		worklib.spill_register_flushable:sv <0x7841c159>
+			streams:   3, words:   680
+		worklib.stream_delay:sv <0x04d50cb5>
+			streams:  11, words:  4737
+		worklib.stream_delay:sv <0x145a4ddb>
+			streams:  11, words:  4637
+		worklib.stream_delay:sv <0x7543243f>
+			streams:  11, words:  4737
+		worklib.stream_delay:sv <0x26991891>
+			streams:  11, words:  4868
+		worklib.delta_counter:sv <0x66cbfdb5>
+			streams:   4, words:  1593
+		worklib.counter:sv <0x36e8a852>
+			streams:   3, words:   653
+		worklib.lfsr_16bit:sv <0x1ffdba3e>
+			streams:   4, words:  1705
+		worklib.stream_delay:sv <0x2fb4bc46>
+			streams:  11, words:  4874
+		worklib.axi_riscv_amos_alu:sv <0x7d3f3de3>
+			streams:   3, words:  7499
+		worklib.axi_riscv_atomics:sv <0x0065d892>
+			streams: 135, words: 28677
+		worklib.axi_riscv_atomics_wrap:sv <0x7a3685c6>
+			streams:  91, words: 15973
+		worklib.delta_counter:sv <0x56afbb96>
+			streams:   4, words:  1641
+		worklib.counter:sv <0x526e19a1>
+			streams:   3, words:   664
+		worklib.fifo_v3:sv <0x36e14f29>
+			streams:  20, words: 13888
+		worklib.fifo_v3:sv <0x67ae659a>
+			streams:  20, words: 13878
+		worklib.fifo_v3:sv <0x4b6144c5>
+			streams:  20, words: 14493
+		worklib.fifo_v3:sv <0x4340ebef>
+			streams:  20, words: 13925
+		worklib.bootrom:sv <0x359d5d6f>
+			streams:   4, words:  1420
+		worklib.axi2mem:sv <0x7fb90ec7>
+			streams:   5, words: 25645
+		worklib.axi_adapter:sv <0x02048c15>
+			streams:   4, words: 34731
+		worklib.axi2mem:sv <0x479032d6>
+			streams:   5, words: 26143
+		worklib.debug_rom:sv <0x005dc3a9>
+			streams:   4, words:  1481
+		worklib.dm_mem:sv <0x59dbf167>
+			streams:  26, words: 45777
+		worklib.dm_sba:sv <0x4ca1d01a>
+			streams:  13, words:  8214
+		worklib.fifo_v3:sv <0x58a2be91>
+			streams:  20, words: 14896
+		worklib.dm_top:sv <0x350d4d7c>
+			streams:  73, words: 14495
+		worklib.cdc_2phase_dst:sv <0x46ae9cff>
+			streams:  11, words:  3020
+		worklib.cdc_2phase_src:sv <0x788b4792>
+			streams:   9, words:  2716
+		worklib.cdc_2phase_dst:sv <0x1a2ffbf9>
+			streams:  11, words:  3026
+		worklib.cdc_2phase_src:sv <0x64b4f373>
+			streams:   9, words:  2722
+		worklib.pulp_clock_mux2:sv <0x73a0eaa8>
+			streams:   1, words:   367
+		worklib.cluster_clock_inverter:sv <0x2b9825bd>
+			streams:   1, words:   184
+		worklib.dmi_jtag_tap:sv <0x185fd691>
+			streams:  19, words: 15041
+		worklib.dmi_jtag:sv <0x35eb0313>
+			streams:  32, words: 16434
+		worklib.rstgen_bypass:sv <0x382783d2>
+			streams:   4, words:  1605
+		worklib.rstgen:sv <0x67e51fdd>
+			streams:   2, words:   469
+		worklib.ariane_tb:sv <0x737c0524>
+			streams:  12, words: 15682
+		worklib.cdc_2phase:sv <0x47a10cce>
+			streams:  10, words:  2430
+		worklib.cdc_2phase:sv <0x555f4645>
+			streams:  10, words:  2424
+		worklib.dmi_cdc:sv <0x75a30b8c>
+			streams:   8, words:  2638
+		worklib.fifo_v2:sv <0x18690fb7>
+			streams:   7, words:  2431
+		worklib.dm_csrs:sv <0x364d567f>
+			streams:  41, words: 57534
+		worklib.axi_delayer:sv <0x1861c996>
+			streams:  22, words: 10335
+		worklib.axi_delayer_intf:sv <0x1733fca1>
+			streams:  52, words: 25872
+		worklib.clint:sv <0x4555632f>
+			streams:  18, words: 11117
+		worklib.rr_arb_tree:sv <0x68462de9>
+			streams:  66, words: 49910
+		worklib.amo_buffer:sv <0x72a4b157>
+			streams:  13, words:  5259
+		worklib.shift_reg:sv <0x6094331e>
+			streams:   2, words:   812
+		worklib.shift_reg:sv <0x13841efc>
+			streams:   1, words:   346
+		worklib.fifo_v3:sv <0x443a78b8>
+			streams:  20, words: 13756
+		worklib.rr_arb_tree:sv <0x0f4290b2>
+			streams:  81, words: 46477
+		worklib.rr_arb_tree:sv <0x45b6bf91>
+			streams:  87, words: 54098
+		worklib.rr_arb_tree:sv <0x49740120>
+			streams:  67, words: 43006
+		worklib.wt_dcache_wbuffer:sv <0x69ff46fa>
+			streams: 115, words: 86590
+		worklib.rr_arb_tree:sv <0x58730c1b>
+			streams:  65, words: 37194
+		worklib.rr_arb_tree:sv <0x2ebc5be4>
+			streams:  75, words: 43453
+		worklib.wt_axi_adapter:sv <0x19d5629a>
+			streams:  85, words: 48229
+		worklib.fifo_v3:sv <0x6bcabbee>
+			streams:  20, words: 13844
+		worklib.fifo_v3:sv <0x7d51341b>
+			streams:  20, words: 14532
+		worklib.instr_tracer_if:sv <0x447928ad>
+			streams:  47, words: 19461
+		worklib.load_store_unit:sv <0x1658ba73>
+			streams:  60, words: 27816
+		worklib.fifo_v2:sv <0x258a0aae>
+			streams:   7, words:  2447
+		worklib.stream_register:sv <0x27cfa86a>
+			streams:   8, words:  1736
+		worklib.axi_atop_filter:sv <0x2e6c64f4>
+			streams:  21, words: 32555
+		worklib.axi_err_slv:sv <0x2f61d479>
+			streams:  40, words: 16166
+		worklib.sram:sv <0x026a682a>
+			streams:   4, words:  2549
+		worklib.sn_cdir_decoder:v <0x610a9c28>
+			streams:  15, words:  5206
+		worklib.instr_realign:sv <0x35b2300f>
+			streams:   7, words:  6866
+		worklib.btb:sv <0x2abaf0c9>
+			streams:   9, words: 29620
+		worklib.bht:sv <0x39222253>
+			streams:  10, words:  8748
+		worklib.instr_queue:sv <0x336cbcf7>
+			streams:  70, words: 38660
+		worklib.fifo_v3:sv <0x099b0aa5>
+			streams:  20, words: 15116
+		worklib.frontend:sv <0x3c06af69>
+			streams:  71, words: 42522
+		worklib.rr_arb_tree:sv <0x1d6bd6ff>
+			streams:  66, words: 47934
+		worklib.rr_arb_tree:sv <0x665d9de4>
+			streams:  66, words: 47934
+		worklib.scoreboard:sv <0x41ef8ed4>
+			streams:  77, words: 65553
+		worklib.ariane_regfile:sv <0x7110a52e>
+			streams:   6, words:  5877
+		worklib.issue_read_operands:sv <0x5edc7447>
+			streams:  61, words: 41926
+		worklib.alu:sv <0x369b1c05>
+			streams:  22, words: 15047
+		worklib.commit_stage:sv <0x752dcf6f>
+			streams:   6, words: 22368
+		worklib.cva6_icache:sv <0x6a81a136>
+			streams:  81, words: 61667
+		worklib.wt_dcache_missunit:sv <0x490aa4bc>
+			streams:  73, words: 60879
+		worklib.wt_dcache_mem:sv <0x37e8b861>
+			streams:  75, words: 50018
+		worklib.wt_dcache:sv <0x1ca61962>
+			streams: 120, words: 32942
+		worklib.wt_cache_subsystem:sv <0x1c40c47e>
+			streams:  45, words: 24413
+		worklib.wt_cache_pkg:sv <0x01553041>
+			streams:   9, words:  8355
+		worklib.cvxif_example_coprocessor:sv <0x3956e4a1>
+			streams:  27, words: 13790
+		worklib.fifo_v2:sv <0x3ecb72ba>
+			streams:   7, words:  2523
+		worklib.fifo:sv <0x744047ce>
+			streams:   5, words:  1223
+		worklib.fifo_v2:sv <0x27b20ad5>
+			streams:   7, words:  2523
+		worklib.fifo:sv <0x2d3025cc>
+			streams:   5, words:  1223
+		worklib.fifo_v2:sv <0x1e6a916f>
+			streams:   7, words:  2523
+		worklib.fifo:sv <0x3fc96921>
+			streams:   5, words:  1223
+		worklib.fifo_v2:sv <0x0713e900>
+			streams:   7, words:  2523
+		worklib.fifo:sv <0x66b90b23>
+			streams:   5, words:  1223
+		worklib.plic_top:sv <0x41a61b53>
+			streams:  34, words: 15911
+		worklib.ariane_peripherals:sv <0x6e729a21>
+			streams: 197, words: 37907
+		worklib.axi_to_axi_lite_mod:sv <0x67cfef41>
+			streams:  34, words:  9037
+		worklib.axi_to_axi_lite_mod:sv <0x69a8a94e>
+			streams:  34, words:  8993
+		worklib.ring_oscillator:v <0x66368c13>
+			streams:   0, words:     0
+		worklib.ring_oscillator:v <0x02fcdcee>
+			streams:   0, words:     0
+		worklib.ariane_regfile:sv <0x5434e399>
+			streams:   5, words:  5386
+		worklib.rr_arb_tree:sv <0x3aba69c1>
+			streams:  61, words: 38098
+		worklib.sram:sv <0x69e103c2>
+			streams:   4, words:  2724
+		worklib.sram:sv <0x7fd99d28>
+			streams:   4, words:  3082
+		worklib.sram:sv <0x198dac40>
+			streams:   4, words:  2728
+		worklib.instr_decoder:sv <0x75a2cfd7>
+			streams:   6, words:  5174
+		worklib.axi_riscv_amos:sv <0x785315a3>
+			streams:  38, words: 71933
+		worklib.axi_res_tbl:sv <0x3fd8eeba>
+			streams:   5, words:  8161
+		worklib.rr_arb_tree:sv <0x7e28af50>
+			streams:  75, words: 44766
+		worklib.stream_arbiter_flushable:sv <0x142b292e>
+			streams:   5, words:  1528
+		worklib.stream_arbiter:sv <0x14b67f9a>
+			streams:   5, words:  1390
+		worklib.axi_riscv_lrsc:sv <0x432add21>
+			streams:  55, words: 30233
+		worklib.addr_decode:sv <0x3b304f3d>
+			streams:   6, words: 21053
+		worklib.addr_decode:sv <0x082fd6dd>
+			streams:   6, words: 21053
+		worklib.fifo_v2:sv <0x24471742>
+			streams:   7, words:  2763
+		worklib.fifo:sv <0x2dfb0d6b>
+			streams:   5, words:  1518
+		worklib.fifo_v2:sv <0x658db773>
+			streams:   7, words:  2718
+		worklib.fifo:sv <0x3aef97a7>
+			streams:   5, words:  1473
+		worklib.fifo_v2:sv <0x343575b0>
+			streams:   7, words:  2535
+		worklib.fifo:sv <0x16f05ab4>
+			streams:   5, words:  1329
+		worklib.pmp:sv <0x2643b080>
+			streams:   4, words:  2630
+		worklib.rr_arb_tree:sv <0x3e89414a>
+			streams:  72, words: 46450
+		worklib.rr_arb_tree:sv <0x1d93d286>
+			streams:  72, words: 46450
+		worklib.rr_arb_tree:sv <0x073adc90>
+			streams:  72, words: 46450
+		worklib.rr_arb_tree:sv <0x525cb997>
+			streams:  72, words: 46450
+		worklib.spill_register:sv <0x6265b3f5>
+			streams:   5, words:  1466
+		worklib.spill_register:sv <0x760c9734>
+			streams:   5, words:  1415
+		worklib.spill_register:sv <0x6c1224ea>
+			streams:   5, words:  1262
+		worklib.rr_arb_tree:sv <0x3a69f268>
+			streams: 104, words: 67841
+		worklib.spill_register:sv <0x11c9415a>
+			streams:   5, words:  1460
+		worklib.spill_register:sv <0x37e5dca3>
+			streams:   5, words:  1415
+		worklib.rr_arb_tree:sv <0x41ed4faf>
+			streams: 104, words: 70511
+		worklib.fifo_v2:sv <0x4974d7e3>
+			streams:   7, words:  2447
+		worklib.stream_register:sv <0x6a1fc271>
+			streams:   8, words:  1736
+		worklib.axi_atop_filter:sv <0x16b03638>
+			streams:  21, words: 32513
+		worklib.axi_err_slv:sv <0x23323637>
+			streams:  40, words: 16163
+		worklib.rr_arb_tree:sv <0x68dcf894>
+			streams:  85, words: 51811
+		worklib.spill_register:sv <0x6e239461>
+			streams:   5, words:  1466
+		worklib.spill_register:sv <0x143ee525>
+			streams:   5, words:  1415
+		worklib.spill_register:sv <0x57ff8551>
+			streams:   5, words:  1274
+		worklib.rr_arb_tree:sv <0x2c25d28f>
+			streams:  85, words: 51721
+		worklib.spill_register:sv <0x02b5f0a7>
+			streams:   5, words:  1460
+		worklib.spill_register:sv <0x55fc9fc7>
+			streams:   5, words:  1415
+		worklib.apb_timer:sv <0x445064b0>
+			streams:  13, words:  5855
+		worklib.lzc:sv <0x385d9d42>
+			streams:  18, words: 22284
+		worklib.lzc:sv <0x121edf6a>
+			streams:  11, words:  6397
+		worklib.lzc:sv <0x4d04590a>
+			streams:  11, words:  6315
+		worklib.axi_demux_id_counters:sv <0x61dfeb0b>
+			streams:  23, words: 12480
+		worklib.axi_demux_id_counters:sv <0x1f3d848c>
+			streams:  23, words: 12480
+		worklib.axi_demux:sv <0x7618f342>
+			streams: 123, words: 68678
+		worklib.axi_id_prepend:sv <0x189d271c>
+			streams:  60, words: 75293
+		worklib.axi_mux:sv <0x20fe59de>
+			streams:  91, words: 39943
+		worklib.axi_xbar:sv <0x17c1ba0b>
+			streams:  49, words: 39409
+		worklib.axi_xbar_intf:sv <0x66a3aabb>
+			streams: 320, words: 164812
+		worklib.ariane_testharness:sv <0x43c6e5f9>
+			streams: 396, words: 111143
+		worklib.ariane_soc:sv <0x6e9f102f>
+			streams:   0, words:     0
+		worklib.axi_pkg:sv <0x23b5fd6b>
+			streams:  14, words: 17135
+		worklib.lzc:sv <0x695cf345>
+			streams:   9, words:  4573
+		worklib.lzc:sv <0x4d3ff5e9>
+			streams:   9, words:  4491
+		worklib.lzc:sv <0x10921536>
+			streams:   7, words:  2814
+		worklib.lzc:sv <0x6fe7b495>
+			streams:   7, words:  2732
+		worklib.control_mvp:sv <0x1856b7f1>
+			streams:  84, words: 164421
+		worklib.fpnew_divsqrt_multi:sv <0x194a9320>
+			streams:  91, words: 35106
+		worklib.fpnew_opgroup_multifmt_slice:sv <0x0c5ca7fa>
+			streams:  46, words: 27040
+		worklib.fpnew_opgroup_block:sv <0x773d8ab1>
+			streams:  23, words: 13985
+		worklib.lzc:sv <0x10ff51b6>
+			streams:  14, words:  8174
+		worklib.lzc:sv <0x688cb0b3>
+			streams:  14, words:  8092
+		worklib.fpnew_cast_multi:sv <0x0e7b4fc2>
+			streams: 222, words: 144961
+		worklib.fpnew_opgroup_multifmt_slice:sv <0x2ba30dfe>
+			streams:  64, words: 43465
+		worklib.fpnew_opgroup_block:sv <0x1ce4320a>
+			streams:  23, words: 13985
+		worklib.lzc:sv <0x6c24ab7d>
+			streams:  18, words: 16200
+		worklib.lzc:sv <0x66a48196>
+			streams:  18, words: 16118
+		worklib.lzc:sv <0x3140a6a5>
+			streams:  11, words:  5539
+		worklib.lzc:sv <0x7d83071b>
+			streams:  11, words:  5457
+		worklib.fpnew_classifier:sv <0x50cc5af6>
+			streams:   1, words:  4569
+		worklib.fpnew_fma:sv <0x34767e03>
+			streams: 172, words: 72478
+		worklib.fpnew_opgroup_fmt_slice:sv <0x49950b71>
+			streams:  36, words: 13041
+		worklib.fpnew_classifier:sv <0x1d105151>
+			streams:   1, words:  5096
+		worklib.fpnew_fma:sv <0x6aa4a2ef>
+			streams: 187, words: 84425
+		worklib.fpnew_opgroup_fmt_slice:sv <0x4802ff23>
+			streams:  36, words: 16061
+		worklib.fpnew_opgroup_block:sv <0x47e9252d>
+			streams:  21, words: 11798
+		worklib.lzc:sv <0x722ff8a2>
+			streams:  20, words: 24525
+		worklib.fpnew_classifier:sv <0x5eee7778>
+			streams:   1, words:  4710
+		worklib.fpnew_noncomp:sv <0x2ec755d3>
+			streams:  68, words: 31977
+		worklib.fpnew_opgroup_fmt_slice:sv <0x3c824176>
+			streams:  37, words: 13238
+		worklib.fpnew_classifier:sv <0x7ba0d8e6>
+			streams:   1, words:  5096
+		worklib.fpnew_noncomp:sv <0x466ff011>
+			streams:  68, words: 35243
+		worklib.fpnew_opgroup_fmt_slice:sv <0x44c284fe>
+			streams:  37, words: 16099
+		worklib.fpnew_opgroup_block:sv <0x465bf93a>
+			streams:  21, words: 11798
+		worklib.fpnew_top:sv <0x032ecb76>
+			streams:  65, words: 28404
+		worklib.fpu_wrap:sv <0x350019b3>
+			streams:  67, words: 48008
+		worklib.lzc:sv <0x235115c6>
+			streams:  17, words: 20979
+		worklib.lzc:sv <0x29c07e3f>
+			streams:  20, words: 24525
+		worklib.lzc:sv <0x18736822>
+			streams:  22, words: 22583
+		worklib.cf_math_pkg:sv <0x34b64b33>
+			streams:   2, words:  2595
+		worklib.fpnew_classifier:sv <0x7441d256>
+			streams:   1, words:  4040
+		worklib.fpnew_classifier:sv <0x7a205d8f>
+			streams:   1, words:  4539
+		worklib.fpnew_pkg:sv <0x0bb7bc10>
+			streams:  24, words: 14344
+		worklib.SyncSpRamBeNx64:sv <0x603eb0d5>
+			streams:  16, words:  8676
+		worklib.id_stage:sv <0x3fc165d5>
+			streams:  12, words:  4979
+		worklib.store_buffer:sv <0x302213fe>
+			streams:  34, words: 32634
+		worklib.load_unit:sv <0x4cb89bf0>
+			streams:  37, words: 41709
+		worklib.\$unit_0x6b9a3a54 :compilation_unit <0x46a61ab0>
+			streams:  43, words: 206749
+		worklib.ariane_pkg:sv <0x5921ebd4>
+			streams:  23, words: 26978
+		worklib.dm:sv <0x02ecd28a>
+			streams:  17, words:  4003
+		worklib.riscv:sv <0x46141203>
+			streams:  18, words:  8384
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                       Instances  Unique
+	VHDL Design hierarchy:
+		Components:                 4153      39
+		Default bindings:             34      16
+		Processes:                  8447     212
+		Signals:                     331     309
+	Verilog Design hierarchy:
+		Modules:                    1940     205
+		Interfaces:                   38       5
+		Verilog packages:             17      17
+		Primitives:                  336       1
+		Registers:                 31462    6205
+		Scalar wires:              24004       -
+		Expanded wires:            28173    1039
+		Vectored wires:            20938       -
+		Named events:               1710      73
+		Always blocks:             10093     924
+		Initial blocks:             2374     129
+		Final blocks:                  2       2
+		Clocking blocks:               1       1
+		Clocking items:               23      23
+		Cont. assignments:         28842    2660
+		Pseudo assignments:         8966       -
+		Assertions:                 3868     171
+		Compilation units:             1       1
+		SV Class declarations:         2       2
+		SV Class specializations:      2       2
+		Process Clocks:             2984      36
+		Simulation timescale:        1ps
+	Writing initial simulation snapshot: worklib.ariane_tb:sv
+TOOL:	xrun(64)	23.09-s003: Exiting on Jan 07, 2024 at 16:32:28 EST  (total: 00:00:14)

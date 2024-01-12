@@ -1,0 +1,24 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-sv
+-sv
+-DEFINE
+WT_DCACHE
+-DEFINE
+RVFI_TRACE
+-INCDIR
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/axi_node
+-INCDIR
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/common_cells/include
+-INCDIR
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/core/fpu/src/common_cells/include
+-INCDIR
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/axi/include
+-INCDIR
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/corev_apu/register_interface/include
+-INCDIR
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/common/local/util
+-INCDIR
+/ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/src/util

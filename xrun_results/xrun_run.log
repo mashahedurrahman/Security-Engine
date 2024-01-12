@@ -1,0 +1,98 @@
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on Jan 07, 2024 at 16:32:28 EST
+xrun
+	+permissive
+	-R
+	-64bit
+	-disable_sem2009
+	-access +rwc
+	-timescale 1ns/1ps
+	-sv_lib /ecel/UFAD/mrahman1/cva6_for_se/cva6_10292023/work-dpi/ariane_dpi.so
+	-xceligen on=1903
+	-nowarn BIGWIX
+	-nowarn ZROMCW
+	-nowarn STRINT
+	-nowarn ENUMERR
+	-nowarn SPDUSD
+	-nowarn RNDXCELON
+	+MAX_CYCLES=10000000
+	-l xrun_run.log
+	+permissive-off
+	+PRELOAD=/home/UFAD/mrahman1/cva6_for_se/cva6_10292023/hello_ecdsa.elf
+
+   User defined plus("+") options:
+	+permissive
+	+MAX_CYCLES=10000000
+	+permissive-off
+	+PRELOAD=/home/UFAD/mrahman1/cva6_for_se/cva6_10292023/hello_ecdsa.elf
+
+Loading snapshot worklib.ariane_tb:sv .................... Done
+
+Current XCELIGEN_OPTIONS settings:
+------------------------------
+
+                          dump =          1 - dump override value of XCELIGEN_OPTIONS
+
+SVSEED default: 1
+xcelium> source /apps/cds/xcelium2309/tools/xcelium/files/xmsimrc
+xcelium> run
+ASSERT/WARNING (time 0 FS) from package ieee.NUMERIC_STD, this builtin function called  from process ariane_tb.dut.i_ariane_peripherals.gen_uart.i_apb_uart:UART_RXFF:$PROCESS_000 (architecture worklib.slib_fifo:rtl)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.NUMERIC_STD, this builtin function called  from process ariane_tb.dut.i_ariane_peripherals.gen_uart.i_apb_uart:UART_TXFF:$PROCESS_000 (architecture worklib.slib_fifo:rtl)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_OUTPUT:$PROCESS_000 (architecture worklib.mux512:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_OUTPUT:$PROCESS_000 (architecture worklib.mux512:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_OUTPUT:$PROCESS_000 (architecture worklib.mux512:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_DONEMUX:$PROCESS_000 (architecture worklib.mux4x1:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_DONEMUX:$PROCESS_000 (architecture worklib.mux4x1:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_DONEMUX:$PROCESS_000 (architecture worklib.mux4x1:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_DECODER:$PROCESS_000 (architecture worklib.decoder:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_DECODER:$PROCESS_000 (architecture worklib.decoder:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_DECODER:$PROCESS_000 (architecture worklib.decoder:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+Simulating with binary /home/UFAD/mrahman1/cva6_for_se/cva6_10292023/hello_ecdsa.elf
+Test Preloading ELF: /home/UFAD/mrahman1/cva6_for_se/cva6_10292023/hello_ecdsa.elf
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_bootrom.mem" of 11904 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 11904 ariane_tb.dut.i_bootrom.mem' or 'setenv SHM_PACKED_LIMIT 11904' to adjust limit.
+xmsim: *W,PRUASZ: Unpacked array at "ariane_tb.dut.i_sram.gen_cut[0].gen_mem.i_ram.Mem_DP" of 33554432 elements exceeds limit of 16384 - not probed
+ Use 'probe -create -unpacked 33554432 ariane_tb.dut.i_sram.gen_cut[0].gen_mem.i_ram.Mem_DP' or 'setenv SHM_UNPACKED_LIMIT 33554432' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_axi_xbar.mst_reqs" of 5700 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 5700 ariane_tb.dut.i_axi_xbar.mst_reqs' or 'setenv SHM_PACKED_LIMIT 5700' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_axi_xbar.i_xbar.mst_ports_req_o" of 5700 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 5700 ariane_tb.dut.i_axi_xbar.i_xbar.mst_ports_req_o' or 'setenv SHM_PACKED_LIMIT 5700' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_axi_xbar.i_xbar.slv_reqs" of 17703 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 17703 ariane_tb.dut.i_axi_xbar.i_xbar.slv_reqs' or 'setenv SHM_PACKED_LIMIT 17703' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_axi_xbar.i_xbar.slv_resps" of 5292 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 5292 ariane_tb.dut.i_axi_xbar.i_xbar.slv_resps' or 'setenv SHM_PACKED_LIMIT 5292' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_axi_xbar.i_xbar.mst_reqs" of 16860 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 16860 ariane_tb.dut.i_axi_xbar.i_xbar.mst_reqs' or 'setenv SHM_PACKED_LIMIT 16860' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_axi_xbar.i_xbar.mst_resps" of 5040 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 5040 ariane_tb.dut.i_axi_xbar.i_xbar.mst_resps' or 'setenv SHM_PACKED_LIMIT 5040' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_axi_xbar.i_xbar.gen_slv_port_demux[0].i_axi_demux.mst_reqs_o" of 5901 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 5901 ariane_tb.dut.i_axi_xbar.i_xbar.gen_slv_port_demux[0].i_axi_demux.mst_reqs_o' or 'setenv SHM_PACKED_LIMIT 5901' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_axi_xbar.i_xbar.gen_slv_port_demux[1].i_axi_demux.mst_reqs_o" of 5901 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 5901 ariane_tb.dut.i_axi_xbar.i_xbar.gen_slv_port_demux[1].i_axi_demux.mst_reqs_o' or 'setenv SHM_PACKED_LIMIT 5901' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "ariane_tb.dut.i_axi_xbar.i_xbar.gen_slv_port_demux[2].i_axi_demux.mst_reqs_o" of 5901 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 5901 ariane_tb.dut.i_axi_xbar.i_xbar.gen_slv_port_demux[2].i_axi_demux.mst_reqs_o' or 'setenv SHM_PACKED_LIMIT 5901' to adjust limit.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_OUTPUT:$PROCESS_000 (architecture worklib.mux512:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_OUTPUT:$PROCESS_000 (architecture worklib.mux512:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+ASSERT/WARNING (time 0 FS) from package ieee.STD_LOGIC_ARITH, this builtin function called  from process ariane_tb.dut.SHA.UUT:U_FUNCTIONS:U_OUTPUT:$PROCESS_000 (architecture worklib.mux512:BHV)
+Built-in relational argument contains a ('U', 'X', 'W', 'Z', '-') in an operand.
+[TRACER] Output filename is: trace_hart_0.log
+Core Test Loading Address: 0000000080000000, Length: 000000000000016e
+Made it to R-check reg is                    6 r is                    6
+Made it to R-check reg is                    6 r is                    1
+Simulation complete via $finish(1) at time 2000110 NS + 1
+../corev_apu/tb/rvfi_tracer.sv:67     if (cycles > SIM_FINISH) $finish(1);
+xcelium> exit
+TOOL:	xrun(64)	23.09-s003: Exiting on Jan 07, 2024 at 16:33:39 EST  (total: 00:01:11)

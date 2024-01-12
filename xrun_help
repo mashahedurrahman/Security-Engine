@@ -1,0 +1,1528 @@
+xrun: 21.03-s015: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Usage:
+	xrun [options] files
+	  File languages:  Verilog, SystemVerilog, VHDL, e, System-C, C, C++
+	  In addition to the dash options all xmverilog plus options can be used.
+	  Options shown below in lowercase can also be entered in uppercase.
+	    For example, both -top and -TOP are valid.
+
+	If you need more information about an option listed below, use the search
+	facility in the online help system. In the "Search for" text box,
+	enter the name of the option, including the dash.  The dash must be escaped.
+	   (\-profile, for example)
+
+  -64bit                     Invoke 64bit version
+  -a_ext <ext>               Override extensions for archive files
+  -abv2copt                  Optimization: assertion with 2 cycle implication
+  -abv_disable_eos_eval      Disable end-of-simulation assertion evaluation
+  -abv_lrmcompliant_asrtctrl Support LRM compliant $assertcontrol
+  -abvcoveron                Enable cover directives
+  -abvdisableasrtst          Disable ASRTST failure and finish message
+  -abvevalnochange           Revert back expression change optimization
+  -abvfailurelimit <Number>  Limit failure count for assert/assume directives
+  -abvfinishlimit <Number>   Limit finish count for cover directives
+  -abvglobalfailurelimit <Number> Limit global failure count
+  -abvnoebsinaopt            Enable finish->inactive transition in 1 cycle SVA
+  -abvnorangeopt             Disable optimization on assertions with Range
+  -abvnostatechange <State>|all Suppress consecutive assertion state changes
+  -abvoff <arg>              Completely stop specified assertions
+  -abvoptreporting           Disable counter details for assertions
+  -abvrangelimit             Treat range as unbounded above specified limit
+  -abvrecordasrctl           Enable logging of ASRCTL msgs
+  -abvrecordcoverall         Record all finishes for cover directives
+  -abvrecorddebuginfo        Enhance debug message for concurrent assertions
+  -abvrecordindago           Enable logging in extended-ost and ASRCTL msgs
+  -abvrecordvacuous          Enable recording of vacuous and attempts counts
+  -access <+/-rwc>           Turn on read, write and/or connectivity access
+  -accessreg <+/-rwc>        Turn on rwc access for registers
+  -accu_path_delay           Enable the enhanced timing features
+  -accu_path_verbose         Enable warnings during ETO characterization
+  -add_seq_delay <arg>       Update undelayed sequential UDPS to have delays
+  -add_v200x_minmax          Support VHDL-2008 MINIMUM/MAXIMUM function
+  -addievlic                 Add IEV license in the promotion order 
+  -adv_ms                    turn on some advanced ms feature
+  -advance_dft               Run Advance DFT checks for HAL
+  -afile <file>              Specify an access file to be used
+  -alias_module              Enable aliasing of formal ports
+  -allowindexviolation       Enable index-violation for xprop enabled scope
+  -allowredefinition         Allow multiple files to define the same object
+  -allowundefinedsvhref      Allow undefined SV hierarchical reference
+  -always_trigger            Enable always trigger mode
+  -ampscript <script file>   Run the script on the file
+  -ams                       Force Verilog-AMS and VHDL-AMS compilation
+  -ams_beta <arg>            Enable AMS Designer beta features
+  -ams_dig_wreal             Keep wreal net in discrete domain
+  -ams_edb                   Enable elaboration database for MSDO
+  -ams_flex                  Enable AMS Flexible Release Matrix flow
+  -ams_gui                   Enable Mixed-Signal Debug Option (MSDO)
+  -ams_icm                   Enable AMS interactive connect module flow
+  -ams_lorder <arg>          Specifies the promotion order for AMS licenses
+  -ams_weak_setd             setdiscipline has lower priority
+  -amsconnrules <cellname>   specify connect rules to use
+  -amsdebug                  Generate readable call stack for AMS coredump
+  -amsdir <arg>              Raw results directory for AMS
+  -amsdropt                  AMS discipline resolution optimization
+  -amsfastspice              Enable Fast SPICE simulator (UltraSim)
+  -amsformat <format>        AMS database format settings.
+  -amsmatlab                 Dynamically link vpi code for AMS/Matlab
+  -amsoutdir <path>          combine AMS options into single option.
+  -amspartinfo [<file>]      Mixed-signal partition information
+  -amssupertop               Enable ams IP reuse flow
+  -amsvhdl_ext <ext>         Override extensions for VHDL AMS sources
+  -amsvivalog                To generate runObjFile
+  -amsvlog_ext <ext>         Override extensions for Verilog-AMS sources
+  -analogcontrol <arg>       Specify analog simulation control file
+  -anno_simtime              Enable delay annotation at simulation time
+  -append_key                Append keystrokes to existing key file
+  -append_log                Append output log to existing log
+  -aps_args <arg>            introduce options to be used by aps
+  -armfm <CPU core>          Allow simulation of given Fast Model from ARM
+  -armfmhome <ARM Fast Models install root directory> Specify location of ARM Fast
+                             Models installation
+  -arr_access                Allow tf_nodeinfo access to Verilog arrays
+  -as_ext <ext>              Override extensions for assembly files
+  -asext <ext>               Add extensions to assembly sources
+  -assert                    Enable PSL language features
+  -assert_count_traces       Use trace-based counting for assertions
+  -assert_logging_error_off  Change default severity for assertion failures
+  -assert_sc                 Enable PSL language features
+  -assert_vhdl               Enable PSL language features
+  -assert_vlog               Enable PSL language features
+  -atstar_lsp                Use longest static prefix rule for @*
+  -atstar_selftrigger        Self-triggering behavior of always@(*)
+  -auto_archive              Add -whole-archive for archive files
+  -auto_config_svams_ie      Automatically find & insert appropriate SVAMS IEs
+  -auto_top_cell_binding     Select top binding automatically
+  -autofetch                 Auto-fetch source files
+  -automsie                  Generate a MSIE partition file and run MSIE
+  -automsie_phase2           Generate a MSIE partition file and run MSIE
+  -autoprotect               Autoprotect input source files
+  -autoreplicated_top        Generate a replicated top and run the flow
+  -autospiceignore <0|1|X|Z> Ignore SPICE OOMRs
+  -autospiceoomr             Process spice oomrs
+  -autoxspice                Process spice oomrs, add prefix 'X' to spice
+  -batch                     Run simulation in batch mode, this is the default
+  -bb_cell_list <filename>   List of cells which will be black boxed
+  -bb_celldefine             Blackbox all verilog modules within `celldefine
+  -bb_gen                    Generates list of modules that will be blackboxed
+  -bb_list <filename>        List of modules to be blackboxed for HAL analysis
+  -bb_nonsynth               Blackbox unsynthesizable modules in halsynth
+  -bb_unbound_comp           Ignore unbounded component for synthesis checks
+  -bb_vital                  Blackbox design-units containing VITAL constructs
+  -bbcell <lib.cell:view>    Black Box Cell
+  -bbconnect                 Preserve BBcell instantiation and port map info
+  -bbinst <Hierarchical Instance name> Black box instance name
+  -bblist <filename>         List of instances which will be black boxed
+  -bbox_create <arg>         Copied all dependents to corresponding tmp dir
+  -bbox_link <arg>           Copied all dependents to corresponding tmp dir
+  -bbox_overwrite            overwrite the content of the tmp directory
+  -bbverbose                 Verbose output of BBINST option
+  -bdoptok                   Allow unrecognized options
+  -binding <bind>            Force explicit submodule or unit L.C:v binding
+  -bps_cfg <file>            Read bps configuration commands from input file
+  -c_ext <ext>               Override extensions for C sources
+  -cachemsg                  Print the caching messages
+  -cassign_self_trigger      Warn and enable self-triggering of cont. assigns
+  -catcxx                    Positional option used to combine C++ sources
+  -catcxxsize <size>         Sets the CATCXX partition size for large groups
+  -categories                List the categories and their descriptions
+  -catroot <arg>             Specify Model Catalog search path
+  -cbnoforwardclockingevent  Disable forward reference for clocking events
+  -ccargs                    Pass arguments to the C compiler
+  -ccext <ext>               Add extensions to C sources
+  -cciparam <arg>            Associate values with SystemC cci params
+  -cd_lexpragma              Process preprocessor directive before lex pragmas
+  -cdn_vip_root <dir>        Set the location of the VIPCAT installation
+  -cdn_vip_svlib             Load the libcdnsv library
+  -cdn_viplib                Link the VIP libs rather than compiling them
+  -cds_alternate_tmpdir      To specify the tmpdir of alternate snapshot
+  -cds_implicit_tmpdir       Specify location for design data storage
+  -cds_implicit_tmponly      Force tools to read design data only from tmpdir
+  -cds_thru_iprobe           enable using iprobe for connect
+  -cds_thru_vsrc             enable using 0v vsource for connect
+  -cds_vip_noauto            Do not automatically process VIP files
+  -cdslib <arg>              Specify a cds.lib file to be used
+  -cedriversloads            Generate TCL file to verify VHDL-SPICE CE
+  -ceprobes                  Generate TCL file to verify VHDL-SPICE CE
+  -cereport                  Generate VHDL-SPICE conversion element report
+  -ceverbose                 Generate detailed VHDL-SPICE CE report
+  -check <arg>               Specify checks and categories of checks
+  -check_sem2009_impact      Check for impact of LRM 2009 scheduling semantics
+  -check_snap_dep            Check snapshot for up-to-dateness
+  -CHECK_VERSION             string to use for checking version compatibility
+  -check_vst_dep             Check VSTs for up-to-dateness
+  -checkargs                 Check command-line arguments for validity
+  -checkpoint_enable         Enables process-based checkpointing
+  -checktasks                Check that all $tasks are built-in system tasks
+  -chkdigdisp                Perform digital net's discipline compatibility
+  -ckshashint                Fast compilation of SDF for large interconnect
+  -classlinedebug            Enable line debugging capabilities for SV classes
+  -clean                     Deletes previous xcelium.d directory if it exists
+  -cleanlib                  Deletes all pak files found with cds.lib
+  -cleanlib_listall          Displays all pakfiles with -cleanlib
+  -cleanlibscript            Creates a script to remove pak files
+  -cleanlibverify            Deletes pak files from cds.lib after verification
+  -coercestruct              Enable 5.7 struct treatment
+  -collect_args <args>       Pass arguments to collect_exe
+  -collect_exe,<execs>       Run selected executables under the sun collector
+  -comb_depth                Enable Logic Depth calculation
+  -compare_build_time_memory  compare this stats db to other run's db.
+  -compare_strict_timescale  Compare strict timescale
+  -compcnfg                  Allow compilation of Verilog configuration in HDL
+  -compile                   Parse only, do NOT elaborate
+  -compile_sw                Specify HVL source files to compile by Xcelium
+  -conffile <file_name>      Generate a configuration file with the given name
+  -confflat                  Requires -CONFFILE, generate a VHDL flat config
+  -confhier                  Requires -CONFFILE, gen VHDL hierarchical config
+  -config_allow_escaped_name Support escaped names in Verilog config blocks
+  -config_analogsolver <spectre> specify the way to launch spectre in flex 2.0
+  -configsib <file>          Specify a Scope Information Browser config file
+  -configverbose             Print resolutions by USE & LIBLIST rules in vcfg
+  -confname <arg>            Requires -CONFFILE, specify output config name
+  -cong_file <file>          Specify a congruency spec file to be used
+  -congruency                Enable congruent behavior.
+  -congverbose               Enable congruency logging.
+  -conn_status_log <arg>     Generates assertion status for connectivity
+  -connect_specify_block     Connection are preserved in $setuphold call
+  -connectivity <file>       Generate assertions for connectivity verification
+  -controlassert <arg>       Specifies a file containing assertion controls
+  -controlrelax <arg>        Enable specific relaxed VHDL interpretation
+  -countdrivertrans          $countdrivers only counts contributing tran gates
+  -cov_cgsample              Enable covergroup sampling
+  -cov_debuglog              Print coverage logs
+  -cov_nocgsample            Disable covergroup sampling
+  -cov_ucisxml_info          Generate XML related data
+  -covbaserun <string>       Select coverage base run name
+  -covcleanworkdir           Remove coverage working directory
+  -covdb <arg>               Path of database for coverage unreachability
+  -covdesign <string>        Select coverage design name
+  -covdut <string>           Select DUT for Coverage
+  -coverage <string>         Enable coverage instrumentation
+  -covfile <file>            Specify coverage instrumentation control file
+  -covfirstbinmatch          Sample the first hit for a coverpoint/cross bin
+  -covmodeldir <string>      Specify path to coverage model
+  -covnomodeldump            Disable coverage design database (model) dumping
+  -covoverwrite              Enable overwrite of coverage output files
+  -covpartial                enable cov instrumentation with -partialdesign
+  -covscope <string>         Select coverage scope name
+  -covtest <string>          Select coverage test name
+  -covworkdir <string>       Select coverage workdir
+  -cp_expr_as_name           Use coverpoint expression as its name 
+  -cpost                     Compile C files after elaboration
+  -cpp_ext <ext>             Override extensions for C++ sources
+  -createdebugdb             Generate LWD during elaboration.
+  -createdebugdb_noies       Generate debug data for third party simulators.
+  -crshell                   Create shell files for import mode
+  -cs_gpg <arg>              Case sensitive GPG switch for SV params
+  -custom_udn_cr             enhancement use model on udn connect rule
+  -cxxext <ext>              Add extensions to C++ sources
+  -D<macro>                  Define a macro for the C and C++ compiler
+  -date                      Print date and time when each engine is invoked
+  -dbsname <name[@<dir>]>    Specify the name[@dir] of the DBS xrun command
+  -dbssnap <snapshot-name>   Specify a saved snapshot to extend
+  -debug                     Equivalent to -access +rw, Specman debug
+  -debug_opts <indago_pp|indago_interactive|indago_flow_recording> Add switches for the
+                             specified Indago debug flow
+  -debugscript <arg>         Specify a debug script file name
+  -default_delay_mode <mode> Delay mode {Zero,PUnit,Unit,Path,Distr,Def,None}
+  -default_ext <fileType>    Override the default extension map
+  -default_spice_oomr        Use default value for Spice OOMR
+  -define <macro>            Define a macro from command line
+  -defineall <macro>         Define macro from command line for all compilers
+  -defparam <arg>            Redefine the value of a Verilog parameter
+  -delay_mode <mode>         Delay mode {Zero,PUnit,Unit,Path,Distr,None}
+  +delay_mode_distributed    Use distributed delay mode
+  +delay_mode_none           Specify no commandline delay modes
+  +delay_mode_path           Use path delay mode
+  +delay_mode_punit          Use precision unit delay mode
+  +delay_mode_unit           Use unit delay mode
+  +delay_mode_zero           Use zero delay mode
+  -delay_trigger             Delay triggering of @ waiters
+  -delay_udp_xminitialize    Initialize UDP after one delta cycle
+  -delta_sequdp_delay        Add delta delay to zero-delay sequential UDP's
+  -denalipath <dir>          Set the location of the Denali installation
+  -design_facts_file <arg>   Generate design facts during structural checks
+  -design_info <arg>         Design Information file
+  -design_top <design_top>   Specifies top design unit for design-top comp
+  -dfile <file>              Specify a batch deposit spec file to be used
+  -dis_sdfmatch_out_of_scope Turn off out of scope SDF matching
+  -disable_2_state_wire      Disable 2-state implicit wire kind ports
+  -disable_aa_assign_opt     Disable AA assignment optimization
+  -disable_afa               Disables the creation of AFA checks
+  -disable_amsdropt          disable discipline resolution optimization
+  -disable_amsoptie          disable IE optimization
+  -disable_arithoverflow     Disables the creation of Arith checks in JG
+  -disable_asrtctrl_string_arg Disable string argument in assert control tasks
+  -disable_autoformal        Disable running of AutoFormal checks
+  -disable_block             Disables the creation of block checks
+  -disable_bus               Disables the creation of bus checks
+  -disable_case_checks       Disables the creation of Case checks in JG
+  -disable_cf                disable marking system functions as const expr
+  -disable_conditional_block Disables Block checks for conditionals.
+  -disable_conditional_deadcode Disables DeadCode checks for conditionals. 
+  -disable_congruency        Disable congruent behavior.
+  -disable_dbits             Disable improved $bits behavior
+  -disable_deadcode          Disables the creation of deadcode checks
+  -disable_enht              Disable enhanced timing features
+  -disable_eto_pulse         Disable ETO pulse modeling
+  -disable_extend_self       Disallow process::self() call from nonprocesses
+  -disable_fast_decompress   Disable faster decompression of compressed files
+  -disable_fewcaa            Disable wildcard assoc array index in for each
+  -disable_fsm               Disables the creation of FSM checks
+  -disable_href_in_svf       Disable hierarchical in sample value function
+  -disable_inactivequeue     Disable inactive queue
+  -disable_option <arg>      disable a feature
+  -disable_param_partsel_rec Disable parameter part select rectification.
+  -disable_persistent_sources_debug Disable preserve copy of source files for debug
+  -disable_prof_realtime     Don't adjust profiler to simulation real time
+  -disable_rangeoverflow     Disables the creation of Range Overflow checks
+  -disable_sem2009           Scheduling semantics from SV 3.1a LRM
+  -disable_sparsearray       Dont set any default size for sparsearray
+  -disable_sv_tcl_driver_fixes Disable fixes for SV expressions for TCL drivers
+  -disable_svudn_complex_port Disable support complex port for SV UDN
+  -disable_tf_deadcode       Disable dead coding for tasks/functions
+  -disable_typed_constructor Disable the use of typed constructors
+  -disable_wire_type_param   disable wire declared with type parameter.
+  -disable_write_opt_for_udp Disable optimization for UDPs with write access
+  -disable_xassignment       Disables the creation of Xchecks
+  -disable_xprop             Disables the creation of X propagation checks
+  -disableoig                Disable the auto processing of OIG files
+  -discapf                   Disable the capital F input file mode
+  -discipline <disciplineName> Discipline to use for undisciplined digital wires
+  -disgatescalarinputreal    Treat gate real input vector as vector
+  -display_protected_path    Display partial path for protected instance
+  -disres <resType>          Set discipline resolution
+  -distcomp                  Option used to turn distributed compilation on
+  -distcompargs,<args>       Pass user specified argument to distributed comp
+  -distcompjobs <number>     Number of parallel distributed compiles to run
+  -distplat <lsf>            Specify underlying platform used for distrib comp
+  -dms_perf                  turn on a bunch of ms performance feature
+  -dms_report                Mixed signal design report
+  -dms_trace_coercion        Print coercion trace along with error
+  -dpi                       Add appropriate build options for dpi designs
+  -dpi_stack_int_c           Lists internal C frames called from import func
+  -dpi_void_task             Return value of export/import tasks will be VOID.
+  -dpiheader [<file>]        Create DPI header file for export functions
+  -dpiimpheader <arg>        generate the header file for import functions
+  -dresolution               Sets discipline resolution to '-disres detailed'
+  -dssdrivers <number-of-drivers> Max number of drivers for a snapshot boundary net
+  +dump_pwlspice             Dump AMS netlist to PWL SPICE netlist
+  +dump_vcdspice             Dump AMS netlist to VCD SPICE netlist
+  -dumpports_format <arg>    Specify EVCD format flag for $dumpports
+  -dumpstack                 Dump the stack on any internal error
+  -dumptiming <arg>          Dump timing information to the given file
+  -dut_prof <file>           Profiler report contains summary for design unit
+  -dutinst <arg>             Top level instance name enabled for coverage
+  -dverbose                  Prints logs of Dfile activity
+  -dynamic                   Build a shared object for simulation
+  -dynlib_ext <ext>          Override extensions for dynamic library files
+  -dynvhpi                   Enable user to create VHDL drivers at run time
+  -e                         Enable std input editing
+  -e_ext <ext>               Override extensions for e sources
+  -e_uvmpkg <arg>            UVM Package name or dcf file for UVM checks
+  -efence                    Debug xmsim with Electric Fence.
+  -efenceelab                Debug xmelab with Electric Fence
+  -efencepfree               Instruct efence to protect free memory
+  -elab_compile              Requires -CONFFILE, compile configuration file
+  -elabonly                  elaborate only, do NOT compile or simulate
+  -elaborate                 Parse and elaborate, do NOT simulate
+  -emhier_dvs                Enable embedded Hierarchical DVS
+  -enable_abv_asrtctrl_enh   Enable assertion control task fixes
+  -enable_afa_clock          Enables AFA clock optimization
+  -enable_asrtctrl_string_arg Enable string argument in assert control tasks
+  -enable_autochk_monitor_strobe enable automatic check for $strobe/$monitor
+  -enable_bind_with_common_pkg Enable binding of common package
+  -enable_cag_const          Allow CAG for constant RHS
+  -enable_cb_drr             Run clocking drive coincident with clocking event
+  -enable_cf                 enable marking system functions as const expr
+  -enable_dbits              Enable improved $bits behavior
+  -enable_ds_unps            Enable dot-star mapping for unpacked struct reg
+  -enable_errchk_dbits       Enable $bits error checking for dynamic types
+  -enable_eto_pulse          Enable ETO pulse modeling 
+  -enable_extends_opt        Enable extends parameter optimization
+  -enable_fgpc_ext           process::kill will kill dead processes
+  -enable_inactivequeue      Enable inactive queue
+  -enable_muldrvchk          Enable improved multiple driver check
+  -enable_new_let            Enable new let implementation
+  -enable_ntc3_perf          Use ntc_level 3 performance mode
+  -enable_ps_ap              Correct part select datatype for assign patterns
+  -enable_relax_multiple_driver_check Enable const loop unroll for multiple driver chk
+  -enable_single_yvlib       Compile -v and -y files into a single library
+  -enable_strict_timescale   Enable strict timescale
+  -enable_svafunccallfix     Enable function call sampling in SV assertions
+  -enable_svaopsfixes        Fix the behavior of sva ops
+  -enable_togglecheck        Enables the creation of Toggle checks
+  -enable_tpe                Enables tcl post-evaluation for breakpoints
+  -enable_wildcard_afile     Enable short wildcard for afile
+  -enable_work_yvlib         Compile -v and -y files into the worklib
+  -enableoig                 Enable the auto processing of OIG files
+  -enctran                   Enable CTRAN engine
+  -end                       Terminate the list of files
+  -endfilemap                Terminate a filemap collection
+  -endlib                    Terminate the list of library files
+  -endprim                   Terminate list of tops in the primary snapshot
+  -endsnstage                Terminate the list of e stage files
+  -enforceto                 Disable opt around CDP timing output
+  -entchwidthcond            Enable cond eval at both edges of width tcheck
+  -enterprise                Run formalbuild for enterprise version
+  -entfileenv                Allow environment variables in tfile
+  -entrandelay               Allow iopath delay if src/dest touches TRAN
+  -epulse_neg                Filter canceled events (negative pulses) to e
+  -epulse_no_msg             Suppress e-pulse error message
+  -epulse_noneg              Do not filter negative pulses to E
+  -epulse_ondetect           Use on-detect filtering of error pulses
+  -epulse_onevent            Use on-event filtering of error pulses
+  -errfile <arg>             File containing messages to be reported as error 
+  -errormax <arg>            Specify the maximum number of errors processed
+  -errtcl_verbose            Output Tcl command that produced the error
+  -escapedname               Print out escaped names in logfile
+  -esw <CPU core>            Specify cores running ESW
+  -exclude_file <file>       Instance file to be excluded for initialization
+  -exit                      Exit simulation instead of issuing a TCL prompt
+  -expand                    Force expansion of all vector nets
+  -extassertmsg              Prints Extended Assert message Information 
+  -extbind <arg>             Option for SV binds in textfile.
+  -extend_replay <arg>       Enables replay extension by <N> cranks
+  -extend_self               Allow process::self() call from some nonprocesses
+  -extend_tcheck_data_limit <val> Relax timing check data limit
+  -extend_tcheck_reference_limit <val> Relax timing check reference limit
+  -extendsnap <snapshot>     Extend snapshot with source files
+  -F <filename>              Scan file for args relative to file location
+  -f <filename>              Scan file for args relative to xrun invocation
+  -faccess <+/-rwc>          Overrides any -access option
+  -fast_recompilation        Enable fast recompilation
+  -fault_boundary            boundary specified for fault propagation
+  -fault_checker_on          Enable checker strobe detection feature
+  -fault_conc_msgs <num>     Max detection messages count for concurrent
+  -fault_concurrent          Concurrent fault simulation
+  -fault_file <file>         Specify fault specification file
+  -fault_gen_test_const <arg> Enable TB level-0 fault reduction
+  -fault_good_run            Enable good simulation run for fault injection
+  -fault_hier_iso            enable RTL hierarchical isolation
+  -fault_id <num>            Specify unique node id to select fault node(s)
+  -fault_lib_mfile <file>    Specify a file that includes a list of lib files
+  -fault_logfile <file>      Specify a log file for fault instrument
+  -fault_logsim <file>       Specify a log file for fault simulation
+  -fault_master_db <dir>     Specify master fault work directory
+  -fault_max_msgs <num>      Specify max count of messages to be displayed
+  -fault_msgs_boundary       number of fault boundary messages per fault
+  -fault_net_jg              Enable net info dump to UCM for JG
+  -fault_no_gtopt            disable gate collapsing optimizations
+  -fault_no_ut <arg>         user control to disable untestability analysis
+  -fault_noiso_opts          disable fault isolation optimizations
+  -fault_num_nodes <num>     Specify number of faultable nodes to apply fault
+  -fault_overwrite           Overwrites the existing fault work directory
+  -fault_random_id <num>     Specify random sequence id to select fault node
+  -fault_RTL                 enables rtl concurrent fault simulation
+  -fault_seed [<num>]        Specify random seed to randomize fault selection
+  -fault_sim_run             Enable fault simulation run for fault injection
+  -fault_strobe_data <string> Specify mode for strobe information dump
+  -fault_test <dir>          Specify the test name for fault simulation run
+  -fault_timeout <time_spec> Specify timeout to terminate a simulation run
+  -fault_top <name>          Specify top for fault injection
+  -fault_trans_waveform      generate waveform database for sync events
+  -fault_tw <start_time[:end_time]> Specify time window to apply fault
+  -fault_type <arg>          Specify fault model type for simulation
+  -fault_work <dir>          Specify directory to save fault run output
+  -fault_xml_ff              Include sequential elements in the XML file
+  -fault_xml_file <file>     Specify a xml file for extracted information
+  -fault_xml_GEN <string>    Specify design version and enable xml generation
+  -fault_xml_overwrite       Overwrite existing xml file
+  -fdlim <limit>             Specify hard limit for open file descriptors
+  -File                      Command file that contains further arguments
+  -filemap                   Set options for certain files
+  -forceelab                 Force xmelab to execute
+  -forceprimupdate           Forces check for primary snapshot up-to-dateness
+  -formalbuildargs <string>  Pass arguments directly to formalbuild
+  -format <on|off>           Enables shorter compiling messages from xmsc_run
+  -fsmdebug                  Extract FSM
+  -fsv                       Run JasperGold FSV App
+  -fsv_clock_cycle_time <arg> Period to convert sim time to FSV clock cycles
+  -fsv_fault_ep_file <arg>   File with end point information for JG FSV flow
+  -fsv_fault_lib_file <arg>  Liberty file for JG FSV flow
+  -fsv_init <arg>            Tcl file for settings to be done before FSV flow
+  -g                         Turn on C debugging
+  -gateloopwarn              Enable potential zero-delay gate loop warning
+  -gatescalarinput           Gate input as scalar and connect right most bit
+  -gb_list <arg>             file containing list of modules to be glassboxed
+  -gcc_vers <vers>           9.3 or 6.3 Linux only
+  -gdb                       Run xmsim under gdb
+  -gdbelab                   Run xmelab under gdb
+  -gdbhref                   Run genhref under gdb
+  -gdbpath <pathToGdb>       Use the provided gdb instead of what is shipped
+  -gdbprim                   Run primary builds under gdb
+  -gdbsh                     Force gdb to run under sh instead of user SHELL
+  -gdbvlog                   Run xmvlog under gdb
+  -genafile <file>           Generate an access file for PLI/TCL
+  -genassert_synth_pragma    Enable generating assertions from synth pragma
+  -generic <arg>             Associate value with top-level generic
+  -genhref <file-name>       Generate an href permission file
+  -genmodafile <file>        Generate a module-based access file for PLI/TCL
+  -genpartition <file-name>  Generate an MSIE partition file
+  -genreplicated_top         Generate a replicated top
+  -genusargs                 Argument list for Genus through HAL
+  -glst_warn_as_err          (xufe only) Print glst and SDF warnings to the e
+  -gnoforce                  Assigns the value if default value not found
+  -gnu                       Choose the GNU C and C++ compiler
+  -gpg <arg>                 Assigns to all generics/params of this name
+  -gprofiler,<args>          Run selected executables with gprofiler enabled
+  -gprofout_elab <file>      gperftool elab profiler data to be dumped to
+  -gprofout_sim <file>       gperftool sim profiler data to be dumped to
+  -gui                       Invoke the Graphical User Interface
+  -gverbose                  Logs the gpg activity to the xmelab logfile
+  -h                         Print a minimal help message
+  -hal                       Call hal instead of xmsim
+  -halargs                   Pass options directly to hal
+  -halsynth_detailcheck      Perform detailed check on unsynthesizable modules
+  -halsynth_nxg              Enable NXG mode for halsynth
+  -hdlvar <arg>              Specify an hdl.var file to be used
+  -helium                    Helium Debug and Analysis mode
+  -heliumgui                 Invoke helium and connect to the session
+  -heliumguiargs <string>    Quoted string of Helium GUI cmd-line arguments
+  -helpalias                 Show the different ways to enter an option
+  -helpall                   Display all supported option
+  -helpargs                  Print help for all the options in use
+  -helpfileext               Show all the file types and their extensions
+  -helphelp                  Print out all the options controlling help
+  -helpshowmin               Show the minimum characters required for dash opt
+  -helpshowsubject           Show all the subjects for -helpsubject
+  -helpsubject <subject>     Display help on the specified subject
+  -helpusage                 Print out the list of options along with usage
+  -helpverbose               Show the verbose help text
+  -helpwidth <width>         Set max width for help messages (def 89)
+  -helpxmverilog             Show the xmverilog form of the options
+  -hier_dvs                  Enable hierarchical dynamic voltage supply
+  -history                   Dislays the xrun history and exit
+  -history_file <filename>   Sets xrun history file name
+  -host <name>               Specifies the name of the emulator for xeDebug
+  -hostinfo                  Print out host information
+  -href <file-name>          Use the given href file for the primary snapshot
+  -hw                        Use ixcom to compile (for more info -hw -helpall)
+  -hwperf_estimate           Enable detailed IXCOM speedup estimation
+  -I<include dir>            Directory to search for C/C++ include files
+  -ial [<configuration>]     Specifies configuration of IAL library
+  -icir_warn                 Enable case inside warnings for invalid ranges
+  -ida                       Enable all environment setting required for IDA
+  -iedebug_info              generate IE info report in debug mode
+  -ieee1364                  Report errors according to IEEE 1364 standards
+  -ieinfo                    Generate AMS ieinfo report
+  -ieinfo_db                 Generate AMS ieinfo SQL database
+  -ieinfo_driverload         Generate IE/CE driver load file
+  -ieinfo_driverload_tcl <logfile> Redirect ieinfo driverload into a specified file
+  -ieinfo_log <logfile>      Redirect ieinfo log into a specified file
+  -ieinfo_probe              Generate AMS IE/CE probe tcl file
+  -ieinfo_probe_tcl <logfile> Redirect ieinfo ie/ce probe into a specified file
+  -ieinfo_summary            Generate AMS ieinfo report summary
+  -iereport                  Generate interface element report
+  -ignore_analog_tstop       ignore the analog tstop setting
+  -ignore_defexpr            Ignore default expressions on variable, signal...
+  -ignore_extrachar          IGNORE extra characters present after the pragma 
+  -ignore_missing_spice_port Flag for amsspice to ignore missing spice port
+  -ignore_pragma <arg>       Ignore the specified pragma
+  -ignore_spice_oomr         Ignore Spice OOMR
+  -ignore_svbind_spice       Ignore Sv bind on Spice
+  -ignr_warnmax <arg>        Warning for which max warn count will be ignored
+  -ii_rwarn                  Issue invalid index warning in read operation
+  -ii_val                    Correct value for vector part-selects
+  -ii_warn                   Issues invalid index access warning
+  -ii_wwarn                  Issue invalid index warning in write operation
+  -import                    Prepare this verilog design for import to VHDL
+  -inc_v200x_pkg             Implicitly include -v200x packages
+  -incdir <dirs>             Specify directories to search for `include files
+  -incrbind <module-name>    Gives a top-level for the incremental partition
+  -incrhasvhdl               Prepare primary snapshot to work with VHDL
+  -incrpath <arg>            path of the primary instance in incremental
+  -incrtop <module-name>     Specify top of incremental with -genhref
+  -indago                    Enable interactive debug with Indago
+  -initbiopz                 Initialize boundary inout port to 'Z'
+  -initbpx                   Initialize boundary ports to 'X'
+  -initmem0                  Initialize all array variables to zero
+  -initmem1                  Initialize all bits of array variables to one
+  -initmemrand               Init all bits of array vars to random ones/zeros 
+  -initreg0                  Initialize all non-array variables to zero
+  -initreg1                  Initialize all bits of non-array variables to one
+  -initzero                  Initialize time, integer, std_logic types to zero
+  -input <file>              Read TCL commands from file
+  -insert <arg>              Specify string to be inserted after matching comp
+  -inst_top <arg>            Specify the top-level instance for HAL analysis
+  -intelligen                Configure generator to use intelligen
+  -intermod_path             Make interconnects be multisource capable
+  -io_port_relax             enabling relaxed inout port connection
+  -iusld                     Prefix `xmroot`/tools/lib path to LD_LIBRARY_PATH
+  -iusldno                   Disable the -iusld option
+  -ixcomargs <string>        Pass arguments to ixcom
+  -jg                        Run JasperGold with xrun
+  -jg_app <arg>              Specify the JasperGold App to be run
+  -jg_bbinst <Hierarchical Instance name> Blackbox instance name in JasperGold
+  -jg_bbinstlist <filename>  List of instances to be blackboxed in JasperGold
+  -jg_bbmod <Module name>    Blackbox module in JasperGold
+  -jg_bbmodlist <filename>   List of modules to be blackboxed in JasperGold
+  -jg_clock <arg>            Specify clock for verification in JasperGold
+  -jg_coverage <string>      Enable coverage instrumentation in JasperGold
+  -jg_periodicexport <arg>   Generate on-demand unicov database in JasperGold
+  -jg_pre_tcl <filename>     Tcl file to be run before elaborate in JasperGold
+  -jg_project <arg>          Specify project directory for JasperGold
+  -jg_reset <arg>            Specify reset for verification in JasperGold
+  -jg_save_restore_design [<arg>] Directory for elaborated design save/restore
+  -jg_unr_assumption         Enable Jaspergold UNR embedded (SVA) assumptions
+  -jgargs <string>           Specify the arguments to be passed to JasperGold
+  -jgsynthesis               Run formalbuild with -R for JasperGold
+  -jrdrs                     Picks up JRDRS.def file for loading definitions
+  -k <filename>              Set key file name
+  -L<lib dir>                Directory to search for lib files
+  -l <filename>              Set logfile name
+  -l<libname>                archive or shared library to be linked in
+  -largest_path_delay        Pick largest delay for mult cond match in iopath
+  -layout <name>             Start Simvision with a layout
+  -level <arg>               Specify levels in HAL analysis
+  -lexpragma                 Enable lexical pragma processing
+  -lib_binding               Defaults back to the IUS5.4 binding search order
+  -libcache <arg>            location on local host to be used for caching
+  -libcache_retention_time <arg> Retention time in MINUTES to delete Libcache Data
+  -libcell                   Mark all cells with `celldefine
+  -libext <ext>              Specify extensions to be used for the -y search
+  -libmap <arg>              Specify the library mapping file
+  -libname <name>            Specify the name of a library to search
+  -liborder                  Library search rule (see documentation)
+  -librescan                 Library search rule (see documentation)
+  -libverbose                Print verbose messages about instance binding
+  -lic_used                  Dump out the licenses checked out 
+  -license_order <arg>       Specifies the promotion order NO_TOP or TOP_ONLY
+  -licinfo                   Dump out the license requirements for this design
+  -licqueue                  Queue simulation till license is available
+  -limitinfo                 Print out limit information
+  -linedebug                 Enable line debugging capabilities
+  -linksysc <dynamic|static> Use libsystemc.so (dynamic) or libsystemc_ar.a
+  -lint_classify_file <arg>  Classification file for superlint flow
+  -lint_filter_file <arg>    Filter file for superlint flow
+  -lint_postprocess          Post processing option for superlint
+  -lintpragma                Process lint pragma in the design
+  -list                      Produce a VHDL source listing in specified file
+  -load_refinement <arg>     Uses refinement file in IEV unreachability flow
+  -loadcfc <lib>             Dynamically load a CFC application
+  -loadfmi <lib>             Dynamically load an FMI library
+  -loadpli1 <arg>            Specify the PLI1 library_name:boot_routine(s)
+  -loadpli1sim <arg>         Specify the PLI1 library_name:boot_routine(s)
+  -loadsc <lib>              Specify SystemC lib to be dynamically loaded
+  -loadvhpi <lib>            Dynamically load a VHPI application
+  -loadvpi <arg>             Specify the VPI library_name:boot_routines(s)
+  -loadvpisim <arg>          Specify the VPI library_name:boot_routines(s)
+  -location                  Print the location of the installation
+  -log_amsspice <logfile>    Place amsspice output into the specified logfile
+  -log_hal <logfile>         Place the hal output into the specified logfile
+  -log_ifv <logfile>         Place the IFV output into the specified logfile
+  -log_ixcom <logfile>       Place the ixcom output into specified logfile
+  -log_mcebuild <logfile>    Place the mcebuild output into specified logfile
+  -log_vhan <logfile>        Place the vhan output into specified logfile
+  -log_vlan <logfile>        Place the vlan output into specified logfile
+  -log_xedebug <logfile>     Place the xedebug output into specified logfile
+  -log_xmelab <logfile>      Place the xmelab output into specified logfile
+  -log_xmelab_ske <logfile>  skeleton xmelab output logfile
+  -log_xmprotect <logfile>   Place the xmprotect output into specified logfile
+  -log_xmsc_run <logfile>    Place the xmsc_run output into specified logfile
+  -log_xmsim <logfile>       Place xmsim output into the specified logfile
+  -log_xmvhdl <logfile>      Place the xmvhdl output into specified logfile
+  -log_xmvlog <logfile>      Place the xmvlog output into specified logfile
+  -log_xmvlog_ske <logfile>  skeleton xmvlog output logfile
+  -loop_unroll_size <arg>    Specify the loop unroll limit for halsynth
+  -lp_sim_cmd <arg>          Dump simulation LP control commands to the file
+  -lp_sim_info <arg>         Dumps problematic low power singals to a file
+  -lpf_off                   Disable power intent modeling in low power formal
+  -lps_1801 <file>           Specify an 1801 file for low power simulation
+  -lps_1801_msg <file>       Specify a file for 1801 file simulation messages
+  -lps_ack_override          Enable power switch ack port override HDL drivers
+  -lps_alt_lp                Alternative Low Power Simulation Semantics
+  -lps_alt_srr               Alternate save/restore pre-condition behavior
+  -lps_ams_avref             Enable IE supply voltage access from analog
+  -lps_ams_connect_supply    Enable 1801 power supply net connection in AMS
+  -lps_ams_ignore_base_ccnd  Removing based domain control condition
+  -lps_ams_lsr               Enable level shifter rules in AMS LPS
+  -lps_ams_relax_pdchk       Relax PD conflict check in AMS LPS
+  -lps_ams_sim               Enable power intent on analog blocks in AMS
+  -lps_ams_uca               Enable 1801 power supply net driving AMS block
+  -lps_analyze               Enable functionality for Power Estimation feature
+  -lps_assign_ft_buf         Disable continuous assignment as feed through net
+  -lps_atime <time>          Specify a time to activate low power assertions
+  -lps_auto_aon_module       Mark modules with only input ports AON 
+  -lps_aux_floating_pgaon    Treat certain floating pg pins as always-on
+  -lps_blackboxmm            Treat all macro models as black boxes
+  -lps_cellrtn_off           IGNORE modules in `celldefine for SRPG
+  -lps_common_options        Umbrella option for common LP options
+  -lps_const_aon             Consider constant driver as always on
+  -lps_corrupt_time0         Corrupt at time 0 for 1801 simulations
+  -lps_cov                   Enables automatic low power coverage 
+  -lps_cpf <file>            Specify a CPF file for low power simulation
+  -lps_dbc                   Low Power Driver Based Corruption mode
+  -lps_delayvar_corrupt      Enable corruption of delay variables
+  -lps_dis_auto_convert_lib2cdb Disables auto conversion of Liberty model
+  -lps_disable_hier_cov      Disables hierarchical low power coverage 
+  -lps_dss_pcell_verbose     Verbose for pCell auto-connection in tb
+  -lps_dtrn_min              Use min slope for domain transition
+  -lps_dut_top <dut_path>    Specify top level scope for low power simulation
+  -lps_en_port_attr_corr     Enable port corruption in SPA and SRSN
+  -lps_en_rv_port_attr_corr  Enable reverse port corruption in SPA and SRSN
+  -lps_enable_assertion_ctrl Enable assertion controls in low power
+  -lps_enable_iso_red_mem    Enable mem reduction of iso blocks
+  -lps_enum_rand_corrupt [<seed>] Random VHDL enum corruption based on seed
+  -lps_enum_right            VHDL enum corruption with 'right value
+  -lps_expr_force_reapply    Reapply HDL expression forces
+  -lps_find_in_cell          traverse inside implicitly defined cells
+  -lps_flexible_gen_naming_off Disable mapping '_' to delimiter/bracket
+  -lps_force_reapply         Reapply user forces after domain power up
+  -lps_ft_graph              Enable bit-precise feedthrough infrastructure.
+  -lps_gen_wildcard_style    Search for match across generate hierarchies
+  -lps_hier_cov              Enables hierarchical low power coverage 
+  -lps_icdb                  icdb is the legal format for liberty database
+  -lps_idss                  Lp Incremental DSS
+  -lps_ignored_1801_file <logfile> Record unsupported UPF commands 
+  -lps_implicit_pso          Enable implicit pso state for enumerated types
+  -lps_implicit_supply_expr  Add implicit FULL_ON to all NORMAL sim states
+  -lps_implicitpso_char <value> Specify a implicit character enum value
+  -lps_implicitpso_nonchar <value> Specify a non character enum value
+  -lps_int_index_nocorrupt   Don't corrupt VHDL integers used as array index
+  -lps_int_nocorrupt         Disable corruption of VHDL integer signals
+  -lps_iso_check_only        Enable simulation of isolation fully inserted
+  -lps_iso_elem_precedence_on Enable ISO element precedence resolution
+  -lps_iso_hybrid            Enable hybrid isolation insertion
+  -lps_iso_nci               Disable input corruption on isolated ft nets
+  -lps_iso_netsplit          Enable 1801 isolation to allow net splitting
+  -lps_iso_off               Turn off port isolation
+  -lps_iso_precedence_verbose Enable ISO element precedence resolution report
+  -lps_iso_supply_aon        Iso rule does not have to specify supply set
+  -lps_iso_verbose           Enable information reporting for isolation
+  -lps_isofilter_verbose     Report isolation filtering information
+  -lps_isoruleopt_warn       Print Warning for Iso rule which is optimized
+  -lps_isotgt_source         Use the source supply for isolation assertions
+  -lps_lib_alt_output_dir <dir> Specify an alternative DIR to place CDB files
+  -lps_lib_mfile <file>      Specify a file that includes a list of lib files
+  -lps_lib_supply_detail     Full supply net pathname in lib verbose 
+  -lps_lib_verbose <level>   Specify liberty information reporting
+  -lps_libinlib_pgpin_check  Enable pg pin connection check for lib inside lib
+  -lps_librtl_nocheck        Disables pin & port check between liberty and RTL
+  -lps_log_verbose <logfile> Specify a log file for lps verbose output
+  -lps_logfile <logfile>     Specify a log file for low power simulation
+  -lps_model_verbose <level> Specify model information reporting
+  -lps_module_load           Apply power models in module load mode
+  -lps_modules_wildcard      Allow wildcarding in certain CPF module names
+  -lps_mtrn_min              Use min latency for mode transition
+  -lps_mvs                   Enable multi-voltage scaling (MVS) simulation
+  -lps_no_dbc                Disable Low Power Driver Based Corruption mode
+  -lps_no_xzshutoff          Don't corrupt domain when pso condition is X/Z
+  -lps_nonstd_1801           Enable features designed for non standard 1801
+  -lps_notlp                 Turn OFF special treatment for top level ports
+  -lps_off                   Turn off low power simulation
+  -lps_pa_model_on           Enable Power aware model checking for CPF
+  -lps_pa_model_supply_port  Allow Power Aware model defined by supply port
+  -lps_pacell_disable_ic     Disable pacell input corruption
+  -lps_pam_verbose           Enable power aware model reporting
+  -lps_pmcheck_only          Power mode is for check only during simulation
+  -lps_pmode                 Enable power mode simulation
+  -lps_power_tchecks         Enable power sensitive timing checks 
+  -lps_psn_verbose <level>   Specify a level of information reporting for PSN
+  -lps_pso_force_check       Check if applying user force while domain is OFF
+  -lps_pst_verbose           Enable reporting additional PST info
+  -lps_query_cmd_alt         Alternative return values for LP query commands
+  -lps_query_cmd_file <file> Specify a 1801 query file for LP
+  -lps_real_nocorrupt        Disables corruption of real variables
+  -lps_red_mem_options       Umbrella option for LP memory reduction
+  -lps_relax_1801            Enable non-strict mode for 1801 reader
+  -lps_relax_hierarchy       Set non-strict mode for hierarchy specification
+  -lps_report_lib2cdb_error  Report any Error from Syntech parser
+  -lps_resolution_no_message Block runtime info for custom supply resolution
+  -lps_restore_level         Restore starts at active edge for balloon style
+  -lps_revert_errors2warnings Make LP errs that used to be warns as warns again
+  -lps_rpr_off               Turn off repeaters on ports
+  -lps_rtn_check_only        Enable simulation of retention fully inserted
+  -lps_rtn_full_lock         New retention lock model
+  -lps_rtn_hybrid            Enable hybrid retention insertion
+  -lps_rtn_lock              Lock the retained reg value
+  -lps_rtn_off               Turn off state retention
+  -lps_rtn_prec_rule         Enable rule based retention precedence
+  -lps_rtn_save_lock         New IEEE 1801 save retention lock model
+  -lps_sda_pa_lib            Allow SDA power aware attribute for liberty cell
+  -lps_sda_upf_dont_touch_on Enable UPF_dont_touch SDA commands
+  -lps_sim_verbose <level>   Specify a level of sim information reporting
+  -lps_simctrl_on            Enable runtime control over low power simulation
+  -lps_smartlog_db           Allow user to change the IDA Database name
+  -lps_smartlog_enable       Enable LP to write into the IDA Database
+  -lps_snstate_hierfind      Enable hierarchical search for supply state
+  -lps_spa_override          Allow set_port_attributes to override liberty
+  -lps_srfilter_verbose      Debug sequential filter.
+  -lps_srruleopt_warn        Print Warning for Ret rule which is optimized
+  -lps_srsn_override         Allow srsn to override liberty and SPA
+  -lps_stdby_nowarn          Disable warning for standby mode input violation
+  -lps_stime <time>          Specify a time to start low power simulation
+  -lps_stl_off               Turn off state loss 
+  -lps_supply_full_on        Initializing root supplies to FULL_ON state
+  -lps_syntax_check          Enable Linter Syntax Check for 1801/CPF files
+  -lps_termb_chkpst_off      Disable terminal boundary check for PST commands
+  -lps_termb_chkscp_off      Disable terminal boundary check for scoping paths
+  -lps_termb_pmodel          Default all power models to terminal boundary
+  -lps_upcase                Changes all identifiers to upper case in CPF file
+  -lps_upfpkg_auto_compile_off Disable auto compilation of UPF package
+  -lps_v10_ack               Enable old style ack port specification
+  -lps_v10iso                Enable V1.0 isolation for 1801
+  -lps_verbose <level>       Specify a level of information reporting
+  -lps_verify                Enables automatic Low Power verification 
+  -lps_vhdl_reg_opt          Optimized algorithm to determine VHDL Reg
+  -lps_vplan <file>          Generate a vplan for Low Power coverage 
+  -lps_wreal_bport_corruption Enable power corruption on wreal boundary port
+  -lps_wreal_corrupt_value <doubleval> Specify corrupt value of wreal signals
+  -lps_wreal_nocorrupt       Disables corruption of wreal signals
+  -lwbbox                    Light weight bbox - no copying of VSTs
+  -lwd_complete              Complete data for LWD after elaboration.
+  -lwd_from_snapshot         Standalone LWD generation
+  -lwd_prepare               Generate partial data for LWD during elaboration.
+  -lwdgen                    Generate LWD during elaboration.
+  -makelib <libpath[:logical]> Compile HDL files into specified library
+  -makelibpost <libpath[:logical]> Compile HDL files after command line files
+  -makeprim                  Elaborate primary top into a primary snapshot
+  -makeuvclib <libpath>      Precompile the selected UVC core into a directory
+  -matchinst <instance>      Specify name of instance to match for -INSERT
+  -max_tchk_errors <arg>     Specifies maximum number of timing violations
+  -maxdelays                 Select maximum delays for simulation
+  -mccodegen                 Enable parallel code generation
+  -mcdump                    Do SHM dumping on separate process
+  -mce                       Enable Multicore Simulation Acceleration
+  -mce_abs_link              Use absolute paths when linking mce
+  -mce_acc_estimation <file> Predict multicore performance
+  -mce_access_file           (xufe only) access filename
+  -mce_access_suppress_errors  (xufe only) Change visibility errors to warnings
+  -mce_allocate_vwdb_percentage_threads  Percentage of threads allocated for VWDB
+                             dumping
+  -mce_allow_mce_functions_to_nacc  (xufe only) Allow mce_functions to use nacc ids
+  -mce_allow_mce_functions_to_part_select  (xufe only) Allow part-selects in
+                             mce_functions
+  -mce_args <string>         Pass arguments to mcebuild
+  -mce_assertion_mode        (xufe only) Sets mode to accelerate assertions
+  -mce_assigns_to_concat     (xufe only) Merge single-bit assigns
+  -mce_auto_access           (xufe only) Apply access per xm_force/xm_deposit
+  -mce_auto_top              Automatically set toplevel to be the top modules
+  -mce_bb_task_file          (xufe only) Module:Task pairs to be black-boxed
+  -mce_cell_ports_forcible   (xufe only) Enable force access to cell ports
+  -mce_clean_binaries        Delete binaries files after each stage
+  -mce_copy_logs <0/1>       Create a backup directory with some of mce logs
+  -mce_copy_logs_con_file_path  User configuration file path for copy_logs
+  -mce_cpu_configuration     (xufe only) Specify core config mode for sim
+  -mce_deposit_mode          (xufe only) Convert $deposit to $mce_deposit_id
+  -mce_deposit_only_into_wrapper_ports_containing_Q  (xufe only) Mark 'Q' ports for
+                             deposit
+  -mce_depositable_cell_ports  (xufe only) Enable deposit access to cell ports
+  -mce_depositable_dangling_ports  (xufe only) Allow deposits to unconnected ports
+  -mce_depositable_ffs       (xufe only) Mark ACC FFs for deposit
+  -mce_depositable_output_ports_Q  (xufe only) Mark 'Q' output ports for deposit
+  -mce_depositable_vars      (xufe only) Mark all vars for deposit
+  -mce_depositable_wrapper_out_ports  (xufe only) Mark wrapper outputs for deposit
+  -mce_detect_event_glitches  Detect event glitches
+  -mce_dryrun                (xufe only) Execute a MCE dry run.
+  -mce_enable_mce_read_max_size (xufe only) Allow mce_reads to be>128 bits
+  -mce_error_msg_ignore      Ignore some errors given by verific
+  -mce_expansion_split_max_size  (xufe only) Maximal size of a split for debug
+  -mce_expansion_split_min_size  (xufe only) Minimal size of a split for debug
+  -mce_expansion_split_threshold_size  (xufe only) Minimal size of a single pass elabor
+  -mce_extract_hierarchy     (xufe only) Run mcebuild extract hierarchy, exit
+  -mce_force_aggregation     (xufe only) Merge force statements into a concat
+  -mce_force_aggregation_max_size  (xufe only) Max size of merged force statement
+  -mce_force_mode            (xufe only) Replace forces with $mce_force
+  -mce_force_rhs_mode        (xufe only) Control if forces follow RHS changes
+  -mce_glst                  (xufe only) Whether MC GLST is on or off
+  -mce_grid                  Parallel compilation on the grid
+  -mce_grid_lsf_tracker_type  The LSF tracking to use when running on grid
+  -mce_grid_max_lsf_launch_time  Max time to wait for grid command to launch
+  -mce_grid_multiple_processes_per_job  Run multiple processes until all jobs are done
+  -mce_hview                 Create hview databases for performance analysis
+  -mce_ignore_process_affinity  Ignore process affinity for mc sim
+  -mce_indago_probing        (xufe only) Optimize probing for Indago
+  -mce_initial_block_to_value  (xufe only) Move initial block to var declration
+  -mce_loop_warning_only     If true, we print Warning only, if false, we tro
+  -mce_looperror_abort_threshold  Threshold for loop detection error
+  -mce_looperror_collisions_threshold  Collisions threshold for loop detection
+  -mce_looperror_invocations_threshold  Threshold for loop detection
+  -mce_looperror_report_invocations_count  Number of loop invocations to report
+  -mce_manual_init           (xufe only) Skeleton explicitly initialize mce
+  -mce_mark_all_depositable_vars_as_random_initable  (xufe only) Mark deposit vars for
+                             random init
+  -mce_max_concurrent_codegens_weight  max weight for current running codegens
+  -mce_max_mem_threshold     (xufe only) Bit width of index to accelerate mem
+  -mce_mem_reporting         If 1, create various memory reports
+  -mce_mode                  (xufe only) Enable skeleton DFT enhancements
+  -mce_msie_incremental      MSIE incremental compilation
+  -mce_msie_primary          MSIE primary compilation
+  -mce_msie_snapshot_name    Snapshot name
+  -mce_nacc_file <file>      Specify a nacc file
+  -mce_nacc_module_with_strength_aware_pes (xufe only) NACC modules with strength PEs
+  -mce_nacc_module_with_strength_keywords  (xufe only) NACC module with strength
+                             keywords
+  -mce_no_config_allow_escaped_name  (xufe only) Disallow escaped name in config file
+  -mce_no_grid_quote         (xufe only) Do not use quote in grid commands
+  -mce_no_if_none            Mode for path delay with no if-none
+  -mce_ovm_home              (xufe only) OVM package home directory for MCE.
+  -mce_parallel_codegens_asm  if set - runs multiple codegen-asm-always-blocks
+  -mce_qualify <file>        Report summary for mce qualification
+  -mce_read_access_all       (xufe only) All variables will be visible
+  -mce_read_access_interfaces (xufe only) Give interface vars read access
+  -mce_read_cont_mode        (xufe only) Convert cont assign OOMR to mce_read
+  -mce_read_mode             (xufe only) Convert RHS OOMRs with $mce_read
+  -mce_run_stats_analyzer    Run the stats analyzer for compilation reports
+  -mce_run_to_completion     Complete all compilations, even if some fail
+  -mce_sanity_module_as_top  (xufe only) Instantiate sanity module as a top
+  -mce_serial_mc_codegen     Run Multi-Core Codegen in serial mode
+  -mce_sim_logs_dir <string> MCE Run Directory
+  -mce_sim_use_hyper_threading  Whether to use CPU hyper threading if exits.
+  -mce_split_min_size        (xufe only) Minimal size of a split
+  -mce_split_threshold_size  (xufe only) Minimal size of a single pass elabor
+  -mce_splits_max_concurrency  (xufe only) Count of splits to build in parallel
+  -mce_top <instance path>   Full path to the accelerated top level
+  -mce_tops_file             File listing the paths to the top of a hierarchy
+  -mce_use_stubs             (xufe only) Allow undefined modules in compile
+  -mce_uvm_home              (xufe only) UVM package home directory for MCE.
+  -mce_vis_all               (xufe only) Mark all signals visible for dumping
+  -mce_vis_all_no_cells      (xufe only) Make non-cell vars visible for dump
+  -mce_vis_all_no_cells_exclude_formals (xufe only) Exclude port formals of the top cell
+  -mce_vis_es                (xufe only) Mark essential signals for dumping
+  -mce_vis_ff                (xufe only) Make FF variables visible for dump
+  -mce_vis_interfaces        (xufe only) Make interface vars visible for dump
+  -mce_vis_non_cell          (xufe only) Make non-cell vars visible for dump
+  -mce_vis_packed_limit      (xufe only) Threshold for packed array egress
+  -mce_vis_unpacked_limit    (xufe only) Threshold for unpacked array egress
+  -mce_vmm_home              (xufe only) VMM package home directory for MCE.
+  -mce_vwdb_use_1_producer   For debug, use only 1 VWDB producer
+  -mce_warnings_as_errors    Treat warnings as errors
+  -mce_waveform_file         (xufe only) waveform filename
+  -mcmaxcores <arg>          Max number of cores multi-core codegen can use
+  -mcperf_estimate           Calculate estimated MCE performance gain
+  -mem_xprof                 Enable instrumented memory profiling
+  -memdetail                 Information about memory usage in profile report
+  -memopt                    Use reduced memory image size
+  -merge_database            Merge sst2/psfxl_all database in save/restart
+  -mindelays                 Select minimum delays for simulation
+  -mixed_bus_opt             Prevent mixed bus on concats
+  -mixesc                    Handle escaped identifiers in imported model
+  -mkdbssnap                 Enable dynamic snap feature
+  -mkprimsnap                Make a primary snapshot
+  -ml_uvm                    Enable multi lang UVM
+  -mlc                       Imply multi lang constraints
+  -mltypemap_input <tclfile> Input file for mltypemap
+  -mltypemap_tcl             Invoke mltypemap in interactive mode
+  -modelincdir <dirlist>     Specify a list of directories separated by :
+  -modelpath <string>        For Verilog-AMS, specify list of source files
+  -ms_record                 To enable Flex record mode
+  -msie_href_verbose         Print file and line number of HREF/Extern OOMRs
+  -msie_verbose              Print information about MSIE partition boundaries
+  -msiectransupplyopt        Allow supply info sharing between partitions
+  -msiepkgsok                Allow same name packages from loaded primaries
+  -msietopsok                Allows tops with same name from loaded primaries
+  -mtd_options <string>      Quoted string of options for MTD
+  -multisource_int_delays    Make interconnect timing be multisource capable
+  -multview                  Allows selection of arch/config for binding
+  -nacc_file <file>          Specify a nacc file
+  -namemap_mixgen            Do name mapping from VHDL generics to Vlog params
+  -native                    Use the native C and C++ compiler
+  -nbacount                  Enables NBA counting for VPI application
+  -neg_verbose               Verbose mode for negative delays adjustment
+  -negdelay                  Adjust for negative delays
+  -nettype_port_relax        Relax nettype port compatability checking
+  -neverwarn                 Disable printing of all warning messages
+  -newperf                   Umbrella option for new performance optimizations
+  -newsv                     Umbrella option for new SV Features
+  -no_cross_def_bind         Suppress cross-language default binding
+  -no_design_facts           Do not generate design facts during structural
+  -no_sdfa_header            Do not print the SDF annotation header
+  -no_tchk_msg               Turn off timing check warnings
+  -no_tchk_xgen              Turn off X-generation in VITAL timing checks
+  -no_top_level_interfaces   Disallow interfaces as top-level design units
+  -no_vpd_msg                Turn off VITAL pathdelay warnings
+  -no_vpd_xgen               Turn off X-generation in VITAL pathdelays
+  -noaslr                    No address space layout randomization for xmsim
+  -noassert                  Disable PSL and SystemVerilog assertions
+  -noassert_synth_pragma     Disable generating assertions from synth pragma
+  -noautosdf                 Suppress automatic SDF annotation
+  -nobinding                 Skip instances of unit given as argument
+  -nobuiltin                 Do not use any built-in IEEE operators
+  -nocheck <arg>             checks and categories not to be performed
+  -nocifcheck                Disables constraint checking in VDA functions
+  -nocopyright               Suppress printing of copyright banner
+  -nocover                   Disable PSL and SystemVerilog cover directives
+  -nodeadcode                Turn off dead code optimization
+  -nodefbopen                No default binding for open binding indication
+  -nodep                     Do not create dependencies
+  -nodistcomp                Option used to turn distributed compilation off
+  -noedg                     Turn off the EDG front-end for XM-SC
+  -noelab                    Disable the invocation of xmelab
+  -noesp                     Disable edge-sensitive iopath delays
+  -noforcesupply             Optimize the handling of supply net
+  -noftwaitchk               no indirect wait check on function calling task
+  -nohal                     Disables the generation of HAL checks 
+  -nohalcheck                Do not run lint checks (disable halcheck engine)
+  -nohalstruct               Do not run structural checks
+  -nohalsynth                Do not run synthesizability checks
+  -nohistory                 Disables xrun history and redo
+  -noievlic                  IEV must not be added in the promotion order
+  -noilglmpchk               no illegal modport check during validation.
+  -noipd                     Ignore interconnect delays
+  -nokey                     Suppress generation of the default keyfile
+  -nolibcell                 Disable tagging library modules as cells
+  -nolicpromote              Deprecated - Does not affect Xcelium licensing
+  -nolicsuspend              Disable suspending licenses for SIGTSTP
+  -noline                    Do not locate source line on errors
+  -nolink                    Copy the source files when using 5x structure
+  -nolog                     Suppress generation of the default logfile
+  -nomempack                 Do not pack memories
+  -nomtdump                  Disable multi-threaded SHM dumping
+  -nomxindr                  Do not generate NOMXINDR error; split net instead
+  -noneg_tchk                Ignore negative numbers for SETUPHOLD & RECREM
+  -nonotifier                Ignore notifiers in timing checks
+  -nontcglitch               Suppress delayed net glitch suppression message
+  -noobjcomp                 Do not compile command line .o files
+  -noparamerr                Do not flag setting undefined parameters as error
+  -nopragmas                 Ignore HDL pragmas such as translate_off
+  -nopragmawarn              Disable pragma related warning messages.
+  -nopreelab                 No preprocess phase to be run for MSIE
+  -noprimtoperr              Do not error for invalid primtop
+  -noprimupdate              Disable the update for the primary snapshot
+  -norebuild                 Do not rebuild xmelab and xmsim
+  -noremovescratch           Do not remove the sub scratch directory for sim
+  -nortis                    Disable retain input sense
+  -norundbg                  When attaching gdb to the exec do not execute run
+  -noscsynceverydelta        Turn Delta cycle accuracy off
+  -noscv                     Turn off linking of the CVE and SCV libraries
+  -nosdfstats_log            Disable SDF annotation statistics logging
+  -nosearch                  Skip library search for units not found
+  -nosncomp                  Do not compile Specman input files
+  -nosource                  Do not check source file timestamps in update
+  -nospecify                 Suppress timing information from specify blocks
+  -nostdout                  Turn off output to screen (terminal)
+  -nosuptran                 Make tran insensitive to supply net change
+  -notarget_svbind           Allow SV Bind without target in design
+  -notefile <arg>            File containing messages to be reported as note
+  -notimezeroasrtmsg         Suppress printing of time zero assert messages
+  -notimingchecks            Do not execute timing checks
+  -notlm                     Do not include tlm or tlm2 headers or libraries
+  -noupdate                  Disable the default update mode
+  -novhdlxp                  Disable VHDL X-PROP
+  -novic                     Turn off linking of the VIC libraries
+  -novitalaccl               Turn off VITAL acceleration
+  -novitalcheck              Suppress VITAL compliance checking
+  -nowarn <arg>              Disable printing of the specified warning
+  -noxilinxaccl              Turn off Xilinx acceleration
+  -ntc_enhanced              Use improved algorithm for NTC convergence
+  -ntc_level <level>         Select NTC algorithm 1,2 or 3 (default is 2)
+  -ntc_neglim                Move negative limit of invalid NTC windows
+  -ntc_path                  Verify pathdelay containing NTC delay is larger
+  -ntc_poslim                Move positive limit of invalid NTC window
+  -ntc_sim_verbose           Display NTC verbose information during simulation
+  -ntc_tolerance <arg>       Specify tolerance value for NTC timing window
+  -ntc_verbose               Display verbose information about NTC process
+  -ntcnotchks                Generate NTC delay while removing timing checks
+  -nxmbind                   Temporary option to enable new SVBIND.
+  -O0                        Optimize to level 0
+  -O1                        Optimize to level 1
+  -O2                        Optimize to level 2
+  -O3                        Optimize to level 3
+  -o_ext <ext>               Override extensions for object files
+  -objext <ext>              Add extensions to object files
+  -olddeposit                The old way of doing deposits to wires
+  -omicheckinglevel <level>  Specify OMI checking level {Min, Std, Max}
+  -override_precision        Override the timescale precision in Verilog
+  -override_timescale        Override the timescale directives in Verilog
+  +overwrite                 Allow overwriting of prep files
+  -overwrite                 Overwrite existing config file of same name
+  -ovl [<configuration>]     Specifies configuration of OVL library
+  -ovmhome <dir>             Location to look for the OVM install
+  -ovmlinedebug              Enable line debugging capabilities of OVM
+  -ovmnoautocompile          Do not auto compile the OVM packages
+  -ovmtest <testName>        Specify the test class name
+  -ovmtop <testName>         Specify the top test class name
+  -ovp <CPU core>            Allow simulation of given OVP model
+  -ovphome <OVP install root directory> Specify location of OVP installation
+  -oxmbind                   Option to enable old SVBIND.
+  -pack_libs <arg>           Filename in which all the libs are packed
+  -parallel                  Compile makelib collections in parallel
+  -parallel_block_disable    Disable fork-join_none/fork-join_any blocks
+  -parseinfo  <args>         Enable information about `include and `define
+  -partialdesign             Allow elaboration of partially-defined design
+  -password                  Prompt for sim passwd for SimVis walkup connect
+  -pathdelay_sense           Enable the pathdelay sense in the design
+  -pathpulse                 Set pulse limits according to PATHPULSE$
+  -pathtran                  Kill pathdelays touching multiple tran gates
+  -perflog <arg>             Writes performance statistics in specified file
+  -perfstat                  Writes performance statistics in xmperfstat.out
+  -persistent_sources_debug  Preserve copy of source files for debug
+  -pkgsearchdefault          Search default library first then search cds.lib
+  -pkgstaticinit             Force elaboration of packages
+  -pli_export                Export symbols from loadpli, loadvpi
+  -plidebug                  Enhance the profile output with PLI info
+  -plierr_verbose            Expand handle info in PLI/VPI/VHPI messages
+  -plimapfile <arg>          Specify VPI and/or PLI mapping file(s)
+  -plinooptwarn              Suppress PLI messages caused by limited access
+  -plinowarn                 Do not print PLI warning and error messages
+  -pliverbose                Print information for PLI/VPI task registration
+  -plusarg_save              Force all user defined plus options to be saved
+  -plusperf                  Umbrella option for simulation perf optimizations
+  -plussv                    Umbrella option for SV relaxations
+  -portable_snapshot         Uses fxsave instruction instead of xsave(c)
+  -portchecks                Issue warnings for all checks of Verilog ports
+  -ppdb <dbase>              Invoke the post-processing environment
+  -ppe                       Enter post-processing mode
+  -pragma                    Enable pragma processing
+  -precompiled_headers <on|off> Use precompiled headers.  Only with gcc 4.1
+  -prefix <arg>              Prefix to the xrun command
+  -prefix_primelab <arg>     Prefix to the MSIE xmelab command for primaries
+  -prefix_xmsim <arg>        Add arguments to before xmsim execution
+  -prep                      Run xrun in -prep mode
+  -prep_name <script name>   Set the prep mode script name
+  -preserve                  Preserves resolution of single-driver sigs
+  -prffile                   Specify the Specman profiler report for profiler
+  -primbind                  Bind to primary snapshots automatically
+  -primhrefupdate            Enable the automatic elaboration of the primary
+  -primincrpathok            Disable the INCRPATH check in incremental elab
+  -primlibdir <dir>          Specify directory of primary xrun command
+  -primname <name>[@<dir>]   Specify the name of the primary xrun command
+  -primparallelelab <number>  Elaborate number of primaries in parallel
+  -primparamsok              Ignore overrides of primary param/generic values
+  -primsnap <snapshot-name>  Use the given snapshot as a primary partition
+  -primtop <module-name>     Specify top of primary partition with -genhref
+  -primvhdlcompat            Prepare primary snapshot to work with VHDL
+  -print_hdl_precision       Prints VHDL timescale.
+  -printspecs                Have xmsc_run print out the spec file
+  -process_save              Enables process-based save/restart
+  -processor <cpunum>        Set a processor's CPU affinity
+  -prof_dump_interval <arg>  RU	--dump prof report after every x seconds
+  -prof_dump_once <arg>      RU --dump prof report at once after x seconds
+  -prof_interval <arg>       Set xprof memory sampling interval
+  -prof_mem_callgraph        Enable the callgraph in memory profiler
+  -prof_mem_dump_before_mem_exhaust Dump db before memory exhaustion in mem profiler
+  -prof_work <dir>           Set root xprof database directory
+  -profile                   Generate a run-time profile of the design
+  -profoutput <file>         Specify an output file for profiling data
+  -profthread                Allow threaded processes to profile
+  -prompt                    Prompts to select arch/config/view for entity/mod
+  -propdir <dir>             Specify directory to consider when searching
+  -propfile <file>           Unsupported use -propfile_vlog|vhdl|sc
+  -propfile_sc <file>        File containing PSL/Covergroup verification code
+  -propfile_vhdl <file>      File containing PSL/Covergroup verification code
+  -propfile_vlog <file>      File containing PSL/Covergroup verification code
+  -propsc_ext <ext>          Specify extensions to consider when searching
+  -propvhdl_ext <ext>        Specify extensions to consider when searching
+  -propvlog_ext <ext>        Specify extensions to consider when searching
+  -pulse_e <arg>             Set percentage of delay for pulse error limit
+  -pulse_int_e <arg>         Set percent delay for pulse error limit
+  -pulse_int_r <arg>         Set percent delay for pulse reject limit
+  -pulse_r <arg>             Set percentage of delay for pulse reject limit
+  -purecov                   Instrument xmsim code with purecov
+  -purecovelab               Instrument xmelab with purecov
+  -purify                    Instrument xmsim code with purify
+  -purifyelab                Instrument xmelab with purify
+  -Q                         Quiet mode, with banner and command line
+  -q                         Suppress informational messages(i.e., Quiet mode)
+  -quantify                  Instrument xmsim code with quantify
+  -quantifyelab              Instrument xmelab with quantify
+  -R                         Simulate using the last xmelab generated snapshot
+  -r <snapshot name>         Force simulation using snapshot
+  -r2l_electrical_inh        select connect module with electrical supply
+  -r2l_msup                  Enable R2L insertion with multiple supply
+  -races                     Run zero-delay race condition checks 
+  -randwarn                  Enable all SV randomize failure warnings
+  -read_lib <arg>            Enable DFT, scanchain check using *.lib synthesis
+  -read_tlf <arg>            Enable DFT, scanchain check using *.tlf synthesis
+  -rebuild                   Rebuild the xmelab & xmsim that are to be used
+  -redirect <path>           Specify directory to store prep files
+  -redmem                    Deprecated option - no impact
+  -redo <stepid | all>       Replays the specified or all steps from history
+  -reduce_classdep           enabling reduce dependency list
+  -reflib <libpath[:logical]> Add the library to the list of libraries searched
+  -refuvclib <libpath>       Use the preprocessed UVC library
+  -relax                     Enable relaxed VHDL interpretation
+  -replace_empty_delay_with_largest Replace empty in sdf with largest delay
+  -replace_empty_delay_with_smallest Replace empty in sdf with smallest delay
+  -replay                    Enable the simulation coverage generation
+  -replicated_top <module-name> Specify name of replicated module
+  -restrict_spaces_macro_escid Only \n, ' ' and \r can terminate escaped ID
+  -rmkeyword <keyword>       Specify list of keywords to be removed
+  -rmkeyword_vhdl <keyword>  Specify list of VHDL keywords to be removed
+  -rnm_coerce <default|detailed|none|off|on> specify RNM coercion type
+  -rnm_dmsie                 Insert DMS IE's
+  -rnm_info                  rnm coercion information. 
+  -rnm_package               Compile Real Number Modeling Packages
+  -rnm_relax                 Non-compliant IEEE 1800 usage for RNM
+  -rnm_res_nowarn            Disable warnings on wreal resolution functions
+  -rnm_tech                  Enable Real Number Modeling(RNM) elaboration mode
+  -roelab                    mark the library as read only for elaborate
+  -rulefile <arg>            file for loading definitions of categories checks
+  -rulelib <arg>             A shared library containing user-defined checks
+  -rules_checked             Print details of the checks
+  -rules_list                Print all the rules present in HAL
+  -run                       Begin simulation automatically
+  -RUNMODE                   Run Rocketbuild as part of xrun
+  -rvf_alias_covers          Generate covers for read-write tests
+  -rvf_aliasaddrgapinblock <arg> Address to use for gap in block alias cover
+  -rvf_aliasaddroutsideblock <arg> Address to use for outside block alias cover
+  -rvf_aliasaddrvalidinblockprimary <arg> Address to use for valid in block alias cover
+  -rvf_aliasaddrvalidinblocksecondary <arg> Secondary address for valid in block alias
+                             cover
+  -rvf_aliasseed <arg>       Seed value for generation of alias covers
+  -rvf_check <arg>           Specify check to run for register validation
+  -rvf_compcsv <file>        Specify Vendor Extensions CSV file
+  -rvf_init_gap <arg>        Specify check initial gap for register validation
+  -rvf_input <file>          Specify IPXACT Component XML file
+  -rvf_inxml <file>          Specify no VE IPXACT Component XML file
+  -rvf_middle_gap <arg>      Specify check middle gap for register validation
+  -rvf_nomirror              Disable xm_mirror generation for register flow
+  -rvf_vpm                   Generate vsif for register checks distribution
+  -rwelab                    mark the library as writable for elaborate
+  -s                         Load snapshot and go to the interactive prompt
+  -save_run_history          Enables xrun history with -r and -R
+  -savechoice <arg>          Specify name of file in which to save bindings
+  -savedependency            Save link dependency information
+  -saveenv                   Save the shell environment variables
+  -savevpconfig <arg>        Save current virtual design configuration
+  -sc_main                   Run with an sc_main entry point
+  -sc_main_stacksize <arg>   Set SystemC sc_main() stack size
+  -sc_thread_stacksize <arg> Set SystemC SC_THREAD stack size
+  -scAllowSCFromPLI          Allow SystemC from PLI
+  -scautoshell SYSTEMC|HDL|VERILOG|VHDL Automatically generate shell modules
+  -scconfig <arg>            Specify SystemC parameter configuration file
+  -scConvertWarn             Turn on X/Z -> 0 data conversion warnings
+  -sccreateviewables         Create xmsc_viewable objs inserted by xmsc_wizard
+  -scdependency <arg>        Specify link dependency information
+  -scDisableDynamicHierarchy Disable Dynamic Hierarchy in designs with SystemC
+  -scdumpstatictop           Dump SystemC code from config file
+  -scerror <arg>             Increases the severity of a warning to an error
+  -scfatal <arg>             Increases the severity of a warn/error to a fatal
+  -scfrontend                Run the SystemC Front End during compilation
+  -scgafap <args>            Either +on +off or +auto
+  -scida                     Enable Indago flow for pure SystemC design
+  -scinitbidirtoz            Initialize connected inout ports to Z state
+  -scNoDestructorsInElab     Do not run destructors during elaboration
+  -scope_discipline <scope>  Specify one scope based discipline
+  -scprocesscb               Enable SystemC Process callbacks
+  -scprocessorder <arg>      Allow System C process order to vary
+  -scprofcount               Enable SystemC dynamic activity count
+  -scregisterproberecordall <arg> Turn recording all sc_register changes on/off
+  -screlaxparam              Allow xmsc_get_param from end_of_construction
+  -scsynceverydelta <on|off> Turn Delta cycle accuracy on
+  -sctestlink                Perform SystemC test link
+  -sctlmcheck                Enable TLM2 Checks and Information messages
+  -sctlmdbname <dbname>      Specify TLM transaction database name
+  -sctlmmmap <mmap>          Mem map file for SystemC TLM performance analysis
+  -sctlmnodata               Exclude data from tlm output
+  -sctlmperf                 Enable SystemC TLM performance analysis
+  -sctlmprobe                Enable probing for TLM 2.0 sockets
+  -sctlmrecord               Enable SystemC TLM tracing mode
+  -sctop <top>               Specify SystemC module name to be the top level
+  -scu                       treat each netlist file as a compile unit
+  -scupdate                  update SystemC design units used in the design
+  -scv                       Turn on linking of the CVE and SCV libraries
+  -scverbosity <arg>         Specify SystemC reporting verbosity
+  -sdf                       Add sdf back annotation: '--sdf min_typ_max:anno
+  -sdf_cmd_file <file>       Specify file of SDF annotation commands
+  -sdf_file <arg>            Specify the SDF annotation file
+  -sdf_ignore_retain         Ignore IO path retain delays in a SDF file 
+  -sdf_no_warnings           Do not report SDF warnings
+  -sdf_nocheck_celltype      Do not check the accuracy of CELLTYPE field
+  -sdf_nopathedge            Ignore edge specifier in SDF IOPATHS
+  -sdf_nopulse               Ignore SDF pulse information
+  -sdf_orig_dir              Store compiled SDF in same dir as original
+  -sdf_precision <arg>       Specify precision which SDF data will be modified
+  -sdf_simtime               Allow SDF annotation during simulation
+  -sdf_specpp                Use PATHPULSE parameters in specify block
+  -sdf_verbose               Include detailed information in SDF log file
+  -sdf_worstcase_rounding    Truncate SDF min delays, round max
+  -sdfdir <dir>              Specify directory to be used for SDF compile
+  -sdfstats <arg>            Write SDF annotation statistics to the given file
+  -seed <seed>               Set the seed value for SystemVerilog and Specman
+  -sem2009                   Scheduling semantics from LRM 2009
+  -seq_udp_delay <arg>       Specify a constant delay for sequential UDPs
+  -sequdp_nba_delay          Add nba delay to zero-delay sequential UDP's
+  -set_eto_pulse             Set ETO pulse value to non-X
+  -setdiscipline <scope>     Set discipline for a specified scope.
+  -setenv <envvar>           Set environment variable -setenv foo=1
+  -shared_lib_symcheck       Checks for symbol conflicts
+  -shm_filter_group          Enable precision filtering on real value probes
+  -shortreal                 Enables shortreal parsing
+  -show_forces               Turn on support for force -show
+  -show_rnm_cover            option to show RNM information with coverage
+  -show_rnm_rand             show RNM random variables
+  -showtoptype               Show the type of the top level design unit
+  -sib                       Enable logging for Scope Information Browser
+  -signal_complete_check     Enable completeness check flow
+  -signal_complete_list <arg> Specify signal list for completeness flow
+  -simcompatible_ams <arg>   Specify compatibility language hspice or spectre
+  -simincfile <arg>          Number of files after which overwriting begins
+  -simlogsize <arg>          Specifies the simulation file size limit in MB
+  -simtfile <arg>            To control the delay on port at runtime
+  -simtmp <dir>              Use specified simulation scratch directory
+  -simvisargs <string>       Quoted string of SimVision command-line arguments
+  -smartlib                  Specifies multiple library compilation in OIC
+  -smartorder                Order-independent compilation (OIC) for VHDL
+  -smartscript <script>      Specifies the OIC compilation script output file
+  -snapshot <name>           Generate snapshot with specified name
+  -snchecknames              Warn if a Specman reference name does not exist
+  -sncompargs <string>       Pass arguments to "e" compiler
+  -sndefine <arg>            Define an e preprocessor directive
+  -sndyn                     If the stage has C code compile it into a dynlib
+  -sndynlazy                 Have xrun load specman libraries with RTLD_LAZY
+  -sndynload <file(s)>       Load given e files after loading a saved snapshot
+  -sndynname <name>          Name of the dynamic lib C/C++ for active snstage
+  -sndynnow                  Have xrun load specman libraries with RTLD_NOW
+  -snfliheader <fileName>    Have specman create a FLI header file
+  -snglobalcompargs <string> Pass arguments to all "e" compiler commands
+  -snheader <fileName>       Have specman create a header file
+  -snheaderargs <string>     Pass arguments to snheader generation phase
+  -snini <ini>               Specify Specman initialization file
+  -snload <file>             Load e/elib files before HDL access generation
+  -snlogappend               Append the log from saved snapshot to current log
+  -snnewbuild                Clean build of input e files
+  -snnoauto                  Do not calculate a language adapter
+  -snpath <path>             Append the options value to SPECMAN_PATH env var
+  -snprerun <cmds>           Execute Specman precommands before simulation
+  -snpresv                   Compile verilog files before Specman header files
+  -snprofileargs <arg>       Arguments for the specman profiler
+  -snprofilecpu              Tell specman to run its profiler
+  -snprofilemem              Tell specman memory profiler to run
+  -snquiet                   Run Specman compile in quiet mode
+  -snrebuild                 Force the recompilation of the e input files
+  -snrecord [<value>]        Specify Specman record directory
+  -snreplay [<value>]        Set where Specman will read recorded data from
+  -snsc                      Specify SystemC agent for Specman
+  -snseed <seed>             Pass seed value to Specman
+  -snset <arg>               Set command to pass to Specman
+  -snshlib <libpath>         Use the provided precompiled e library
+  -snstage <stagename>       Compile e files as a staged compile
+  -snstubelab                Generate stubs via xmelab
+  -snsv                      Specify SystemVerilog agent for Specman
+  -snsvdpi                   Automate SV_DPI Support
+  -sntimescale <arg>         Specify the time scale for specman delays
+  -snupdate                  Just update the e code
+  -snvhdl                    Specify VHDL agent for Specman
+  -snvlog                    Specify Verilog agent for Specman
+  -solver <arg>              Specify solver to be used
+  -source_debug              Enable recording of inactive code regions
+  -south_pe_names            add names to south pes
+  -sparsearray <arg>         Make 1-D array with more than <N> elements sparse
+  -spec <specfile>           Specify an alternative spec file
+  -specificunit              Compile only the specified unit from source file
+  -spectre_argfile_spp <arg> Run Spectre parser with '-spp' option (spp on)
+  -spectre_args <arg>        introduce options to be used by spectre
+  -spectre_e                 Run Spectre parser with '-E' option
+  -spectre_path <path>       spectre install/wrapper path from user
+  -spectre_spp               Run Spectre parser with '-spp' option
+  -spectre_validated_version Display validated spectre releases
+  -specview                  Invoke the Specview Graphical User Interface
+  -spice_ext <ext>           Override extensions for SPICE sources
+  -spicetop                  Trigger SPICE-on-Top flow.
+  -sprofile                  Generate a VHDL source profile
+  -stacksize <arg>           Maximum size for the PLI stack
+  -stats                     Print counts of the error/warning messages issued
+  -status                    Print out the runtime statistics after step
+  -stdout_options            Print invocation options to stdout
+  -stop_on_build_error       Exit with error status when tool encounters error
+  -stpcheck                  Enables printing of warning message
+  -structural                Check Structural Connectivity
+  -superlint                 Run superlinting flow in single step
+  -sv                        Force SystemVerilog compilation
+  -sv_lib <lib>              Dynamically load a DPI library
+  -sv_ms                     turn on SystemVerilog plus ms feature
+  -sv_root <path>            Specify root path for "sv_lib" switch
+  -svperf <up>               Enable SystemVerilog UniquePriority performance
+  -svseed <seed>             Set SystemVerilog default RNG seed
+  -svudn_complex_port        Support complex port for SV UDN
+  -swdeveloper               Use VSP software developer licenses
+  -symbols                   Use xmelab & xmsim with symbols
+  -syncall <on|off>          Synchronize all compatible signals & transactions
+  -syncinitval               propagate initial value of VHDL ports of type
+  -sysc                      SystemC is present
+  -systemc_args <args>       List of arguments to sc_main
+  -sysv                      Enables the support for SystemVerilog Data Types
+  -sysv2005                  Only enable SV-2005 and earlier keywords
+  -sysv2009                  Only enable SV-2009 and earlier keywords
+  -sysv_ext <ext>            Override extensions for SystemVerilog sources
+  -target <stage>            Stop at or redo the given compile stage
+  -testability_analysis      RC testability reprot through HAL
+  -testcoverage <arg>        Enables test coverage calculation
+  -tfile <file>              Specify a timing file
+  -tfverbose                 Enables verbose mode for timing file matching.
+  -timedetail                Print out wall clock time for each executable
+  -timescale <arg>           Set default timescale on Verilog modules
+  -timeunit_case             Prints time units from std.textio in upper case
+  -tlm2                      Deprecated. Has no effect
+  -tlmcpu <CPU core>         Allow TLM CPU aware debugging
+  -top <lib.cell:view>       Specify the top-level unit
+  -topic <category|option>   Lists all xmsc_run option in a group or more info
+  -tranmin                   Choose min delay if multiple iopath arc collapse
+  -transport_int_delays      Make interconnect timing be multisource capable
+  -turbo                     Enable turbo mode
+  -typdelays                 Select typical delays for simulation
+  -u                         Convert identifiers to uppercase
+  -ultrasim_args <arg>       introduce options to be used by ultrasim
+  -unadorned_class_chk       Enable certain checking for class scope operators
+  -unbuffered                Do not buffer output
+  -unclockedsva              Unclocked assertion support in SystemVerilog
+  -unipri_old                Warnings for unique-priority as per old behavior
+  -unr                       Enable coverage unreachability App
+  -upffakemodulestublist <filename> List of Fake Modules for low power
+  -upfpkg <file>             Specify a UPF package to be used
+  -uptodate_messages         Print module name for up-to-date modules
+  -use_cm                    Use VerilogAMS CM for VHDLSpice Connection
+  -use_ieee_dumpport_ids     Dump $dumpports port ids as per IEEE format
+  -use_last_ie               use last ie when wildcard scope conflict
+  -use_new_dumpports         IUS 14.2: deprecated
+  -usearch <arg>             Specify the priority list of VHDL architectures
+  -usechoice <arg>           Specify name of file from which to read bindings.
+  -useconf <arg>             Specify the priority list of VHDL configurations
+  -uselicense <arg>          Deprecated - Does not affect Xcelium licensing
+  -usesctimeunit <on|off>    Turn SystemC time resolution mode on/off
+  -useview <arg>             Specify the priority list of Verilog views
+  -uvc_patch <file>          Patch file for OIG elements
+  -uvm                       Turn on support for the UVM library
+  -uvmaccess                 Enable uvm debug APIS
+  -uvmexthome <dir>          Location for UVM extensions
+  -uvmhome <dir>             Location to look for the UVM install
+  -uvmlinedebug              Enable line debugging capabilities of UVM
+  -uvmnoautocompile          Do not auto compile the UVM packages
+  -uvmnocdnsextra            Do not automatically compile the uvm cdns extras
+  -uvmnoloaddpi              Do not automatically load or compile uvm dpi code
+  -uvmpackagename            Specify UVM package name
+  -uvmtest <testName>        Specify the test class name
+  -uvmtop <testName>         Specify the top test class name
+  -v <file>                  Specify a library file to be used
+  -v1995                     Turn off new Verilog-2001 keywords
+  -v2001                     Turn off new Verilog-2005 keywords
+  -v200x                     Enable VHDL200X and VHDL93 features
+  -v93                       Enable VHDL93 features
+  -vcdextend                 Left-extend all vectors in VCD files
+  -vcfg_aoi_index            Allows specifying index for AOI instance in vcfg
+  -vcfg_inst_precedence      Give precedence to instance rule in vlog config
+  -vcfg_no_default_bind      Strictly bind the instances using Verilog config
+  -vclass_ext                Display derived class instead of base class
+  -verbose                   Verbose messages when compiling C
+  -version                   Print the version and exit
+  -vhanargs <string>         Pass arguments to vhan
+  -vhcfg_ext <ext>           Override extensions for VHDL config files
+  -vhdl_ext <ext>            Override extensions for VHDL sources
+  -vhdl_nba                  Enable VHDL NBA queue
+  -vhdl_nxg                  Enables the support for NxG VHDL support
+  -vhdl_seq_nba              Enable VHDL NBA queue
+  -vhdl_time_precision <prec> Set default time precision for VHDL
+  -vhdlext <ext>             Add extensions to VHDL sources
+  -vhdlsparsearray <arg>     Make 1-D array with more than <N> elements sparse
+  -vhdlsync                  Enable mixed language synchronization
+  -vic                       Turn on linking of the VIC libraries
+  -view <view>               Set the view type for xmvlog compilation
+  -vipdmax                   Select max delay value for VitalInterconnectDelay
+  -vipdmin                   Select Min delay value for VitalInterconnectDelay
+  -vis_ingress               (xufe only) Dump all ingress signals to waves
+  -vlanargs <string>         Pass arguments to vlan
+  -vlog95_ext <ext>          Override extensions for Verilog95 sources
+  -vlog_ext <ext>            Override extensions for Verilog sources
+  -vlog_strong_type_check    Warn for incorrect string/integral conversion
+  -vlogext <ext>             Add extensions to Verilog sources
+  -vpicompat <1364v1995|1364v2001|1364v2005|1800v2005> Specify the IEEE VPI
+                             compatibility mode default
+  -vsof_dir                  Write the vsof file at specified location
+  -vspdebug <all|off|fast>   VSP Virtual Platform Debug and Analysis mode
+  -vtimescale <arg>          Define initial timescale for command line files
+  -vtwverbose                Prints logs of VTWfile activity
+  -warn_null_range           Warn about null range in design
+  -warn_only_libverbose      Display only warnings from -libverbose logs
+  -warn_rtoi_assign          warn for real to integral type assignment
+  -warn_yv                   Gives more warnings related to library files
+  -warnfile <arg>            File containing msgs to be reported as warning
+  -warnmax <arg>             Maximum warnings reported by halsynth and xmelab
+  -waveform_coverage         Enables coverage for waveform generation
+  -Wcc,<arg>                 Pass user specified arguments to the C compiler
+  -Wcxx,<arg>                Pass user specified arguments to C++ compiler
+  -Wld,<arg>                 Pass user specified arguments to C++ linker
+  -work <library>            Library for command line Source
+  -workmce                   Use worklib_mce for skeleton compilation
+  -wreal2vhd_probe           To generate probe file for -WREAL2VHDLMAP
+  -wreal2vhdlmap             Add Wreal 2 VHDL map file
+  -wreal_coerce <on|off>     Turn on/off wreal coercion
+  -wreal_resolution <default|4state|sum|avg|max|min> Set the global wreal resolution
+                             function
+  -write_metrics             Dump the vsof file
+  +xcDesignTop+<hier>=<du>   See verbose details
+  -xceligen <option>         Set SystemVerilog constraint options
+  +xcEmbeddedTb+<mod>        Specify the embedded TB design unit to exclude
+  -xedebug                   Use xeDebug as debugger before xmsim
+  -xedebugargs <string>      Pass arguments to xeDebug
+  -xfile <file>              Specify a xprop specification file to be used
+  -xlifnone                  Emulate XL's ifnone SDF annotation implementation
+  -xlog <file>               Specify X-Prop log file for simulator
+  -xlog_elab <file>          Specify X-Prop log file for elaborator
+  -xlstyle_units             Display time values in XL style
+  -xm_no_soft_err            Treat all soft errors as warnings
+  -xm_sn_standalone          Enable interactive Indago for specman only
+  -xmallerror                Increase severity of all warnings to error.
+  -xmb_environment <arg>     Specify environment file to be loaded by xmbrowse
+  -xmb_file <arg>            File for xmbrowse to load command line arguments
+  -xmb_filter <arg>          Filter for report generation by xmbrowse
+  -xmb_format <arg>          Set the format of messages in the report
+  -xmb_nodefaultenv          Prevent xmbrowse from using default environment
+  -xmb_order <arg>           Set the order in which items are shown
+  -xmb_report <arg>          Specify the report file to be created by xmbrowse
+  -xmb_sortby <arg>          Specify a sort order to xmbrowse for report
+  -xmdebug                   Equivalent to -access +r
+  -xmelab_args,<string>      Pass arguments to elaborator (xmsc_run compat)
+  -xmelabargs <string>       Pass arguments to elaborator
+  -xmelabexe <exe>           Specify elaborator with statically linked PLI
+  -xmelabfile                File for generated elab options from import
+  -xmerror <arg>             Increase the severity of a warning to an error
+  -xmfatal <arg>             Increase the severity of a warn/error to fatal
+  -xmfile_msgcntl <filename> Control file to change severity of messages
+  -xmhierarchy <arg>         Specify hierarchy to start initialization from
+  -xminit_file <file>        Custom file for initialization commands
+  -xminit_log <file>         Custom file to record initialized variables
+  -xminitialize <value>      Initialize variables in the design
+  -xmlfile <arg>             Specify the XML file to print log information in
+  -xmlibdirname <dir>        Specify directory name to store created library
+  -xmlibdirpath <path>       Relative path where libraries should be created
+  -xmls_all                  Run xmls with the -all option
+  -xmls_dep                  Run xmls with the -dep option
+  -xmls_so                   Run xmls with the -source option
+  -xmls_ss                   Run xmls with the -snapshot option
+  -xmnote <arg>              Decreases the severity of a warning to a note
+  -xmprofile                 Disable +diagnose when -profile is set
+  -xmprotect_file <file_name> Pass arguments from a file to xmprotect
+  -xmreplay_file <arg>       The list of replay options specified in the file
+  -xmsc_msgs <on|off>        Tell xmsc to run xmsc messages on or off
+  -xmsc_runargs <string>     Pass arguments to xmsc_run
+  -xmshare                   Reuse any available view with NCUID
+  -xmsie_multiple_replicated_tops Identify multiple replicated tops
+  -xmsie_verbose             Print messages about Automatic partitioner
+  -xmsienumclonepartitions <arg> Specify the cloning limit for MSIE partitioner
+  -xmsienumpartitions <arg>  Specify number of partitions for MSIE partitioner
+  -xmsiepartitiontop <arg>   Specify top of the hierarchy to be partitioned
+  -xmsieperfstat             Print performance status of the AutoMSIE
+  -xmsim_args,<string>       Pass arguments to simulator.  (xmsc_run compat)
+  -xmsimargs <string>        Pass arguments to simulator
+  -xmsimexe <exe>            Specify simulator with statically linked PLI
+  -xmsimfile                 File for generated sim options from import
+  -xmuid <arg>               Specify a unique ID for this invocation
+  -xmvhdl_args,<string>      Pass arguments to VHDL parser (xmsc_run compat)
+  -xmvhdlargs <string>       Pass arguments to VHDL parser
+  -xmvlog_args,<string>      Pass arguments to Verilog parser(xmsc_run compat)
+  -xmvlogargs <string>       Pass arguments to Verilog parser
+  -xmwarn <arg>              Decrease the severity of an error to a warning
+  -xp_int_corrupt            VHDL xprop integer corruption value
+  -xp_int_rand_corrupt       VHDL xprop random value for integer corruption
+  -xpess                     Enable X-Pessimism Analysis and Correction
+  -xpnoenuminit              No init of user defined enums compiled for X-Prop
+  -xprof                     Enable instrumented profiling
+  -xprop F/C                 Enable X-Propagation
+  -xpusrenumdef              Enable user defined enum for X-prop
+  -xrio_file <file>          Specify a XRIO file low power simulation
+  -xverbose                  Logs X-Prop activity
+  -xzlib                     Enable X-Prop log in gzip format
+  -y <directory>             Specify a library directory to be used
+  -zlib [<arg>]              Compressed PAK file
+  -zparse                    Enable zparsing
+
+Example commands to invoke xrun
+  xrun sio85.v
+  xrun xor.v bot.vhd xor_verify.e
+  xrun -f run.f
+  xrun a.v b.v c.vhd -c
+  xrun -R -input commands.tcl
+  xrun -helpsubject specman
+  xrun -helpsubject mce
