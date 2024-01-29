@@ -1,10 +1,10 @@
 # FTR-SE (Farimah Tehranipoor Rahman - Security Engine)
 
-Project Description:
+### Project Description:
 
 FTR-SE is an open-source security subsystem developed by the Florida Institute of Cybersecurity (FICS) Research at the University of Florida. The primary aim of this project is to provide a RISC-V based security subsystem for System-on-Chip (SoC), enabling robust hardware security functionalities. FTR-SE addresses semiconductor supply chain vulnerabilities and incorporates various hardware primitive components, including Physical Unclonable Function (PUF), True Random Number Generator (TRNG), symmetric and asymmetric crypto accelerators, and life cycle management features. 
 
-Key Features
+#### Key Features
 •	RISC-V Based: FTR-SE leverages the RISC-V architecture, a free and open-source instruction set architecture, providing flexibility and openness.
 •	Semiconductor Supply Chain Protection: The project focuses on mitigating vulnerabilities in the semiconductor supply chain through the innovative fast Power On Chip Authentication (POCA) protocol, ensuring the integrity and security of hardware components.
 •	Hardware Primitives:
@@ -18,11 +18,11 @@ Key Features
 
 
 
-Block Diagram
+### Block Diagram
  ![image](https://github.com/mashahedurrahman/Security-Engine/assets/89419440/f91c3b7f-5b91-4070-ba0c-89e58c91627e)
 
 
-Getting Started
+### Getting Started
 
 To use FTR-SE in your project, follow these steps:
 •	Clone the Repository:
@@ -38,7 +38,7 @@ To use FTR-SE in your project, follow these steps:
 2.	Run "./run.sh" to run simulation
 3.	Use "simvision ./xrun_results/dump.vcd" to observe waveform
 
-Contact:   
+### Contact:   
 
 For inquiries or more information, contact the project maintainers:
 •	Mridha Md Mashahedur Rahman (mrahman1@ufl.edu)
@@ -46,7 +46,7 @@ For inquiries or more information, contact the project maintainers:
 
 Feel free to explore and contribute to FTR-SE! Your input is valuable in advancing hardware security in the open-source community.
 
-Reference Publication:
+### Reference Publication:
 
 Mohammad, Sajeed, Mridha Md Mashahedur Rahman, and Farimah Farahmandi. "Required Policies and Properties of the Security Engine of an SoC." 2021 IEEE International Symposium on Smart Electronic Systems (iSES). IEEE, 2021.
 
