@@ -19,7 +19,7 @@ FTR-SE is an open-source security subsystem developed by the Florida Institute o
 
 
 ### Block Diagram
- ![image](https://github.com/mashahedurrahman/Security-Engine/assets/89419440/f91c3b7f-5b91-4070-ba0c-89e58c91627e)
+ ![image](https://github.com/mashahedurrahman/Security-Engine/assets/89419440/90fe68db-a864-429f-b670-7fae86d7ee49)
 
 
 ### Getting Started
