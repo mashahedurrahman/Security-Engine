@@ -8,11 +8,11 @@ FTR-SE is an open-source security subsystem developed by the Florida Institute o
 *	RISC-V Based: FTR-SE leverages the RISC-V architecture, a free and open-source instruction set architecture, providing flexibility and openness.
 *	Semiconductor Supply Chain Protection: The project focuses on mitigating vulnerabilities in the semiconductor supply chain through the innovative fast Power On Chip Authentication (POCA) protocol, ensuring the integrity and security of hardware components.
 *	Hardware Primitives:
-  *	PUF (Physical Unclonable Function): FTR-SE incorporates PUF as a hardware primitive, contributing to secure key generation and authentication.
-  *	TRNG (True Random Number Generator): A robust TRNG is integrated for secure and unpredictable random number generation.
+	* PUF (Physical Unclonable Function): FTR-SE incorporates PUF as a hardware primitive, contributing to secure key generation and authentication.
+	* TRNG (True Random Number Generator): A robust TRNG is integrated for secure and unpredictable random number generation.
 *	Crypto Accelerators:
-  *	Symmetric Crypto Accelerator: Enables efficient symmetric cryptographic operations for secure data encryption and decryption.
-  *	Asymmetric Crypto Accelerator: Supports asymmetric cryptographic algorithms for secure key exchange and digital signatures.
+	* Symmetric Crypto Accelerator: Enables efficient symmetric cryptographic operations for secure data encryption and decryption.
+	* Asymmetric Crypto Accelerator: Supports asymmetric cryptographic algorithms for secure key exchange and digital signatures.
 *	Life Cycle Management: FTR-SE includes features for managing the life cycle of the security subsystem, ensuring secure initialization, updates, and retirement.
 *	MailBox: FTR-SE incorporates a MailBox IP, facilitating secure communication between the Host processor and the RISC-V processor without relying on memory transactions.
 
