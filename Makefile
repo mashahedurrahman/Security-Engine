@@ -243,17 +243,6 @@ trng_src += TRNG/rtl/Mux.v
 trng_src := $(addprefix $(root-dir), $(trng_src))
 
 
-#mash: add ECIES IP files
-ecies_src := Security-IP_DrMishra/ECIES/ECIES_wrapper.v 
-ecies_src += Security-IP_DrMishra/ECIES/ECIES_top.v 
-ecies_src += Security-IP_DrMishra/ECCShared/montgomeryLadder.v 
-ecies_src += Security-IP_DrMishra/ECCShared/get_2P.v 
-ecies_src += Security-IP_DrMishra/ECCShared/eeageneric.v 
-ecies_src += Security-IP_DrMishra/ECCShared/get_PQ.v 
-ecies_src += Security-IP_DrMishra/ECIES/ECIES_encrypt.v 
-ecies_src += Security-IP_DrMishra/ECIES/ECIES_decrypt.v 
-ecies_src += Security-IP_DrMishra/ECIES/ANSIX963KDF.sv
-ecies_src := $(addprefix $(root-dir), $(ecies_src))
 
 
 #Shams: add PUF IP files
@@ -299,22 +288,8 @@ sha_src += SHA/rtl/toplevel.vhd
 sha_src := $(addprefix $(root-dir), $(sha_src))
 
 
-#sujan: add ECC IP files
-ecc_src := ecc/ECC_v1_0_S00_AXI.v
-#ecc_src += ecc/eeageneric.v   # already included in ecies_src
-#ecc_src += ecc/get_2P.v       # already included in ecies_src
-#ecc_src += ecc/get_PQ.v       # already included in ecies_src
-#ecc_src += ecc/montgomeryLadder.v   # already included in ecies_src
-ecc_src := $(addprefix $(root-dir), $(ecc_src))
 
 
-#mash: add AES IP files
-aes_src := aes_ctr/aes_ctr_wrapper.sv
-aes_src += aes_ctr/aes_CTR_mode.v
-aes_src += aes_ctr/aes_128.v
-aes_src += aes_ctr/round.v
-aes_src += aes_ctr/table.v
-aes_src := $(addprefix $(root-dir), $(aes_src))
 
 
 #azim: add DH IP files
@@ -331,16 +306,6 @@ poca_src += POCA_FSM/poca_master.v
 poca_src := $(addprefix $(root-dir), $(poca_src))
 
 
-#azim: add ECDSA IP files
-ecdsa_src := ECDSA/rtl/ecdsa_wrapper.v
-ecdsa_src += ECDSA/rtl/ecdsa_combined.sv
-ecdsa_src += ECDSA/rtl/ECDSA_sign.v
-ecdsa_src += ECDSA/rtl/ECDSA_verify.v
-#ecdsa_src += ECDSA/rtl/eeageneric.v
-#ecdsa_src += ECDSA/rtl/get_2P.v
-#ecdsa_src += ECDSA/rtl/get_PQ.v
-#ecdsa_src += ECDSA/rtl/montgomeryLadder.v
-ecdsa_src := $(addprefix $(root-dir), $(ecdsa_src))
 
 
 
@@ -435,15 +400,11 @@ XRUN_COMP = $(XRUN_COMP_FLAGS)		\
 	$(filter %.sv, $(src))	      	\
 	$(rsa_src)              	\
 	$(trng_src)              	\
-	$(ecies_src)              	\
 	$(PUF_src)              	\
 	$(ro_odometer_src)          	\
 	$(sha_src)               	\
-	$(ecc_src)               	\
-	$(aes_src)               	\
 	$(dh_src)               	\
 	$(poca_src)               	\
-	$(ecdsa_src)               	\
 	$(filter %.sv, $(XRUN_TB))	\
 
 XRUN_RUN = $(XRUN_RUN_FLAGS) 		\
