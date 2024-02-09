@@ -1,1 +1,0 @@
-irun -access +rw ./ECIES/ECIES_tb_2.sv ./ECIES/ECIES_top.v ./AES/CTR/aes_CTR_mode.v ./tinyAES-master/rtl/aes_128.v ./tinyAES-master/rtl/sbox.v ./tinyAES-master/rtl/table.v ./tinyAES-master/rtl/round.v ./ECCShared/montgomeryLadder.v ./ECCShared/get_2P.v ./ECCShared/eeageneric.v ./ECCShared/get_PQ.v ./ECIES/ECIES_encrypt.v ./ECIES/ECIES_decrypt.v ./ECIES/ANSIX963KDF.sv

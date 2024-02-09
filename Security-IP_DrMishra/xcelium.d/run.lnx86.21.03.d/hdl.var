@@ -1,8 +1,0 @@
-define XMSIMRC	( /apps/cds/xcelium2103/tools/xcelium/files/xmsimrc, ~/.xmsimrc )
-define AMSRC	( /apps/cds/xcelium2103/tools/xcelium/files/amsrc, ~/.amsrc )
-include ./hdlrun.var
-define SNAPSHOT worklib.ECIES_full_tb:sv
-DEFINE RUNMODEDEFAULT 1
-DEFINE LIB_MAP ( + => worklib )
-define ELAB_SNAPSHOT
-define SNAPSHOT worklib.ECIES_full_tb:sv
