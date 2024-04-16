@@ -43,11 +43,14 @@ To use FTR-SE in your project, follow these steps:
 For inquiries or more information, contact the project maintainers:
 •	Mridha Md Mashahedur Rahman (mrahman1@ufl.edu)
 •	Sujan Kumar Saha (sujansaha@ufl.edu)
+•	Azim Uddin (azim.uddin@ufl.edu)
+•	Shams Tarek (shams.tarek@ufl.edu)
 
 Feel free to explore and contribute to FTR-SE! Your input is valuable in advancing hardware security in the open-source community.
 
 ### Reference Publication:
 
-Mohammad, Sajeed, Mridha Md Mashahedur Rahman, and Farimah Farahmandi. "Required Policies and Properties of the Security Engine of an SoC." 2021 IEEE International Symposium on Smart Electronic Systems (iSES). IEEE, 2021.
+1.	Mohammad, Sajeed, Mridha Md Mashahedur Rahman, and Farimah Farahmandi. "Required Policies and Properties of the Security Engine of an SoC." 2021 IEEE International Symposium on Smart Electronic Systems (iSES). IEEE, 2021.
+2.	M. S. U. I. Sami et al., "POCA: First Power-on Chip Authentication in Untrusted Foundry and Assembly," 2021 IEEE International Symposium on Hardware Oriented Security and Trust (HOST), Tysons Corner, VA, USA, 2021, pp. 124-135, doi: 10.1109/HOST49136.2021.9702285.
 
 
