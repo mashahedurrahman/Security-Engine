@@ -52,5 +52,6 @@ Feel free to explore and contribute to FTR-SE! Your input is valuable in advanci
 
 1.	Mohammad, Sajeed, Mridha Md Mashahedur Rahman, and Farimah Farahmandi. "Required Policies and Properties of the Security Engine of an SoC." 2021 IEEE International Symposium on Smart Electronic Systems (iSES). IEEE, 2021.
 2.	M. S. U. I. Sami et al., "POCA: First Power-on Chip Authentication in Untrusted Foundry and Assembly," 2021 IEEE International Symposium on Hardware Oriented Security and Trust (HOST), Tysons Corner, VA, USA, 2021, pp. 124-135, doi: 10.1109/HOST49136.2021.9702285.
+3.	T. Rahman, M. K. Bepary, M. S. Ul Haque, M. Tehranipoor and F. Rahman, "Design and Security-Mitigation of Custom and Configurable Hardware Cryptosystems," 2023 IEEE 16th Dallas Circuits and Systems Conference (DCAS), Denton, TX, USA, 2023, pp. 1-6, doi: 10.1109/DCAS57389.2023.10130190.
 
 
