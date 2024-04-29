@@ -25,25 +25,25 @@ package ariane_soc;
 
   typedef enum int unsigned {
     DRAM     = 0,
-    ECIES    = 1,
-    PUF      = 2,
-    ODO      = 3,
-    SHA      = 4,
-    RSA      = 5,
-    TRNG     = 6,
-    ECC      = 7,
-    AES      = 8,
-    DH       = 9,
-    ECDSA    = 10,
-    GPIO     = 11,
-    Ethernet = 12,
-    SPI      = 13,
-    Timer    = 14,
-    UART     = 15,
-    PLIC     = 16,
-    CLINT    = 17,
-    ROM      = 18,
-    Debug    = 19
+//    ECIES    = 1,
+    PUF      = 1,
+    ODO      = 2,
+    SHA      = 3,
+    RSA      = 4,
+    TRNG     = 5,
+//    ECC      = 7,
+//    AES      = 8,
+    DH       = 6,
+//    ECDSA    = 10,
+    GPIO     = 7,
+    Ethernet = 8,
+    SPI      = 9,
+    Timer    = 10,
+    UART     = 11,
+    PLIC     = 12,
+    CLINT    = 13,
+    ROM      = 14,
+    Debug    = 15
   } axi_slaves_t;
 
   localparam NB_PERIPHERALS = Debug + 1;
@@ -58,16 +58,16 @@ package ariane_soc;
   localparam logic[63:0] SPILength      = 64'h800000;
   localparam logic[63:0] EthernetLength = 64'h10000;
   localparam logic[63:0] GPIOLength     = 64'h1000;
-  localparam logic[63:0] ECDSALength    = 64'h10000;
+//  localparam logic[63:0] ECDSALength    = 64'h10000;
   localparam logic[63:0] DHLength       = 64'h10000;
-  localparam logic[63:0] AESLength      = 64'h10000;
-  localparam logic[63:0] ECCLength      = 64'h10000;
+//  localparam logic[63:0] AESLength      = 64'h10000;
+//  localparam logic[63:0] ECCLength      = 64'h10000;
   localparam logic[63:0] TRNGLength     = 64'h10000;
   localparam logic[63:0] RSALength      = 64'h10000;
   localparam logic[63:0] SHALength      = 64'h10000;
   localparam logic[63:0] ODOLength      = 64'h1000;
   localparam logic[63:0] PUFLength      = 64'h10000;
-  localparam logic[63:0] ECIESLength    = 64'h10000;
+//  localparam logic[63:0] ECIESLength    = 64'h10000;
   localparam logic[63:0] DRAMLength     = 64'h40000000; // 1GByte of DDR (split between two chips on Genesys2)
   localparam logic[63:0] SRAMLength     = 64'h1800000;  // 24 MByte of SRAM
   // Instantiate AXI protocol checkers
@@ -83,16 +83,16 @@ package ariane_soc;
     SPIBase      = 64'h2000_0000,
     EthernetBase = 64'h3000_0000,
     GPIOBase     = 64'h4000_0000,
-    ECDSABase    = 64'h4700_0000,
+//    ECDSABase    = 64'h4700_0000,
     DHBase       = 64'h4600_0000,
-    AESBase      = 64'h4500_0000,
-    ECCBase      = 64'h4400_0000,
+//    AESBase      = 64'h4500_0000,
+//    ECCBase      = 64'h4400_0000,
     TRNGBase     = 64'h6000_0000,
     RSABase      = 64'h5000_0000,
     SHABase      = 64'h4300_0000,
     ODOBase      = 64'h4200_0000,
     PUFBase      = 64'h4100_0000,
-    ECIESBase    = 64'h7000_0000,
+//    ECIESBase    = 64'h7000_0000,
     DRAMBase     = 64'h8000_0000
   } soc_bus_start_t;
 

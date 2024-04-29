@@ -472,16 +472,16 @@ module ariane_testharness #(
     '{ idx: ariane_soc::SPI,      start_addr: ariane_soc::SPIBase,      end_addr: ariane_soc::SPIBase + ariane_soc::SPILength           },
     '{ idx: ariane_soc::Ethernet, start_addr: ariane_soc::EthernetBase, end_addr: ariane_soc::EthernetBase + ariane_soc::EthernetLength },
     '{ idx: ariane_soc::GPIO,     start_addr: ariane_soc::GPIOBase,     end_addr: ariane_soc::GPIOBase + ariane_soc::GPIOLength         },
-    '{ idx: ariane_soc::ECDSA,    start_addr: ariane_soc::ECDSABase,    end_addr: ariane_soc::ECDSABase + ariane_soc::ECDSALength       },
+//    '{ idx: ariane_soc::ECDSA,    start_addr: ariane_soc::ECDSABase,    end_addr: ariane_soc::ECDSABase + ariane_soc::ECDSALength       },
     '{ idx: ariane_soc::DH,       start_addr: ariane_soc::DHBase,       end_addr: ariane_soc::DHBase + ariane_soc::DHLength             },
-    '{ idx: ariane_soc::AES,      start_addr: ariane_soc::AESBase,      end_addr: ariane_soc::AESBase + ariane_soc::AESLength           },
-    '{ idx: ariane_soc::ECC,      start_addr: ariane_soc::ECCBase,      end_addr: ariane_soc::ECCBase + ariane_soc::ECCLength           },
+//    '{ idx: ariane_soc::AES,      start_addr: ariane_soc::AESBase,      end_addr: ariane_soc::AESBase + ariane_soc::AESLength           },
+//    '{ idx: ariane_soc::ECC,      start_addr: ariane_soc::ECCBase,      end_addr: ariane_soc::ECCBase + ariane_soc::ECCLength           },
     '{ idx: ariane_soc::TRNG,     start_addr: ariane_soc::TRNGBase,     end_addr: ariane_soc::TRNGBase + ariane_soc::TRNGLength         },
     '{ idx: ariane_soc::RSA,      start_addr: ariane_soc::RSABase,      end_addr: ariane_soc::RSABase + ariane_soc::RSALength           },
     '{ idx: ariane_soc::SHA,      start_addr: ariane_soc::SHABase,      end_addr: ariane_soc::SHABase + ariane_soc::SHALength           },
     '{ idx: ariane_soc::ODO,      start_addr: ariane_soc::ODOBase,      end_addr: ariane_soc::ODOBase + ariane_soc::ODOLength           },
     '{ idx: ariane_soc::PUF,      start_addr: ariane_soc::PUFBase,      end_addr: ariane_soc::PUFBase + ariane_soc::PUFLength           },
-    '{ idx: ariane_soc::ECIES,    start_addr: ariane_soc::ECIESBase,    end_addr: ariane_soc::ECIESBase + ariane_soc::ECIESLength       },
+//    '{ idx: ariane_soc::ECIES,    start_addr: ariane_soc::ECIESBase,    end_addr: ariane_soc::ECIESBase + ariane_soc::ECIESLength       },
     '{ idx: ariane_soc::DRAM,     start_addr: ariane_soc::DRAMBase,     end_addr: ariane_soc::DRAMBase + ariane_soc::DRAMLength         }
   };
 
@@ -615,42 +615,42 @@ module ariane_testharness #(
   //    .mst        (ecies_lite)
   //);
 
-  AXI_LITE #(
-      .AXI_ADDR_WIDTH (32),
-      .AXI_DATA_WIDTH (32)
-  ) ecies_lite();
-
-  axi_to_axi_lite_mod  axi_to_axi_lite_ecies (
-      .clk_i      (clk_i),
-      .rst_ni     (ndmreset_n),
-      .testmode_i (test_en),
-      .in         (master[ariane_soc::ECIES]),
-      .out        (ecies_lite)
-  );
-
-  ECIES_wrapper  ecies (
-      .S_AXI_ACLK          (clk_i   ),
-      .S_AXI_ARESETN       (ndmreset_n   ),
-      .S_AXI_AWADDR        (ecies_lite.aw_addr   ),
-      .S_AXI_AWPROT        (   ),
-      .S_AXI_AWVALID       (ecies_lite.aw_valid   ),
-      .S_AXI_AWREADY       (ecies_lite.aw_ready   ),
-      .S_AXI_WDATA         (ecies_lite.w_data   ),
-      .S_AXI_WSTRB         (ecies_lite.w_strb   ),
-      .S_AXI_WVALID        (ecies_lite.w_valid   ),
-      .S_AXI_WREADY        (ecies_lite.w_ready   ),
-      .S_AXI_BRESP         (ecies_lite.b_resp   ),
-      .S_AXI_BVALID        (ecies_lite.b_valid   ),
-      .S_AXI_BREADY        (ecies_lite.b_ready   ),
-      .S_AXI_ARADDR        (ecies_lite.ar_addr   ),
-      .S_AXI_ARPROT        (   ),
-      .S_AXI_ARVALID       (ecies_lite.ar_valid   ),
-      .S_AXI_ARREADY       (ecies_lite.ar_ready   ),
-      .S_AXI_RDATA         (ecies_lite.r_data   ),
-      .S_AXI_RRESP         (ecies_lite.r_resp   ),
-      .S_AXI_RVALID        (ecies_lite.r_valid   ),
-      .S_AXI_RREADY        (ecies_lite.r_ready   )
-  );
+//  AXI_LITE #(
+//      .AXI_ADDR_WIDTH (32),
+//      .AXI_DATA_WIDTH (32)
+//  ) ecies_lite();
+//
+//  axi_to_axi_lite_mod  axi_to_axi_lite_ecies (
+//      .clk_i      (clk_i),
+//      .rst_ni     (ndmreset_n),
+//      .testmode_i (test_en),
+//      .in         (master[ariane_soc::ECIES]),
+//      .out        (ecies_lite)
+//  );
+//
+//  ECIES_wrapper  ecies (
+//      .S_AXI_ACLK          (clk_i   ),
+//      .S_AXI_ARESETN       (ndmreset_n   ),
+//      .S_AXI_AWADDR        (ecies_lite.aw_addr   ),
+//      .S_AXI_AWPROT        (   ),
+//      .S_AXI_AWVALID       (ecies_lite.aw_valid   ),
+//      .S_AXI_AWREADY       (ecies_lite.aw_ready   ),
+//      .S_AXI_WDATA         (ecies_lite.w_data   ),
+//      .S_AXI_WSTRB         (ecies_lite.w_strb   ),
+//      .S_AXI_WVALID        (ecies_lite.w_valid   ),
+//      .S_AXI_WREADY        (ecies_lite.w_ready   ),
+//      .S_AXI_BRESP         (ecies_lite.b_resp   ),
+//      .S_AXI_BVALID        (ecies_lite.b_valid   ),
+//      .S_AXI_BREADY        (ecies_lite.b_ready   ),
+//      .S_AXI_ARADDR        (ecies_lite.ar_addr   ),
+//      .S_AXI_ARPROT        (   ),
+//      .S_AXI_ARVALID       (ecies_lite.ar_valid   ),
+//      .S_AXI_ARREADY       (ecies_lite.ar_ready   ),
+//      .S_AXI_RDATA         (ecies_lite.r_data   ),
+//      .S_AXI_RRESP         (ecies_lite.r_resp   ),
+//      .S_AXI_RVALID        (ecies_lite.r_valid   ),
+//      .S_AXI_RREADY        (ecies_lite.r_ready   )
+//  );
 
 
   // ---------------
@@ -779,84 +779,84 @@ module ariane_testharness #(
   // ---------------
   // ECC : Dr. Sujan
   // ---------------
-  AXI_LITE #(
-      .AXI_ADDR_WIDTH (32),
-      .AXI_DATA_WIDTH (32)
-  ) ecc_lite();
-
-  axi_to_axi_lite_mod  axi_to_axi_lite_ecc (
-      .clk_i      (clk_i),
-      .rst_ni     (ndmreset_n),
-      .testmode_i (test_en),
-      .in         (master[ariane_soc::ECC]),
-      .out        (ecc_lite)
-  );
-
-  ECC_v1_0_S00_AXI  ecc (
-      .S_AXI_ACLK          (clk_i   ),
-      .S_AXI_ARESETN       (ndmreset_n   ),
-      .S_AXI_AWADDR        (ecc_lite.aw_addr   ),
-      .S_AXI_AWPROT        (   ),
-      .S_AXI_AWVALID       (ecc_lite.aw_valid   ),
-      .S_AXI_AWREADY       (ecc_lite.aw_ready   ),
-      .S_AXI_WDATA         (ecc_lite.w_data   ),
-      .S_AXI_WSTRB         (ecc_lite.w_strb   ),
-      .S_AXI_WVALID        (ecc_lite.w_valid   ),
-      .S_AXI_WREADY        (ecc_lite.w_ready   ),
-      .S_AXI_BRESP         (ecc_lite.b_resp   ),
-      .S_AXI_BVALID        (ecc_lite.b_valid   ),
-      .S_AXI_BREADY        (ecc_lite.b_ready   ),
-      .S_AXI_ARADDR        (ecc_lite.ar_addr   ),
-      .S_AXI_ARPROT        (   ),
-      .S_AXI_ARVALID       (ecc_lite.ar_valid   ),
-      .S_AXI_ARREADY       (ecc_lite.ar_ready   ),
-      .S_AXI_RDATA         (ecc_lite.r_data   ),
-      .S_AXI_RRESP         (ecc_lite.r_resp   ),
-      .S_AXI_RVALID        (ecc_lite.r_valid   ),
-      .S_AXI_RREADY        (ecc_lite.r_ready   )
-  );
+//  AXI_LITE #(
+//      .AXI_ADDR_WIDTH (32),
+//      .AXI_DATA_WIDTH (32)
+//  ) ecc_lite();
+//
+//  axi_to_axi_lite_mod  axi_to_axi_lite_ecc (
+//      .clk_i      (clk_i),
+//      .rst_ni     (ndmreset_n),
+//      .testmode_i (test_en),
+//      .in         (master[ariane_soc::ECC]),
+//      .out        (ecc_lite)
+//  );
+//
+//  ECC_v1_0_S00_AXI  ecc (
+//      .S_AXI_ACLK          (clk_i   ),
+//      .S_AXI_ARESETN       (ndmreset_n   ),
+//      .S_AXI_AWADDR        (ecc_lite.aw_addr   ),
+//      .S_AXI_AWPROT        (   ),
+//      .S_AXI_AWVALID       (ecc_lite.aw_valid   ),
+//      .S_AXI_AWREADY       (ecc_lite.aw_ready   ),
+//      .S_AXI_WDATA         (ecc_lite.w_data   ),
+//      .S_AXI_WSTRB         (ecc_lite.w_strb   ),
+//      .S_AXI_WVALID        (ecc_lite.w_valid   ),
+//      .S_AXI_WREADY        (ecc_lite.w_ready   ),
+//      .S_AXI_BRESP         (ecc_lite.b_resp   ),
+//      .S_AXI_BVALID        (ecc_lite.b_valid   ),
+//      .S_AXI_BREADY        (ecc_lite.b_ready   ),
+//      .S_AXI_ARADDR        (ecc_lite.ar_addr   ),
+//      .S_AXI_ARPROT        (   ),
+//      .S_AXI_ARVALID       (ecc_lite.ar_valid   ),
+//      .S_AXI_ARREADY       (ecc_lite.ar_ready   ),
+//      .S_AXI_RDATA         (ecc_lite.r_data   ),
+//      .S_AXI_RRESP         (ecc_lite.r_resp   ),
+//      .S_AXI_RVALID        (ecc_lite.r_valid   ),
+//      .S_AXI_RREADY        (ecc_lite.r_ready   )
+//  );
 
 
 
   // ---------------
   // AES : mash
   // ---------------
-  AXI_LITE #(
-      .AXI_ADDR_WIDTH (32),
-      .AXI_DATA_WIDTH (32)
-  ) aes_lite();
-
-  axi_to_axi_lite_mod  axi_to_axi_lite_aes (
-      .clk_i      (clk_i),
-      .rst_ni     (ndmreset_n),
-      .testmode_i (test_en),
-      .in         (master[ariane_soc::AES]),
-      .out        (aes_lite)
-  );
-
-  aes_ctr_wrapper  aes (
-      .S_AXI_ACLK          (clk_i   ),
-      .S_AXI_ARESETN       (ndmreset_n   ),
-      .S_AXI_AWADDR        (aes_lite.aw_addr   ),
-      .S_AXI_AWPROT        (   ),
-      .S_AXI_AWVALID       (aes_lite.aw_valid   ),
-      .S_AXI_AWREADY       (aes_lite.aw_ready   ),
-      .S_AXI_WDATA         (aes_lite.w_data   ),
-      .S_AXI_WSTRB         (aes_lite.w_strb   ),
-      .S_AXI_WVALID        (aes_lite.w_valid   ),
-      .S_AXI_WREADY        (aes_lite.w_ready   ),
-      .S_AXI_BRESP         (aes_lite.b_resp   ),
-      .S_AXI_BVALID        (aes_lite.b_valid   ),
-      .S_AXI_BREADY        (aes_lite.b_ready   ),
-      .S_AXI_ARADDR        (aes_lite.ar_addr   ),
-      .S_AXI_ARPROT        (   ),
-      .S_AXI_ARVALID       (aes_lite.ar_valid   ),
-      .S_AXI_ARREADY       (aes_lite.ar_ready   ),
-      .S_AXI_RDATA         (aes_lite.r_data   ),
-      .S_AXI_RRESP         (aes_lite.r_resp   ),
-      .S_AXI_RVALID        (aes_lite.r_valid   ),
-      .S_AXI_RREADY        (aes_lite.r_ready   )
-  );
+//  AXI_LITE #(
+//      .AXI_ADDR_WIDTH (32),
+//      .AXI_DATA_WIDTH (32)
+//  ) aes_lite();
+//
+//  axi_to_axi_lite_mod  axi_to_axi_lite_aes (
+//      .clk_i      (clk_i),
+//      .rst_ni     (ndmreset_n),
+//      .testmode_i (test_en),
+//      .in         (master[ariane_soc::AES]),
+//      .out        (aes_lite)
+//  );
+//
+//  aes_ctr_wrapper  aes (
+//      .S_AXI_ACLK          (clk_i   ),
+//      .S_AXI_ARESETN       (ndmreset_n   ),
+//      .S_AXI_AWADDR        (aes_lite.aw_addr   ),
+//      .S_AXI_AWPROT        (   ),
+//      .S_AXI_AWVALID       (aes_lite.aw_valid   ),
+//      .S_AXI_AWREADY       (aes_lite.aw_ready   ),
+//      .S_AXI_WDATA         (aes_lite.w_data   ),
+//      .S_AXI_WSTRB         (aes_lite.w_strb   ),
+//      .S_AXI_WVALID        (aes_lite.w_valid   ),
+//      .S_AXI_WREADY        (aes_lite.w_ready   ),
+//      .S_AXI_BRESP         (aes_lite.b_resp   ),
+//      .S_AXI_BVALID        (aes_lite.b_valid   ),
+//      .S_AXI_BREADY        (aes_lite.b_ready   ),
+//      .S_AXI_ARADDR        (aes_lite.ar_addr   ),
+//      .S_AXI_ARPROT        (   ),
+//      .S_AXI_ARVALID       (aes_lite.ar_valid   ),
+//      .S_AXI_ARREADY       (aes_lite.ar_ready   ),
+//      .S_AXI_RDATA         (aes_lite.r_data   ),
+//      .S_AXI_RRESP         (aes_lite.r_resp   ),
+//      .S_AXI_RVALID        (aes_lite.r_valid   ),
+//      .S_AXI_RREADY        (aes_lite.r_ready   )
+//  );
 
 
   // ---------------
@@ -939,42 +939,42 @@ module ariane_testharness #(
   // ---------------
   // ECDSA : azim
   // ---------------
-  AXI_LITE #(
-      .AXI_ADDR_WIDTH (32),
-      .AXI_DATA_WIDTH (32)
-  ) ECDSA_lite();
-
-  axi_to_axi_lite_mod  axi_to_axi_lite_ECDSA (
-      .clk_i      (clk_i),
-      .rst_ni     (ndmreset_n),
-      .testmode_i (test_en),
-      .in         (master[ariane_soc::ECDSA]),
-      .out        (ECDSA_lite)
-  );
-
-  ecdsa_wrapper  ECDSA(
-      .S_AXI_ACLK          (clk_i   ),
-      .S_AXI_ARESETN       (ndmreset_n   ),
-      .S_AXI_AWADDR        (ECDSA_lite.aw_addr   ),
-      .S_AXI_AWPROT        (   ),
-      .S_AXI_AWVALID       (ECDSA_lite.aw_valid   ),
-      .S_AXI_AWREADY       (ECDSA_lite.aw_ready   ),
-      .S_AXI_WDATA         (ECDSA_lite.w_data   ),
-      .S_AXI_WSTRB         (ECDSA_lite.w_strb   ),
-      .S_AXI_WVALID        (ECDSA_lite.w_valid   ),
-      .S_AXI_WREADY        (ECDSA_lite.w_ready   ),
-      .S_AXI_BRESP         (ECDSA_lite.b_resp   ),
-      .S_AXI_BVALID        (ECDSA_lite.b_valid   ),
-      .S_AXI_BREADY        (ECDSA_lite.b_ready   ),
-      .S_AXI_ARADDR        (ECDSA_lite.ar_addr   ),
-      .S_AXI_ARPROT        (   ),
-      .S_AXI_ARVALID       (ECDSA_lite.ar_valid   ),
-      .S_AXI_ARREADY       (ECDSA_lite.ar_ready   ),
-      .S_AXI_RDATA         (ECDSA_lite.r_data   ),
-      .S_AXI_RRESP         (ECDSA_lite.r_resp   ),
-      .S_AXI_RVALID        (ECDSA_lite.r_valid   ),
-      .S_AXI_RREADY        (ECDSA_lite.r_ready   )
-  );
+//  AXI_LITE #(
+//      .AXI_ADDR_WIDTH (32),
+//      .AXI_DATA_WIDTH (32)
+//  ) ECDSA_lite();
+//
+//  axi_to_axi_lite_mod  axi_to_axi_lite_ECDSA (
+//      .clk_i      (clk_i),
+//      .rst_ni     (ndmreset_n),
+//      .testmode_i (test_en),
+//      .in         (master[ariane_soc::ECDSA]),
+//      .out        (ECDSA_lite)
+//  );
+//
+//  ecdsa_wrapper  ECDSA(
+//      .S_AXI_ACLK          (clk_i   ),
+//      .S_AXI_ARESETN       (ndmreset_n   ),
+//      .S_AXI_AWADDR        (ECDSA_lite.aw_addr   ),
+//      .S_AXI_AWPROT        (   ),
+//      .S_AXI_AWVALID       (ECDSA_lite.aw_valid   ),
+//      .S_AXI_AWREADY       (ECDSA_lite.aw_ready   ),
+//      .S_AXI_WDATA         (ECDSA_lite.w_data   ),
+//      .S_AXI_WSTRB         (ECDSA_lite.w_strb   ),
+//      .S_AXI_WVALID        (ECDSA_lite.w_valid   ),
+//      .S_AXI_WREADY        (ECDSA_lite.w_ready   ),
+//      .S_AXI_BRESP         (ECDSA_lite.b_resp   ),
+//      .S_AXI_BVALID        (ECDSA_lite.b_valid   ),
+//      .S_AXI_BREADY        (ECDSA_lite.b_ready   ),
+//      .S_AXI_ARADDR        (ECDSA_lite.ar_addr   ),
+//      .S_AXI_ARPROT        (   ),
+//      .S_AXI_ARVALID       (ECDSA_lite.ar_valid   ),
+//      .S_AXI_ARREADY       (ECDSA_lite.ar_ready   ),
+//      .S_AXI_RDATA         (ECDSA_lite.r_data   ),
+//      .S_AXI_RRESP         (ECDSA_lite.r_resp   ),
+//      .S_AXI_RVALID        (ECDSA_lite.r_valid   ),
+//      .S_AXI_RREADY        (ECDSA_lite.r_ready   )
+//  );
 
 
 
